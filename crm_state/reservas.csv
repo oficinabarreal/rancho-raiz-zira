@@ -1,0 +1,9 @@
+guest,pax,check_in,check_out,source,amount_paid,notes
+José Miguel,1,2026-01-31T14:00:00,2026-02-05T11:00:00,WhatsApp directo,345000,Pagó $345k efectivo. Problema con heladera durante estadía. Check-out ~4-5 feb.
+Andrés Chouhy,2,2026-02-08T17:00:00,2026-02-11T11:00:00,Booking,525765,Pagó $525.765. Llegó ~18hs.
+Tomás Scala,3,2026-02-16T14:00:00,2026-02-26T10:00:00,WhatsApp,0,Reserva Rancho Laluuu. 10 noches. 3 personas.
+Anónimo (21-mar),1,2026-03-21T15:00:00,2026-03-22T10:00:00,WhatsApp,0,"1 noche. Llegó 21/3, se fue 22/3."
+Alvaro Martinez,2,2026-04-01T14:00:00,2026-04-02T10:00:00,Booking,0,Booking. 1 noche. Contacto: Alvaro Martinez Bkg Rancho.vcf
+Santiago Ruiz,5,2026-04-02T14:00:00,2026-04-05T10:00:00,Web,0,5 pax. 3 noches. Contacto: Santi Airbnb.vcf
+Alejandro Beltrán,2,2026-05-15T14:00:00,2026-05-18T11:00:00,Booking,200000,Huésped especial desde Colombia. 2 noches + 2 extra de cortesía. Señá $100k. Total $200k.
+Anónimo (finde mayo),2,2026-05-01T14:00:00,2026-05-03T10:00:00,WhatsApp,173800,Finde. Pagó $173.800. Comisión 10% = $17.380.

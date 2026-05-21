@@ -1,0 +1,71 @@
+{
+  "leo": {
+    "nombre": "Leo Tello",
+    "rol": "Dueño / Finanzas",
+    "email": "ltelloraiz@gmail.com",
+    "telefono": "+54 9 264 548-0313",
+    "responsabilidades": [
+      "Aprobar reservas mayores",
+      "Manejar finanzas y pagos",
+      "Decisiones de reposición y stock",
+      "Visto bueno en contratos"
+    ],
+    "tono": "directivo, paternal, confía en Diego para operaciones",
+    "alias": [
+      "Leo",
+      "Tello",
+      "ltelloraiz"
+    ]
+  },
+  "ayelen": {
+    "nombre": "Ayelen Juricevic",
+    "rol": "Booking / Ventas",
+    "email": "ayelenjuricevic@gmail.com",
+    "telefono": "+54 9 11 5959-5869",
+    "responsabilidades": [
+      "Recibir y confirmar reservas",
+      "Pasar contratos a huéspedes",
+      "Comunicar datos de reserva al equipo",
+      "Cobrar señas"
+    ],
+    "tono": "organizada, detallista, pasa la info y delega seguimiento",
+    "alias": [
+      "Aye",
+      "Ayelen",
+      "Ayelen Juricevic"
+    ]
+  },
+  "diego": {
+    "nombre": "Diego",
+    "rol": "Operaciones (vos)",
+    "email": "oficinabarreal@gmail.com",
+    "telefono": "",
+    "responsabilidades": [
+      "Recibir e instalar huéspedes",
+      "Coordinar limpieza con Chiqui",
+      "Resolver problemas en la casa",
+      "Cobrar pagos en efectivo",
+      "Mantener inventario y reposiciones",
+      "Gestionar el gimnasio (pesas, etc.)"
+    ],
+    "tono": "resolutivo, reporta en el grupo, atento a detalles",
+    "alias": [
+      "Diego",
+      "Dieguito",
+      "diegui"
+    ]
+  },
+  "chiqui": {
+    "nombre": "Chiqui",
+    "rol": "Limpieza",
+    "email": "",
+    "telefono": "",
+    "responsabilidades": [
+      "Limpieza post-checkout",
+      "Preparar la casa para nuevos huéspedes"
+    ],
+    "alias": [
+      "Chiqui"
+    ]
+  }
+}

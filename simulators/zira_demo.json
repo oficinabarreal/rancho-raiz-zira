@@ -1,0 +1,53 @@
+{
+  "session": "zira_demo",
+  "dialogue": [
+    {
+      "speaker": "Cliente",
+      "text": "Hola, estoy buscando una posada en la cordillera. \u00bfMe pasas info?"
+    },
+    {
+      "speaker": "Zira",
+      "text": "Hola. S\u00ed, te puedo ayudar. Somos una posada en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes."
+    },
+    {
+      "speaker": "Cliente",
+      "text": "\u00bfQu\u00e9 incluye la estad\u00eda y cu\u00e1ntas personas entran?"
+    },
+    {
+      "speaker": "Zira",
+      "text": "La casa incluye living-comedor, cocina equipada, ba\u00f1o, habitaci\u00f3n principal, WiFi, pileta, galer\u00eda y parrillero. Aceptamos de 1 a 5 personas."
+    },
+    {
+      "speaker": "Cliente",
+      "text": "\u00bfTen\u00e9s disponibilidad para el finde largo?"
+    },
+    {
+      "speaker": "Zira",
+      "text": "Decime las fechas exactas y cu\u00e1ntas personas son, as\u00ed te confirmo disponibilidad al toque."
+    },
+    {
+      "speaker": "Cliente",
+      "text": "Te mando una foto de una habitaci\u00f3n, quiero que la eval\u00faes para un post."
+    },
+    {
+      "speaker": "Zira",
+      "text": "Recibido. Voy a guardar la foto, prepararla para edici\u00f3n y dejarla lista para revisi\u00f3n antes de publicar."
+    },
+    {
+      "speaker": "Cliente",
+      "text": "Perfecto, si est\u00e1 buena la subimos al feed."
+    },
+    {
+      "speaker": "Zira",
+      "text": "Listo. La foto queda en cola para editar, aprobar y postear cuando me des el ok."
+    },
+    {
+      "speaker": "Cliente",
+      "text": "Gracias. \u00bfMe mand\u00e1s tambi\u00e9n los precios?"
+    },
+    {
+      "speaker": "Zira",
+      "text": "S\u00ed. Puedo enviarte el tarifario completo y ayudarte a coordinar la reserva por Telegram."
+    }
+  ]
+}

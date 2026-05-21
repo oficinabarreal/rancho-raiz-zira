@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "puente_email_digest",
+      "title": "Puente: daily email digest",
+      "channel": "gmail",
+      "source": "IMAP cache",
+      "summary": "The digest engine groups inbox items and highlights the most urgent billing alert.",
+      "entities": {
+        "channel": "gmail",
+        "priority": "high",
+        "goal": "operator_briefing"
+      },
+      "steps": [
+        {
+          "stage": "fetch",
+          "action": "read inbox",
+          "detail": "The engine pulls the latest inbox state from IMAP."
+        },
+        {
+          "stage": "categorize",
+          "action": "group by topic",
+          "detail": "Billing, AI providers, social, and other items are separated."
+        },
+        {
+          "stage": "prioritize",
+          "action": "surface urgency",
+          "detail": "Billing issues are moved to the top of the brief."
+        },
+        {
+          "stage": "notify",
+          "action": "deliver Telegram digest",
+          "detail": "A compact summary is sent to the client-facing bot."
+        }
+      ],
+      "telegram": [
+        "Daily digest ready",
+        "Top alert: billing issue",
+        "Other items grouped by category"
+      ],
+      "voice": "Daily digest ready. Top alert is a billing issue.",
+      "next_actions": [
+        "Open the top email thread",
+        "Draft a reply or schedule follow-up"
+      ]
+    },
+    {
+      "id": "puente_ig_lead_pipeline",
+      "title": "Puente: Instagram lead pipeline",
+      "channel": "instagram",
+      "source": "Comments and profile scraping",
+      "summary": "An Instagram interaction is scored and inserted into the lead pipeline.",
+      "entities": {
+        "channel": "instagram",
+        "priority": "medium",
+        "goal": "lead_capture"
+      },
+      "steps": [
+        {
+          "stage": "capture",
+          "action": "detect engagement",
+          "detail": "A new comment or follower event is detected."
+        },
+        {
+          "stage": "profile",
+          "action": "inspect public profile",
+          "detail": "Follower counts, activity, and bio hints are read."
+        },
+        {
+          "stage": "score",
+          "action": "classify lead quality",
+          "detail": "The system assigns a score and classification."
+        },
+        {
+          "stage": "persist",
+          "action": "append to leads.json",
+          "detail": "The lead is stored with interaction history."
+        }
+      ],
+      "telegram": [
+        "New Instagram lead",
+        "Score computed",
+        "Suggested next step: reply or nurture"
+      ],
+      "voice": "New Instagram lead scored. Suggested next step is reply or nurture.",
+      "next_actions": [
+        "Inspect the score",
+        "Send a personalized reply if hot",
+        "Move to nurture if warm"
+      ]
+    },
+    {
+      "id": "puente_whatsapp_autoresponse",
+      "title": "Puente: WhatsApp Business autoresponse",
+      "channel": "whatsapp",
+      "source": "Webhook",
+      "summary": "A WhatsApp webhook receives a reservation question and sends a structured response.",
+      "entities": {
+        "channel": "whatsapp_business",
+        "priority": "high",
+        "goal": "reservation_reply"
+      },
+      "steps": [
+        {
+          "stage": "receive",
+          "action": "webhook POST",
+          "detail": "Meta sends a new message into the webhook."
+        },
+        {
+          "stage": "detect",
+          "action": "match intent",
+          "detail": "The text is classified as greeting, price, reservation, or location."
+        },
+        {
+          "stage": "respond",
+          "action": "select template",
+          "detail": "A reply is built from the response catalog."
+        },
+        {
+          "stage": "log",
+          "action": "store lead event",
+          "detail": "The event is appended to the WhatsApp lead log."
+        }
+      ],
+      "telegram": [
+        "WhatsApp webhook triggered",
+        "Intent detected",
+        "Auto-response sent"
+      ],
+      "voice": "WhatsApp webhook triggered. Intent detected. Auto-response sent.",
+      "next_actions": [
+        "Review the conversation log",
+        "Escalate unusual cases manually"
+      ]
+    },
+    {
+      "id": "puente_client_demo_bridge",
+      "title": "Puente: client demo bridge",
+      "channel": "bridge",
+      "source": "Agent queue",
+      "summary": "A task is routed to the correct agent: code, UI, or auto repair.",
+      "entities": {
+        "channel": "bridge",
+        "priority": "system",
+        "goal": "task_routing"
+      },
+      "steps": [
+        {
+          "stage": "enqueue",
+          "action": "write task",
+          "detail": "A task lands in the shared queue."
+        },
+        {
+          "stage": "classify",
+          "action": "route by keywords",
+          "detail": "The bridge decides whether the task is code, UI, or repair."
+        },
+        {
+          "stage": "dispatch",
+          "action": "call executor",
+          "detail": "OpenCode or OpenClaw receives the work."
+        },
+        {
+          "stage": "report",
+          "action": "write result",
+          "detail": "The result is saved back into the bridge."
+        }
+      ],
+      "telegram": [
+        "Bridge task accepted",
+        "Routing decided",
+        "Result stored"
+      ],
+      "voice": "Bridge task accepted. Routing decided. Result stored.",
+      "next_actions": [
+        "Inspect the result file",
+        "Retry with a smaller task if needed"
+      ]
+    },
+    {
+      "id": "puente_video_publish",
+      "title": "Puente: video publish pipeline",
+      "channel": "video",
+      "source": "Training artifacts",
+      "summary": "An image is transformed into a ready-to-post marketing piece.",
+      "entities": {
+        "channel": "video",
+        "priority": "medium",
+        "goal": "publish_ready"
+      },
+      "steps": [
+        {
+          "stage": "ingest",
+          "action": "load media",
+          "detail": "A source asset enters the training pipeline."
+        },
+        {
+          "stage": "generate",
+          "action": "make variants",
+          "detail": "Crops, captions, and preview files are created."
+        },
+        {
+          "stage": "review",
+          "action": "prepare output",
+          "detail": "Ready-to-post files are assembled."
+        },
+        {
+          "stage": "publish",
+          "action": "stage for approval",
+          "detail": "The deliverable can now be published or reviewed."
+        }
+      ],
+      "telegram": [
+        "Video asset processed",
+        "Ready-to-post output available",
+        "Suggested next step: review and publish"
+      ],
+      "voice": "Video asset processed. Ready-to-post output available.",
+      "next_actions": [
+        "Check the output folder",
+        "Approve the publish step"
+      ]
+    }
+  ]
+}

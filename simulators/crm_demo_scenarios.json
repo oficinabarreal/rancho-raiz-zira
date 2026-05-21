@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "gmail_starlink_payment_issue",
+      "title": "Gmail: Starlink payment issue",
+      "channel": "gmail",
+      "source": "Inbox"
+    },
+    {
+      "id": "whatsapp_booking_lead",
+      "title": "WhatsApp: booking lead",
+      "channel": "whatsapp",
+      "source": "Chat"
+    },
+    {
+      "id": "email_followup_reminder",
+      "title": "Email: follow-up reminder",
+      "channel": "gmail",
+      "source": "Inbox"
+    }
+  ]
+}

@@ -1,0 +1,1756 @@
+[2026-05-18T06:36:29Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 280, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 210, in handle_callback
+    answer_callback(token, callback_id, "Mostrando precios")
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 104, in answer_callback
+    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback_id, "text": text})
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 58, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+[2026-05-18T06:36:32Z] zira bot exited, restarting in 2s
+[2026-05-18T06:36:34Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 280, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 210, in handle_callback
+    answer_callback(token, callback_id, "Mostrando precios")
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 104, in answer_callback
+    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback_id, "text": text})
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 58, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+[2026-05-18T06:36:38Z] zira bot exited, restarting in 2s
+[2026-05-18T06:36:40Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 280, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 210, in handle_callback
+    answer_callback(token, callback_id, "Mostrando precios")
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 104, in answer_callback
+    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback_id, "text": text})
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 58, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+[2026-05-18T06:36:45Z] zira bot exited, restarting in 2s
+[2026-05-18T06:36:48Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:36:51Z] zira bot exited, restarting in 2s
+[2026-05-18T06:36:53Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:36:58Z] zira bot exited, restarting in 2s
+[2026-05-18T06:37:00Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:37:07Z] zira bot exited, restarting in 2s
+[2026-05-18T06:37:09Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:37:13Z] zira bot exited, restarting in 2s
+[2026-05-18T06:37:38Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:37:43Z] zira bot exited, restarting in 2s
+[2026-05-18T06:37:45Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:37:48Z] zira bot exited, restarting in 2s
+[2026-05-18T06:37:50Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:37:53Z] zira bot exited, restarting in 2s
+[2026-05-18T06:37:55Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:37:58Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:00Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:04Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:06Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:09Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:11Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:14Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:16Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:19Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:21Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:23Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:25Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:28Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:30Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:34Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:36Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:40Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:42Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:38:45Z] zira bot exited, restarting in 2s
+[2026-05-18T06:38:47Z] starting zira bot
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1356, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1402, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1351, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1111, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1055, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1497, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.12/ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionAbortedError: [Errno 103] Software caused connection abort
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 165, in handle_message
+    send_message(token, chat_id, reply, reply_markup=build_inline_keyboard())
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 69, in send_message
+    telegram_api(token, "sendMessage", payload)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 58, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 103] Software caused connection abort>
+[2026-05-18T06:38:58Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:00Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:03Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:05Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:08Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:10Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:14Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:16Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:19Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:21Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:24Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:26Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:29Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:31Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:34Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:36Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:39Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:41Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:44Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:46Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:49Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:51Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:54Z] zira bot exited, restarting in 2s
+[2026-05-18T06:39:56Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:39:59Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:01Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:04Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:06Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:09Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:11Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:13Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:16Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:19Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:21Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:23Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:25Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:28Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:30Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:34Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:36Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:38Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:41Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:43Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:45Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:49Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:51Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:40:54Z] zira bot exited, restarting in 2s
+[2026-05-18T06:40:56Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:41:01Z] zira bot exited, restarting in 2s
+[2026-05-18T06:41:03Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:41:06Z] zira bot exited, restarting in 2s
+[2026-05-18T06:41:08Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:41:11Z] zira bot exited, restarting in 2s
+[2026-05-18T06:41:13Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 166, in handle_message
+    maybe_send_audio_response(token, chat_id, intent, reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 111, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+[2026-05-18T06:41:16Z] zira bot exited, restarting in 2s
+[2026-05-18T06:41:18Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 291, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 282, in main
+    handle_message(token, update["message"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 165, in handle_message
+    send_message(token, chat_id, reply, reply_markup=build_inline_keyboard())
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 69, in send_message
+    telegram_api(token, "sendMessage", payload)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 58, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1356, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1402, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1351, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1111, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1055, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1497, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.12/ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+[2026-05-18T06:42:59Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 114, in maybe_send_audio_response
+    synthesize_sync(text, audio_path)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 20, in synthesize_sync
+    return asyncio.run(synthesize(text, output, voice=voice))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_voice.py", line 11, in synthesize
+    import edge_tts
+ModuleNotFoundError: No module named 'edge_tts'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1356, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1402, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1351, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1111, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1055, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1497, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.12/ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionAbortedError: [Errno 103] Software caused connection abort
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 297, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 286, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 228, in handle_callback
+    maybe_send_audio_response(token, chat_id, "reserve", reply)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 117, in maybe_send_audio_response
+    send_message(token, chat_id, f"Audio no disponible ahora: {exc}", reply_markup=build_inline_keyboard())
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 71, in send_message
+    telegram_api(token, "sendMessage", payload)
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 60, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 103] Software caused connection abort>
+[2026-05-18T06:45:07Z] zira bot exited, restarting in 2s
+[2026-05-18T06:45:09Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 297, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 286, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 230, in handle_callback
+    answer_callback(token, callback_id, "Pedí una foto")
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 106, in answer_callback
+    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback_id, "text": text})
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 60, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+[2026-05-18T06:45:13Z] zira bot exited, restarting in 2s
+[2026-05-18T06:45:15Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 297, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 286, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 235, in handle_callback
+    answer_callback(token, callback_id, "Mostrando FAQ")
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 106, in answer_callback
+    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback_id, "text": text})
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 60, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+[2026-05-18T06:45:17Z] zira bot exited, restarting in 2s
+[2026-05-18T06:45:19Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 297, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 286, in main
+    handle_callback(token, update["callback_query"])
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 241, in handle_callback
+    answer_callback(token, callback_id, "Enviando audio")
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 106, in answer_callback
+    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback_id, "text": text})
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 60, in telegram_api
+    with urllib.request.urlopen(req, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+[2026-05-18T06:45:22Z] zira bot exited, restarting in 2s
+[2026-05-18T06:45:24Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 297, in <module>
+    maybe_send_audio_response(token, chat_id, "photo", reply)
+                 ^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 279, in main
+    answer_callback(token, callback_id, "Mostrando precios")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 126, in get_updates
+    data=b"".join(parts),
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1348, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1448, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[2026-05-18T06:49:48Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:49:50Z] zira bot exited, restarting in 2s
+[2026-05-18T06:49:52Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:49:53Z] zira bot exited, restarting in 2s
+[2026-05-18T06:49:55Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:49:55Z] zira bot exited, restarting in 2s
+[2026-05-18T06:49:57Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:49:58Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:00Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:01Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:03Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:04Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:06Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:07Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:09Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:10Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:12Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:13Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:15Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:16Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:18Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:19Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:21Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:22Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:24Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:25Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:27Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:28Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:30Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:31Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:33Z] starting zira bot
+Traceback (most recent call last):
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_bot.py", line 41, in <module>
+    from zira_photo_pipeline import process_photo
+  File "/root/Documents/Codex/2026-05-18/hola-3/simulators/zira_photo_pipeline.py", line 21, in <module>
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+ModuleNotFoundError: No module named 'PIL'
+[2026-05-18T06:50:34Z] zira bot exited, restarting in 2s
+[2026-05-18T06:50:42Z] starting zira bot

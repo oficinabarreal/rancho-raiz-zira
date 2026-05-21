@@ -1,0 +1,252 @@
+{
+  "session": "client_demo",
+  "events": [
+    {
+      "id": "email_digest_starlink",
+      "title": "Email digest: Starlink billing",
+      "channel": "gmail",
+      "source": "Daily digest",
+      "summary": "The daily email digest groups billing alerts and surfaces the most urgent item first.",
+      "entities": {
+        "category": "billing",
+        "priority": "high",
+        "queue": "email_digest"
+      },
+      "steps": [
+        {
+          "stage": "fetch",
+          "action": "open IMAP cache",
+          "detail": "The engine reads the inbox and cached summaries."
+        },
+        {
+          "stage": "group",
+          "action": "categorize",
+          "detail": "Emails are clustered into billing, social, and other buckets."
+        },
+        {
+          "stage": "rank",
+          "action": "surface urgency",
+          "detail": "The Starlink billing alert is raised above the rest."
+        },
+        {
+          "stage": "notify",
+          "action": "send digest",
+          "detail": "Telegram receives a compact digest for the operator."
+        }
+      ],
+      "telegram": [
+        "Daily digest ready",
+        "Top item: Starlink billing alert",
+        "Other items grouped into AI/APIs, social, and misc"
+      ],
+      "voice": "Daily digest ready. Top item is a Starlink billing alert.",
+      "next_actions": [
+        "Open the billing thread",
+        "Reply or defer with a reminder"
+      ]
+    },
+    {
+      "id": "instagram_lead_scoring",
+      "title": "Instagram: lead scoring",
+      "channel": "instagram",
+      "source": "Comments and followers",
+      "summary": "An Instagram comment is scored, profiled, and promoted into the lead pipeline.",
+      "entities": {
+        "channel": "instagram",
+        "source": "comment",
+        "priority": "medium",
+        "intent": "lead_capture"
+      },
+      "steps": [
+        {
+          "stage": "capture",
+          "action": "detect new engagement",
+          "detail": "A new comment or follower event is observed."
+        },
+        {
+          "stage": "profile",
+          "action": "scrape profile",
+          "detail": "Public profile details are read for lead scoring."
+        },
+        {
+          "stage": "score",
+          "action": "classify hotness",
+          "detail": "The lead is scored as cold, warm, or hot."
+        },
+        {
+          "stage": "persist",
+          "action": "append lead record",
+          "detail": "The lead is written to the leads ledger."
+        },
+        {
+          "stage": "notify",
+          "action": "telegram summary",
+          "detail": "The operator gets a short lead brief."
+        }
+      ],
+      "telegram": [
+        "New Instagram lead",
+        "Profile scored and classified",
+        "Suggested next step: reply or nurture"
+      ],
+      "voice": "New Instagram lead scored and classified. Suggested next step is reply or nurture.",
+      "next_actions": [
+        "Review lead score",
+        "Send a personalized reply if score is high",
+        "Add to nurture sequence"
+      ]
+    },
+    {
+      "id": "whatsapp_business_autoresponse",
+      "title": "WhatsApp Business: auto-response",
+      "channel": "whatsapp",
+      "source": "Webhook",
+      "summary": "A WhatsApp webhook receives a reservation question and returns a structured auto-response.",
+      "entities": {
+        "channel": "whatsapp_business",
+        "priority": "high",
+        "intent": "reservation"
+      },
+      "steps": [
+        {
+          "stage": "receive",
+          "action": "webhook POST",
+          "detail": "Meta delivers a new WhatsApp message to the webhook."
+        },
+        {
+          "stage": "classify",
+          "action": "detect intent",
+          "detail": "The message is marked as reservation, price, location, or schedule."
+        },
+        {
+          "stage": "answer",
+          "action": "compose response",
+          "detail": "A structured answer is prepared from canned templates."
+        },
+        {
+          "stage": "send",
+          "action": "reply via API",
+          "detail": "The response is sent back over the Graph API."
+        },
+        {
+          "stage": "log",
+          "action": "save lead",
+          "detail": "The conversation is stored in the lead log."
+        }
+      ],
+      "telegram": [
+        "WhatsApp webhook triggered",
+        "Intent: reservation",
+        "Auto-response sent from template"
+      ],
+      "voice": "WhatsApp webhook triggered. Reservation intent. Auto-response sent from template.",
+      "next_actions": [
+        "Inspect the conversation log",
+        "Escalate to manual review if needed"
+      ]
+    },
+    {
+      "id": "bridge_task_routing",
+      "title": "Agent bridge: task routing",
+      "channel": "bridge",
+      "source": "Task queue",
+      "summary": "The agent bridge routes a task to code, UI, or auto repair depending on the content.",
+      "entities": {
+        "queue": "task_queue",
+        "priority": "system",
+        "intent": "routing"
+      },
+      "steps": [
+        {
+          "stage": "enqueue",
+          "action": "receive task",
+          "detail": "A task is written to the shared queue."
+        },
+        {
+          "stage": "classify",
+          "action": "route by keywords",
+          "detail": "The bridge decides between code, UI, or auto repair."
+        },
+        {
+          "stage": "dispatch",
+          "action": "select executor",
+          "detail": "OpenCode or OpenClaw gets the work."
+        },
+        {
+          "stage": "report",
+          "action": "write result",
+          "detail": "The outcome is stored back into the bridge folder."
+        }
+      ],
+      "telegram": [
+        "Bridge task accepted",
+        "Route selected based on task type",
+        "Result written to the shared queue"
+      ],
+      "voice": "Bridge task accepted. Route selected based on task type.",
+      "next_actions": [
+        "Inspect the result file",
+        "Retry with a narrower task if needed"
+      ]
+    },
+    {
+      "id": "video_marketing_pipeline",
+      "title": "Video marketing: content to publish",
+      "channel": "video",
+      "source": "Training pipeline",
+      "summary": "A marketing asset becomes a video draft, then a ready-to-post deliverable.",
+      "entities": {
+        "category": "video_marketing",
+        "priority": "medium",
+        "intent": "publish"
+      },
+      "steps": [
+        {
+          "stage": "ingest",
+          "action": "load source asset",
+          "detail": "An image or clip enters the training pipeline."
+        },
+        {
+          "stage": "generate",
+          "action": "produce variations",
+          "detail": "The system creates crops, pans, captions, or edits."
+        },
+        {
+          "stage": "review",
+          "action": "prepare deliverable",
+          "detail": "Ready-to-post assets are generated."
+        },
+        {
+          "stage": "publish",
+          "action": "post or queue",
+          "detail": "The item can be posted or staged for approval."
+        }
+      ],
+      "telegram": [
+        "Video asset processed",
+        "Ready-to-post deliverable generated",
+        "Suggested next step: review and publish"
+      ],
+      "voice": "Video asset processed. Ready-to-post deliverable generated.",
+      "next_actions": [
+        "Check the output folder",
+        "Approve for publishing"
+      ]
+    }
+  ],
+  "telegram": [
+    "*Email digest: Starlink billing*\n\u2022 Channel: gmail\n\u2022 Summary: The daily email digest groups billing alerts and surfaces the most urgent item first.\n\n\u2022 Daily digest ready\n\u2022 Top item: Starlink billing alert\n\u2022 Other items grouped into AI/APIs, social, and misc",
+    "*Instagram: lead scoring*\n\u2022 Channel: instagram\n\u2022 Summary: An Instagram comment is scored, profiled, and promoted into the lead pipeline.\n\n\u2022 New Instagram lead\n\u2022 Profile scored and classified\n\u2022 Suggested next step: reply or nurture",
+    "*WhatsApp Business: auto-response*\n\u2022 Channel: whatsapp\n\u2022 Summary: A WhatsApp webhook receives a reservation question and returns a structured auto-response.\n\n\u2022 WhatsApp webhook triggered\n\u2022 Intent: reservation\n\u2022 Auto-response sent from template",
+    "*Agent bridge: task routing*\n\u2022 Channel: bridge\n\u2022 Summary: The agent bridge routes a task to code, UI, or auto repair depending on the content.\n\n\u2022 Bridge task accepted\n\u2022 Route selected based on task type\n\u2022 Result written to the shared queue",
+    "*Video marketing: content to publish*\n\u2022 Channel: video\n\u2022 Summary: A marketing asset becomes a video draft, then a ready-to-post deliverable.\n\n\u2022 Video asset processed\n\u2022 Ready-to-post deliverable generated\n\u2022 Suggested next step: review and publish"
+  ],
+  "voice": [
+    "Daily digest ready. Top item is a Starlink billing alert.",
+    "New Instagram lead scored and classified. Suggested next step is reply or nurture.",
+    "WhatsApp webhook triggered. Reservation intent. Auto-response sent from template.",
+    "Bridge task accepted. Route selected based on task type.",
+    "Video asset processed. Ready-to-post deliverable generated."
+  ],
+  "human": "Session: client_demo\nEvents: 5\n\nStoryline:\n  1. Email digest: Starlink billing [gmail / Daily digest]\n  2. Instagram: lead scoring [instagram / Comments and followers]\n  3. WhatsApp Business: auto-response [whatsapp / Webhook]\n  4. Agent bridge: task routing [bridge / Task queue]\n  5. Video marketing: content to publish [video / Training pipeline]\n\nTimeline:\n## 1. Email digest: Starlink billing\n- ID: email_digest_starlink\n- Channel: gmail\n- Source: Daily digest\n- Summary: The daily email digest groups billing alerts and surfaces the most urgent item first.\n\nSteps:\n  1.1 [fetch] open IMAP cache \u2014 The engine reads the inbox and cached summaries.\n  1.2 [group] categorize \u2014 Emails are clustered into billing, social, and other buckets.\n  1.3 [rank] surface urgency \u2014 The Starlink billing alert is raised above the rest.\n  1.4 [notify] send digest \u2014 Telegram receives a compact digest for the operator.\n\nTelegram:\n  - Daily digest ready\n  - Top item: Starlink billing alert\n  - Other items grouped into AI/APIs, social, and misc\n\nVoice:\n  Daily digest ready. Top item is a Starlink billing alert.\n\nNext:\n  - Open the billing thread\n  - Reply or defer with a reminder\n\n## 2. Instagram: lead scoring\n- ID: instagram_lead_scoring\n- Channel: instagram\n- Source: Comments and followers\n- Summary: An Instagram comment is scored, profiled, and promoted into the lead pipeline.\n\nSteps:\n  2.1 [capture] detect new engagement \u2014 A new comment or follower event is observed.\n  2.2 [profile] scrape profile \u2014 Public profile details are read for lead scoring.\n  2.3 [score] classify hotness \u2014 The lead is scored as cold, warm, or hot.\n  2.4 [persist] append lead record \u2014 The lead is written to the leads ledger.\n  2.5 [notify] telegram summary \u2014 The operator gets a short lead brief.\n\nTelegram:\n  - New Instagram lead\n  - Profile scored and classified\n  - Suggested next step: reply or nurture\n\nVoice:\n  New Instagram lead scored and classified. Suggested next step is reply or nurture.\n\nNext:\n  - Review lead score\n  - Send a personalized reply if score is high\n  - Add to nurture sequence\n\n## 3. WhatsApp Business: auto-response\n- ID: whatsapp_business_autoresponse\n- Channel: whatsapp\n- Source: Webhook\n- Summary: A WhatsApp webhook receives a reservation question and returns a structured auto-response.\n\nSteps:\n  3.1 [receive] webhook POST \u2014 Meta delivers a new WhatsApp message to the webhook.\n  3.2 [classify] detect intent \u2014 The message is marked as reservation, price, location, or schedule.\n  3.3 [answer] compose response \u2014 A structured answer is prepared from canned templates.\n  3.4 [send] reply via API \u2014 The response is sent back over the Graph API.\n  3.5 [log] save lead \u2014 The conversation is stored in the lead log.\n\nTelegram:\n  - WhatsApp webhook triggered\n  - Intent: reservation\n  - Auto-response sent from template\n\nVoice:\n  WhatsApp webhook triggered. Reservation intent. Auto-response sent from template.\n\nNext:\n  - Inspect the conversation log\n  - Escalate to manual review if needed\n\n## 4. Agent bridge: task routing\n- ID: bridge_task_routing\n- Channel: bridge\n- Source: Task queue\n- Summary: The agent bridge routes a task to code, UI, or auto repair depending on the content.\n\nSteps:\n  4.1 [enqueue] receive task \u2014 A task is written to the shared queue.\n  4.2 [classify] route by keywords \u2014 The bridge decides between code, UI, or auto repair.\n  4.3 [dispatch] select executor \u2014 OpenCode or OpenClaw gets the work.\n  4.4 [report] write result \u2014 The outcome is stored back into the bridge folder.\n\nTelegram:\n  - Bridge task accepted\n  - Route selected based on task type\n  - Result written to the shared queue\n\nVoice:\n  Bridge task accepted. Route selected based on task type.\n\nNext:\n  - Inspect the result file\n  - Retry with a narrower task if needed\n\n## 5. Video marketing: content to publish\n- ID: video_marketing_pipeline\n- Channel: video\n- Source: Training pipeline\n- Summary: A marketing asset becomes a video draft, then a ready-to-post deliverable.\n\nSteps:\n  5.1 [ingest] load source asset \u2014 An image or clip enters the training pipeline.\n  5.2 [generate] produce variations \u2014 The system creates crops, pans, captions, or edits.\n  5.3 [review] prepare deliverable \u2014 Ready-to-post assets are generated.\n  5.4 [publish] post or queue \u2014 The item can be posted or staged for approval.\n\nTelegram:\n  - Video asset processed\n  - Ready-to-post deliverable generated\n  - Suggested next step: review and publish\n\nVoice:\n  Video asset processed. Ready-to-post deliverable generated.\n\nNext:\n  - Check the output folder\n  - Approve for publishing\n\nMermaid:\n```mermaid\nflowchart LR\n  S1[\"Email digest: Starlink billing\"]\n  S2[\"Instagram: lead scoring\"]\n  S1 --> S2\n  S3[\"WhatsApp Business: auto-response\"]\n  S2 --> S3\n  S4[\"Agent bridge: task routing\"]\n  S3 --> S4\n  S5[\"Video marketing: content to publish\"]\n  S4 --> S5\n```"
+}

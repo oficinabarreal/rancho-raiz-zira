@@ -1,0 +1,36 @@
+{
+  "crm_root": "crm_state",
+  "gmail": {
+    "user_env": "CRM_GMAIL_USER",
+    "password_env": "CRM_GMAIL_APP_PASSWORD"
+  },
+  "telegram": {
+    "token_env": "CRM_TG_TOKEN",
+    "chat_id_env": "CRM_TG_CHAT_ID"
+  },
+  "google": {
+    "creds_file_env": "CRM_GOOGLE_CREDS",
+    "state_dir_env": "CRM_STATE_DIR",
+    "scopes": {
+      "drive": "https://www.googleapis.com/auth/drive.file",
+      "calendar": "https://www.googleapis.com/auth/calendar",
+      "sheets": "https://www.googleapis.com/auth/spreadsheets"
+    }
+  },
+  "kommo": {
+    "subdomain_env": "CRM_KOMMO_SUBDOMAIN",
+    "token_env": "CRM_KOMMO_TOKEN"
+  },
+  "notion": {
+    "token_env": "CRM_NOTION_TOKEN",
+    "database_id_env": "CRM_NOTION_DATABASE_ID"
+  },
+  "whatsapp": {
+    "token_env": "CRM_WHATSAPP_TOKEN",
+    "phone_id_env": "CRM_WHATSAPP_PHONE_ID"
+  },
+  "instagram": {
+    "token_env": "CRM_INSTAGRAM_TOKEN",
+    "user_id_env": "CRM_INSTAGRAM_USER_ID"
+  }
+}
