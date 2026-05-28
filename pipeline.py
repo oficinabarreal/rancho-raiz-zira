@@ -361,7 +361,8 @@ def tg_poll_decision(timeout: int = 120) -> str:
 
 async def run_pipeline(modo: str = "cache", force: bool = False,
                        solo_banner: bool = False, solo_gif: bool = False,
-                       solo_reel: bool = False, poll: bool = False):
+                       solo_reel: bool = False, poll: bool = False,
+                       auto: bool = False):
     tema = "montanas"
 
     section(f"PIPELINE CRM + ARTE — modo={modo}")
@@ -410,14 +411,14 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
 
     if solo_reel:
         rpath = cache["reel"]["path"]
-        ok_reel = tg_send_video(rpath, f"Rancho Raiz: {tema.upper()}")
+        ok_reel = tg_send_video(rpath, f"Rancho Raiz: {tema.upper()} — Zira")
         log(f"  {'✅' if ok_reel else '⚠️'} Reel ({Path(rpath).name})")
     elif solo_gif:
         gif_path = cache["gif"]["path"]
-        ok_gif = tg_send_animation(gif_path, f"Rancho Raiz: {tema.upper()}")
+        ok_gif = tg_send_animation(gif_path, f"Rancho Raiz: {tema.upper()} — Zira")
         log(f"  {'✅' if ok_gif else '⚠️'} GIF ({Path(gif_path).name})")
     else:
-        ok_banner = tg_send_photo(cache["banner"]["path"], f"Rancho Raiz: {tema.upper()}")
+        ok_banner = tg_send_photo(cache["banner"]["path"], f"Rancho Raiz: {tema.upper()} — Zira")
         log(f"  {'✅' if ok_banner else '⚠️'} Banner ({Path(cache['banner']['path']).name})")
 
         if not solo_banner and "gif" in cache:
@@ -433,7 +434,7 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
             log(f"  {'✅' if ok_reel else '⚠️'} Reel ({Path(rpath).name})")
 
     # Botones de aprobación después de todos los assets
-    ok_btns = tg_send_message("Aprobas este contenido?", buttons=[[
+    ok_btns = tg_send_message("Aprobas este contenido? — Zira", buttons=[[
         {"text": "Aprobar", "callback_data": "aprobar"},
         {"text": "Rechazar", "callback_data": "rechazar"},
     ]])
@@ -444,6 +445,9 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
     if poll:
         log("  Esperando que presiones un botón en Telegram...")
         decision = tg_poll_decision(timeout=120)
+    elif auto:
+        log("  Modo --auto: omitiendo aprobación...")
+        decision = "aprobar"
     else:
         log("  Escribí 'aprobar' (a) o 'rechazar' (r) y Enter:")
         decision = ""
@@ -457,7 +461,7 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
     log("")
 
     if not aprobado:
-        tg_send_message(f"Sin publicacion — {tema.upper()}")
+        tg_send_message(f"Sin publicacion — {tema.upper()} — Zira")
         section("PIPELINE CANCELADO")
         log("  Contenido rechazado. Pipeline detenido.")
         return
@@ -472,7 +476,7 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
     if not solo_banner and not solo_gif and "reel" in cache:
         detalles += f"\nReel: {Path(cache['reel']['path']).name}"
     ok_post = tg_send_message(
-        f"Publicacion exitosa\n\n{detalles}"
+        f"Publicacion exitosa\n\n{detalles}\n\n— Zira"
     )
     log(f"  {'✅' if ok_post else '⚠️'} Mensaje de posteo exitoso enviado")
     log("")
@@ -526,7 +530,8 @@ if __name__ == "__main__":
     parser.add_argument("--solo-gif", action="store_true", help="Solo GIF, sin banner ni reel")
     parser.add_argument("--solo-reel", action="store_true", help="Solo reel, sin banner ni GIF")
     parser.add_argument("--poll", action="store_true", help="Esperar decisión por botón de Telegram")
+    parser.add_argument("--auto", action="store_true", help="Posteo directo sin aprobación")
     args = parser.parse_args()
     asyncio.run(run_pipeline(modo=args.mode, force=args.force,
                 solo_banner=args.solo_banner, solo_gif=args.solo_gif,
-                solo_reel=args.solo_reel, poll=args.poll))
+                solo_reel=args.solo_reel, poll=args.poll, auto=args.auto))

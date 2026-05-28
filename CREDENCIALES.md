@@ -43,3 +43,36 @@
 ## Entorno
 - `.env` en raíz del proyecto (NO subir a git)
 - `crm_state/` contiene tokens y datos locales
+
+## Agentes
+
+### Hermes (`.worktrees/hermes-bd3ca329/`)
+- Modelo: `opencode/big-pickle` (vía OpenCode CLI)
+- `.env`: CRM + Telegram + IA config
+- Rol: depuración profunda, procesar reservas, auditoría de pipeline
+
+### OpenClaw (`~/.openclaw/`)
+- Instalación global completa con gateway, plugins, Telegram, cron
+- `openclaw.json`: provider `opencode` añadido + modelo `opencode/big-pickle`
+- `.worktrees/openclaw/`:
+  - `daemon.py`: ejecutor de tareas en segundo plano
+  - `ia_client.py`: cliente compartido (CLI big-pickle + fallback Zen API)
+  - `cron.sh`: script para crontab
+- Rol: automatización programada, webhooks, tareas de fondo
+
+### Uso
+```bash
+# OpenClaw: una ronda de tareas programadas
+python3 .worktrees/openclaw/daemon.py --once
+
+# OpenClaw: escuchar webhooks en puerto 8083
+python3 .worktrees/openclaw/daemon.py --webhook 8083
+
+# Agregar al crontab (se ejecuta a los :30 de cada hora)
+echo '30 * * * * /ruta/a/.worktrees/openclaw/cron.sh >> /tmp/openclaw.log 2>&1' | crontab -
+```
+
+### Nota
+`opencode/big-pickle` está disponible directamente en el CLI de OpenCode (como esta sesión).
+Agentes tipo Hermes/OpenClaw se conectan a través del CLI. Para llamadas API directas (sin CLI),
+usan modelos NVIDIA como fallback configurado en cada agente.

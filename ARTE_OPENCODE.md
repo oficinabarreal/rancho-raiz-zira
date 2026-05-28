@@ -875,3 +875,35 @@ python3 pipeline.py --mode cache --solo-banner
 - [ ] 5. Resumen en terminal refleja nuevo asset
 - [ ] 6. Test: aprobar y rechazar con `--poll`
 - [ ] 7. Test: `--mode full --force` sin cache
+
+---
+
+## Próximas Fases — Posteo y Campañas
+
+### Fase 6: Posteo Directo (sin aprobación)
+- [ ] Pipeline sin `--poll` → postea directo sin preguntar
+- [ ] `--auto` flag que omite aprobación y va directo a POSTEO
+- [ ] Útil para contenido recurrente/confiable, o testing
+
+### Fase 7: Posteo con Aprobación (completo)
+- [ ] `--poll` es el default
+- [ ] Botón "Aprobar" → postea + email
+- [ ] Botón "Rechazar" → descarta + avisa
+
+### Fase 8: Diferenciar tipos de posteo
+- [ ] `--tipo posteo` → contenido a Instagram/Facebook (directo a red social)
+- [ ] `--tipo campania` → mailing + informes + reportes a Gmail
+- [ ] `--tipo ambos` → posteo en redes + email campaign report
+- [ ] Los informes/reportes por Gmail llevan adjuntos (PDF con métricas)
+- [ ] Las campañas publicitarias usan el mismo pipeline pero destino distinto
+
+### Fase 9: Posteo Real a Redes Sociales
+- [ ] Conectar Instagram Graph API (o ManyChat como puente)
+- [ ] Conectar Facebook Pages API
+- [ ] `--publicar` flag que envía a redes en vez de solo Telegram
+- [ ] Diferenciar: contenido orgánico vs. campaña paga
+
+### Fase 10: Feedback Loop (modificar/rechazar con cambios)
+- [ ] Botón triple: Aprobar / Modificar / Rechazar
+- [ ] "Modificar" → solicita cambios + re-genera
+- [ ] Ciclo de revisión sin reiniciar el pipeline desde cero
