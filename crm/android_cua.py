@@ -21,7 +21,7 @@ def _sh(command: str, timeout: int = 20) -> Tuple[str, str, int]:
     for attempt in range(2):
         try:
             r = subprocess.run(
-                [SHIZUKU_BIN, "sh", "-c", command],
+                [SHIZUKU_BIN, "-c", command],
                 capture_output=True, text=True, timeout=timeout
             )
             raw = r.stderr + r.stdout

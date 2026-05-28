@@ -3,14 +3,16 @@ import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from config import settings
-from models import GatewayEvent, GatewayResponse
-from handlers.crm_flows import (
+from flows.central_crm.models import GatewayEvent, GatewayResponse
+from flows.central_crm.engine import (
     init_parser, nueva_reserva, procesar_incidente,
-    procesar_pago, generar_informe
+    procesar_pago, generar_informe,
 )
+from flows.central_crm import parser as parser_mod
+from flows.central_crm import store
+from flows.arte.banner_flows import generar_banner
+from flows.arte.reel_pipeline import generar_reel as generar_reel_handler
 from gateway_client import enviar_instrucciones
-import parser as parser_mod
-import store
 
 app = FastAPI(title="CRM Rancho Raíz - Hybrid Server", version="2.0.0")
 
@@ -87,6 +89,54 @@ async def webhook_informe(event: GatewayEvent = GatewayEvent(type="informe_diari
     if resp.instructions:
         enviar_instrucciones(resp.instructions)
     return resp
+
+
+@app.post("/webhook/banner", response_model=GatewayResponse)
+async def webhook_banner(event: GatewayEvent):
+    """Genera un banner/imagen desde HTML/CSS usando el servidor MCP local."""
+    data = event.data | {"source": event.source, "event_id": event.event_id}
+    resp = await generar_banner(data)
+    if resp.instructions:
+        resp.state_updates["instrucciones_enviadas"] = enviar_instrucciones(resp.instructions)
+    return resp
+
+
+@app.post("/webhook/banner/raw", response_model=GatewayResponse)
+async def webhook_banner_raw(request: Request):
+    """Endpoint raw: recibe JSON plano con html, width, height, etc."""
+    body = await request.json()
+    import uuid
+    event = GatewayEvent(
+        event_id=str(uuid.uuid4())[:8],
+        type="generar_banner",
+        source=body.get("source", "raw"),
+        data=body,
+    )
+    return await webhook_banner(event)
+
+
+@app.post("/webhook/reel", response_model=GatewayResponse)
+async def webhook_reel(event: GatewayEvent):
+    """Genera un reel (video) usando HTML+FFmpeg pipeline."""
+    data = event.data | {"source": event.source, "event_id": event.event_id}
+    resp = await generar_reel_handler(data)
+    if resp.instructions:
+        resp.state_updates["instrucciones_enviadas"] = enviar_instrucciones(resp.instructions)
+    return resp
+
+
+@app.post("/webhook/reel/raw", response_model=GatewayResponse)
+async def webhook_reel_raw(request: Request):
+    """Endpoint raw: recibe JSON plano con tagline, title, subtitle, cta, duracion, etc."""
+    body = await request.json()
+    import uuid
+    event = GatewayEvent(
+        event_id=str(uuid.uuid4())[:8],
+        type="generar_reel",
+        source=body.get("source", "raw"),
+        data=body,
+    )
+    return await webhook_reel(event)
 
 
 @app.post("/gateway/response")

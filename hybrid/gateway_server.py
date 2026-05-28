@@ -113,6 +113,79 @@ ACTION_MAP = {
 }
 
 
+# ── Render MCP — HTML → Imagen ──────────────────────────
+
+def render_html_to_image(payload: dict) -> dict:
+    """Convierte HTML a imagen usando el servidor MCP local.
+
+    Instrucción típica desde Hermes/OpenClaw:
+    {
+        "action": "render.html_to_image",
+        "payload": {
+            "html": "<html>...</html>",
+            "width": 1080,
+            "height": 1080,
+            "format": "png",
+            "quality": 90,
+            "output_name": "banner_pileta",
+            "caption": "Nueva promo de pileta - Julio 2026",
+            "send_telegram": true,
+            "campaign": "pileta_julio"
+        }
+    }
+    """
+    import asyncio
+    from flows.arte.banner_flows import generar_banner
+
+    event = payload.copy()
+    event["event_id"] = payload.get("event_id", str(uuid.uuid4())[:8])
+    try:
+        result = asyncio.run(generar_banner(event))
+        if result.status == "ok":
+            return {"ok": True, "data": result.state_updates, "message": result.message}
+        return {"ok": False, "data": {}, "error": result.message}
+    except Exception as e:
+        return {"ok": False, "data": {}, "error": str(e)}
+
+
+ACTION_MAP["render.html_to_image"] = render_html_to_image
+ACTION_MAP["render.banner"] = render_html_to_image
+
+
+def render_generate_reel(payload: dict) -> dict:
+    """Genera un reel (video) usando MCP + FFmpeg.
+
+    Instrucción típica desde Hermes/OpenClaw:
+    {
+        "action": "render.generate_reel",
+        "payload": {
+            "tagline": "🏔️ AVENTURA EN LA MONTAÑA 🏔️",
+            "title": "Rancho Raíz",
+            "subtitle": "Barreal · San Juan · Argentina",
+            "cta": "Reservá tu experiencia →",
+            "duracion": 10,
+            "caption": "Nuevo reel promocional",
+            "send_telegram": true
+        }
+    }
+    """
+    import asyncio
+    from flows.arte.reel_pipeline import generar_reel as generar_reel_handler
+
+    event = payload.copy()
+    event["event_id"] = payload.get("event_id", str(uuid.uuid4())[:8])
+    try:
+        result = asyncio.run(generar_reel_handler(event))
+        if result.status == "ok":
+            return {"ok": True, "data": result.state_updates, "message": result.message}
+        return {"ok": False, "data": {}, "error": result.message}
+    except Exception as e:
+        return {"ok": False, "data": {}, "error": str(e)}
+
+
+ACTION_MAP["render.generate_reel"] = render_generate_reel
+
+
 def _cua_dump_ui(p):
     r = AndroidCuaConnector().dump_ui()
     return {"ok": r.ok, "data": r.data, "error": r.error}

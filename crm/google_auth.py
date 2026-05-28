@@ -55,6 +55,10 @@ def get_service(api_name: str, api_version: str, scope_key: str) -> Any | None:
             needed = SCOPES[scope_key]
             if needed not in stored_scopes:
                 return None
+            # Normalizar: algunos flujos guardan "token" en vez de "access_token"
+            if "token" in stored and "access_token" not in stored:
+                stored["access_token"] = stored.pop("token")
+                token_file.write_text(json.dumps(stored, indent=2))
             creds = Credentials.from_authorized_user_file(str(token_file), stored_scopes)
         except Exception:
             creds = None
@@ -71,5 +75,7 @@ def get_service(api_name: str, api_version: str, scope_key: str) -> Any | None:
         client_file = _creds_path()
         if not client_file:
             return None
+        # Si hay client_file pero creds no es válido, necesita re-autenticación
+        return None
 
     return build(api_name, api_version, credentials=creds)
