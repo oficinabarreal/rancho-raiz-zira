@@ -46,10 +46,12 @@
 
 ## Agentes
 
-### Hermes (`.worktrees/hermes-bd3ca329/`)
-- Modelo: `opencode/big-pickle` (vía OpenCode CLI)
-- `.env`: CRM + Telegram + IA config
-- Rol: depuración profunda, procesar reservas, auditoría de pipeline
+### Hermes (`~/.hermes/config.yaml`)
+- **YAML reparado**: indentación inconsistente en tts/stt/memory/delegation/x_search (causaba fallback a default config, ignorando todas las overrides)
+- Modelo default: `nvidia/nemotron-3-super-120b-a12b` (NVIDIA API key funcionando)
+- Fallback: `openai` → `https://opencode.ai/zen/v1` (key expirada, 403)
+- `opencode/big-pickle` agregado al model_catalog local (200K context window)
+- OpenRouter API key eliminada (401, expirada)
 
 ### OpenClaw (`~/.openclaw/`)
 - Instalación global completa con gateway, plugins, Telegram, cron
