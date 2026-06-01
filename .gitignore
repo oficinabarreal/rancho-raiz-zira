@@ -1,8 +1,50 @@
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
+*.pyc.bak
+*.pyo.bak
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment & secrets
 .env
+.env.backup
+*.env.local
 credentials.json
-crm_state/.google_token.json
-crm_state/.tg_offset
+CONTEXTO_CONFIG.md
+crm_state/
+hybrid/crm_state/
+**/crm_state/
+notas/
+
+# OpenCode / OpenClaw worktrees
+.worktrees/
+
+# Generated output
+simulaciones_output/
 *.tar.gz
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+*.egg-info/

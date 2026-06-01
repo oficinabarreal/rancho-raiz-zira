@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Free Production Music by Jason Shaw AudionautiX.com</title> 
+    <meta charset="UTF-8">
+    <meta name="description" content="Hassle free Creative Commons music. Search and download free high quality music for podcasts, phone messages, background music for your business, YouTube videos... No sign up required!">
+    <meta name="Keywords" CONTENT="free production music, royalty free music, copyright free music,Creative Commons music">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="https://audionautix.com/favicon.ico">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500&display=swap" rel="stylesheet">
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://audionautix.com/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://audionautix.com/assets/css/plugins.min.css">
+    <link rel="stylesheet" href="https://audionautix.com/assets/css/nexmenu.css">
+    <link rel="stylesheet" href="https://audionautix.com/assets/css/style.css">
+    <!-- Modernizr JS -->
+    <script src="https://audionautix.com/assets/js/modernizr-2.8.3.min.js"></script>
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/42bf5f89fcde1709d1ec2cced/b2e1907f117d8ce3f2afa9d9a.js");
+    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBCP05ND74"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LBCP05ND74');
+</script>
+
+</head>
+
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<body>  
+<!-- ================= Navigation Area ====================== -->
+<nav class="navigation-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Menu block -->
+                <div id="justify-block" class="navigation">
+                    <!-- Logo -->
+                    <div class="single-block logo-block">
+                        <a href="https://audionautix.com/">
+                            <img src="https://audionautix.com/assets/img/logo.png" alt="Audionautix">
+                        </a>
+                    </div>
+                    <!-- Menu Items -->
+                    <div class="single-block">
+                        <ul class="nav">
+                            <li class="active"><a href="https://audionautix.com/">Home</a></li>
+                            <li><a href="https://audionautix.com/">Search</a></li>
+                            <li><a href="https://audionautix.com/new_stuff.php">New Stuff</a></li>
+                            <li><a href="https://audionautix.com/about-jason.php">About Jason</a></li>                            
+                            <li><a href="https://audionautix.com/faqs.php">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <!-- Button -->
+                    <div class="single-block donate-btn">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="9GDMTUC8NAPBC">
+                        <input type="image" src="https://audionautix.com//assets/img/donate-blue.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav><!-- ================= Main Content Area ====================== -->
+<div class="main-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="main-contents">
+                    <!-- Content left -->
+                    <div class="content-left">
+                        <div class="genre">
+                            <h3>Free Music</h3>
+                            <ul>
+                                <li><a href="/free-music/acid-jazz">Acid Jazz</a></li>
+                                <li><a href="/free-music/acoustic">Acoustic</a></li>
+                                <li><a href="/free-music/ballad">Ballad</a></li>
+                                <li><a href="/free-music/bluegrass">Bluegrass</a></li>
+                                <li><a href="/free-music/blues/">Blues</a></li>
+                                <li><a href="/free-music/country">Country</a></li>
+                                <li><a href="/free-music/dance">Dance</a></li>
+                                <li><a href="/free-music/easy-listening">Easy Listening</a></li>
+                                <li><a href="/free-music/electronic">Electronic</a></li>
+                                <li><a href="/free-music/ethnic">Ethnic</a></li>
+                                <li><a href="/free-music/folk">Folk</a></li>
+                                <li><a href="/free-music/gospel">Gospel</a></li>
+                                <li><a href="/free-music/hard-rock">Hardrock</a></li>
+                                <li><a href="/free-music/hip-hop">Hip-Hop</a></li>
+                                <li><a href="/free-music/house">House</a></li>
+                                <li><a href="/free-music/jazz">Jazz</a></li>
+                                <li><a href="/free-music/jazz-funk">Jazz + Funk</a></li>
+                                <li><a href="/free-music/latin">Latin</a></li>
+                                <li><a href="/free-music/lo-fi">Lo-Fi</a></li>
+                                <li><a href="/free-music/meditative">Meditative</a></li>
+                                <li><a href="/free-music/other">Other</a></li>
+                                <li><a href="/free-music/pop-funk">Pop / Funk</a></li>
+                                <li><a href="/free-music/punk-rock">Punk Rock</a></li>
+                                <li><a href="/free-music/reggae">Reggae</a></li>
+                                <li><a href="/free-music/rock">Rock</a></li>
+                                <li><a href="/free-music/soundtrack">Soundtrack</a></li>
+                                <li><a href="/free-music/symphony">Symphony</a></li>
+                                <li><a href="/free-music/techno">Techno</a></li>
+                                <li><a href="/free-music/top-40">Top-40</a></li>
+                                <li><a href="/free-music/trip-hop">Trip-Hop</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            <!-- end Content left -->
+            <div class="content-right">
+                <div class="adv-1" style="text-align:center">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:120px;height:600px"
+                         data-ad-client="ca-pub-6757707808126034"
+                         data-ad-slot="6393401906"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script> 
+                </div>
+                <div class="adv-2">
+                    <h4>Toss something in our guitar case? Coffee for me. Karma for you!</h4>
+
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="9GDMTUC8NAPBC">
+                        <input type="image" src="https://audionautix.com//assets/img/donate-btn.svg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+
+                                        <img src="https://audionautix.com//assets/img/cards.png" alt="cart">
+                </div>
+            </div>
+            <!-- Content center -->
+            <div class="content-middle">        
+<h1>Error</h1>
+ 
+
+<p>You have reached this AUDIONAUTIX page in error.</p>
+
+<p>Don't give up. We believe in you.</p>
+
+<p><br />Sincerely,</p>
+
+<p>The Management</p>
+
+<p>Audionautix.com</p> 
+
+
+ <form id="music-search" method="post" action="https://audionautix.com/">
+                        <input type="hidden" name="action" value="search" />
+                        <!-- Music Download -->
+                        <div class="music-download">
+                            <h3>Search and Download Free Music</h3>
+                            <!-- Mood -->
+                            <div class="mood">
+                                <h4>Mood</h4>
+                                <div class="checkboxes">
+                                    <ul class="unstyled centered">
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Calming"
+                                                    id="Calming" 
+                                                    value="Calming"                                                                                                        
+                                            />
+                                            <label for="Calming">Calming</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Relaxing"
+                                                    id="Relaxing" 
+                                                    value="Relaxing"                                                                                                        
+                                            />
+                                            <label for="Relaxing">Relaxing</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Uplifting"
+                                                    id="Uplifting" 
+                                                    value="Uplifting"                                                                                                        
+                                            />
+                                            <label for="Uplifting">Uplifting</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Bright"
+                                                    id="Bright" 
+                                                    value="Bright"                                                                                                        
+                                            />
+                                            <label for="Bright">Bright</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Grooving"
+                                                    id="Grooving" 
+                                                    value="Grooving"                                                                                                        
+                                            />
+                                            <label for="Grooving">Grooving</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Energy"
+                                                    id="Energy" 
+                                                    value="Energy"                                                                                                        
+                                            />
+                                            <label for="Energy">Energy</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Sad"
+                                                    id="Sad" 
+                                                    value="Sad"                                                                                                        
+                                            />
+                                            <label for="Sad">Sad</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Driving"
+                                                    id="Driving" 
+                                                    value="Driving"                                                                                                        
+                                            />
+                                            <label for="Driving">Driving</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Bouncy"
+                                                    id="Bouncy" 
+                                                    value="Bouncy"                                                                                                        
+                                            />
+                                            <label for="Bouncy">Bouncy</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Dark"
+                                                    id="Dark" 
+                                                    value="Dark"                                                                                                        
+                                            />
+                                            <label for="Dark">Dark</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Pensive"
+                                                    id="Pensive" 
+                                                    value="Pensive"                                                                                                        
+                                            />
+                                            <label for="Pensive">Pensive</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Somber"
+                                                    id="Somber" 
+                                                    value="Somber"                                                                                                        
+                                            />
+                                            <label for="Somber">Somber</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Epic"
+                                                    id="Epic" 
+                                                    value="Epic"                                                                                                        
+                                            />
+                                            <label for="Epic">Epic</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Cool"
+                                                    id="Cool" 
+                                                    value="Cool"                                                                                                        
+                                            />
+                                            <label for="Cool">Cool</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Guest-Composer"
+                                                    id="Guest-Composer" 
+                                                    value="Guest Composer"                                                                                                        
+                                            />
+                                            <label for="Guest-Composer">Guest-Composer</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Groove"
+                                                    id="Groove" 
+                                                    value="Groove"                                                                                                        
+                                            />
+                                            <label for="Groove">Groove</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Meloncholy"
+                                                    id="Meloncholy" 
+                                                    value="Meloncholy"                                                                                                        
+                                            />
+                                            <label for="Meloncholy">Meloncholy</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Mysterious"
+                                                    id="Mysterious" 
+                                                    value="Mysterious"                                                                                                        
+                                            />
+                                            <label for="Mysterious">Mysterious</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Moody"
+                                                    id="Moody" 
+                                                    value="Moody"                                                                                                        
+                                            />
+                                            <label for="Moody">Moody</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Meditative"
+                                                    id="Meditative" 
+                                                    value="Meditative"                                                                                                        
+                                            />
+                                            <label for="Meditative">Meditative</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Intense"
+                                                    id="Intense" 
+                                                    value="Intense"                                                                                                        
+                                            />
+                                            <label for="Intense">Intense</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Humorous"
+                                                    id="Humorous" 
+                                                    value="Humorous"                                                                                                        
+                                            />
+                                            <label for="Humorous">Humorous</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Short-Bits"
+                                                    id="Short-Bits" 
+                                                    value="Short Bits"                                                                                                        
+                                            />
+                                            <label for="Short-Bits">Short-Bits</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Suspenseful"
+                                                    id="Suspenseful" 
+                                                    value="Suspenseful"                                                                                                        
+                                            />
+                                            <label for="Suspenseful">Suspenseful</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Christmas"
+                                                    id="Christmas" 
+                                                    value="Christmas"                                                                                                        
+                                            />
+                                            <label for="Christmas">Christmas</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Action"
+                                                    id="Action" 
+                                                    value="Action"                                                                                                        
+                                            />
+                                            <label for="Action">Action</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Aggressive"
+                                                    id="Aggressive" 
+                                                    value="Aggressive"                                                                                                        
+                                            />
+                                            <label for="Aggressive">Aggressive</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Meditation"
+                                                    id="Meditation" 
+                                                    value="Meditation"                                                                                                        
+                                            />
+                                            <label for="Meditation">Meditation</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Melancholy"
+                                                    id="Melancholy" 
+                                                    value="Melancholy"                                                                                                        
+                                            />
+                                            <label for="Melancholy">Melancholy</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Dramatic"
+                                                    id="Dramatic" 
+                                                    value="Dramatic"                                                                                                        
+                                            />
+                                            <label for="Dramatic">Dramatic</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Vocal"
+                                                    id="Vocal" 
+                                                    value="Vocal"                                                                                                        
+                                            />
+                                            <label for="Vocal">Vocal</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Dance"
+                                                    id="Dance" 
+                                                    value="Dance"                                                                                                        
+                                            />
+                                            <label for="Dance">Dance</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Soothing"
+                                                    id="Soothing" 
+                                                    value="Soothing"                                                                                                        
+                                            />
+                                            <label for="Soothing">Soothing</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Light"
+                                                    id="Light" 
+                                                    value="Light"                                                                                                        
+                                            />
+                                            <label for="Light">Light</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Happy"
+                                                    id="Happy" 
+                                                    value="Happy"                                                                                                        
+                                            />
+                                            <label for="Happy">Happy</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Angry"
+                                                    id="Angry" 
+                                                    value="Angry"                                                                                                        
+                                            />
+                                            <label for="Angry">Angry</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Ominous"
+                                                    id="Ominous" 
+                                                    value="Ominous"                                                                                                        
+                                            />
+                                            <label for="Ominous">Ominous</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Evil"
+                                                    id="Evil" 
+                                                    value="Evil"                                                                                                        
+                                            />
+                                            <label for="Evil">Evil</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Inspiration"
+                                                    id="Inspiration" 
+                                                    value="Inspiration"                                                                                                        
+                                            />
+                                            <label for="Inspiration">Inspiration</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Bird-House-Music-(get-It?)"
+                                                    id="Bird-House-Music-(get-It?)" 
+                                                    value="Bird House Music (get It?)"                                                                                                        
+                                            />
+                                            <label for="Bird-House-Music-(get-It?)">Bird-House-Music-(get-It?)</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Goofy"
+                                                    id="Goofy" 
+                                                    value="Goofy"                                                                                                        
+                                            />
+                                            <label for="Goofy">Goofy</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Silly"
+                                                    id="Silly" 
+                                                    value="Silly"                                                                                                        
+                                            />
+                                            <label for="Silly">Silly</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Smooth"
+                                                    id="Smooth" 
+                                                    value="Smooth"                                                                                                        
+                                            />
+                                            <label for="Smooth">Smooth</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Chill"
+                                                    id="Chill" 
+                                                    value="Chill"                                                                                                        
+                                            />
+                                            <label for="Chill">Chill</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Bossa-Nova"
+                                                    id="Bossa-Nova" 
+                                                    value="Bossa Nova"                                                                                                        
+                                            />
+                                            <label for="Bossa-Nova">Bossa-Nova</label>
+                                        </li>
+                                                                        <li>
+                                            <input  type="checkbox"  
+                                                    name="tags[]"  
+                                                    class="styled-checkbox" 
+                                                    label for="Jazz"
+                                                    id="Jazz" 
+                                                    value="Jazz"                                                                                                        
+                                            />
+                                            <label for="Jazz">Jazz</label>
+                                        </li>
+                                 
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Genre Tempo -->
+                        <div class="genre-tempo">                            
+                             <input class="hpt" type="text" name="hptrack" value="" /> 
+                                <div class="genre">
+                                    <!-- Select Genre -->
+                                    <div class="genre-select">
+                                        <h3>Genre</h3>
+                                         <select  name="genre">
+                                            <option value=""></option>
+                                            <option value="acid jazz">Acid Jazz</option>
+<option value="acoustic">Acoustic</option>
+<option value="ballad">Ballad</option>
+<option value="bluegrass">Bluegrass</option>
+<option value="blues">Blues</option>
+<option value="country">Country</option>
+<option value="dance">Dance</option>
+<option value="easy listening">Easy Listening</option>
+<option value="electronic">Electronic</option>
+<option value="ethnic">Ethnic</option>
+<option value="folk">Folk</option>
+<option value="gospel">Gospel</option>
+<option value="hard rock">Hard Rock</option>
+<option value="hip-hop">Hip-hop</option>
+<option value="house">House</option>
+<option value="jazz">Jazz</option>
+<option value="jazz+funk">Jazz+funk</option>
+<option value="lo-fi">Lo-fi</option>
+<option value="meditative">Meditative</option>
+<option value="other">Other</option>
+<option value="pop">Pop</option>
+<option value="pop/funk">Pop/funk</option>
+<option value="punk rock">Punk Rock</option>
+<option value="reggae">Reggae</option>
+<option value="rock">Rock</option>
+<option value="soundtrack">Soundtrack</option>
+<option value="symphony">Symphony</option>
+<option value="techno">Techno</option>
+<option value="top 40">Top 40</option>
+<option value="trip-hop">Trip-hop</option>
+                                        </select>
+                                    </div>
+                                    <!-- Title (keyword) -->
+                                    <div class="title-keyword">
+                                        <h3>Title (keyword)</h3>
+                                        <!-- Keyword input -->
+                                        <div class="keyword">
+                                            <input type="text" name="tsearch" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tempo">
+                                    <!-- Tempo -->
+                                    <div class="tempo-content">
+                                        <h3>Tempo</h3>
+                                        <div class="tempo-radio custom-radio">
+                                            <p>
+                                                <input type="radio" id="fast" name="tempo"  value="1">
+                                                <label for="fast">Fast</label>
+                                            </p>
+                                            <p>
+                                                <input type="radio" id="medium" name="tempo"  value="2">
+                                                <label for="medium">Medium</label>
+                                            </p>
+                                            <p>
+                                                <input type="radio" id="slow" name="tempo"  value="3">
+                                                <label for="slow">Slow</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="submit-btn">
+                                        <button type="submit">Find Music</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </form>   
+                    </div> <!-- end content middle -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ===================== Banner ========================== -->
+<div class="banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="banner">
+                    <div class="banner-content">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="9GDMTUC8NAPBC">
+                            <input type="image" src="https://audionautix.com//assets/img/donate-big.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                    </div>
+                    <h3>If you find this site useful, please consider donating.</h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======== Footer =========== -->
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Top -->
+                <div class="footer-top">
+                                        <img src="https://audionautix.com/images/random/royalty-free-music-6.jpg" alt="AudionautiX" title="Download Free Music" />
+                </div>
+                <!-- Bottom -->
+                <div class="footer-bottom" id="creative-commons">
+                    <p>* All free and downloadable music on audionautix.com is created by Jason Shaw. </p> 
+
+                    <p>You are free to use the music (even for commercial purposes) as long as you <a href="/creative-commons-music"><strong>provide appropriate credit</strong></a>. 
+
+                    <p>Must be part of some other created works. No further permission is required. If you need a signed <a href="http://www.audionautix.com/Saved/CCrelease.jpg">copyright release form</a>, <a href="http://www.audionautix.com/Saved/CCrelease.jpg">click here</a>.
+                      </p>
+                    <br>
+                    <p>This <a href="/creative-commons-music">creative commons music</a> is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution 4.0 International License</a>.</p>
+
+                    <p>We use third-party advertising companies to serve ads when you visit our website. These companies
+                        may use information (not including your name, address, email address, or telephone number) about
+                        your visits to this and other websites in order to provide advertisements about good and
+                        services of interest to you. If you would like more information about this practice and to know
+                        your choices about not having this information used by these companies visit <a href="http://www.google.com/privacy_ads.html" target="_blank">this link.</a></p>
+                        
+                        <p>By accessing and using this website, you agree that your use is at your own risk. We assume no liability for any loss of revenue, data, or damages incurred. Your use of this website constitutes your agreement not to hold us liable and to indemnify us against any claims or damages. Use of this website implies acceptance of these terms. </p>
+                    <br>
+                    <h4>Copyright @ 2026 by <a href="https://audionautix.com/" title="AudionautiX - copyright free music to download ">AudionautiX.com</a></h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+     
+     <!-- jQuery -->
+<script src="https://audionautix.com/assets/js/jquery-1.11.2.min.js"></script>
+<script src="https://audionautix.com/assets/js/bootstrap.min.js"></script>
+<script src="https://audionautix.com/assets/js/plugins.min.js"></script>
+<script type="text/javascript" src="https://audionautix.com/assets/music/script/soundmanager2.js"></script>
+<script type="text/javascript" src="https://audionautix.com/assets/music/script/mp3-player-button.js"></script>
+<script>
+    soundManager.setup({
+        url: '../../swf/'
+    });
+</script>
+<script src="https://audionautix.com/assets/js/nexmenu.js"></script>
+<script src="https://audionautix.com/assets/js/main.js"></script>
+
+</body>
+
+</html>

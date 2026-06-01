@@ -1,0 +1,531 @@
+{
+  "turns": [
+    {
+      "ts": "2026-05-30T13:38:56.874454+00:00",
+      "speaker": "Cliente",
+      "text": "precios"
+    },
+    {
+      "ts": "2026-05-30T13:38:56.875548+00:00",
+      "speaker": "Zira",
+      "text": "💰 Tarifario 2026\n\n• 5 personas → $120.000 / noche\n• 4 personas → $115.000 / noche\n• 3 personas → $105.000 / noche\n• 2 personas → $95.000 / noche\n• 1 persona → $80.000 / noche\n\nNo incluye desayuno.\nPara reservar, seña de 1 noche."
+    },
+    {
+      "ts": "2026-05-30T13:45:29.218262+00:00",
+      "speaker": "Cliente",
+      "text": "precios"
+    },
+    {
+      "ts": "2026-05-30T13:45:29.220062+00:00",
+      "speaker": "Zira",
+      "text": "💰 Tarifario 2026\n\n• 5 personas → $120.000 / noche\n• 4 personas → $115.000 / noche\n• 3 personas → $105.000 / noche\n• 2 personas → $95.000 / noche\n• 1 persona → $80.000 / noche\n\nNo incluye desayuno.\nPara reservar, seña de 1 noche."
+    },
+    {
+      "ts": "2026-05-30T13:45:39.578215+00:00",
+      "speaker": "Cliente",
+      "text": "hubicacion"
+    },
+    {
+      "ts": "2026-05-30T13:45:39.579917+00:00",
+      "speaker": "Zira",
+      "text": "📍 Ubicación\n\nLa posada está en Barreal, Calingasta, San Juan.\nEs una zona de cordillera, con paisaje abierto y mucho cielo limpio.\n\nSi querés, también te paso cómo llegar y un mapa de referencia."
+    },
+    {
+      "ts": "2026-05-30T13:46:01.226605+00:00",
+      "speaker": "Cliente",
+      "text": "clima"
+    },
+    {
+      "ts": "2026-05-30T13:46:01.228006+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T13:46:16.791659+00:00",
+      "speaker": "Cliente",
+      "text": "disponibilidad"
+    },
+    {
+      "ts": "2026-05-30T13:46:16.792982+00:00",
+      "speaker": "Zira",
+      "text": "📅 Para consultar disponibilidad, decime:\n\n• fechas exactas\n• cantidad de personas\n\nCon eso te confirmo al toque."
+    },
+    {
+      "ts": "2026-05-30T13:46:37.751475+00:00",
+      "speaker": "Cliente",
+      "text": "14/10"
+    },
+    {
+      "ts": "2026-05-30T13:46:37.752699+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T13:46:54.146710+00:00",
+      "speaker": "Cliente",
+      "text": "disponibilidad 14/10"
+    },
+    {
+      "ts": "2026-05-30T13:46:54.153736+00:00",
+      "speaker": "Zira",
+      "text": "📅 Para consultar disponibilidad, decime:\n\n• fechas exactas\n• cantidad de personas\n\nCon eso te confirmo al toque."
+    },
+    {
+      "ts": "2026-05-30T13:57:21.904050+00:00",
+      "speaker": "Cliente",
+      "text": "/start"
+    },
+    {
+      "ts": "2026-05-30T13:57:21.905681+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Hola, soy Zira.\n\nPuedo ayudarte con la posada en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nUsá los botones o escribime tu consulta."
+    },
+    {
+      "ts": "2026-05-30T13:57:37.982290+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:faq:about"
+    },
+    {
+      "ts": "2026-05-30T13:57:37.984024+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Sobre la posada\n\nEstamos en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nLa casa es para descansar, mirar la montaña y trabajar con tranquilidad.\nPuedo pasar más fotos, precios y disponibilidad cuando quieras."
+    },
+    {
+      "ts": "2026-05-30T13:57:50.360076+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:faq:amenities"
+    },
+    {
+      "ts": "2026-05-30T13:57:50.363816+00:00",
+      "speaker": "Zira",
+      "text": "🛏️ Qué incluye\n\n• living-comedor\n• cocina equipada\n• baño completo\n• habitación principal\n• WiFi\n• pileta\n• galería\n• parrillero\n\nCapacidad: 1 a 5 personas."
+    },
+    {
+      "ts": "2026-05-30T13:57:59.715681+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:availability"
+    },
+    {
+      "ts": "2026-05-30T13:57:59.717408+00:00",
+      "speaker": "Zira",
+      "text": "📅 Para consultar disponibilidad, decime:\n\n• fechas exactas\n• cantidad de personas\n\nCon eso te confirmo al toque."
+    },
+    {
+      "ts": "2026-05-30T13:58:13.588254+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:faq:location"
+    },
+    {
+      "ts": "2026-05-30T13:58:13.589661+00:00",
+      "speaker": "Zira",
+      "text": "📍 Ubicación\n\nLa posada está en Barreal, Calingasta, San Juan.\nEs una zona de cordillera, con paisaje abierto y mucho cielo limpio.\n\nSi querés, también te paso cómo llegar y un mapa de referencia."
+    },
+    {
+      "ts": "2026-05-30T13:58:23.376054+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:prices"
+    },
+    {
+      "ts": "2026-05-30T13:58:23.382916+00:00",
+      "speaker": "Zira",
+      "text": "💰 Tarifario 2026\n\n• 5 personas → $120.000 / noche\n• 4 personas → $115.000 / noche\n• 3 personas → $105.000 / noche\n• 2 personas → $95.000 / noche\n• 1 persona → $80.000 / noche\n\nNo incluye desayuno.\nPara reservar, seña de 1 noche."
+    },
+    {
+      "ts": "2026-05-30T13:58:32.194596+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:reserve"
+    },
+    {
+      "ts": "2026-05-30T13:58:32.198800+00:00",
+      "speaker": "Zira",
+      "text": "✅ Para reservar:\n\n1. Elegí fecha y cantidad de personas.\n2. Coordinamos la seña.\n3. Confirmamos la reserva.\n\nSi querés, también te paso el detalle por Telegram."
+    },
+    {
+      "ts": "2026-05-30T13:58:40.334659+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:photo"
+    },
+    {
+      "ts": "2026-05-30T13:58:40.339501+00:00",
+      "speaker": "Zira",
+      "text": "📷 Mandame una foto por Telegram.\n\nLa voy a guardar, dejar en cola para edición y preparar para publicación."
+    },
+    {
+      "ts": "2026-05-30T14:07:47.973632+00:00",
+      "speaker": "Cliente",
+      "text": "/start"
+    },
+    {
+      "ts": "2026-05-30T14:07:47.979969+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Hola, soy Zira.\n\nPuedo ayudarte con la posada en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nUsá los botones o escribime tu consulta."
+    },
+    {
+      "ts": "2026-05-30T14:07:55.802860+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:listen"
+    },
+    {
+      "ts": "2026-05-30T14:07:55.805177+00:00",
+      "speaker": "Zira",
+      "text": "🔊 Audio no disponible ahora (falta edge-tts).\n\nHola, soy Zira. Preguntame lo que quieras sobre la posada."
+    },
+    {
+      "ts": "2026-05-30T14:08:27.427893+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:faq:about"
+    },
+    {
+      "ts": "2026-05-30T14:08:27.432681+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Sobre la posada\n\nEstamos en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nLa casa es para descansar, mirar la montaña y trabajar con tranquilidad.\nPuedo pasar más fotos, precios y disponibilidad cuando quieras."
+    },
+    {
+      "ts": "2026-05-30T14:09:48.848183+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:faq:amenities"
+    },
+    {
+      "ts": "2026-05-30T14:09:48.852484+00:00",
+      "speaker": "Zira",
+      "text": "🛏️ Qué incluye\n\n• living-comedor\n• cocina equipada\n• baño completo\n• habitación principal\n• WiFi\n• pileta\n• galería\n• parrillero\n\nCapacidad: 1 a 5 personas."
+    },
+    {
+      "ts": "2026-05-30T15:58:15.141165+00:00",
+      "speaker": "Cliente",
+      "text": "/start",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T15:58:15.144181+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Hola, soy Zira.\n\nPuedo ayudarte con la posada en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nUsá los botones o escribime tu consulta."
+    },
+    {
+      "ts": "2026-05-30T15:58:16.102478+00:00",
+      "speaker": "Cliente",
+      "text": "/start",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T15:58:16.109370+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Hola, soy Zira.\n\nPuedo ayudarte con la posada en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nUsá los botones o escribime tu consulta."
+    },
+    {
+      "ts": "2026-05-30T16:00:13.716797+00:00",
+      "speaker": "Cliente(callback)",
+      "text": "zira:faq:about",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:00:13.722404+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Sobre la posada\n\nEstamos en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nLa casa es para descansar, mirar la montaña y trabajar con tranquilidad.\nPuedo pasar más fotos, precios y disponibilidad cuando quieras."
+    },
+    {
+      "ts": "2026-05-30T16:14:54.035326+00:00",
+      "speaker": "Cliente",
+      "text": "/start",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:14:54.038797+00:00",
+      "speaker": "Zira",
+      "text": "🏡 Hola, soy Zira.\n\nPuedo ayudarte con la posada en Barreal, Calingasta, San Juan, al pie de la Cordillera de los Andes.\n\nUsá los botones o escribime tu consulta."
+    },
+    {
+      "ts": "2026-05-30T16:41:48.889348+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:41:48.891904+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:41:48.903701+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:42:12.395619+00:00",
+      "speaker": "Cliente",
+      "text": "/modo guests",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:42:12.400944+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:42:12.404374+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:42:30.073973+00:00",
+      "speaker": "Cliente",
+      "text": "/modo team",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:42:30.076514+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:42:30.078714+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:42:53.697547+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:42:53.699884+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:42:53.707628+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:43:08.546481+00:00",
+      "speaker": "Cliente",
+      "text": "/modo leads",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:43:08.550542+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:43:08.553964+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:48:41.635175+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:48:41.638259+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:48:41.640391+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:49:14.309183+00:00",
+      "speaker": "Cliente",
+      "text": "/modo leads",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:49:14.311674+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:49:14.313495+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:49:51.008827+00:00",
+      "speaker": "Cliente",
+      "text": "/modo team",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:49:51.018037+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:49:51.021103+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:51:23.167662+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:23.170642+00:00",
+      "speaker": "Cliente",
+      "text": "/modo team",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:23.172899+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 🎯 Prospectos. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:51:23.174746+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:51:23.177283+00:00",
+      "speaker": "Cliente",
+      "text": "precios",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:23.179124+00:00",
+      "speaker": "Zira",
+      "text": "💰 Tarifario 2026\n\n• 5 personas → $120.000 / noche\n• 4 personas → $115.000 / noche\n• 3 personas → $105.000 / noche\n• 2 personas → $95.000 / noche\n• 1 persona → $80.000 / noche\n\nNo incluye desayuno.\nPara reservar, seña de 1 noche."
+    },
+    {
+      "ts": "2026-05-30T16:51:23.183743+00:00",
+      "speaker": "Cliente",
+      "text": "precios",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:23.185872+00:00",
+      "speaker": "Zira",
+      "text": "💰 Tarifario 2026\n\n• 5 personas → $120.000 / noche\n• 4 personas → $115.000 / noche\n• 3 personas → $105.000 / noche\n• 2 personas → $95.000 / noche\n• 1 persona → $80.000 / noche\n\nNo incluye desayuno.\nPara reservar, seña de 1 noche."
+    },
+    {
+      "ts": "2026-05-30T16:51:49.344382+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:49.347105+00:00",
+      "speaker": "Cliente",
+      "text": "/modo team",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:49.350515+00:00",
+      "speaker": "Cliente",
+      "text": "/modo guests",
+      "mode": "team"
+    },
+    {
+      "ts": "2026-05-30T16:51:49.354275+00:00",
+      "speaker": "Cliente",
+      "text": "/modo invalido",
+      "mode": "guests"
+    },
+    {
+      "ts": "2026-05-30T16:51:49.357634+00:00",
+      "speaker": "Cliente",
+      "text": "precios",
+      "mode": "team"
+    },
+    {
+      "ts": "2026-05-30T16:51:49.359462+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 👥 Equipo. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:51:49.361520+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:51:49.364488+00:00",
+      "speaker": "Cliente",
+      "text": "precios",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:51:49.366554+00:00",
+      "speaker": "Zira",
+      "text": "💰 Tarifario 2026\n\n• 5 personas → $120.000 / noche\n• 4 personas → $115.000 / noche\n• 3 personas → $105.000 / noche\n• 2 personas → $95.000 / noche\n• 1 persona → $80.000 / noche\n\nNo incluye desayuno.\nPara reservar, seña de 1 noche."
+    },
+    {
+      "ts": "2026-05-30T16:52:07.636581+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "team"
+    },
+    {
+      "ts": "2026-05-30T16:52:07.640879+00:00",
+      "speaker": "Cliente",
+      "text": "precios",
+      "mode": "team"
+    },
+    {
+      "ts": "2026-05-30T16:52:07.643594+00:00",
+      "speaker": "Zira",
+      "text": "📌 Estás en modo 👥 Equipo. Esa consulta no aplica acá. Te redirijo al menú general."
+    },
+    {
+      "ts": "2026-05-30T16:52:07.646254+00:00",
+      "speaker": "Zira",
+      "text": "Decime si querés precios, disponibilidad, reservar o subir una foto."
+    },
+    {
+      "ts": "2026-05-30T16:54:35.350431+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:55:29.895108+00:00",
+      "speaker": "Cliente",
+      "text": "/modo team",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:55:43.365692+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "team"
+    },
+    {
+      "ts": "2026-05-30T16:56:01.758332+00:00",
+      "speaker": "Cliente",
+      "text": "/modo guests",
+      "mode": "team"
+    },
+    {
+      "ts": "2026-05-30T16:56:22.932919+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "guests"
+    },
+    {
+      "ts": "2026-05-30T16:56:34.738891+00:00",
+      "speaker": "Cliente",
+      "text": "/modo leads",
+      "mode": "guests"
+    },
+    {
+      "ts": "2026-05-30T16:58:07.597920+00:00",
+      "speaker": "Cliente",
+      "text": "/modo leads",
+      "mode": "leads"
+    },
+    {
+      "ts": "2026-05-30T16:58:21.573872+00:00",
+      "speaker": "Cliente",
+      "text": "/modo",
+      "mode": "leads"
+    }
+  ]
+}

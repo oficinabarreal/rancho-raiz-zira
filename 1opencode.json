@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/big-pickle",
+  "mcp": {
+    "google-workspace": {
+      "type": "local",
+      "command": ["npx", "-y", "@alanxchen/google-workspace-mcp@2.0.1"],
+      "enabled": true,
+      "environment": {
+        "GOOGLE_WORKSPACE_MCP_AUTH_FLOW": "device"
+      }
+    }
+  },
+  "agents": {
+    "Hermes": {
+      "worktree": ".worktrees/hermes-bd3ca329",
+      "model": "opencode/big-pickle",
+      "description": "Deep debugging, auditoria de pipelines, procesamiento de reservas via Telegram"
+    },
+    "OpenClaw": {
+      "worktree": ".worktrees/openclaw",
+      "model": "opencode/big-pickle",
+      "description": "Automatizacion en segundo plano, cron, webhooks, tareas programadas"
+    }
+  }
+}

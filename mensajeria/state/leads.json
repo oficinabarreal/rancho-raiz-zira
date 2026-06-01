@@ -1,0 +1,179 @@
+{
+  "items": [
+    {
+      "ts": "2026-05-30T13:38:56.876277+00:00",
+      "source": "prices",
+      "payload": {
+        "chat_id": 0,
+        "text": "precios",
+        "intent": "prices"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:45:29.223212+00:00",
+      "source": "prices",
+      "payload": {
+        "chat_id": 0,
+        "text": "precios",
+        "intent": "prices"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:45:39.581104+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 0,
+        "text": "hubicacion",
+        "intent": "faq"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:46:16.799516+00:00",
+      "source": "availability",
+      "payload": {
+        "chat_id": 0,
+        "text": "disponibilidad",
+        "intent": "availability"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:46:54.162767+00:00",
+      "source": "availability",
+      "payload": {
+        "chat_id": 0,
+        "text": "disponibilidad 14/10",
+        "intent": "availability"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:57:37.992361+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "faq"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:57:50.365244+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "faq"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:57:59.721302+00:00",
+      "source": "availability",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "availability"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:58:13.590869+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "faq"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:58:23.386255+00:00",
+      "source": "prices",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "prices"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:58:32.202946+00:00",
+      "source": "reserve",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "reserve"
+      }
+    },
+    {
+      "ts": "2026-05-30T13:58:40.347898+00:00",
+      "source": "photo",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "photo"
+      }
+    },
+    {
+      "ts": "2026-05-30T14:07:55.813716+00:00",
+      "source": "listen",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "listen"
+      }
+    },
+    {
+      "ts": "2026-05-30T14:08:27.436988+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "faq"
+      }
+    },
+    {
+      "ts": "2026-05-30T14:09:48.856442+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "faq"
+      }
+    },
+    {
+      "ts": "2026-05-30T16:00:13.726210+00:00",
+      "source": "faq",
+      "payload": {
+        "chat_id": 8272684219,
+        "text": "",
+        "intent": "faq",
+        "mode": "leads"
+      }
+    },
+    {
+      "ts": "2026-05-30T16:51:23.181816+00:00",
+      "source": "prices",
+      "payload": {
+        "chat_id": 999,
+        "text": "precios",
+        "intent": "prices",
+        "mode": "leads"
+      }
+    },
+    {
+      "ts": "2026-05-30T16:51:23.187358+00:00",
+      "source": "prices",
+      "payload": {
+        "chat_id": 999,
+        "text": "precios",
+        "intent": "prices",
+        "mode": "leads"
+      }
+    },
+    {
+      "ts": "2026-05-30T16:51:49.368205+00:00",
+      "source": "prices",
+      "payload": {
+        "chat_id": 999,
+        "text": "precios",
+        "intent": "prices",
+        "mode": "leads"
+      }
+    }
+  ]
+}

@@ -1,47 +1,47 @@
-# Hoja de Ruta — CRM Rancho Raíz
+# Roadmap: hola-3 CRM Automation
 
-## 🟢 Completado
-- [x] Conectores: Gmail, Calendar, Drive, Sheets, Kommo, Telegram, Instagram
-- [x] Token OAuth con gmail.modify + drive.file + calendar + spreadsheets
-- [x] 8 reservas extraídas de chats WhatsApp
-- [x] Planilla `Reservas_Rancho_Raiz` en Sheets
-- [x] Simulación de 6 escenarios (reserva, check-in, incidencia, check-out, resumen diario, aprobación)
-- [x] Workflow unificado: Gmail → Kommo → Calendar → Sheets → Telegram
-- [x] Perfiles del equipo (Leo, Ayelen, Diego, Chiqui)
-- [x] Perfiles de 8 huéspedes registrados
-- [x] Telegram listener (recibir y procesar reservas por chat)
-- [x] Informe diario generador (vía Telegram + Email)
+## ✅ Completed
+- [x] Gmail connector with `list_messages` and `send_message` via `ConnectorResult`
+- [x] Telegram bot with `/emails`, `/send`, `/status` commands
+- [x] Natural language parsing for Spanish phrases (heuristic + LLM fallback)
+- [x] Credential management via `.env` and `CREDENCIALES.md`
+- [x] Google OAuth token persistence in `crm_state/.google_token.json`
+- [x] Modular structure: `asistente/google/`, `asistente/telegram/`, `crm/connectors/`
+- [x] Simulation scripts: `generar_pdf.py`, `enviar_pdf.py`, `informe_diario.py`
+- [x] AGENT.md and ROADMAP.md in root and `asistente/` for agent context
+- [x] Android notification system via termux-notification for task reminders, API alerts, and process status
+- [x] Demo script showcasing notification capabilities
 
-## 🟡 En progreso / Pendiente
+## 🚧 In Progress
+- [ ] Hybrid AI routing: local model (OpenCode Zen) → cloud fallback (OpenRouter/NVIDIA)
+- [ ] Enhanced NLP: better handling of dates, ranges, and complex queries
+- [ ] Web navigation via agent-browser (CUA) for Shizuku-enabled Android
+- [ ] Instagram/WhatsApp integration for multi-channel CRM
+- [ ] Scheduled jobs (cron) for daily reports and backup workflows
+- [ ] Voice input/output via TTS/STX for hands-free operation
 
-### Infraestructura
-- [ ] Resolver WhatsApp token (renovar en Meta Developers)
-- [ ] Guardar credenciales en CREDENCIALES.md
+## 🎯 Future Goals
+- [ ] Full CRM sync: bidirectional Google Sheets ↔ Kommo/Instagram
+- [ ] AI-assisted invoice generation from email templates
+- [ ] Multi-agent workflow: delegate email triage to specialized subagents
+- [ ] Dashboard: real-time metrics via Hermes dashboard
+- [ ] Offline-first mode: local queue for actions when network unavailable
 
-### Flujo CRM
-- [ ] Inventario real (convertir .xlsx a Sheets o cargarlo)
-- [ ] Workflow real con Gmail (sin demo)
-- [ ] Listener automático cada N minutos (cron/loop permanente)
-- [ ] Historial de huéspedes con preferencias (alergias, deportes, etc.)
-- [ ] Competencia: alertas cuando bajen precios (Telegram)
+## 📅 Timeline
+- **Q2 2026**: Core Gmail/Telegram/NLP/Android notifications complete (current)
+- **Q3 2026**: Hybrid AI, CUA/web navigation, Instagram integration
+- **Q4 2026**: Scheduled jobs, voice I/O, multi-agent workflows
+- **2027**: Full CRM sync, invoice AI, dashboard
 
-### IA / Automatización
-- [ ] Integrar Zen model para parsear mails de reserva (más preciso que regex)
-- [ ] Análisis de sentimiento de comentarios de huéspedes
-- [ ] Recomendaciones de precios basadas en competencia y ocupación
-- [ ] Generación automática de contenido Instagram con IA
+## 🔧 Maintenance
+- Update `.env` with valid API keys when rotating credentials
+- Renew Google token via `crm/oauth_capture.py` if expired (checks auto-refresh)
+- Monitor Telegram bot logs via `hermes logs -f` or `process(action='log')`
+- Test notification system periodically with `python demo_notifications.py`
 
-### Contenido
-- [ ] Laboratorio de creación de contenido Instagram
-- [ ] Programación de posts
-- [ ] Análisis de engagement
-
-### Reportes
-- [ ] Informe diario automático (email a Leo + Telegram grupo)
-- [ ] Dashboard semanal: ocupación, ingresos, redes
-- [ ] Alertas de mantenimiento (heladera, piletas, etc.)
-
-### Futuro
-- [ ] Migrar a servidor (Cloudflare Workers + cron)
-- [ ] Webhook WhatsApp
-- [ ] App mobile para huéspedes
+## ✅ Definition of Done
+A feature is complete when:
+- Implemented in modular style (connectors in `crm/`, assistants in `asistente/`)
+- Covered by simulation or test script
+- Documented in AGENT.md/ROADMAP.md
+- Safe to run: no hard credentials, clear error handling

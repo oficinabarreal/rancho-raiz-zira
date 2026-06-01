@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2026-05-27 20:12:15",
+    "accion": "PUBLICACION_SIMULADA",
+    "plataforma": "Instagram",
+    "tipo": "Reel",
+    "video": "brand_reel.mp4",
+    "caption": "RANCHO RAÍZ - La experiencia",
+    "tema": "",
+    "tamano": "605 KB",
+    "status": "publicado_simulado"
+  },
+  {
+    "timestamp": "2026-05-27 20:16:58",
+    "accion": "PUBLICACION_SIMULADA",
+    "plataforma": "Instagram",
+    "tipo": "Reel",
+    "video": "brand_reel.mp4",
+    "caption": "Rancho Raíz - brand_reel.mp4",
+    "tema": "",
+    "tamano": "605 KB",
+    "status": "publicado_simulado"
+  }
+]

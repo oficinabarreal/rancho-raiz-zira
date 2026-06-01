@@ -362,8 +362,8 @@ def tg_poll_decision(timeout: int = 120) -> str:
 async def run_pipeline(modo: str = "cache", force: bool = False,
                        solo_banner: bool = False, solo_gif: bool = False,
                        solo_reel: bool = False, poll: bool = False,
-                       auto: bool = False):
-    tema = "montanas"
+                       auto: bool = False, tema: str = "montanas",
+                       skip_telegram: bool = False, skip_email: bool = False):
 
     section(f"PIPELINE CRM + ARTE — modo={modo}")
     log(f"Inicio: {datetime.now().strftime('%d/%m/%Y %H:%M')}")
@@ -409,36 +409,39 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
     # ── Paso 2: Enviar assets a Telegram ──
     section("2. ENVIAR A TELEGRAM")
 
-    if solo_reel:
-        rpath = cache["reel"]["path"]
-        ok_reel = tg_send_video(rpath, f"Rancho Raiz: {tema.upper()} — Zira")
-        log(f"  {'✅' if ok_reel else '⚠️'} Reel ({Path(rpath).name})")
-    elif solo_gif:
-        gif_path = cache["gif"]["path"]
-        ok_gif = tg_send_animation(gif_path, f"Rancho Raiz: {tema.upper()} — Zira")
-        log(f"  {'✅' if ok_gif else '⚠️'} GIF ({Path(gif_path).name})")
-    else:
-        ok_banner = tg_send_photo(cache["banner"]["path"], f"Rancho Raiz: {tema.upper()} — Zira")
-        log(f"  {'✅' if ok_banner else '⚠️'} Banner ({Path(cache['banner']['path']).name})")
-
-        if not solo_banner and "gif" in cache:
-            gif_path = cache["gif"]["path"]
-            ok_gif = tg_send_animation(gif_path, f"GIF - {tema.upper()}")
-            if not ok_gif:
-                ok_gif = tg_send_message(f"GIF adjunto: {Path(gif_path).name}")
-            log(f"  {'✅' if ok_gif else '⚠️'} GIF ({Path(gif_path).name})")
-
-        if not solo_banner and "reel" in cache:
+    if not skip_telegram:
+        if solo_reel:
             rpath = cache["reel"]["path"]
-            ok_reel = tg_send_video(rpath, f"Reel - {tema.upper()}")
+            ok_reel = tg_send_video(rpath, f"Rancho Raiz: {tema.upper()} — Zira")
             log(f"  {'✅' if ok_reel else '⚠️'} Reel ({Path(rpath).name})")
+        elif solo_gif:
+            gif_path = cache["gif"]["path"]
+            ok_gif = tg_send_animation(gif_path, f"Rancho Raiz: {tema.upper()} — Zira")
+            log(f"  {'✅' if ok_gif else '⚠️'} GIF ({Path(gif_path).name})")
+        else:
+            ok_banner = tg_send_photo(cache["banner"]["path"], f"Rancho Raiz: {tema.upper()} — Zira")
+            log(f"  {'✅' if ok_banner else '⚠️'} Banner ({Path(cache['banner']['path']).name})")
 
-    # Botones de aprobación después de todos los assets
-    ok_btns = tg_send_message("Aprobas este contenido? — Zira", buttons=[[
-        {"text": "Aprobar", "callback_data": "aprobar"},
-        {"text": "Rechazar", "callback_data": "rechazar"},
-    ]])
-    log(f"  {'✅' if ok_btns else '⚠️'} Botones de aprobación enviados")
+            if not solo_banner and "gif" in cache:
+                gif_path = cache["gif"]["path"]
+                ok_gif = tg_send_animation(gif_path, f"GIF - {tema.upper()}")
+                if not ok_gif:
+                    ok_gif = tg_send_message(f"GIF adjunto: {Path(gif_path).name}")
+                log(f"  {'✅' if ok_gif else '⚠️'} GIF ({Path(gif_path).name})")
+
+            if not solo_banner and "reel" in cache:
+                rpath = cache["reel"]["path"]
+                ok_reel = tg_send_video(rpath, f"Reel - {tema.upper()}")
+                log(f"  {'✅' if ok_reel else '⚠️'} Reel ({Path(rpath).name})")
+
+        # Botones de aprobación después de todos los assets
+        ok_btns = tg_send_message("Aprobas este contenido? — Zira", buttons=[[
+            {"text": "Aprobar", "callback_data": "aprobar"},
+            {"text": "Rechazar", "callback_data": "rechazar"},
+        ]])
+        log(f"  {'✅' if ok_btns else '⚠️'} Botones de aprobación enviados")
+    else:
+        log(f"  ⏭️  Telegram deshabilitado (--skip-telegram)")
 
     # ── Paso 3: Esperar aprobación ──
     section("3. APROBACION")
@@ -461,12 +464,13 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
     log("")
 
     if not aprobado:
-        tg_send_message(f"Sin publicacion — {tema.upper()} — Zira")
+        if not skip_telegram:
+            tg_send_message(f"Sin publicacion — {tema.upper()} — Zira")
         section("PIPELINE CANCELADO")
         log("  Contenido rechazado. Pipeline detenido.")
         return
 
-    # ── Paso 4: Posteo exitoso ──
+    # Paso 4: Posteo exitoso
     section("4. POSTEO EXITOSO")
     detalles = f"Tema: {tema.upper()}"
     if not solo_gif and not solo_reel and "banner" in cache:
@@ -475,26 +479,34 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
         detalles += f"\nGIF: {Path(cache['gif']['path']).name}"
     if not solo_banner and not solo_gif and "reel" in cache:
         detalles += f"\nReel: {Path(cache['reel']['path']).name}"
-    ok_post = tg_send_message(
-        f"Publicacion exitosa\n\n{detalles}\n\n— Zira"
-    )
-    log(f"  {'✅' if ok_post else '⚠️'} Mensaje de posteo exitoso enviado")
+    if not skip_telegram:
+        ok_post = tg_send_message(
+            f"Publicacion exitosa\n\n{detalles}\n\n\u2014 Zira"
+        )
+        log(f"  {'✅' if ok_post else '⚠️'} Mensaje de posteo exitoso enviado")
+    else:
+        log("  ⏭️  Posteo exitoso (Telegram deshabilitado)")
     log("")
 
-    # ── Paso 5: Email notificación ──
+    # Paso 5: Email notificacion
     section("5. NOTIFICACION EMAIL")
-    email_ok = enviar_email(
-        f"Contenido aprobado — Rancho Raíz ({tema})",
-        f"Contenido aprobado para publicar.\n\n"
-        f"Tema: {tema}\n"
-        f"Banner: {cache.get('banner', {}).get('path', '-')}\n"
-        f"GIF: {cache.get('gif', {}).get('path', '-')}\n"
-        f"Reel: {cache.get('reel', {}).get('path', '-')}\n"
-        f"Aprobado: {datetime.now().strftime('%d/%m/%Y %H:%M')}\n"
-        f"Pipeline: CAPTACION → CREACION → APROBACION → POSTEO"
-    )
+    if not skip_email:
+        email_ok = enviar_email(
+            f"Contenido aprobado — Rancho Raíz ({tema})",
+            f"Contenido aprobado para publicar.\n\n"
+            f"Tema: {tema}\n"
+            f"Banner: {cache.get('banner', {}).get('path', '-')}\n"
+            f"GIF: {cache.get('gif', {}).get('path', '-')}\n"
+            f"Reel: {cache.get('reel', {}).get('path', '-')}\n"
+            f"Aprobado: {datetime.now().strftime('%d/%m/%Y %H:%M')}\n"
+            f"Pipeline: CAPTACION → CREACION → APROBACION → POSTEO"
+        )
+    else:
+        email_ok = None  # skip_email flag activo
+        log("  ⏭️  Email deshabilitado (--skip-email)")
+    log("")
 
-    # ── Resumen ──
+    # Resumen
     section("RESUMEN")
     log(f"Modo: {modo}")
     log(f"Assets: {'cache' if modo == 'cache' else 'generados'}")
@@ -516,7 +528,7 @@ async def run_pipeline(modo: str = "cache", force: bool = False,
             log(f"GIF:    {cache['gif']['path']}")
         if "reel" in cache:
             log(f"Reel:   {cache['reel']['path']}")
-    log(f"Email:  {'✅ enviado' if email_ok else '⚠️ opcional no enviado'}")
+    log(f"Email:  {'✅ enviado' if email_ok else '⚠️ opcional no enviado' if email_ok is not None else '⏭️ deshabilitado'}")
     log(f"Estado: COMPLETADO ✅")
     log(f"Hora:   {datetime.now().strftime('%H:%M:%S')}")
 
@@ -531,7 +543,12 @@ if __name__ == "__main__":
     parser.add_argument("--solo-reel", action="store_true", help="Solo reel, sin banner ni GIF")
     parser.add_argument("--poll", action="store_true", help="Esperar decisión por botón de Telegram")
     parser.add_argument("--auto", action="store_true", help="Posteo directo sin aprobación")
+    parser.add_argument("--tema", default="montanas", help="Tema visual (default: montanas)")
+    parser.add_argument("--skip-telegram", action="store_true", help="No enviar nada a Telegram")
+    parser.add_argument("--skip-email", action="store_true", help="No enviar email")
     args = parser.parse_args()
     asyncio.run(run_pipeline(modo=args.mode, force=args.force,
                 solo_banner=args.solo_banner, solo_gif=args.solo_gif,
-                solo_reel=args.solo_reel, poll=args.poll, auto=args.auto))
+                solo_reel=args.solo_reel, poll=args.poll, auto=args.auto,
+                tema=args.tema, skip_telegram=args.skip_telegram,
+                skip_email=args.skip_email))

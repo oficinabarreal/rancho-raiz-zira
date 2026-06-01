@@ -1,4 +1,5 @@
 from __future__ import annotations
+import uuid
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -57,7 +58,6 @@ async def webhook_reserva_raw(request: Request):
     """Endpoint simple: recibe texto plano y lo parsea."""
     body = await request.body()
     text = body.decode("utf-8")
-    import uuid
     event = GatewayEvent(
         event_id=str(uuid.uuid4())[:8],
         type="nueva_reserva",
@@ -71,7 +71,7 @@ async def webhook_reserva_raw(request: Request):
 async def webhook_incidente(event: GatewayEvent):
     resp = procesar_incidente(event.dict() if hasattr(event, "dict") else event.model_dump())
     if resp.instructions:
-        enviar_instrucciones(resp.instructions)
+        resp.state_updates["instrucciones_enviadas"] = enviar_instrucciones(resp.instructions)
     return resp
 
 
@@ -79,15 +79,17 @@ async def webhook_incidente(event: GatewayEvent):
 async def webhook_pago(event: GatewayEvent):
     resp = procesar_pago(event.dict() if hasattr(event, "dict") else event.model_dump())
     if resp.instructions:
-        enviar_instrucciones(resp.instructions)
+        resp.state_updates["instrucciones_enviadas"] = enviar_instrucciones(resp.instructions)
     return resp
 
 
 @app.post("/webhook/informe", response_model=GatewayResponse)
-async def webhook_informe(event: GatewayEvent = GatewayEvent(type="informe_diario", data={})):
+async def webhook_informe(event: GatewayEvent = None):
+    if event is None:
+        event = GatewayEvent(type="informe_diario", data={})
     resp = generar_informe(event.dict() if hasattr(event, "dict") else event.model_dump())
     if resp.instructions:
-        enviar_instrucciones(resp.instructions)
+        resp.state_updates["instrucciones_enviadas"] = enviar_instrucciones(resp.instructions)
     return resp
 
 
@@ -105,7 +107,6 @@ async def webhook_banner(event: GatewayEvent):
 async def webhook_banner_raw(request: Request):
     """Endpoint raw: recibe JSON plano con html, width, height, etc."""
     body = await request.json()
-    import uuid
     event = GatewayEvent(
         event_id=str(uuid.uuid4())[:8],
         type="generar_banner",
@@ -129,7 +130,6 @@ async def webhook_reel(event: GatewayEvent):
 async def webhook_reel_raw(request: Request):
     """Endpoint raw: recibe JSON plano con tagline, title, subtitle, cta, duracion, etc."""
     body = await request.json()
-    import uuid
     event = GatewayEvent(
         event_id=str(uuid.uuid4())[:8],
         type="generar_reel",

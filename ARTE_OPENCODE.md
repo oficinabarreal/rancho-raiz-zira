@@ -907,3 +907,204 @@ python3 pipeline.py --mode cache --solo-banner
 - [ ] Botón triple: Aprobar / Modificar / Rechazar
 - [ ] "Modificar" → solicita cambios + re-genera
 - [ ] Ciclo de revisión sin reiniciar el pipeline desde cero
+
+---
+
+## Monitoreo y Persistencia de Agentes (v2.3)
+
+### Heartbeat compartido
+Ambos agentes (Hermes y OpenClaw) registran latidos en `.worktrees/openclaw/heartbeats.json`.
+
+```bash
+# Ver estado de todos los agentes
+python3 .worktrees/openclaw/heartbeat.py --status
+
+# Registrar latido manual
+python3 .worktrees/openclaw/heartbeat.py --beat hermes "auditoria pipeline"
+python3 .worktrees/openclaw/heartbeat.py --beat openclaw "tareas cron"
+
+# Registrar tarea en segundo plano
+python3 .worktrees/openclaw/heartbeat.py --register "TASK-001" "Generar informe semanal"
+
+# Marcar tarea como completada
+python3 .worktrees/openclaw/heartbeat.py --complete "TASK-001"
+```
+
+### CRM Monitor (cron cada 5 min)
+`crm_monitor.sh` verifica: pipeline.py, GmailConnector, Telegram token, assets en cache, Google token. Si algo critico falta, envía alerta por Telegram.
+
+```bash
+# Activar en crontab
+crontab -e
+*/5 * * * * /data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/.worktrees/openclaw/crm_monitor.sh >> /tmp/crm_monitor.log 2>&1
+```
+
+### Configuracion final de agentes (v2.4)
+| Agente | Default | Fallback | Provider |
+|--------|---------|----------|----------|
+| **Hermes** | `big-pickle` | `nvidia/nemotron-3-super-120b-a12b` | OpenCode Zen + NVIDIA |
+| **OpenClaw** | `gemini-2.5-flash` | `gemini-2.5-flash-lite` → `nemotron` | Gemini + NVIDIA |
+
+### Archivos clave de monitoreo
+- `.worktrees/openclaw/crm_monitor.sh` — script para crontab
+- `.worktrees/openclaw/heartbeat.py` — registro de latidos y tareas
+- `.worktrees/openclaw/heartbeats.json` — estado persistente compartido
+
+---
+
+## 🏆 LOGRO: Laboratorio de Combinaciones — Metodologia de Descubrimiento
+
+### Fecha
+29 de Mayo de 2026
+
+### El Descubrimiento
+**Probar combinaciones de herramientas revela capacidades que ninguna herramienta muestra por si sola.**
+
+El flujo de trabajo "probar X en Y" (big-pickle en Hermes, A2UI desde Python, modelos gratis via OpenCode API) nos llevo a descubrimientos que nunca hubieramos encontrado siguiendo una unica via.
+
+### Matriz de Descubrimientos
+
+| # | Combinacion | Resultado | Impacto |
+|---|-------------|-----------|---------|
+| 1 | **big-pickle + API directa** | ✅ Funciona | big-pickle NO esta muerto, solo mal enrutado |
+| 2 | **big-pickle + Hermes** | ✅ "Hola" | Hermes puede usar big-pickle como agente principal |
+| 3 | **nemotron + OpenCode API** | ✅ "Hello" | Segundo modelo funcional gratis via OpenCode |
+| 4 | **A2UI + Python + Chromium** | ✅ Screenshot 25KB | Replica de Canvas de OpenClaw con tools locales |
+| 5 | **big-pickle + OpenClaw** | ⏳ Pendiente | Gateway no corriendo, modelo en catalogo |
+| 6 | **Gemini + reasoning:false** | ✅ Funciona | Solucion al empty content bug |
+
+### Modelos Gratis en OpenCode API (zen/v1)
+
+| Model ID | Status | Notas |
+|----------|--------|-------|
+| `big-pickle` | ✅ Funciona | Mapea a deepseek-v4-flash. Usar reasoning_effort: low |
+| `nemotron-3-super-free` | ✅ Funciona | Sin problemas de razonamiento |
+| `deepseek-v4-flash-free` | ⚠️ Content empty | Mismo bug que big-pickle sin config |
+| `qwen3.6-plus-free` | ❌ Terminado | Promocion free expirada |
+| `mimo-v2.5-free` | ❌ No responde | - |
+| `minimax-m2.5-free` | ❌ No responde | - |
+
+### Arquitectura Actual (v2.4)
+
+```
+┌─────────────────────────────────────────────────────┐
+│                 ESTE ENTORNO                         │
+│  big-pickle (opencode) + herramientas locales         │
+│  │                                                    │
+│  ├── API directa → OpenCode Zen (big-pickle/nemotron)│
+│  ├── Python http.server + Chromium → A2UI replica    │
+│  └── pipeline.py → ARTE (banner + GIF + reel)        │
+├─────────────────────────────────────────────────────┤
+│                    HERMES                             │
+│  big-pickle (default) + fallback nemotron             │
+│  Provider: OpenCode Zen (zen/v1)                      │
+├─────────────────────────────────────────────────────┤
+│                   OPENCLAW                            │
+│  Gemini 2.5 Flash (primary) + Flash Lite + Nemotron   │
+│  Provider: Gemini API + NVIDIA                        │
+│  Features: Telegram, Canvas/A2UI, gateway:18789       │
+├─────────────────────────────────────────────────────┤
+│                  PIPELINE ARTE                        │
+│  pipeline.py → cache/generar → Telegram → aprobar     │
+│  Flags: --auto, --poll, --solo-banner/gif/reel        │
+│  Post: email (Gmail) + Zira signature                 │
+└─────────────────────────────────────────────────────┘
+```
+
+### Lecciones Aprendidas
+
+1. **No asumir fracaso** — big-pickle devolvia 401 en OpenClaw, pero funciona via API directa y Hermes
+2. **Probar todas las combinaciones** — cada herramienta interpreta los modelos de forma distinta
+3. **Documentar los fracasos** — son tan valiosos como los exitos (nos ahorran repetir)
+4. **A2UI no requiere OpenClaw** — Python http.server + Chromium es equivalente funcional
+5. **El laboratorio como metodo** — pruebas iterativas revelan capacidades ocultas
+6. **Cada entorno tiene su forte** — OpenClaw para persistencia/Telegram, Hermes para CLI rapido, este entorno para debug
+
+### Proximos Pasos
+
+- [ ] Probar big-pickle desde OpenClaw (iniciar gateway con provider opencode)
+- [ ] Prueba de persistencia con Gemini (cuota renovada ~07:00 UTC)
+- [ ] Probar nemotron como agente principal en Hermes para sesiones largas
+- [ ] Integrar A2UI preview en pipeline.py (servir HTML + Chromium screenshot pre-aprobacion)
+- [x] Automatizar bateria de tests (test_combinations.sh)
+- [x] Documentar todas las combinaciones en formato estandar
+- [x] Transferir identidad a Hermes + big-pickle (dual agents)
+
+---
+
+## 🏆 LOGRO: Agentes Duales — opencode como laboratorio, Hermes como taller
+
+### Fecha
+29 de Mayo de 2026
+
+### Arquitectura Dual
+
+```
+┌─ ESTE ENTORNO (opencode/big-pickle) ─────────────────┐
+│  Rol: LABORATORIO · RESPALDO · DEBUG                  │
+│                                                        │
+│  Funcion:                                               │
+│  • Seguimiento tecnico de Hermes                       │
+│  • Pruebas exploratorias de combinaciones              │
+│  • Diseno de soluciones arquitectonicas                │
+│  • Respaldo si Hermes se rompe durante pruebas         │
+│  • Lectura del espacio de Hermes (project_context.md)  │
+│                                                        │
+│  Fortalezas:                                            │
+│  • Mas solido y confiable por experiencia de uso       │
+│  • Sin rate limits (API key dedicada)                  │
+│  • Acceso directo a herramientas del sistema           │
+├─ HERMES (big-pickle) ─────────────────────────────────┤
+│  Rol: TALLER · AUTOMATIZACION · PRODUCCION             │
+│                                                        │
+│  Funcion:                                               │
+│  • Background processes reales                         │
+│  • Cron scheduler integrado                            │
+│  • Subagentes para tareas paralelas                    │
+│  • Memoria persistente entre sesiones                  │
+│  • Skills = conocimiento procedural                    │
+│  • Session search (FTS5)                               │
+│  • Browser y CUA integrados                            │
+│  • Notificaciones Android                              │
+│                                                        │
+│  Fortalezas:                                            │
+│  • Background processes (antes todo sincronico)        │
+│  • Cron jobs sin scripts externos                      │
+│  • Delegacion a agentes hijos                          │
+│  • NO repetir contexto cada sesion                     │
+└────────────────────────────────────────────────────────┘
+```
+
+### Como funciona el flujo
+
+1. **Trabajo diario** → Hermes (big-pickle) via CLI
+2. **Si Hermes se rompe** → Desde aca debuggeo, arreglo, y relanzo
+3. **Pruebas exploratorias** → Desde aca (mas control, sin rate limits)
+4. **Backups** → Desde aca (tengo acceso a ambos espacios)
+5. **Sincronizacion** → project_context.md es el puente de conocimiento
+
+### Archivos clave del agente dual
+
+| Archivo | Proposito | Ubicacion |
+|---------|-----------|-----------|
+| `project_context.md` | Memoria compartida (identidad + estado) | `~/.hermes/` |
+| `SOUL.md` | Identidad de Hermes ("eres big-pickle transferido") | `~/.hermes/` |
+| `prefill_router.json` | Instruccion de arranque para Hermes | `~/.hermes/` |
+| `CONTEXTO_CONFIG.md` | Trazabilidad de configuraciones | `hola-3/` |
+| `ARTE_OPENCODE.md` | Documentacion completa del proyecto | `hola-3/` |
+| `test_combinations.sh` | Bateria de pruebas | `hola-3/` |
+
+### Backups creados (v2.4)
+
+| Backup | Tamano | Contenido |
+|--------|--------|-----------|
+| `backup-hola-3-v2.4-dual-agents.tar.gz` | 241 MB | Proyecto completo (sin venv/cache) |
+| `backup-hermes-v2.4.tar.gz` | 8.7 KB | Config Hermes + SOUL + project_context + prefill |
+| `backup-openclaw-v2.4.tar.gz` | 1.8 KB | Config OpenClaw |
+
+### Próximos pasos para el esquema dual
+
+- [ ] Establecer heartbeat compartido entre ambos entornos
+- [ ] Definir protocolo de "caida de Hermes" (desde aca detectar y reparar)
+- [ ] Sincronizar project_context.md automaticamente post-sesion de Hermes
+- [ ] Probar delegacion: desde aca lanzar tareas a Hermes via CLI
