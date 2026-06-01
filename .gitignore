@@ -51,9 +51,12 @@ build/
 *.egg-info/
 
 # DATOS SENSIBLES — no subir a GitHub
-# Facturas/datos de clientes (txt y pdf)
+# Facturas/datos de clientes
 factura_*.txt
 factura_*.pdf
+
+# Dashboard generado automáticamente (se genera en CI y se deploya a gh-pages)
+/index.html
 
 # Archivos de estado con datos de prueba que pueden contener
 # información personal o de clientes
