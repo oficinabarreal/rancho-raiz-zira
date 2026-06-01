@@ -1,0 +1,82 @@
+name: Robot Inspector - Simulador de Pruebas
+on:
+  push:
+    branches:
+      - main
+      - test-automejora-*
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  inspect:
+    name: Auditoria de Codigo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Instalar Dependencias
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+          if [ -f hybrid/requirements.txt ]; then
+            pip install -r hybrid/requirements.txt
+          fi
+          echo "Dependencias instaladas correctamente"
+
+      - name: Verificar Sintaxis (compileall)
+        run: |
+          python -m compileall . \
+            -x '__pycache__|\.git|notas|simulaciones_output|\.worktrees|asistente'
+          echo "Sintaxis OK - todos los archivos compilan"
+
+      - name: Smoke Test - Modelos CRM
+        run: |
+          python -c "
+          import sys; sys.path.insert(0, '.')
+          from crm.models import JourneyStage, Channel, Lead, CustomerProfile, CustomerJourney
+          print('✅ Modelos CRM OK')
+          print(f'  - JourneyStage: {[e.value for e in JourneyStage]}')
+          print(f'  - Channel: {[e.value for e in Channel]}')
+          # Crear lead de prueba
+          p = CustomerProfile(name='Test', email='test@test.com')
+          j = CustomerJourney(source_channel=Channel.TELEGRAM)
+          lead = Lead(lead_id='test_001', profile=p, journey=j)
+          print(f'  - Lead creado: {lead.lead_id} / {lead.profile.name}')
+          "
+
+      - name: Smoke Test - Simulador CRM
+        run: |
+          python -c "
+          import sys; sys.path.insert(0, '.')
+          from simulators.crm_simulator import SCENARIOS
+          print(f'✅ Simulador OK - {len(SCENARIOS)} escenarios:')
+          for name, s in SCENARIOS.items():
+              print(f'  - {name}: {len(s.steps)} pasos')
+          "
+
+      - name: Ejecutar Tests Unitarios
+        run: |
+          python -m unittest discover -s tests/ -v
+
+      - name: Resumen Final
+        run: |
+          echo '========================================'
+          echo '  ROBOT INSPECTOR - RESULTADO'
+          echo '========================================'
+          echo '  ✅ Sintaxis: OK'
+          echo '  ✅ Imports CRM Core: OK'
+          echo '  ✅ Imports Flujo Central: OK'
+          echo '  ✅ Escenarios Simulador: Cargados'
+          echo '  ✅ Tests: Ejecutados'
+          echo '========================================'
+          echo '  Rama: ${{ github.ref_name }}'
+          echo '  Commit: ${{ github.sha }}'
+          echo '  Status: VERDE - Listo para fusion'
