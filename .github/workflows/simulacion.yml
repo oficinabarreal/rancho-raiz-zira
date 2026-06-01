@@ -98,7 +98,7 @@ jobs:
               print('⚠️ No hay token/chat_id para Telegram')
               exit(0)
           msg = '''🤖 CRM SIMULACIÓN — Reporte Automático
-          • Proyecto: rancho-raz-zira
+          • Proyecto: rancho-raiz-zira
           • Branch: ${{ github.ref_name }}
           • Run: #${{ github.run_number }}
           • Commit: ${{ github.sha }}
