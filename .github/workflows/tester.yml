@@ -58,8 +58,8 @@ jobs:
           import sys; sys.path.insert(0, '.')
           from simulators.crm_simulator import SCENARIOS
           print(f'✅ Simulador OK - {len(SCENARIOS)} escenarios:')
-          for name, s in SCENARIOS.items():
-              print(f'  - {name}: {len(s.steps)} pasos')
+          for s in SCENARIOS:
+              print(f'  - {s.id}: {len(s.steps)} pasos')
           "
 
       - name: Ejecutar Tests Unitarios
