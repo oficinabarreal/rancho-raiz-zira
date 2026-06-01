@@ -245,7 +245,9 @@ def scan_new_docs(drive):
         orderBy="createdTime desc"
     ).execute()
     
-    keywords = ["sumar", "crm", "idea", "sugerencia", "mejora", "feature", "propuesta", "nota"]
+    keywords = ["sumar", "crm", "idea", "sugerencia", "mejora", "feature", "propuesta", 
+                 "nota", "notis", "web", "dashboard", "github", "zira", "rancho",
+                 "posada", "automatizar", "proyecto", "bot", "lead", "factura"]
     found = []
     
     for f in results.get("files", []):
@@ -332,9 +334,9 @@ CÓDIGO_NUEVO:
 [FIN_MEJORA]
 
 3. Podés dejar múltiples mejoras, una tras otra.
-4. Hermes procesará y limpiará el buzón automáticamente.
+4. Zira procesará y limpiará el buzón automáticamente.
 
-Instrucciones para Hermes:
+Instrucciones para Zira:
 1. Lee periódicamente esta sección.
 2. Si detectás [NUEVA_MEJORA], procesala con el pipeline automejora.
 3. Borrá el tag procesado y escribí el resultado al final.

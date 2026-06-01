@@ -286,7 +286,7 @@ async def codigl(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             f"- Python: {sys.version.split()[0]}",
             f"- Directorio: {Path.cwd()}",
             "",
-            "🤖 Estado de Hermes:",
+            "🤖 Estado de Zira:",
         ]
         
         # Verificar configuración de Hermes

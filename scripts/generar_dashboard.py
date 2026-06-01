@@ -178,13 +178,13 @@ def generar_html(git, tests, runs, facturas, ts):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hermes CRM · Dashboard</title>
+  <title>Zira CRM · Dashboard</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body {{ background: #0f172a; }}
     .glass {{ background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }}
-    .stat-value {{ font-variant-numeric: tabular-nums; }}
+    .accent {{ color: #10b981; }}
   </style>
 </head>
 <body class="text-slate-100 font-sans antialiased min-h-screen">
@@ -194,10 +194,10 @@ def generar_html(git, tests, runs, facturas, ts):
     <header class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
       <div class="flex items-center gap-2">
         <div class="p-1.5 bg-emerald-500/10 text-emerald-400 rounded-lg border border-emerald-500/20">
-          <i data-lucide="terminal" class="w-5 h-5"></i>
+          <i data-lucide="zap" class="w-5 h-5"></i>
         </div>
         <div>
-          <h1 class="text-lg font-bold tracking-tight">Hermes CRM</h1>
+          <h1 class="text-lg font-bold tracking-tight">Zira CRM</h1>
           <p class="text-[10px] text-slate-400 font-mono">Rancho Raíz · Barreal</p>
         </div>
       </div>
@@ -258,7 +258,7 @@ def generar_html(git, tests, runs, facturas, ts):
     </div>
 
     <footer class="text-center text-[10px] text-slate-600 pb-6">
-      Generado por Hermes · {ts}
+      Generado por Zira · {ts}
     </footer>
   </div>
   <script>lucide.createIcons();</script>
