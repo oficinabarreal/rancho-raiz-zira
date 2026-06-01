@@ -216,6 +216,78 @@ def _get_gh_token():
     return ""
 
 
+def get_processed_docs():
+    """Lee IDs de docs ya procesados."""
+    state_file = STATE_DIR / "buzon_state.json"
+    if state_file.exists():
+        return set(json.loads(state_file.read_text()).get("processed_docs", []))
+    return set()
+
+
+def save_processed_doc(doc_id: str):
+    """Marca un doc como procesado."""
+    state_file = STATE_DIR / "buzon_state.json"
+    state_file.parent.mkdir(parents=True, exist_ok=True)
+    processed = get_processed_docs()
+    processed.add(doc_id)
+    state_file.write_text(json.dumps({"processed_docs": list(processed)}, indent=2))
+
+
+def scan_new_docs(drive):
+    """Busca documentos creados por el usuario en las últimas 24h que
+    parezcan ideas/sugerencias para el CRM."""
+    from datetime import timedelta
+    
+    since = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    results = drive.files().list(
+        q=f"mimeType='application/vnd.google-apps.document' and createdTime > '{since}' and trashed=false",
+        fields="files(id, name, createdTime)",
+        orderBy="createdTime desc"
+    ).execute()
+    
+    keywords = ["sumar", "crm", "idea", "sugerencia", "mejora", "feature", "propuesta", "nota"]
+    found = []
+    
+    for f in results.get("files", []):
+        name = f["name"].lower()
+        if any(k in name for k in keywords) and "buzón" not in name and "contexto + buzón" not in name:
+            found.append(f)
+    return found
+
+
+def append_to_buzon(service, doc_id, text):
+    """Agrega texto al inicio del buzón (después del sectionBreak)."""
+    requests = [{
+        "insertText": {
+            "location": {"index": 1},
+            "text": text + "\n\n"
+        }
+    }]
+    service.documents().batchUpdate(
+        documentId=doc_id, body={"requests": requests}
+    ).execute()
+    return True
+
+
+def get_drive_service():
+    """Obtiene service de Google Drive."""
+    from google.oauth2.credentials import Credentials
+    from googleapiclient.discovery import build
+    
+    if not TOKEN_FILE.exists():
+        return None
+    with open(TOKEN_FILE) as f:
+        stored = json.load(f)
+    if "access_token" in stored and "token" not in stored:
+        stored["token"] = stored["access_token"]
+    scopes = stored.get("scopes", [])
+    creds = Credentials.from_authorized_user_info(stored, scopes)
+    if creds.expired and creds.refresh_token:
+        from google.auth.transport.requests import Request
+        creds.refresh(Request())
+    return build("drive", "v3", credentials=creds)
+
+
 def update_doc_content(service, doc_id, context_text):
     """Reemplaza TODO el contenido del doc con contexto + buzón."""
     docs = service.documents()
@@ -410,6 +482,58 @@ def cmd_clear():
     return 0
 
 
+def cmd_scan():
+    """Escanea docs nuevos del usuario y los agrega al buzón."""
+    service = get_docs_service()
+    if not service:
+        return 1
+    doc_id, _ = find_or_create_doc(service)
+    if not doc_id:
+        return 1
+
+    drive = get_drive_service()
+    if not drive:
+        print("❌ No se pudo conectar a Drive")
+        return 1
+
+    new_docs = scan_new_docs(drive)
+    if not new_docs:
+        print("📭 No se encontraron documentos nuevos con ideas")
+        return 0
+
+    # Filtrar docs ya procesados
+    processed = get_processed_docs()
+    pending = [d for d in new_docs if d["id"] not in processed]
+    
+    if not pending:
+        print("📭 No hay documentos nuevos sin procesar")
+        return 0
+
+    print(f"📄 {len(pending)} documento(s) nuevo(s) sin procesar:")
+    for d in pending:
+        print(f"  • {d['name']} — https://docs.google.com/document/d/{d['id']}/edit")
+
+    # Agregarlos al buzón
+    for d in new_docs:
+        # Intentar leer el contenido
+        try:
+            doc = service.documents().get(documentId=d["id"]).execute()
+            content = ""
+            for el in doc.get("body", {}).get("content", []):
+                if "paragraph" in el:
+                    for tr in el["paragraph"].get("elements", []):
+                        if "textRun" in tr:
+                            content += tr["textRun"].get("content", "")
+            text = f"[NUEVA_MEJORA]\nOBJETIVO: {d['name']} (documento nuevo)\nCOMPONENTE: Documento de Google Docs\nURL: https://docs.google.com/document/d/{d['id']}/edit\nContenido: {content.strip()[:500]}\n[FIN_MEJORA]"
+            append_to_buzon(service, doc_id, text)
+            save_processed_doc(d["id"])
+            print(f"  ✅ Agregado al buzón: {d['name']}")
+        except Exception as e:
+            print(f"  ⚠ Error al leer {d['name']}: {e}")
+
+    return 0
+
+
 def cmd_status():
     """Muestra estado del proyecto en terminal."""
     print("📊 Estado del Proyecto CRM\n")
@@ -427,13 +551,14 @@ def main():
         "create": cmd_create,
         "read": cmd_read,
         "clear": cmd_clear,
+        "scan": cmd_scan,
         "status": cmd_status,
     }
     
     fn = commands.get(cmd)
     if not fn:
         print(f"Comando desconocido: {cmd}")
-        print("Usá: create, read, clear, status")
+        print("Usá: create, read, scan, clear, status")
         return 1
     
     return fn()
