@@ -62,7 +62,7 @@ jobs:
               print(f'  - {s.id}: {len(s.steps)} pasos')
           "
 
-      - name: Ejecutar Tests Unitarios
+      - name: Ejecutar Tests Unitarios (Core)
         run: |
           python -m unittest discover -s tests/ -v
 
@@ -80,3 +80,71 @@ jobs:
           echo '  Rama: ${{ github.ref_name }}'
           echo '  Commit: ${{ github.sha }}'
           echo '  Status: VERDE - Listo para fusion'
+
+  # ─── Tests de Conectividad (solo ramas test-automejora-*) ────────
+  connectivity:
+    name: Conectividad APIs
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref_name, 'test-automejora-')
+    continue-on-error: true
+    environment: hola3-production
+    env:
+      CRM_TG_TOKEN: ${{ secrets.CRM_TG_TOKEN }}
+      CRM_TG_CHAT_ID: ${{ secrets.CRM_TG_CHAT_ID }}
+      CRM_INSTAGRAM_TOKEN: ${{ secrets.CRM_INSTAGRAM_TOKEN }}
+      CRM_INSTAGRAM_USER_ID: ${{ secrets.CRM_INSTAGRAM_USER_ID }}
+      CRM_WHATSAPP_TOKEN: ${{ secrets.CRM_WHATSAPP_TOKEN }}
+      CRM_WHATSAPP_PHONE_ID: ${{ secrets.CRM_WHATSAPP_PHONE_ID }}
+      CRM_KOMMO_TOKEN: ${{ secrets.CRM_KOMMO_TOKEN }}
+      CRM_KOMMO_SUBDOMAIN: ${{ secrets.CRM_KOMMO_SUBDOMAIN }}
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Instalar Dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+          echo "Dependencias instaladas"
+
+      - name: Conectividad - Telegram
+        run: |
+          python -m unittest tests.test_telegram_api -v
+        env:
+          CRM_TG_TOKEN: ${{ secrets.CRM_TG_TOKEN }}
+          CRM_TG_CHAT_ID: ${{ secrets.CRM_TG_CHAT_ID }}
+
+      - name: Conectividad - Google
+        run: |
+          python -m unittest tests.test_google_api -v
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: Conectividad - Instagram / WhatsApp / Kommo
+        run: |
+          python -m unittest tests.test_social_connectivity -v
+        env:
+          CRM_INSTAGRAM_TOKEN: ${{ secrets.CRM_INSTAGRAM_TOKEN }}
+          CRM_INSTAGRAM_USER_ID: ${{ secrets.CRM_INSTAGRAM_USER_ID }}
+          CRM_WHATSAPP_TOKEN: ${{ secrets.CRM_WHATSAPP_TOKEN }}
+          CRM_WHATSAPP_PHONE_ID: ${{ secrets.CRM_WHATSAPP_PHONE_ID }}
+          CRM_KOMMO_TOKEN: ${{ secrets.CRM_KOMMO_TOKEN }}
+          CRM_KOMMO_SUBDOMAIN: ${{ secrets.CRM_KOMMO_SUBDOMAIN }}
+
+      - name: Resumen Conectividad
+        run: |
+          echo '========================================'
+          echo '  CONECTIVIDAD - RESULTADO'
+          echo '========================================'
+          echo '  Tests de API ejecutados'
+          echo '  (errores esperados si tokens no disponibles)'
+          echo '========================================'
