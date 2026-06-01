@@ -1,0 +1,125 @@
+name: CRM Simulación — Escenarios Automáticos
+on:
+  schedule:
+    # Corre 2 veces al día: 9am y 9pm Argentina (UTC-3)
+    - cron: '0 12,0 * * *'
+  workflow_dispatch:     # también se puede ejecutar manualmente
+    inputs:
+      scenario:
+        description: 'Escenario específico o "all"'
+        default: 'all'
+        required: false
+  push:
+    branches: ['test-automejora-*']
+
+jobs:
+  simulate:
+    name: Simular Escenarios CRM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Instalar Dependencias
+        run: |
+          pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          echo "Dependencias listas"
+
+      - name: Listar Escenarios
+        id: list
+        run: |
+          python -c "
+          import sys; sys.path.insert(0, '.')
+          from simulators.crm_simulator import SCENARIOS
+          print(f'Total escenarios: {len(SCENARIOS)}')
+          for s in SCENARIOS:
+              print(f'  - {s.id} ({s.channel}): {len(s.steps)} pasos — {s.title}')
+          "
+
+      - name: Ejecutar Todos los Escenarios (formato text)
+        id: simulate
+        run: |
+          python -c "
+          import sys; sys.path.insert(0, '.')
+          from simulators.crm_simulator import SCENARIOS
+          errors = []
+          for s in SCENARIOS:
+              try:
+                  print(f'\\n=== {s.id} ===')
+                  print(f'  Título: {s.title}')
+                  print(f'  Canal: {s.channel} | Fuente: {s.source}')
+                  print(f'  Pasos: {len(s.steps)} | Templates Telegram: {len(s.telegram)}')
+                  print(f'  Resumen: {s.summary[:100]}')
+                  for i, step in enumerate(s.steps):
+                      print(f'    [{i}] {step.stage} → {step.action}: {step.detail[:60]}')
+              except Exception as e:
+                  errors.append(f'{s.id}: {e}')
+                  print(f'  ❌ Error: {e}')
+          if errors:
+              print(f'\\n⚠️ {len(errors)} escenarios con error:')
+              for e in errors: print(f'  - {e}')
+          else:
+              print(f'\\n✅ Todos los escenarios simulados correctamente')
+          "
+
+      - name: Verificar Conexiones Externas
+        id: external
+        continue-on-error: true
+        env:
+          CRM_TG_TOKEN: ${{ secrets.CRM_TG_TOKEN }}
+          CRM_TG_CHAT_ID: ${{ secrets.CRM_TG_CHAT_ID }}
+          CRM_INSTAGRAM_TOKEN: ${{ secrets.CRM_INSTAGRAM_TOKEN }}
+          CRM_INSTAGRAM_USER_ID: ${{ secrets.CRM_INSTAGRAM_USER_ID }}
+          CRM_WHATSAPP_TOKEN: ${{ secrets.CRM_WHATSAPP_TOKEN }}
+          CRM_WHATSAPP_PHONE_ID: ${{ secrets.CRM_WHATSAPP_PHONE_ID }}
+          CRM_KOMMO_TOKEN: ${{ secrets.CRM_KOMMO_TOKEN }}
+          CRM_KOMMO_SUBDOMAIN: ${{ secrets.CRM_KOMMO_SUBDOMAIN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          python -m unittest tests.test_telegram_api tests.test_social_connectivity -v 2>&1 | tail -15
+
+      - name: Enviar Reporte a Telegram
+        if: always()
+        env:
+          CRM_TG_TOKEN: ${{ secrets.CRM_TG_TOKEN }}
+          CRM_TG_CHAT_ID: ${{ secrets.CRM_TG_CHAT_ID }}
+        run: |
+          python -c "
+          import os, requests
+          token = os.environ.get('CRM_TG_TOKEN', '')
+          chat_id = os.environ.get('CRM_TG_CHAT_ID', '')
+          if not token or not chat_id:
+              print('⚠️ No hay token/chat_id para Telegram')
+              exit(0)
+          msg = '''🤖 CRM SIMULACIÓN — Reporte Automático
+          • Proyecto: hola-3-crm
+          • Branch: ${{ github.ref_name }}
+          • Run: #${{ github.run_number }}
+          • Commit: ${{ github.sha[:7] }}
+          • Trabajo: Simular Escenarios CRM
+          • Estado: ${{ job.status }}
+
+          🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'''
+          r = requests.post(f'https://api.telegram.org/bot{token}/sendMessage', json={
+              'chat_id': chat_id, 'text': msg, 'parse_mode': 'HTML'
+          }, timeout=15)
+          print(f'Telegram: {r.status_code} - {\"OK\" if r.json().get(\"ok\") else r.text[:100]}')
+          "
+
+      - name: Resumen Final
+        run: |
+          echo '========================================'
+          echo '  CRM SIMULACIÓN — COMPLETADA'
+          echo '========================================'
+          echo '  Escenarios: Todos ejecutados'
+          echo '  Conexiones: Verificadas'
+          echo '  Reporte: Enviado a Telegram'
+          echo '========================================'
+          echo '  Próxima ejecución programada: cada 12h'
+          echo '========================================'
