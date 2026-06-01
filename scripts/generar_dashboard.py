@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
-GH_REPO = "oficinabarreal/hola-3-crm"
+GH_REPO = "oficinabarreal/rancho-raz-zira"
 GH_TOKEN = os.environ.get("GITHUB_TOKEN", "") or os.environ.get("GH_TOKEN", "")
 
 
@@ -239,7 +239,7 @@ def generar_html(git, tests, runs, facturas, ts):
 
     <!-- Enlaces rápidos -->
     <div class="grid grid-cols-2 gap-3 mb-8">
-      <a href="https://github.com/oficinabarreal/hola-3-crm" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
+      <a href="https://github.com/oficinabarreal/rancho-raz-zira" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
         <i data-lucide="github" class="w-5 h-5 mx-auto mb-1 text-slate-400"></i>
         <div class="text-[10px] text-slate-400">Repositorio</div>
       </a>
@@ -247,11 +247,11 @@ def generar_html(git, tests, runs, facturas, ts):
         <i data-lucide="file-text" class="w-5 h-5 mx-auto mb-1 text-slate-400"></i>
         <div class="text-[10px] text-slate-400">Buzón</div>
       </a>
-      <a href="https://github.com/oficinabarreal/hola-3-crm/actions" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
+      <a href="https://github.com/oficinabarreal/rancho-raz-zira/actions" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
         <i data-lucide="activity" class="w-5 h-5 mx-auto mb-1 text-slate-400"></i>
         <div class="text-[10px] text-slate-400">Actions</div>
       </a>
-      <a href="https://github.com/oficinabarreal/hola-3-crm/actions/workflows/simulacion.yml" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
+      <a href="https://github.com/oficinabarreal/rancho-raz-zira/actions/workflows/simulacion.yml" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
         <i data-lucide="play" class="w-5 h-5 mx-auto mb-1 text-slate-400"></i>
         <div class="text-[10px] text-slate-400">Simulación</div>
       </a>

@@ -27,7 +27,7 @@ DOC_TITLE = "CRM Automejora — Contexto + Buzón"
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 STATE_DIR = PROJECT_DIR / "crm_state"
 TOKEN_FILE = STATE_DIR / ".google_token.json"
-GH_REPO = "oficinabarreal/hola-3-crm"
+GH_REPO = "oficinabarreal/rancho-raz-zira"
 BUZON_MARKER_START = "[BUZÓN_DE_INSTRUCCIONES]"
 BUZON_MARKER_END = "=== FIN DEL DOCUMENTO ==="
 
