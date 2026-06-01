@@ -101,7 +101,7 @@ jobs:
           • Proyecto: hola-3-crm
           • Branch: ${{ github.ref_name }}
           • Run: #${{ github.run_number }}
-          • Commit: ${{ github.sha[:7] }}
+          • Commit: ${{ github.sha }}
           • Trabajo: Simular Escenarios CRM
           • Estado: ${{ job.status }}
 
