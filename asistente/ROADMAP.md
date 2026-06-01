@@ -4,7 +4,7 @@
 Esta carpeta `asistente/` encapsula un asistente personal para automatizar tareas del CRM Rancho Raíz, ofreciendo conectores genéricos para Gmail, Calendar, Drive, Sheets, Telegram e Instagram. Los flujos específicos (ej: factura) se construyen combinando estas habilidades.
 
 ## ✅ Logros (hoy)
-- **Extracción de Gmail vía API**: Se recuperó un correo del 12/05/2026 dirigido a `alejandro.beltran@foraco.com` con etiqueta CRM.
+- **Extracción de Gmail vía API**: Se recuperó un correo de prueba del 12/05/2026 para pruebas de etiquetado CRM.
 - **Envío de correos con adjuntos**: Implementado en `mail_utils.py` mediante Gmail API (multipart).
 - **Bot de Telegram**: `telegram_bot.py` escucha comandos (`/start`, `/emails`, `/status`) y utiliza los conectores.
 - **Arquitectura por habilidades**: Conectores organizados en `google/`, `telegram/`, `instagram/` con `__init__.py` y re-exportaciones.
@@ -37,9 +37,7 @@ asistente/
 │
 └── examples/
     ├── generar_pdf.py
-    ├── enviar_pdf.py
-    ├── factura_alejandro_beltran.txt
-    └── factura_alejandro_beltran.pdf
+    └── enviar_pdf.py
 ```
 
 ## 🔮 Próximos pasos (futuro del asistente)

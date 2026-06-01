@@ -40,9 +40,7 @@ asistente/
 │
 └── examples/             # Flujos de ejemplo (no habilidades)
     ├── generar_pdf.py    # Genera factura PDF desde TXT (ejemplo)
-    ├── enviar_pdf.py     # Envía PDF por Gmail (ejemplo)
-    ├── factura_alejandro_beltran.txt
-    └── factura_alejandro_beltran.pdf
+    └── enviar_pdf.py     # Envía PDF por Gmail (ejemplo)
 ```
 
 ### Cómo importar habilidades (Agent Quick Reference)

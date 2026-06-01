@@ -1,16 +1,7 @@
- Factura de Demo CRM - Rancho Raíz
+Factura de Demo CRM - Rancho Raíz
 
-Cliente: [Nombre del cliente]
-Total: $300,000 COP
-Beneficio opcional: 2 noches adicionales
+Cliente: [Nombre del cliente demo]
+Total: $300,000 COP (simulado)
 
-Detalles de la prúbua de prueba:
-- Propósito: Demuestra funcionalidad del sistema CRM
-- Estado: Demo (no facturación real)
-
-Enviar a:
-- ltelloraiz@gmail.com
-- oficinabarreal@gmail.com
-Asunto: test modo demo CRM Rancho Raíz
-
-Nota: Este es un documento simulado para pruebas.
+Propósito: Archivo de prueba para demostrar funcionalidad del sistema CRM
+Estado: Demo — no representa una facturación real

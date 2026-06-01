@@ -36,6 +36,7 @@ simulaciones_output/
 *.swp
 *.swo
 *~
+*#
 
 # OS
 .DS_Store
@@ -48,3 +49,19 @@ Thumbs.db
 dist/
 build/
 *.egg-info/
+
+# DATOS SENSIBLES — no subir a GitHub
+# Facturas/datos de clientes (txt y pdf)
+factura_*.txt
+factura_*.pdf
+
+# Archivos de estado con datos de prueba que pueden contener
+# información personal o de clientes
+simulators/*_state.json
+simulators/*_leads.json
+simulators/zira_media/
+simulators/integracion_publicidad/db.json
+
+# Archivos de config locales con APIs
+opencode.json
+1opencode.json

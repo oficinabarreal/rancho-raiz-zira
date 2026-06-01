@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 def generar_factura(txt_path: Path | None = None) -> Path:
     if txt_path is None:
-        txt_path = BASE_DIR / "factura_alejandro_beltran.txt"
+        txt_path = BASE_DIR / "factura_demo.txt"
     with open(txt_path, 'r', encoding='utf-8') as f:
         contenido = f.read()
 
@@ -27,7 +27,7 @@ def generar_factura(txt_path: Path | None = None) -> Path:
     pdf.set_font("Arial", 'I', 8)
     pdf.cell(0, 10, f'Sistema CRM Rancho Raiz · Modo Demo · Generado: {datetime.now().strftime("%Y-%m-%d %H:%M")}', 0, 0, 'C')
 
-    pdf_path = BASE_DIR / "factura_alejandro_beltran.pdf"
+    pdf_path = BASE_DIR / "factura_demo.pdf"
     pdf.output(str(pdf_path))
     return pdf_path
 

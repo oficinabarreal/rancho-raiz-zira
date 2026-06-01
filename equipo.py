@@ -65,67 +65,9 @@ EQUIPO = {
 
 
 HUESPEDES_REGISTRADOS = [
-    {
-        "nombre": "José Miguel",
-        "pax": 4,
-        "check_in": "2026-01-31",
-        "check_out": "2026-02-05",
-        "monto": 345000,
-        "origen": "Booking",
-        "notas": "Pagó en efectivo. Había tormenta el día de llegada.",
-    },
-    {
-        "nombre": "Anónimo (21-mar)",
-        "pax": 1,
-        "check_in": "2026-03-21",
-        "check_out": "2026-03-22",
-        "notas": "Estadía corta, 1 noche.",
-    },
-    {
-        "nombre": "Alejandro Beltrán",
-        "pax": 4,
-        "check_in": "2026-05-15",
-        "check_out": "2026-05-18",
-        "monto": 0,
-        "origen": "WhatsApp directo",
-        "notas": "2 adultos + 2 menores. Tel: +57 321 811 4358. Email: alejandro.beltran@foraco.com",
-        "preferencias": [],
-    },
-    {
-        "nombre": "Anónimo (finde mayo)",
-        "pax": 2,
-        "check_in": "2026-05-01",
-        "check_out": "2026-05-03",
-        "notas": "Finde de mayo.",
-    },
-    {
-        "nombre": "Andrés Chouhy",
-        "pax": 2,
-        "check_in": "2026-02-08",
-        "check_out": "2026-02-11",
-        "notas": "",
-    },
-    {
-        "nombre": "Tomás Scala",
-        "pax": 3,
-        "check_in": "2026-02-16",
-        "check_out": "2026-02-26",
-        "notas": "Estadía larga (10 noches).",
-    },
-    {
-        "nombre": "Alvaro Martinez",
-        "pax": 0,
-        "check_in": "",
-        "check_out": "",
-        "notas": "Reserva mencionada en chats.",
-    },
-    {
-        "nombre": "Santiago Ruiz",
-        "pax": 0,
-        "check_in": "",
-        "check_out": "",
-        "notas": "Reserva mencionada en chats.",
-    },
+    # Los datos de huéspedes reales se cargan desde crm_state/huespedes.json
+    # (excluido del repositorio via .gitignore). Esta lista es solo para
+    # desarrollo local y nunca debe contener datos personales en GitHub.
 ]
 
 

@@ -3,7 +3,7 @@ from datetime import datetime
 from fpdf import FPDF
 import sys
 
-FACTURA_PATH = Path("/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/factura_alejandro_beltran.txt")
+FACTURA_PATH = Path(__file__).resolve().parent / "factura_demo.txt"
 factura_texto = FACTURA_PATH.read_text()
 
 class FacturaPDF(FPDF):
@@ -31,6 +31,6 @@ for line in factura_texto.split('\n'):
     except:
         pdf.cell(0, 5, line.encode('ascii', 'replace').decode('ascii'), 0, 1)
 
-pdf_path = Path("/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/factura_alejandro_beltran.pdf")
+pdf_path = Path(__file__).resolve().parent / "factura_demo.pdf"
 pdf.output(str(pdf_path))
 print(f"✅ PDF generado: {pdf_path} ({pdf_path.stat().st_size} bytes)")

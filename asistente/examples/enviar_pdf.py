@@ -22,7 +22,7 @@ Este es un correo de prueba del sistema CRM de Rancho Raiz.
 
 ✅ FACTURA EN MODO PDF DEMO
 Esta factura fue generada automaticamente desde el correo original
-del cliente Alejandro Beltran (alejandro.beltran@foraco.com) del
+del cliente demo (demo@cliente.com) del
 dia 12 de mayo de 2026.
 
 Se adjunta la factura en:
@@ -31,7 +31,7 @@ Se adjunta la factura en:
 
 Detalle del cliente:
    · Cliente: Sr. Alejandro Beltran
-   · Email: alejandro.beltran@foraco.com
+   · Email: demo@cliente.com
    · Estadia: 3 noches (22/05/2025 - 25/05/2025)
    · Total abonado: $100.000
 
@@ -47,7 +47,7 @@ def main():
     print("=== ENVIANDO FACTURA PDF (modo test CRM Rancho Raiz - modo PDF) ===")
     print(f"Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
 
-    pdf_path = BASE_DIR / "factura_alejandro_beltran.pdf"
+    pdf_path = BASE_DIR / "factura_demo.pdf"
     if not pdf_path.exists():
         print(f"❌ No existe el PDF: {pdf_path}")
         return

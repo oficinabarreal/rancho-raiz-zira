@@ -11,8 +11,8 @@ from crm.connectors import GmailConnector
 print("=== ENVIANDO FACTURA PDF (modo test CRM Rancho Raiz - modo PDF) ===")
 print(f"Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
 
-FACTURA_PATH = Path("/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/factura_alejandro_beltran.pdf")
-FACTURA_TXT = Path("/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/factura_alejandro_beltran.txt")
+FACTURA_PATH = Path(__file__).resolve().parent / "factura_demo.pdf"
+FACTURA_TXT = Path(__file__).resolve().parent / "factura_demo.txt"
 
 # Leer el archivo PDF y el texto
 pdf_bytes = FACTURA_PATH.read_bytes()
@@ -46,7 +46,7 @@ Este es un correo de prueba del sistema CRM de Rancho Raiz.
 
 ✅ FACTURA EN MODO PDF DEMO
 Esta factura fue generada automaticamente desde el correo original
-del cliente Alejandro Beltran (alejandro.beltran@foraco.com) del
+del cliente demo (demo@cliente.com) del
 dia 12 de mayo de 2026.
 
 Se adjunta la factura en:
@@ -55,7 +55,7 @@ Se adjunta la factura en:
 
 Detalle del cliente:
    · Cliente: Sr. Alejandro Beltran
-   · Email: alejandro.beltran@foraco.com
+   · Email: demo@cliente.com
    · Estadia: 3 noches (22/05/2025 - 25/05/2025)
    · Total abonado: $100.000
 
@@ -72,7 +72,7 @@ Modo: DEMO / TEST
     part = MIMEBase('application', 'pdf')
     part.set_payload(pdf_bytes)
     encoders.encode_base64(part)
-    part.add_header('Content-Disposition', f'attachment; filename="factura_alejandro_beltran.pdf"')
+    part.add_header('Content-Disposition', f'attachment; filename="factura_demo.pdf"')
     msg.attach(part)
     
     raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
