@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏔️ Zira — Galería de Estilos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #a78bfa, #38bdf8, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .card svg, .card img {
+    width: 100%;
+    display: block;
+  }
+  .card-body {
+    padding: 16px 20px;
+    border-top: 1px solid #334155;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .card .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .tag-vibe { background: #7c3aed20; color: #a78bfa; border: 1px solid #7c3aed40; }
+  .tag-tech { background: #0284c720; color: #38bdf8; border: 1px solid #0284c740; }
+  .tag-warm { background: #ea580c20; color: #fb923c; border: 1px solid #ea580c40; }
+  .tag-retro { background: #fbbf2420; color: #fbbf24; border: 1px solid #fbbf2440; }
+  .card p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #1e293b;
+    color: #475569;
+    font-size: 0.85rem;
+  }
+  .version-badge {
+    display: inline-block;
+    background: #2dd4bf20;
+    color: #2dd4bf;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid #2dd4bf40;
+    margin-left: 8px;
+  }
+</style>
+</head>
+<body>
+  <h1>⛰️ Zira</h1>
+  <p class="subtitle">Una montaña con personalidad · 2 de junio de 2026</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <object data="zira-mountain.svg" type="image/svg+xml" width="100%" height="320">Zira Clásica</object>
+      <div class="card-body">
+        <h2>Zira Clásica <span class="version-badge">v1.0</span></h2>
+        <span class="tag tag-vibe">🌙 nocturna</span>
+        <span class="tag tag-vibe">🌲 andina</span>
+        <span class="tag tag-tech">original</span>
+        <p>La Zira original. Montaña slate, glaciar nevado, ojos grandes y brazo saludando. Nació aquí.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <object data="zira/zira-magica.svg" type="image/svg+xml" width="100%" height="320">Zira Mágica</object>
+      <div class="card-body">
+        <h2>Zira Mágica <span class="version-badge">✨</span></h2>
+        <span class="tag tag-vibe">🔮 mágica</span>
+        <span class="tag tag-warm">🌅 atardecer</span>
+        <span class="tag tag-warm">💜 lavanda</span>
+        <p>Atardecer violeta, ojos con estrellas, corona de luz en la cima. Zira en modo hechicera de los Andes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <object data="zira/zira-playful.svg" type="image/svg+xml" width="100%" height="320">Zira Juguetona</object>
+      <div class="card-body">
+        <h2>Zira Juguetona <span class="version-badge">😎</span></h2>
+        <span class="tag tag-warm">☀️ día</span>
+        <span class="tag tag-warm">🕶️ gafas</span>
+        <span class="tag tag-vibe">😉 guiño</span>
+        <p>Cielo celeste, sol, nubes, pájaros y mariposas. Zira con gafas de sol, guiño pícaro, pasto y florcitas.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <object data="zira/zira-zen.svg" type="image/svg+xml" width="100%" height="320">Zira Zen</object>
+      <div class="card-body">
+        <h2>Zira Zen <span class="version-badge">🧘</span></h2>
+        <span class="tag tag-tech">🌙 luna llena</span>
+        <span class="tag tag-vibe">🧘 meditación</span>
+        <span class="tag tag-tech">🌸 loto</span>
+        <p>Noche profunda, luna llena, ojos cerrados. Brazos en posición de meditación, loto flotando. Zira en paz.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <object data="zira/zira-retro.svg" type="image/svg+xml" width="100%" height="320">Zira Retro</object>
+      <div class="card-body">
+        <h2>Zira Retro <span class="version-badge">🕹️</span></h2>
+        <span class="tag tag-retro">🕹️ 8-bit</span>
+        <span class="tag tag-retro">🎮 pixel</span>
+        <span class="tag tag-retro">💾 retro</span>
+        <p>Zira como personaje de videojuego clásico. Montaña pixelada, corazones, estrellas voladoras. Nostalgia pura.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    🏔️ Zira CRM · Rancho Raíz · Barreal, San Juan · Argentina<br>
+    Cada versión es una faceta de la misma montaña
+  </div>
+</body>
+</html>

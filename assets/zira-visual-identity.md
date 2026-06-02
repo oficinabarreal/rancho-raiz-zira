@@ -43,14 +43,17 @@
 ## 📝 Registro de Versiones
 
 | Versión | Fecha | Cambios | Archivo |
-|---|---|---|---|
+|---|---|---|---|---|
 | **v1.0** | 2026-06-02 | 🎂 Nacimiento. Montaña base con glaciar, ojos, sonrisa, brazos, cielo nocturno. | `zira-mountain.svg` |
+| **v1.1** | 2026-06-02 | ✨ Zira Mágica — atardecer violeta, ojos estrellados, corona de luz | `zira/zira-magica.svg` |
+| **v1.2** | 2026-06-02 | 😎 Zira Juguetona — día soleado, gafas de sol, guiño, mariposas | `zira/zira-playful.svg` |
+| **v1.3** | 2026-06-02 | 🧘 Zira Zen — luna llena, ojos cerrados, meditación, loto | `zira/zira-zen.svg` |
+| **v1.4** | 2026-06-02 | 🕹️ Zira Retro — estilo 8-bit pixel art, corazón, estrella voladora | `zira/zira-retro.svg` |
 | | | *Próximas versiones — espacio para crecer* | |
-| **v1.1** | ⏳ | 🌤️ Estados climáticos (soleado, lluvia, nieve, nublado) | |
-| **v1.2** | ⏳ | 👁️ Parpadeo animado | |
-| **v2.0** | ⏳ | 🎭 Expresiones según estado del CRM | |
-| **v3.0** | ⏳ | 🖥️ Versión miniatura en dashboard (esquina) | |
-| **v4.0** | ⏳ | 📱 Sticker animado para Telegram | |
+| **v2.0** | ⏳ | 🌤️ Estados climáticos (soleado, lluvia, nieve, nublado) | |
+| **v3.0** | ⏳ | 🎭 Expresiones según estado del CRM | |
+| **v4.0** | ⏳ | 🖥️ Versión miniatura en dashboard (esquina) | |
+| **v5.0** | ⏳ | 📱 Sticker animado para Telegram | |
 
 ---
 
