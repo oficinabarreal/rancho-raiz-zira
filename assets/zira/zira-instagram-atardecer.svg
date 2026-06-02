@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <style>
+      @keyframes blink-i { 0%,95%,100%{transform:scaleY(1)} 97%{transform:scaleY(0.05)} }
+      @keyframes wave-i { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-3deg)} 75%{transform:rotate(3deg)} }
+      @keyframes float-i { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+      .eye-i{animation:blink-i 4.5s ease-in-out infinite;transform-origin:185px 210px}
+      .arm-i{animation:wave-i 2.5s ease-in-out infinite;transform-origin:260px 230px}
+      .float-i{animation:float-i 3s ease-in-out infinite}
+    </style>
+    <!-- Gradient cielo atardecer real -->
+    <linearGradient id="sky-real" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="30%" stop-color="#ea580c"/>
+      <stop offset="70%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+    <!-- Silueta cordillera -->
+    <linearGradient id="cordillera" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#292524"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo: cielo realista atardecer -->
+  <rect width="400" height="500" fill="url(#sky-real)"/>
+
+  <!-- Sol bajo -->
+  <circle cx="320" cy="340" r="80" fill="#f59e0b" opacity="0.3"/>
+  <circle cx="320" cy="340" r="50" fill="#fbbf24" opacity="0.5"/>
+
+  <!-- Cordillera de fondo -->
+  <polygon points="0,280 40,220 90,250 130,190 170,230 200,210 240,240 270,170 310,220 350,180 400,230 400,500 0,500" fill="url(#cordillera)"/>
+
+  <!-- Pastizales reales -->
+  <path d="M 0,350 Q 50,340 100,355 Q 150,370 200,350 Q 250,340 300,360 Q 350,345 400,355 L 400,500 L 0,500 Z" fill="#292524"/>
+  <path d="M 0,380 Q 80,370 160,385 Q 240,400 320,380 Q 360,370 400,380 L 400,500 L 0,500 Z" fill="#1c1917"/>
+
+  <!-- Arbustos -->
+  <ellipse cx="60" cy="360" rx="25" ry="15" fill="#292524" opacity="0.6"/>
+  <ellipse cx="340" cy="370" rx="30" ry="18" fill="#292524" opacity="0.5"/>
+
+  <!-- ZIRA posada en la montaña -->
+  <g class="float-i">
+    <!-- Montaña pequeña de Zira -->
+    <polygon points="185,225 270,350 100,350" fill="#475569"/>
+    <polygon points="185,225 270,350 100,350" fill="url(#sky-real)" opacity="0.3"/>
+    <!-- Glaciar -->
+    <path d="M 175,240 Q 185,225 195,240 Q 205,235 210,250 L 160,250 Z" fill="#f8fafc" opacity="0.7"/>
+    <!-- Cuerpo -->
+    <rect x="155" y="250" width="60" height="10" rx="3" fill="#475569" opacity="0.5"/>
+
+    <g class="eye-i">
+      <!-- Ojos -->
+      <ellipse cx="175" cy="255" rx="6" ry="7" fill="#0f172a"/>
+      <ellipse cx="175" cy="255" rx="4" ry="5" fill="#fff"/>
+      <circle cx="174" cy="254" r="2" fill="#0f172a"/>
+
+      <ellipse cx="205" cy="255" rx="6" ry="7" fill="#0f172a"/>
+      <ellipse cx="205" cy="255" rx="4" ry="5" fill="#fff"/>
+      <circle cx="204" cy="254" r="2" fill="#0f172a"/>
+    </g>
+
+    <!-- Mejillas -->
+    <ellipse cx="165" cy="268" rx="5" ry="3" fill="#ef4444" opacity="0.2"/>
+    <ellipse cx="215" cy="268" rx="5" ry="3" fill="#ef4444" opacity="0.2"/>
+
+    <!-- Brazo izquierdo -->
+    <line x1="155" y1="275" x2="135" y2="295" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Brazo derecho saludando -->
+    <g class="arm-i">
+      <line x1="225" y1="275" x2="245" y2="260" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+      <line x1="245" y1="260" x2="252" y2="250" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Pájaros reales -->
+  <path d="M 50,100 Q 55,95 60,100" fill="none" stroke="#1c1917" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 60,100 Q 65,95 70,100" fill="none" stroke="#1c1917" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 310,120 Q 315,115 320,120" fill="none" stroke="#1c1917" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 320,120 Q 325,115 330,120" fill="none" stroke="#1c1917" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Info card abajo como IG story -->
+  <g transform="translate(20, 420)">
+    <rect width="360" height="65" rx="12" fill="#1c1917" opacity="0.85"/>
+    <rect width="360" height="65" rx="12" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+    <text x="180" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">¡Atardecer en los Andes!</text>
+    <text x="180" y="45" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#a8a29e">🏔️ Zira mirando el sol caer sobre Barreal</text>
+    <text x="180" y="58" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57534e">⛰️ Rancho Raíz · San Juan · Argentina</text>
+  </g>
+
+  <!-- Logo Zira pequeño esquina -->
+  <g transform="translate(340, 15)">
+    <rect width="50" height="20" rx="6" fill="#1c1917" opacity="0.6"/>
+    <text x="25" y="14" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fbbf24">ZIRA</text>
+  </g>
+</svg>

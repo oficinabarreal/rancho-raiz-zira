@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <style>
+      @keyframes blink-p { 0%,95%,100%{transform:scaleY(1)} 97%{transform:scaleY(0.05)} }
+      @keyframes sign-float { 0%,100%{transform:translateY(0)rotate(0)} 50%{transform:translateY(-3px)rotate(1deg)} }
+      .eye-p{animation:blink-p 4.5s ease-in-out infinite;transform-origin:185px 245px}
+      .sign{animation:sign-float 3s ease-in-out infinite;transform-origin:200px 150px}
+    </style>
+    <linearGradient id="day-clean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="40%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#166534"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Día radiante -->
+  <rect width="400" height="500" fill="url(#day-clean)"/>
+
+  <!-- Sol -->
+  <circle cx="80" cy="70" r="30" fill="#fef3c7"/>
+  <circle cx="80" cy="70" r="25" fill="#fbbf24"/>
+
+  <!-- Nubes -->
+  <ellipse cx="300" cy="80" rx="50" ry="18" fill="#fff" opacity="0.5"/>
+  <ellipse cx="270" cy="75" rx="30" ry="12" fill="#fff" opacity="0.6"/>
+  <ellipse cx="150" cy="110" rx="40" ry="14" fill="#fff" opacity="0.3"/>
+
+  <!-- Cercos / campo -->
+  <path d="M 0,340 Q 200,320 400,340 L 400,500 L 0,500 Z" fill="url(#grass)"/>
+  <path d="M 0,360 Q 200,345 400,360 L 400,500 L 0,500 Z" fill="#14532d"/>
+
+  <!-- Florcitas -->
+  <circle cx="80" cy="355" r="2" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="120" cy="348" r="2.5" fill="#f87171" opacity="0.5"/>
+  <circle cx="300" cy="358" r="2" fill="#fbbf24" opacity="0.5"/>
+  <circle cx="340" cy="350" r="2.5" fill="#a78bfa" opacity="0.4"/>
+
+  <!-- Cerca de madera -->
+  <line x1="50" y1="340" x2="50" y2="300" stroke="#78350f" stroke-width="3" opacity="0.4"/>
+  <line x1="150" y1="335" x2="150" y2="295" stroke="#78350f" stroke-width="3" opacity="0.4"/>
+  <line x1="250" y1="338" x2="250" y2="298" stroke="#78350f" stroke-width="3" opacity="0.4"/>
+  <line x1="350" y1="340" x2="350" y2="300" stroke="#78350f" stroke-width="3" opacity="0.4"/>
+  <line x1="40" y1="310" x2="360" y2="310" stroke="#78350f" stroke-width="2" opacity="0.3"/>
+  <line x1="40" y1="325" x2="360" y2="325" stroke="#78350f" stroke-width="2" opacity="0.3"/>
+
+  <!-- ZIRA -->
+  <g transform="translate(0, 0)">
+    <!-- Montaña -->
+    <polygon points="185,250 280,370 90,370" fill="#92400e"/>
+    <polygon points="185,250 280,370 90,370" fill="#78350f" opacity="0.3"/>
+    <path d="M 175,265 Q 185,250 195,265 Q 210,258 215,275 L 155,275 Z" fill="#f8fafc" opacity="0.8"/>
+
+    <g class="eye-p">
+      <ellipse cx="175" cy="280" rx="6" ry="7" fill="#292524"/>
+      <ellipse cx="175" cy="280" rx="4" ry="5" fill="#fff"/>
+      <circle cx="174" cy="279" r="2" fill="#292524"/>
+
+      <ellipse cx="210" cy="280" rx="6" ry="7" fill="#292524"/>
+      <ellipse cx="210" cy="280" rx="4" ry="5" fill="#fff"/>
+      <circle cx="209" cy="279" r="2" fill="#292524"/>
+    </g>
+
+    <!-- Sonrisa -->
+    <path d="M 186,295 Q 193,305 200,295" fill="none" stroke="#292524" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Mejillas -->
+    <ellipse cx="165" cy="295" rx="5" ry="3" fill="#ef4444" opacity="0.2"/>
+    <ellipse cx="220" cy="295" rx="5" ry="3" fill="#ef4444" opacity="0.2"/>
+
+    <!-- Brazos sosteniendo cartel -->
+    <line x1="130" y1="320" x2="110" y2="260" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+    <line x1="260" y1="320" x2="290" y2="260" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- CARTEL promocional -->
+  <g class="sign">
+    <rect x="100" y="140" width="200" height="70" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="105" y="145" width="190" height="60" rx="8" fill="none" stroke="#f59e0b" stroke-width="0.5" opacity="0.3"/>
+    <text x="200" y="168" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">🔥 PROMO TEMPORADA</text>
+    <text x="200" y="185" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d4">15% OFF en estadías de 3+ noches</text>
+    <text x="200" y="198" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#57534e">🏔️ Rancho Raíz · Consultá por WhatsApp</text>
+  </g>
+
+  <!-- Info card -->
+  <g transform="translate(20, 415)">
+    <rect width="360" height="65" rx="12" fill="#1c1917" opacity="0.85"/>
+    <rect width="360" height="65" rx="12" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.3"/>
+    <text x="180" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">¡Zira promociona!</text>
+    <text x="180" y="45" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#a8a29e">🏡 Zira con cartel de promos para la temporada</text>
+    <text x="180" y="58" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57534e">⛰️ Rancho Raíz · Barreal · San Juan</text>
+  </g>
+
+  <g transform="translate(340, 15)">
+    <rect width="50" height="20" rx="6" fill="#1c1917" opacity="0.6"/>
+    <text x="25" y="14" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fbbf24">ZIRA</text>
+  </g>
+</svg>

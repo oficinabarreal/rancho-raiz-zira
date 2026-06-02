@@ -1,9 +1,10 @@
-name: Recordatorio Pagos Diario
+name: Recordatorio Pagos
 
 on:
   schedule:
+    # 2-3 veces x mes: día 7 (Starlink vence 10) y día 12 (Luz vence 15)
     # 10:00 AM ART (UTC-3) = 13:00 UTC
-    - cron: '0 13 * * *'
+    - cron: '0 13 7,12 * *'
   workflow_dispatch:  # permitir ejecución manual
 
 env:

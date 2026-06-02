@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <style>
+      @keyframes blink-r { 0%,95%,100%{transform:scaleY(1)} 97%{transform:scaleY(0.05)} }
+      @keyframes rain-fall { 0%{transform:translateY(-10px);opacity:0} 30%{opacity:0.4} 100%{transform:translateY(100px);opacity:0} }
+      @keyframes peek { 0%,100%{transform:translateX(0)} 50%{transform:translateX(3px)} }
+      .eye-r{animation:blink-r 4.5s ease-in-out infinite;transform-origin:185px 245px}
+      .rain{animation:rain-fall 1.5s linear infinite}
+      .rain:nth-child(2){animation-delay:0.3s}
+      .rain:nth-child(3){animation-delay:0.6s}
+      .rain:nth-child(4){animation-delay:0.9s}
+      .rain:nth-child(5){animation-delay:1.2s}
+      .peek{animation:peek 4s ease-in-out infinite}
+    </style>
+    <linearGradient id="rainy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="40%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="window-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Día lluvioso desde adentro -->
+  <rect width="400" height="500" fill="#1c1917"/>
+
+  <!-- Marco de ventana -->
+  <rect x="20" y="20" width="360" height="460" rx="16" fill="#292524" stroke="#44403c" stroke-width="3"/>
+  <rect x="35" y="35" width="330" height="430" rx="8" fill="url(#rainy)"/>
+
+  <!-- Afuera: campo lluvioso -->
+  <path d="M 35,350 L 365,350 L 365,465 L 35,465 Z" fill="#166534" opacity="0.3"/>
+  <path d="M 35,370 L 365,370 L 365,465 L 35,465 Z" fill="#14532d" opacity="0.3"/>
+
+  <!-- Gotas de lluvia -->
+  <g stroke="#94a3b8" stroke-width="1" opacity="0.3">
+    <line x1="60" y1="40" x2="60" y2="55" class="rain"/>
+    <line x1="130" y1="60" x2="130" y2="75" class="rain"/>
+    <line x1="200" y1="45" x2="200" y2="60" class="rain"/>
+    <line x1="280" y1="70" x2="280" y2="85" class="rain"/>
+    <line x1="340" y1="50" x2="340" y2="65" class="rain"/>
+    <line x1="90" y1="100" x2="90" y2="115" class="rain"/>
+    <line x1="160" y1="120" x2="160" y2="135" class="rain"/>
+    <line x1="240" y1="90" x2="240" y2="105" class="rain"/>
+    <line x1="310" y1="130" x2="310" y2="145" class="rain"/>
+    <line x1="70" y1="180" x2="70" y2="195" class="rain"/>
+    <line x1="150" y1="200" x2="150" y2="215" class="rain"/>
+    <line x1="260" y1="170" x2="260" y2="185" class="rain"/>
+    <line x1="330" y1="220" x2="330" y2="235" class="rain"/>
+  </g>
+
+  <!-- Marco interior de la ventana -->
+  <line x1="200" y1="35" x2="200" y2="465" stroke="#44403c" stroke-width="3"/>
+  <line x1="35" y1="200" x2="365" y2="200" stroke="#44403c" stroke-width="3"/>
+  <line x1="35" y1="200" x2="365" y2="200" stroke="#44403c" stroke-width="3"/>
+
+  <!-- Alfeizar (donde Zira se asoma) -->
+  <rect x="35" y="350" width="330" height="15" fill="#44403c"/>
+
+  <!-- ZIRA asomándose por la ventana -->
+  <g class="peek" transform="translate(0, 0)">
+    <!-- Montaña chica -->
+    <polygon points="185,300 260,370 110,370" fill="#475569"/>
+    <path d="M 178,310 Q 185,300 192,310 Q 200,305 205,315 L 165,315 Z" fill="#e2e8f0" opacity="0.6"/>
+
+    <g class="eye-r">
+      <ellipse cx="175" cy="320" rx="5" ry="6" fill="#0f172a"/>
+      <ellipse cx="175" cy="320" rx="3" ry="4" fill="#fff"/>
+      <circle cx="174" cy="319" r="1.5" fill="#0f172a"/>
+      <ellipse cx="205" cy="320" rx="5" ry="6" fill="#0f172a"/>
+      <ellipse cx="205" cy="320" rx="3" ry="4" fill="#fff"/>
+      <circle cx="204" cy="319" r="1.5" fill="#0f172a"/>
+    </g>
+
+    <!-- Sonrisa tranquila -->
+    <path d="M 186,332 Q 190,338 195,332" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Brazos apoyados en alfeizar -->
+    <line x1="140" y1="345" x2="125" y2="350" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+    <line x1="240" y1="345" x2="260" y2="350" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Texto en la ventana -->
+  <g transform="translate(60, 380)">
+    <text font-family="sans-serif" font-size="11" fill="#94a3b8" opacity="0.6">🌧️ Llueve en Barreal</text>
+    <text y="18" font-family="sans-serif" font-size="9" fill="#64748b" opacity="0.4">Zira se asoma a ver la lluvia</text>
+  </g>
+
+  <!-- Info card -->
+  <g transform="translate(20, 420)">
+    <rect width="360" height="60" rx="12" fill="#1c1917" opacity="0.9"/>
+    <rect width="360" height="60" rx="12" fill="none" stroke="#475569" stroke-width="1" opacity="0.3"/>
+    <text x="180" y="22" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#94a3b8">🌧️ Día de lluvia en Rancho Raíz</text>
+    <text x="180" y="42" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#57534e">Zira se asoma por la ventana a saludar</text>
+    <text x="180" y="55" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#44403c">🏔️ Barreal · San Juan · Argentina</text>
+  </g>
+
+  <g transform="translate(340, 15)">
+    <rect width="50" height="20" rx="6" fill="#1c1917" opacity="0.6"/>
+    <text x="25" y="14" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="bold" fill="#94a3b8">ZIRA</text>
+  </g>
+</svg>
