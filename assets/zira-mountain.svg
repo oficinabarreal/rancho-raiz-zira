@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Fondo cielo -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <!-- Cuerpo montaña -->
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <!-- Nieve/glaciar (cabello) -->
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <!-- Círculo de luz detrás -->
+    <radialGradient id="glow" cx="50%" cy="40%" r="30%">
+      <stop offset="0%" stop-color="#334155" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Filtro sombra -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Cielo -->
+  <rect width="400" height="400" fill="url(#sky)"/>
+
+  <!-- Brillo -->
+  <circle cx="200" cy="180" r="120" fill="url(#glow)"/>
+
+  <!-- Montaña principal -->
+  <polygon points="200,60 340,340 60,340" fill="url(#mountain)" filter="url(#shadow)"/>
+
+  <!-- Montaña secundaria (atrás) -->
+  <polygon points="100,140 280,340 340,340 200,60" fill="#1e293b" opacity="0.4"/>
+
+  <!-- Nieve/Glaciar estilo cabello -->
+  <path d="M 170,100 Q 200,70 230,100 Q 250,90 240,130 
+           Q 220,140 200,135 Q 180,140 160,130 
+           Q 150,90 170,100 Z" fill="url(#snow)" opacity="0.9"/>
+
+  <!-- Copos de nieve decorativos en el glaciar -->
+  <circle cx="185" cy="110" r="3" fill="#f8fafc" opacity="0.6"/>
+  <circle cx="210" cy="105" r="2.5" fill="#f8fafc" opacity="0.5"/>
+  <circle cx="195" cy="95" r="2" fill="#f8fafc" opacity="0.4"/>
+  <circle cx="220" cy="115" r="2" fill="#f8fafc" opacity="0.3"/>
+
+  <!-- Ojos -->
+  <!-- Ojo derecho -->
+  <ellipse cx="160" cy="195" rx="12" ry="14" fill="#1e293b"/>
+  <ellipse cx="160" cy="195" rx="8" ry="10" fill="#f8fafc"/>
+  <circle cx="158" cy="193" r="4" fill="#1e293b"/>
+  <circle cx="156" cy="191" r="1.5" fill="#fff"/>
+
+  <!-- Ojo izquierdo -->
+  <ellipse cx="240" cy="195" rx="12" ry="14" fill="#1e293b"/>
+  <ellipse cx="240" cy="195" rx="8" ry="10" fill="#f8fafc"/>
+  <circle cx="238" cy="193" r="4" fill="#1e293b"/>
+  <circle cx="236" cy="191" r="1.5" fill="#fff"/>
+
+  <!-- Mejillas sonrosadas -->
+  <ellipse cx="135" cy="225" rx="10" ry="6" fill="#ef4444" opacity="0.15"/>
+  <ellipse cx="265" cy="225" rx="10" ry="6" fill="#ef4444" opacity="0.15"/>
+
+  <!-- Boca sonrisa -->
+  <path d="M 180,230 Q 200,250 220,230" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Brazos/Ramitas -->
+  <!-- Brazo izquierdo -->
+  <line x1="80" y1="250" x2="55" y2="275" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+  <line x1="55" y1="275" x2="40" y2="265" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Brazo derecho (saludando) -->
+  <line x1="320" y1="250" x2="350" y2="220" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+  <line x1="350" y1="220" x2="365" y2="200" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- "Mano" derecha abierta -->
+  <line x1="365" y1="200" x2="360" y2="190" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <line x1="365" y1="200" x2="370" y2="190" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <line x1="365" y1="200" x2="375" y2="195" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Estrellas/partículas decorativas -->
+  <circle cx="100" cy="100" r="1.5" fill="#f8fafc" opacity="0.6"/>
+  <circle cx="300" cy="80" r="1" fill="#f8fafc" opacity="0.4"/>
+  <circle cx="150" cy="50" r="1.5" fill="#f8fafc" opacity="0.5"/>
+  <circle cx="280" cy="130" r="1" fill="#f8fafc" opacity="0.3"/>
+  <circle cx="70" cy="160" r="1" fill="#f8fafc" opacity="0.4"/>
+
+  <!-- Suelo/base -->
+  <rect x="40" y="335" width="320" height="8" rx="4" fill="#475569" opacity="0.3"/>
+</svg>
