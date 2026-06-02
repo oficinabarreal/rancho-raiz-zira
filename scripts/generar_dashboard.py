@@ -185,6 +185,10 @@ def generar_html(git, tests, runs, facturas, ts):
     body {{ background: #0f172a; }}
     .glass {{ background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }}
     .accent {{ color: #10b981; }}
+    @keyframes blink-d {{ 0%,95%,100%{{transform:scaleY(1)}} 97%{{transform:scaleY(0.05)}} }}
+    @keyframes wave-d {{ 0%,100%{{transform:rotate(0)}} 25%{{transform:rotate(-5deg)}} 75%{{transform:rotate(5deg)}} }}
+    .eye-d{{animation:blink-d 4.5s ease-in-out infinite;transform-origin:20px 19px}}
+    .arm-d{{animation:wave-d 2.5s ease-in-out infinite;transform-origin:32px 24px}}
   </style>
 </head>
 <body class="text-slate-100 font-sans antialiased min-h-screen">
@@ -192,10 +196,27 @@ def generar_html(git, tests, runs, facturas, ts):
 
     <!-- Header -->
     <header class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
-      <div class="flex items-center gap-2">
-        <div class="p-1.5 bg-emerald-500/10 text-emerald-400 rounded-lg border border-emerald-500/20">
-          <i data-lucide="zap" class="w-5 h-5"></i>
-        </div>
+      <div class="flex items-center gap-3">
+        <a href="assets/zira/" class="shrink-0 relative group" title="Galería Zira">
+          <svg viewBox="0 0 40 40" class="w-8 h-8">
+            <rect width="40" height="40" rx="8" fill="#1e293b"/>
+            <polygon points="20,6 34,34 6,34" fill="#334155"/>
+            <path d="M 17,12 Q 20,9 23,12 Q 24,10 23,14 Q 22,14 20,14 Q 18,14 17,13 Q 16,11 17,12 Z" fill="#e2e8f0"/>
+            <g class="eye-d">
+              <ellipse cx="14" cy="19" rx="3" ry="3.5" fill="#0f172a"/>
+              <ellipse cx="14" cy="19" rx="2" ry="2.5" fill="#fff"/>
+              <circle cx="13.5" cy="18.5" r="1" fill="#0f172a"/>
+              <ellipse cx="26" cy="19" rx="3" ry="3.5" fill="#0f172a"/>
+              <ellipse cx="26" cy="19" rx="2" ry="2.5" fill="#fff"/>
+              <circle cx="25.5" cy="18.5" r="1" fill="#0f172a"/>
+            </g>
+            <path d="M 16,23 Q 20,26 24,23" fill="none" stroke="#0f172a" stroke-width="0.8"/>
+            <g class="arm-d">
+              <line x1="32" y1="24" x2="35" y2="21" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+            </g>
+          </svg>
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-slate-900 group-hover:animate-pulse"></span>
+        </a>
         <div>
           <h1 class="text-lg font-bold tracking-tight">Zira CRM</h1>
           <p class="text-[10px] text-slate-400 font-mono">Rancho Raíz · Barreal</p>
@@ -239,6 +260,15 @@ def generar_html(git, tests, runs, facturas, ts):
 
     <!-- Enlaces rápidos -->
     <div class="grid grid-cols-2 gap-3 mb-8">
+      <a href="assets/zira/" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 mx-auto mb-1 text-emerald-400">
+          <polygon points="12,3 22,21 2,21" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M 10,13 Q 12,11 14,13" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="10" cy="11" r="1" fill="currentColor"/>
+          <circle cx="14" cy="11" r="1" fill="currentColor"/>
+        </svg>
+        <div class="text-[10px] text-slate-400">Galería Zira</div>
+      </a>
       <a href="https://github.com/oficinabarreal/rancho-raiz-zira" target="_blank" class="glass rounded-xl p-3 text-center hover:bg-slate-700/40 transition-colors">
         <i data-lucide="github" class="w-5 h-5 mx-auto mb-1 text-slate-400"></i>
         <div class="text-[10px] text-slate-400">Repositorio</div>
