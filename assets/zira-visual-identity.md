@@ -49,7 +49,7 @@
 | **v1.2** | 2026-06-02 | 😎 Zira Juguetona — día soleado, gafas de sol, guiño, mariposas | `zira/zira-playful.svg` |
 | **v1.3** | 2026-06-02 | 🧘 Zira Zen — luna llena, ojos cerrados, meditación, loto | `zira/zira-zen.svg` |
 | **v1.4** | 2026-06-02 | 🕹️ Zira Retro — estilo 8-bit pixel art, corazón, estrella voladora | `zira/zira-retro.svg` |
-| **v1.5** | 2026-06-02 | 🎬 **ZIRA SE MUEVE** — Parpadeo, brazo saludando, respiración, estrellas titilantes, partículas flotando | `zira/zira-alive.svg` |
+| **v1.5** | 2026-06-02 | 🎬 **ZIRA SE MUEVE** — Parpadeo, brazo saludando, respiración, estrellas titilantes, partículas flotando <br>➕ **Zira Mágica** animada: estrellas titilantes, brillo pulsante, corona girando, ojos parpadean, corazón flota<br>➕ **Zira Juguetona** animada: sol pulsa, nubes se mueven, pájaros vuelan, mariposas revolotean, ojos parpadean<br>➕ **Zira Zen** animada: luna brilla, estrellas titilan, loto gira suavemente, parpadeo zen cada 10s<br>➕ **Zira Retro** animada: ojos pixel parpadean, corazón late, estrellas rebotan, parpadeo CRT | `zira/zira-alive.svg`<br>`zira/zira-magica.svg`<br>`zira/zira-playful.svg`<br>`zira/zira-zen.svg`<br>`zira/zira-retro.svg` |
 | | | *Próximas versiones — espacio para crecer* | |
 | **v2.0** | ⏳ | 🌤️ Estados climáticos (soleado, lluvia, nieve, nublado) | |
 | **v3.0** | ⏳ | 🎭 Expresiones según estado del CRM | |

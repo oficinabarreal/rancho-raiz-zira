@@ -1,5 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
   <defs>
+    <style>
+      @keyframes blink { 0%,95%,100%{transform:scaleY(1)} 97%{transform:scaleY(0.05)} }
+      .eye-lid{animation:blink 4.5s ease-in-out infinite;transform-origin:200px 195px}
+      @keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.006)} }
+      .mountain-body{animation:breathe 5s ease-in-out infinite;transform-origin:200px 200px}
+      @keyframes puff { 0%,100%{opacity:0.3;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.15)} }
+      .puff{animation:puff 2.5s ease-in-out infinite}
+      .puff:nth-child(2){animation-delay:0.6s}
+      .puff:nth-child(3){animation-delay:1.2s}
+      @keyframes cloud-drift { 0%,100%{transform:translateX(0)} 50%{transform:translateX(10px)} }
+      .cloud{animation:cloud-drift 8s ease-in-out infinite}
+      .cloud:nth-child(2){animation-delay:4s;animation-duration:10s}
+      @keyframes flutter { 0%,100%{transform:translate(0,0)rotate(0deg)} 25%{transform:translate(4px,-6px)rotate(3deg)} 75%{transform:translate(-2px,-3px)rotate(-3deg)} }
+      .flutter{animation:flutter 4s ease-in-out infinite}
+      .flutter:nth-child(2){animation-delay:2s}
+      @keyframes bird-fly{0%,100%{transform:translate(0,0)} 50%{transform:translate(4px,-3px)}}
+      .bird{animation:bird-fly 3s ease-in-out infinite}
+      .bird:nth-child(2){animation-delay:1.5s}
+    </style>
     <linearGradient id="day" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#38bdf8"/>
       <stop offset="100%" stop-color="#7dd3fc"/>
@@ -14,108 +33,102 @@
     </linearGradient>
   </defs>
 
-  <!-- Cielo celeste -->
   <rect width="400" height="400" fill="url(#day)"/>
 
   <!-- Sol radiante -->
   <circle cx="330" cy="70" r="35" fill="#fbbf24"/>
   <circle cx="330" cy="70" r="30" fill="#fef3c7"/>
-  <!-- Rayos -->
-  <line x1="330" y1="25" x2="330" y2="15" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="330" y1="115" x2="330" y2="125" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="285" y1="70" x2="275" y2="70" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="375" y1="70" x2="385" y2="70" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="298" y1="38" x2="291" y2="31" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="362" y1="102" x2="369" y2="109" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="362" y1="38" x2="369" y2="31" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
-  <line x1="298" y1="102" x2="291" y2="109" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  <g class="puff">
+    <line x1="330" y1="25" x2="330" y2="15" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="330" y1="115" x2="330" y2="125" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="285" y1="70" x2="275" y2="70" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="375" y1="70" x2="385" y2="70" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g class="puff" style="animation-delay:0.6s">
+    <line x1="298" y1="38" x2="291" y2="31" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="362" y1="102" x2="369" y2="109" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="362" y1="38" x2="369" y2="31" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="298" y1="102" x2="291" y2="109" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  </g>
 
   <!-- Nubes -->
-  <ellipse cx="100" cy="110" rx="55" ry="20" fill="#fff" opacity="0.8"/>
-  <ellipse cx="80" cy="105" rx="30" ry="15" fill="#fff" opacity="0.9"/>
-  <ellipse cx="120" cy="105" rx="25" ry="12" fill="#fff" opacity="0.7"/>
-  <ellipse cx="260" cy="150" rx="40" ry="12" fill="#fff" opacity="0.5"/>
+  <g class="cloud">
+    <ellipse cx="100" cy="110" rx="55" ry="20" fill="#fff" opacity="0.8"/>
+    <ellipse cx="80" cy="105" rx="30" ry="15" fill="#fff" opacity="0.9"/>
+    <ellipse cx="120" cy="105" rx="25" ry="12" fill="#fff" opacity="0.7"/>
+  </g>
+  <g class="cloud" style="animation-delay:4s">
+    <ellipse cx="260" cy="150" rx="40" ry="12" fill="#fff" opacity="0.5"/>
+  </g>
 
   <!-- Pájaros -->
-  <path d="M 50,70 Q 55,65 60,70" fill="none" stroke="#475569" stroke-width="1.5"/>
-  <path d="M 60,70 Q 65,65 70,70" fill="none" stroke="#475569" stroke-width="1.5"/>
-  <path d="M 80,55 Q 84,51 88,55" fill="none" stroke="#475569" stroke-width="1.5"/>
-  <path d="M 88,55 Q 92,51 96,55" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <g class="bird">
+    <path d="M 50,70 Q 55,65 60,70" fill="none" stroke="#475569" stroke-width="1.5"/>
+    <path d="M 60,70 Q 65,65 70,70" fill="none" stroke="#475569" stroke-width="1.5"/>
+  </g>
+  <g class="bird" style="animation-delay:1.5s">
+    <path d="M 80,55 Q 84,51 88,55" fill="none" stroke="#475569" stroke-width="1.5"/>
+    <path d="M 88,55 Q 92,51 96,55" fill="none" stroke="#475569" stroke-width="1.5"/>
+  </g>
 
-  <!-- Montaña tierra -->
-  <polygon points="200,90 340,340 60,340" fill="url(#mountain)"/>
+  <g class="mountain-body">
+    <polygon points="200,90 340,340 60,340" fill="url(#mountain)"/>
+    <path d="M 120,200 Q 130,190 140,200" fill="none" stroke="#78350f" stroke-width="1.5" opacity="0.3"/>
+    <path d="M 260,220 Q 270,210 280,220" fill="none" stroke="#78350f" stroke-width="1.5" opacity="0.3"/>
+    <path d="M 170,150 Q 175,145 180,150" fill="none" stroke="#78350f" stroke-width="1" opacity="0.2"/>
+    <path d="M 220,160 Q 225,155 230,160" fill="none" stroke="#78350f" stroke-width="1" opacity="0.2"/>
+    <path d="M 175,115 Q 200,90 225,115 Q 240,105 235,140 Q 220,145 200,140 Q 180,145 165,138 Q 160,105 175,115 Z" fill="url(#snow)" opacity="0.95"/>
+    <circle cx="195" cy="110" r="2" fill="#fff" opacity="0.7"/>
+    <circle cx="210" cy="115" r="1.5" fill="#fff" opacity="0.5"/>
+    <circle cx="185" cy="120" r="1" fill="#fff" opacity="0.4"/>
+  </g>
 
-  <!-- Detalle de tierra/rocas -->
-  <path d="M 120,200 Q 130,190 140,200" fill="none" stroke="#78350f" stroke-width="1.5" opacity="0.3"/>
-  <path d="M 260,220 Q 270,210 280,220" fill="none" stroke="#78350f" stroke-width="1.5" opacity="0.3"/>
-  <path d="M 170,150 Q 175,145 180,150" fill="none" stroke="#78350f" stroke-width="1" opacity="0.2"/>
-  <path d="M 220,160 Q 225,155 230,160" fill="none" stroke="#78350f" stroke-width="1" opacity="0.2"/>
+  <g class="eye-lid">
+    <ellipse cx="160" cy="195" rx="13" ry="15" fill="#292524"/>
+    <ellipse cx="160" cy="195" rx="9" ry="11" fill="#fff"/>
+    <circle cx="158" cy="193" r="4" fill="#292524"/>
+    <circle cx="156" cy="191" r="1.5" fill="#fff"/>
+    <path d="M 147,195 Q 160,210 173,195" fill="#292524" opacity="0.3"/>
+    <ellipse cx="240" cy="195" rx="13" ry="15" fill="#292524"/>
+    <ellipse cx="240" cy="195" rx="9" ry="11" fill="#fff"/>
+    <circle cx="238" cy="193" r="4" fill="#292524"/>
+    <circle cx="236" cy="191" r="1.5" fill="#fff"/>
+    <path d="M 227,175 Q 240,168 253,175" fill="none" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
 
-  <!-- Glaciar -->
-  <path d="M 175,115 Q 200,90 225,115 Q 240,105 235,140 
-           Q 220,145 200,140 Q 180,145 165,138 
-           Q 160,105 175,115 Z" fill="url(#snow)" opacity="0.95"/>
-  <!-- Brillitos en glaciar -->
-  <circle cx="195" cy="110" r="2" fill="#fff" opacity="0.7"/>
-  <circle cx="210" cy="115" r="1.5" fill="#fff" opacity="0.5"/>
-  <circle cx="185" cy="120" r="1" fill="#fff" opacity="0.4"/>
-
-  <!-- OJO DERECHO - guiño 😉 -->
-  <ellipse cx="160" cy="195" rx="13" ry="15" fill="#292524"/>
-  <ellipse cx="160" cy="195" rx="9" ry="11" fill="#fff"/>
-  <circle cx="158" cy="193" r="4" fill="#292524"/>
-  <circle cx="156" cy="191" r="1.5" fill="#fff"/>
-  <!-- Párpado guiño -->
-  <path d="M 147,195 Q 160,210 173,195" fill="#292524" opacity="0.3"/>
-
-  <!-- OJO IZQUIERDO - bien abierto -->
-  <ellipse cx="240" cy="195" rx="13" ry="15" fill="#292524"/>
-  <ellipse cx="240" cy="195" rx="9" ry="11" fill="#fff"/>
-  <circle cx="238" cy="193" r="4" fill="#292524"/>
-  <circle cx="236" cy="191" r="1.5" fill="#fff"/>
-  <!-- Ceja levantada -->
-  <path d="M 227,175 Q 240,168 253,175" fill="none" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
-
-  <!-- Mejillas sonrosadas -->
   <ellipse cx="135" cy="228" rx="10" ry="6" fill="#ef4444" opacity="0.15"/>
   <ellipse cx="265" cy="228" rx="10" ry="6" fill="#ef4444" opacity="0.15"/>
-
-  <!-- Sonrisa pícara -->
   <path d="M 183,235 Q 200,255 217,235" fill="none" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
 
-  <!-- GAFAS DE SOL 🕶️ -->
-  <!-- Puente -->
+  <!-- Gafas de sol -->
   <path d="M 183,188 Q 200,182 217,188" fill="none" stroke="#1c1917" stroke-width="3"/>
-  <!-- Lente derecho -->
   <rect x="143" y="180" width="32" height="24" rx="8" fill="#1c1917" opacity="0.85"/>
   <rect x="146" y="183" width="26" height="18" rx="6" fill="#292524" opacity="0.9"/>
-  <!-- Lente izquierdo -->
   <rect x="225" y="180" width="32" height="24" rx="8" fill="#1c1917" opacity="0.85"/>
   <rect x="228" y="183" width="26" height="18" rx="6" fill="#292524" opacity="0.9"/>
-  <!-- Patillas -->
   <line x1="143" y1="192" x2="130" y2="195" stroke="#1c1917" stroke-width="2.5"/>
   <line x1="257" y1="192" x2="270" y2="195" stroke="#1c1917" stroke-width="2.5"/>
-  <!-- Brillo en lentes -->
   <path d="M 152,186 Q 155,183 158,186" fill="none" stroke="#fef3c7" stroke-width="1" opacity="0.3"/>
   <path d="M 234,186 Q 237,183 240,186" fill="none" stroke="#fef3c7" stroke-width="1" opacity="0.3"/>
 
-  <!-- Brazos relajados -->
-  <!-- Izquierdo -->
+  <!-- Brazos -->
   <line x1="80" y1="255" x2="50" y2="270" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
   <line x1="50" y1="270" x2="60" y2="285" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
-  <!-- Derecho -->
   <line x1="320" y1="255" x2="350" y2="270" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
   <line x1="350" y1="270" x2="340" y2="285" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
 
-  <!-- Mariposa -->
-  <g transform="translate(110, 160) scale(0.6)">
+  <!-- Mariposas -->
+  <g class="flutter" transform="translate(110, 160) scale(0.6)">
     <path d="M 0,0 Q -8,-8 -5,-15 Q 0,-10 0,0 Q 0,-10 5,-15 Q 8,-8 0,0" fill="#fbbf24" opacity="0.6"/>
     <path d="M 0,0 Q -6,6 -4,12 Q 0,8 0,0 Q 0,8 4,12 Q 6,6 0,0" fill="#fbbf24" opacity="0.4"/>
+  </g>
+  <g class="flutter" style="animation-delay:2s" transform="translate(290, 180) scale(0.5)">
+    <path d="M 0,0 Q -8,-8 -5,-15 Q 0,-10 0,0 Q 0,-10 5,-15 Q 8,-8 0,0" fill="#f87171" opacity="0.6"/>
+    <path d="M 0,0 Q -6,6 -4,12 Q 0,8 0,0 Q 0,8 4,12 Q 6,6 0,0" fill="#f87171" opacity="0.4"/>
   </g>
 
   <!-- Pasto/base -->
   <path d="M 30,340 Q 100,330 200,340 Q 300,330 370,340 L 370,350 Q 300,345 200,350 Q 100,345 30,350 Z" fill="#4ade80" opacity="0.2"/>
-  <!-- Florcitas -->
   <circle cx="100" cy="335" r="3" fill="#fbbf24" opacity="0.5"/>
   <circle cx="300" cy="338" r="2.5" fill="#f87171" opacity="0.4"/>
   <circle cx="180" cy="342" r="2" fill="#fbbf24" opacity="0.3"/>

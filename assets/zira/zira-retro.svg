@@ -5,16 +5,32 @@
       <stop offset="60%" stop-color="#1a0040"/>
       <stop offset="100%" stop-color="#0a0020"/>
     </linearGradient>
+    <style>
+      @keyframes pixel-blink { 0%,85%,100%{opacity:1} 87%{opacity:0.2} 90%{opacity:1} }
+      .pixel-blink{animation:pixel-blink 3s step-end infinite}
+      @keyframes heart-beat { 0%,100%{transform:scale(1)} 15%{transform:scale(1.2)} 30%{transform:scale(1)} 45%{transform:scale(1.1)} 60%{transform:scale(1)} }
+      .heart-beat{animation:heart-beat 1.5s steps(2) infinite;transform-origin:108px 296px}
+      @keyframes pixel-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+      .pixel-bounce{animation:pixel-bounce 0.8s step-end infinite}
+      .pixel-bounce:nth-child(2){animation-delay:0.4s}
+      @keyframes pixel-float{0%,100%{transform:translate(0,0);opacity:0.3} 50%{transform:translate(0,-6px);opacity:0.5}}
+      .pixel-float{animation:pixel-float 2s step-end infinite}
+      @keyframes scanline { 0%{transform:translateY(0)} 100%{transform:translateY(4px)} }
+      .scanline{animation:scanline 4s linear infinite}
+      .pixel-star{animation:star-rotate 2s step-end infinite}
+      @keyframes star-rotate{0%,100%{opacity:0.6} 50%{opacity:1} }
+      .mtn-flicker{animation:mtn-flicker 3s step-end infinite}
+      @keyframes mtn-flicker{0%,100%{opacity:1} 3%{opacity:0.97} 6%{opacity:1} }
+      .cr{animation:cr 4s step-end infinite}
+      @keyframes cr{0%,100%{opacity:0.03} 50%{opacity:0.06} }
+    </style>
   </defs>
-  <style>
-    .pixel { stroke-linejoin: round; }
-  </style>
 
   <!-- Fondo -->
   <rect width="400" height="400" fill="url(#retro-sky)"/>
 
-  <!-- Cuadrícula retro sutil -->
-  <g opacity="0.03" stroke="#fff" stroke-width="0.5">
+  <!-- Cuadrícula animada -->
+  <g class="cr" stroke="#fff" stroke-width="0.5" fill="none">
     <line x1="0" y1="40" x2="400" y2="40"/><line x1="0" y1="80" x2="400" y2="80"/>
     <line x1="0" y1="120" x2="400" y2="120"/><line x1="0" y1="160" x2="400" y2="160"/>
     <line x1="0" y1="200" x2="400" y2="200"/><line x1="0" y1="240" x2="400" y2="240"/>
@@ -26,101 +42,96 @@
     <line x1="360" y1="0" x2="360" y2="400"/>
   </g>
 
-  <!-- Estrella pixelada -->
-  <g fill="#fff" opacity="0.8">
-    <rect x="58" y="58" width="4" height="4"/>
-    <rect x="78" y="58" width="4" height="4"/>
-    <rect x="68" y="48" width="4" height="4"/>
-    <rect x="68" y="68" width="4" height="4"/>
+  <!-- Estrella pixelada titilante -->
+  <g class="pixel-blink">
+    <rect x="58" y="58" width="4" height="4" fill="#fff" opacity="0.8"/>
+    <rect x="78" y="58" width="4" height="4" fill="#fff" opacity="0.8"/>
+    <rect x="68" y="48" width="4" height="4" fill="#fff" opacity="0.8"/>
+    <rect x="68" y="68" width="4" height="4" fill="#fff" opacity="0.8"/>
   </g>
-  <g fill="#fff" opacity="0.5">
-    <rect x="298" y="88" width="4" height="4"/>
-    <rect x="298" y="108" width="4" height="4"/>
-    <rect x="288" y="98" width="4" height="4"/>
-    <rect x="308" y="98" width="4" height="4"/>
+  <g class="pixel-blink" style="animation-delay:1s">
+    <rect x="298" y="88" width="4" height="4" fill="#fff" opacity="0.5"/>
+    <rect x="298" y="108" width="4" height="4" fill="#fff" opacity="0.5"/>
+    <rect x="288" y="98" width="4" height="4" fill="#fff" opacity="0.5"/>
+    <rect x="308" y="98" width="4" height="4" fill="#fff" opacity="0.5"/>
   </g>
-  <g fill="#fef3c7" opacity="0.6">
-    <rect x="148" y="28" width="4" height="4"/>
-    <rect x="148" y="48" width="4" height="4"/>
-    <rect x="138" y="38" width="4" height="4"/>
-    <rect x="158" y="38" width="4" height="4"/>
+  <g class="pixel-blink" style="animation-delay:0.5s">
+    <rect x="148" y="28" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
+    <rect x="148" y="48" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
+    <rect x="138" y="38" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
+    <rect x="158" y="38" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
   </g>
 
-  <!-- LUNA pixelada (gran pixel art) -->
+  <!-- Luna -->
   <circle cx="310" cy="70" r="24" fill="#fef3c7" opacity="0.9"/>
   <circle cx="316" cy="66" r="22" fill="#0a0020" opacity="0.15"/>
 
-  <!-- MONTAÑA pixelada (estilo beat'em up) -->
-  <!-- Base montaña -->
-  <rect x="144" y="148" width="112" height="16" fill="#334155"/>
-  <rect x="132" y="164" width="136" height="16" fill="#334155"/>
-  <rect x="120" y="180" width="160" height="20" fill="#2d3748"/>
-  <rect x="108" y="200" width="184" height="20" fill="#2d3748"/>
-  <rect x="92" y="220" width="216" height="24" fill="#1e293b"/>
-  <rect x="72" y="244" width="256" height="28" fill="#1e293b"/>
-  <rect x="52" y="272" width="296" height="32" fill="#0f172a"/>
-  <rect x="32" y="304" width="336" height="36" fill="#0f172a"/>
-  <rect x="12" y="340" width="376" height="40" fill="#09090b"/>
+  <!-- Montaña -->
+  <g class="mtn-flicker">
+    <rect x="144" y="148" width="112" height="16" fill="#334155"/>
+    <rect x="132" y="164" width="136" height="16" fill="#334155"/>
+    <rect x="120" y="180" width="160" height="20" fill="#2d3748"/>
+    <rect x="108" y="200" width="184" height="20" fill="#2d3748"/>
+    <rect x="92" y="220" width="216" height="24" fill="#1e293b"/>
+    <rect x="72" y="244" width="256" height="28" fill="#1e293b"/>
+    <rect x="52" y="272" width="296" height="32" fill="#0f172a"/>
+    <rect x="32" y="304" width="336" height="36" fill="#0f172a"/>
+    <rect x="12" y="340" width="376" height="40" fill="#09090b"/>
+  </g>
 
-  <!-- Escalones de nieve/glaciar -->
   <rect x="164" y="132" width="72" height="16" fill="#e2e8f0"/>
   <rect x="156" y="116" width="88" height="16" fill="#f8fafc"/>
   <rect x="172" y="100" width="56" height="16" fill="#fff"/>
   <rect x="184" y="84" width="32" height="16" fill="#fff"/>
-
-  <!-- Detalles de nieve pixel -->
   <rect x="176" y="106" width="4" height="4" fill="#94a3b8" opacity="0.5"/>
   <rect x="196" y="106" width="4" height="4" fill="#94a3b8" opacity="0.5"/>
   <rect x="188" y="122" width="4" height="4" fill="#94a3b8" opacity="0.4"/>
 
-  <!-- OJOS pixelados -->
-  <!-- Ojo derecho -->
-  <rect x="156" y="196" width="20" height="20" fill="#1e293b"/>
-  <rect x="160" y="200" width="12" height="12" fill="#fff"/>
-  <rect x="164" y="204" width="4" height="4" fill="#1e293b"/>
-  <!-- Ojo izquierdo -->
-  <rect x="224" y="196" width="20" height="20" fill="#1e293b"/>
-  <rect x="228" y="200" width="12" height="12" fill="#fff"/>
-  <rect x="232" y="204" width="4" height="4" fill="#1e293b"/>
+  <!-- Ojos pixel - blink animado -->
+  <g class="pixel-blink" style="animation-duration:4s">
+    <rect x="156" y="196" width="20" height="20" fill="#1e293b"/>
+    <rect x="160" y="200" width="12" height="12" fill="#fff"/>
+    <rect x="164" y="204" width="4" height="4" fill="#1e293b"/>
+    <rect x="224" y="196" width="20" height="20" fill="#1e293b"/>
+    <rect x="228" y="200" width="12" height="12" fill="#fff"/>
+    <rect x="232" y="204" width="4" height="4" fill="#1e293b"/>
+    <rect x="158" y="198" width="4" height="4" fill="#fff" opacity="0.8"/>
+    <rect x="226" y="198" width="4" height="4" fill="#fff" opacity="0.8"/>
+  </g>
 
-  <!-- Brillo de ojo pixel -->
-  <rect x="158" y="198" width="4" height="4" fill="#fff" opacity="0.8"/>
-  <rect x="226" y="198" width="4" height="4" fill="#fff" opacity="0.8"/>
-
-  <!-- Mejillas pixel -->
   <rect x="144" y="220" width="16" height="8" fill="#ef4444" opacity="0.2"/>
   <rect x="240" y="220" width="16" height="8" fill="#ef4444" opacity="0.2"/>
 
-  <!-- Boca pixel - sonrisa (8-bit) -->
+  <!-- Boca -->
   <rect x="180" y="228" width="8" height="4" fill="#1e293b"/>
   <rect x="188" y="232" width="24" height="4" fill="#1e293b"/>
   <rect x="212" y="228" width="8" height="4" fill="#1e293b"/>
 
-  <!-- BRAZOS pixel (ramitas) -->
-  <!-- Brazo izquierdo -->
+  <!-- Brazos -->
   <rect x="76" y="248" width="32" height="8" fill="#475569"/>
   <rect x="60" y="256" width="24" height="8" fill="#475569"/>
   <rect x="48" y="264" width="16" height="8" fill="#475569"/>
-  <!-- Mano izquierda (puño pixel) -->
   <rect x="44" y="264" width="8" height="12" fill="#475569"/>
-
-  <!-- Brazo derecho (saludando) -->
   <rect x="292" y="248" width="32" height="8" fill="#475569"/>
   <rect x="316" y="236" width="24" height="8" fill="#475569"/>
   <rect x="332" y="224" width="16" height="8" fill="#475569"/>
-  <!-- Mano derecha (abierta pixel) -->
   <rect x="348" y="216" width="8" height="8" fill="#475569"/>
   <rect x="344" y="224" width="8" height="12" fill="#475569"/>
   <rect x="356" y="220" width="4" height="8" fill="#475569"/>
 
-  <!-- Estrella voladora pixel -->
-  <g fill="#fef3c7" opacity="0.8">
-    <rect x="148" y="80" width="4" height="4"/>
-    <rect x="140" y="88" width="4" height="4"/>
-    <rect x="144" y="84" width="4" height="4"/>
+  <!-- Estrella voladora -->
+  <g class="pixel-bounce">
+    <rect x="148" y="80" width="4" height="4" fill="#fef3c7" opacity="0.8"/>
+    <rect x="140" y="88" width="4" height="4" fill="#fef3c7" opacity="0.8"/>
+    <rect x="144" y="84" width="4" height="4" fill="#fef3c7" opacity="0.8"/>
+  </g>
+  <g class="pixel-bounce" style="animation-delay:0.4s">
+    <rect x="258" y="170" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
+    <rect x="250" y="178" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
+    <rect x="254" y="174" width="4" height="4" fill="#fef3c7" opacity="0.6"/>
   </g>
 
-  <!-- Nube pixel -->
+  <!-- Nube -->
   <g fill="#fff" opacity="0.1">
     <rect x="60" y="116" width="40" height="12"/>
     <rect x="50" y="120" width="60" height="8"/>
@@ -128,16 +139,15 @@
     <rect x="110" y="120" width="10" height="8"/>
   </g>
 
-  <!-- Heart pixel -->
-  <g fill="#f472b6" opacity="0.3">
-    <rect x="104" y="296" width="8" height="8"/>
-    <rect x="112" y="304" width="8" height="8"/>
-    <rect x="96" y="304" width="8" height="8"/>
-    <rect x="120" y="296" width="8" height="8"/>
-    <rect x="128" y="288" width="8" height="8"/>
-    <rect x="88" y="288" width="8" height="8"/>
+  <!-- Corazón pixel latiendo -->
+  <g class="heart-beat">
+    <rect x="104" y="296" width="8" height="8" fill="#f472b6" opacity="0.3"/>
+    <rect x="112" y="304" width="8" height="8" fill="#f472b6" opacity="0.3"/>
+    <rect x="96" y="304" width="8" height="8" fill="#f472b6" opacity="0.3"/>
+    <rect x="120" y="296" width="8" height="8" fill="#f472b6" opacity="0.3"/>
+    <rect x="128" y="288" width="8" height="8" fill="#f472b6" opacity="0.3"/>
+    <rect x="88" y="288" width="8" height="8" fill="#f472b6" opacity="0.3"/>
   </g>
 
-  <!-- Letrero abajo -->
   <text x="200" y="380" text-anchor="middle" font-family="monospace" font-size="16" fill="#64748b" opacity="0.5">ZIRA 8-BIT</text>
 </svg>
