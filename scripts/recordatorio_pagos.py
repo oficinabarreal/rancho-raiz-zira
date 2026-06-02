@@ -198,16 +198,20 @@ def main():
             tg_token = os.environ.get("CRM_TG_TOKEN")
             tg_chat = os.environ.get("CRM_TG_CHAT_ID")
             if tg_token and tg_chat:
-                import urllib.request
+                import urllib.request, urllib.parse
                 resumen = "🔔 *Revista de pagos Zira*\n\n"
                 if starlink:
                     resumen += f"🚨 Starlink: {len(starlink)} comunicación(es)\n"
                 for f in prox:
                     emoji = "🟢" if f["dias"] > 7 else "🟡" if f["dias"] > 3 else "🔴"
                     resumen += f"{emoji} {f['nombre']}: vence en {f['dias']} días\n"
-                msg = resumen.replace(" ", "%20").replace("\n", "%0A")
+                params = urllib.parse.urlencode({
+                    "chat_id": tg_chat,
+                    "text": resumen,
+                    "parse_mode": "Markdown"
+                })
                 urllib.request.urlopen(
-                    f"https://api.telegram.org/bot{tg_token}/sendMessage?chat_id={tg_chat}&text={msg}&parse_mode=Markdown"
+                    f"https://api.telegram.org/bot{tg_token}/sendMessage?{params}"
                 )
                 print("  ✅ Telegram notificado")
         except Exception as e:
