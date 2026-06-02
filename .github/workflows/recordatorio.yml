@@ -1,0 +1,35 @@
+name: Recordatorio Pagos Diario
+
+on:
+  schedule:
+    # 10:00 AM ART (UTC-3) = 13:00 UTC
+    - cron: '0 13 * * *'
+  workflow_dispatch:  # permitir ejecución manual
+
+env:
+  CRM_TG_TOKEN: ${{ secrets.CRM_TG_TOKEN }}
+  CRM_TG_CHAT_ID: ${{ secrets.CRM_TG_CHAT_ID }}
+
+jobs:
+  recordatorio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet google-auth google-auth-oauthlib google-api-python-client
+
+      - name: Restore Google token from secret
+        run: |
+          mkdir -p crm_state
+          echo '${{ secrets.GOOGLE_TOKEN_JSON }}' > crm_state/.google_token.json
+
+      - name: Run recordatorio
+        run: python3 scripts/recordatorio_pagos.py
