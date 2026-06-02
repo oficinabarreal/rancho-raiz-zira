@@ -193,15 +193,15 @@ def main():
     print(f"\n✅ Revista enviada a {len(RECIPIENTS)} destinatarios")
 
     # También notificar por Telegram si hay algo urgente
-    if starlink_msgs or any(f["dias"] <= 5 for f in prox):
+    if starlink or any(f["dias"] <= 5 for f in prox):
         try:
             tg_token = os.environ.get("CRM_TG_TOKEN")
             tg_chat = os.environ.get("CRM_TG_CHAT_ID")
             if tg_token and tg_chat:
                 import urllib.request
                 resumen = "🔔 *Revista de pagos Zira*\n\n"
-                if starlink_msgs:
-                    resumen += f"🚨 Starlink: {len(starlink_msgs)} comunicación(es)\n"
+                if starlink:
+                    resumen += f"🚨 Starlink: {len(starlink)} comunicación(es)\n"
                 for f in prox:
                     emoji = "🟢" if f["dias"] > 7 else "🟡" if f["dias"] > 3 else "🔴"
                     resumen += f"{emoji} {f['nombre']}: vence en {f['dias']} días\n"
