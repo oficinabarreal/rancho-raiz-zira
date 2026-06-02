@@ -34,6 +34,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+          # assets/zira/ queda incluido automáticamente
 
   deploy:
     needs: build
