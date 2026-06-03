@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Rancho;Nicolas;Gimenez;;
+FN:Nicolas Gimenez Rancho
+item1.TEL;waid=5492644181679:+54 9 264 418-1679
+item1.X-ABLabel:Celular
+X-WA-BIZ-DESCRIPTION:Empresa de transporte
+X-WA-BIZ-NAME:Nicolas Gimenez Rancho
+END:VCARD

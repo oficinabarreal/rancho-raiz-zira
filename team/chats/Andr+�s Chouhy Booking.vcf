@@ -1,0 +1,7 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Booking;Andrés;Chouhy;;
+FN:Andrés Chouhy Booking
+item1.TEL;waid=5491168523868:+54 9 11 6852-3868
+item1.X-ABLabel:Celular
+END:VCARD
