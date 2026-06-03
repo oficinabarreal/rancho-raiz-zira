@@ -71,7 +71,8 @@ Además de música, conviene tener sonidos ambiente reales para:
 4. 🐦 **Pájaros de montaña** — amanecer en los Andes
 5. 🌬️ **Viento en los árboles** — brisa suave
 6. 🏞️ **Arroyo/río** — agua entre piedras
-7. 🎻 **Música folclórica cuyana ** — opcional, para videos de identidad local
+| 7. 🎻 **Música folclórica cuyana** — opcional, para videos de identidad local
+| 8. ☔ **Lluvia** — tormenta suave, lluvia en el techo, gotas en pileta
 
 ### Script de descarga sugerido
 
