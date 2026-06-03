@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="cuerpo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="glaciar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <style>
+      @keyframes blink-s { 0%,94%,100%{transform:scaleY(1)} 96%{transform:scaleY(0.05)} }
+      @keyframes wave-s { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(15deg)} }
+      .eye-lid{animation:blink-s 3.5s ease-in-out infinite;transform-origin:50% 55%}
+    </style>
+  </defs>
+  
+  <!-- Cuerpo montaña -->
+  <polygon points="100,10 180,170 20,170" fill="url(#cuerpo)"/>
+  
+  <!-- Glaciar/cabello -->
+  <polygon points="100,10 140,80 120,70 130,90 100,50 70,90 80,70 60,80" fill="url(#glaciar)" opacity="0.9"/>
+  
+  <!-- Nieve cima -->
+  <polygon points="100,10 115,40 110,35 105,45 100,25 95,45 90,35 85,40" fill="#f8fafc"/>
+  
+  <!-- Ojos -->
+  <g class="eye-lid">
+    <ellipse cx="82" cy="95" rx="8" ry="9" fill="#0f172a"/>
+    <ellipse cx="118" cy="95" rx="8" ry="9" fill="#0f172a"/>
+    <ellipse cx="84" cy="93" rx="4" ry="5" fill="#f8fafc"/>
+    <ellipse cx="120" cy="93" rx="4" ry="5" fill="#f8fafc"/>
+  </g>
+  
+  <!-- Mejillas -->
+  <ellipse cx="72" cy="108" rx="8" ry="5" fill="#f472b6" opacity="0.3"/>
+  <ellipse cx="128" cy="108" rx="8" ry="5" fill="#f472b6" opacity="0.3"/>
+  
+  <!-- Sonrisa -->
+  <path d="M88,115 Q100,128 112,115" fill="none" stroke="#f8fafc" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Brazos -->
+  <g>
+    <line x1="20" y1="130" x2="8" y2="155" stroke="#475569" stroke-width="5" stroke-linecap="round">
+      <animate attributeName="x2" values="8;0;8" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="155;145;155" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="180" y1="130" x2="192" y2="155" stroke="#475569" stroke-width="5" stroke-linecap="round">
+      <animate attributeName="x2" values="192;200;192" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="155;145;155" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Manitas -->
+  <circle cx="8" cy="155" r="4" fill="#94a3b8">
+    <animate attributeName="cx" values="8;0;8" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="155;145;155" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="192" cy="155" r="4" fill="#94a3b8">
+    <animate attributeName="cx" values="192;200;192" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="155;145;155" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

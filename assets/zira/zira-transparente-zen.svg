@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      @keyframes blink-z { 0%,97%,100%{transform:scaleY(1)} 99%{transform:scaleY(0.05)} }
+      .eye-z{animation:blink-z 8s ease-in-out infinite;transform-origin:200px 195px}
+      @keyframes breathe-z { 0%,100%{transform:scale(1)} 50%{transform:scale(1.005)} }
+      .body-z{animation:breathe-z 6s ease-in-out infinite;transform-origin:200px 200px}
+      @keyframes glow { 0%,100%{opacity:0.6;filter:drop-shadow(0 0 4px #fef3c7)} 50%{opacity:1;filter:drop-shadow(0 0 12px #fef3c7)} }
+      .moon-z{animation:glow 4s ease-in-out infinite}
+      @keyframes twinkle-z { 0%,100%{opacity:0.3;transform:scale(1)} 50%{opacity:0.9;transform:scale(1.4)} }
+      .star-z{animation:twinkle-z 3s ease-in-out infinite}
+      .star-z:nth-child(2){animation-delay:0.8s}
+      .star-z:nth-child(3){animation-delay:1.6s}
+      .star-z:nth-child(4){animation-delay:2.4s}
+      .star-z:nth-child(5){animation-delay:1.2s}
+      @keyframes float-up { 0%,100%{transform:translateY(0);opacity:0.2} 50%{transform:translateY(-8px);opacity:0.5} }
+      .float-z{animation:float-up 5s ease-in-out infinite}
+    </style>
+    <linearGradient id="cuerpo-z" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="glaciar-z" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="luna-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="glow-z">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- LUNA MEDIA (creciente) -->
+  <g class="moon-z">
+    <circle cx="310" cy="70" r="25" fill="url(#luna-g)" filter="url(#glow-z)"/>
+    <circle cx="318" cy="64" r="25" fill="#0f172a" opacity="0.3"/>
+  </g>
+
+  <!-- ESTRELLAS titilando -->
+  <g filter="url(#glow-z)">
+    <circle cx="80" cy="55" r="2" fill="#f8fafc" class="star-z"/>
+    <circle cx="160" cy="40" r="1.5" fill="#f8fafc" class="star-z"/>
+    <circle cx="240" cy="60" r="2.5" fill="#f8fafc" class="star-z"/>
+    <circle cx="140" cy="120" r="1.5" fill="#f8fafc" class="star-z"/>
+    <circle cx="50" cy="110" r="1.5" fill="#f8fafc" class="star-z"/>
+    <circle cx="350" cy="130" r="1" fill="#f8fafc" class="star-z" style="animation-delay:0.5s"/>
+    <circle cx="270" cy="35" r="1" fill="#f8fafc" class="star-z" style="animation-delay:1.8s"/>
+  </g>
+
+  <g class="body-z">
+    <!-- MONTAÑA CUERPO (nocturna) -->
+    <polygon points="200,100 350,340 50,340" fill="url(#cuerpo-z)"/>
+    <path d="M 178,125 Q 200,100 222,125 Q 240,115 235,150 Q 220,155 200,150 Q 180,155 165,148 Q 160,115 178,125 Z" fill="url(#glaciar-z)" opacity="0.8"/>
+
+    <!-- OJOS CERRADOS (meditación/zen) -->
+    <g class="eye-z">
+      <path d="M 148,195 Q 160,188 172,195" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 228,195 Q 240,188 252,195" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- CEJAS suaves -->
+    <path d="M 145,178 Q 160,172 175,178" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 225,178 Q 240,172 255,178" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- MEJILLAS -->
+    <ellipse cx="140" cy="222" rx="8" ry="5" fill="#64748b" opacity="0.15"/>
+    <ellipse cx="260" cy="222" rx="8" ry="5" fill="#64748b" opacity="0.15"/>
+
+    <!-- BOCA sonrisa zen -->
+    <path d="M 193,235 Q 200,242 207,235" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- BRAZOS meditación (en postura de loto) -->
+    <path d="M 80,260 Q 140,300 180,290" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 320,260 Q 260,300 220,290" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="200" cy="295" r="8" fill="#1e293b"/>
+  </g>
+
+  <!-- FLOR DE LOTO -->
+  <g style="transform:translate(85px,170px)scale(0.6)">
+    <path d="M 0,10 Q -8,-5 0,-12 Q 8,-5 0,10 Z" fill="#e9d5ff" opacity="0.5"/>
+    <path d="M -2,8 Q -12,0 -5,-8 Q -2,-3 -1,5 Z" fill="#d8b4fe" opacity="0.4"/>
+    <path d="M 2,8 Q 12,0 5,-8 Q 2,-3 1,5 Z" fill="#d8b4fe" opacity="0.4"/>
+  </g>
+
+  <!-- PARTÍCULAS flotando -->
+  <circle cx="130" cy="275" r="1.5" fill="#fef3c7" filter="url(#glow-z)" class="float-z"/>
+  <circle cx="270" cy="285" r="1.5" fill="#fef3c7" filter="url(#glow-z)" class="float-z" style="animation-delay:1.5s"/>
+  <circle cx="160" cy="315" r="1" fill="#fef3c7" filter="url(#glow-z)" class="float-z" style="animation-delay:3s"/>
+  <circle cx="240" cy="320" r="1" fill="#fef3c7" filter="url(#glow-z)" class="float-z" style="animation-delay:2s"/>
+</svg>

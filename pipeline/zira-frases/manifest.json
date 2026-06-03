@@ -1,0 +1,192 @@
+[
+  {
+    "id": "montanas-no-se-mueven",
+    "frase": "Las montañas no se mueven, pero el viento cambia. Todo fluye.",
+    "emoji": "🏔️",
+    "estilo": "zen",
+    "archivo": "zira-frase-montanas-no-se-mueven.svg",
+    "tags": [
+      "filosofia",
+      "zira",
+      "montaña",
+      "reflexion"
+    ]
+  },
+  {
+    "id": "raices-profundas",
+    "frase": "Ramas al cielo, raíces profundas. Eso es Rancho Raíz.",
+    "emoji": "🌳",
+    "estilo": "clasica",
+    "archivo": "zira-frase-raices-profundas.svg",
+    "tags": [
+      "rancho",
+      "raices",
+      "naturaleza"
+    ]
+  },
+  {
+    "id": "cada-atardecer",
+    "frase": "Cada atardecer es una promesa de un nuevo amanecer.",
+    "emoji": "🌅",
+    "estilo": "magica",
+    "archivo": "zira-frase-cada-atardecer.svg",
+    "tags": [
+      "atardecer",
+      "andes",
+      "esperanza"
+    ]
+  },
+  {
+    "id": "silencio-andes",
+    "frase": "En el silencio de los Andes encuentro mi centro.",
+    "emoji": "🧘",
+    "estilo": "zen",
+    "archivo": "zira-frase-silencio-andes.svg",
+    "tags": [
+      "silencio",
+      "andes",
+      "paz",
+      "meditacion"
+    ]
+  },
+  {
+    "id": "corazon-piedra",
+    "frase": "Corazón de piedra, alma de glaciar, latido de montaña.",
+    "emoji": "💎",
+    "estilo": "clasica",
+    "archivo": "zira-frase-corazon-piedra.svg",
+    "tags": [
+      "zira",
+      "montaña",
+      "esencia"
+    ]
+  },
+  {
+    "id": "viento-peino",
+    "frase": "Las montañas me criaron, el viento me peinó, la nieve me coronó.",
+    "emoji": "🏔️",
+    "estilo": "viva",
+    "archivo": "zira-frase-viento-peino.svg",
+    "tags": [
+      "zira",
+      "naturaleza",
+      "identidad"
+    ]
+  },
+  {
+    "id": "fogata-estrellas",
+    "frase": "Fogata, estrellas y montaña. La combinación perfecta.",
+    "emoji": "🔥",
+    "estilo": "magica",
+    "archivo": "zira-frase-fogata-estrellas.svg",
+    "tags": [
+      "fogata",
+      "noche",
+      "andes",
+      "magia"
+    ]
+  },
+  {
+    "id": "lluvia-beso",
+    "frase": "La lluvia es un beso del cielo a la tierra. Que empiece la magia.",
+    "emoji": "🌧️",
+    "estilo": "zen",
+    "archivo": "zira-frase-lluvia-beso.svg",
+    "tags": [
+      "lluvia",
+      "naturaleza",
+      "magia"
+    ]
+  },
+  {
+    "id": "sol-despierta",
+    "frase": "El sol me despierta, la montaña me abraza, el viento me cuenta historias.",
+    "emoji": "☀️",
+    "estilo": "viva",
+    "archivo": "zira-frase-sol-despierta.svg",
+    "tags": [
+      "sol",
+      "mañana",
+      "andes",
+      "vida"
+    ]
+  },
+  {
+    "id": "verde-que-te-quiero",
+    "frase": "Verde que te quiero verde. Los Andes me enseñaron a respirar.",
+    "emoji": "🌿",
+    "estilo": "viva",
+    "archivo": "zira-frase-verde-que-te-quiero.svg",
+    "tags": [
+      "naturaleza",
+      "verde",
+      "andes",
+      "vida"
+    ]
+  },
+  {
+    "id": "manto-estrellado",
+    "frase": "Bajo el manto estrellado de Barreal, soy guardiana del silencio.",
+    "emoji": "🌙",
+    "estilo": "zen",
+    "archivo": "zira-frase-manto-estrellado.svg",
+    "tags": [
+      "noche",
+      "estrellas",
+      "barreal",
+      "guardiana"
+    ]
+  },
+  {
+    "id": "nieve-corona",
+    "frase": "La nieve es mi corona, el glaciar mi cabello, los Andes mi hogar.",
+    "emoji": "❄️",
+    "estilo": "clasica",
+    "archivo": "zira-frase-nieve-corona.svg",
+    "tags": [
+      "nieve",
+      "glaciar",
+      "zira",
+      "montaña"
+    ]
+  },
+  {
+    "id": "camino-montaña",
+    "frase": "No hay camino fácil hasta la cima. Pero la vista lo vale todo.",
+    "emoji": "⛰️",
+    "estilo": "clasica",
+    "archivo": "zira-frase-camino-montaña.svg",
+    "tags": [
+      "esfuerzo",
+      "superacion",
+      "montaña",
+      "motivacion"
+    ]
+  },
+  {
+    "id": "abrazo-andes",
+    "frase": "Los Andes te reciben con los brazos abiertos. Solo hace falta dejarse abrazar.",
+    "emoji": "🤗",
+    "estilo": "magica",
+    "archivo": "zira-frase-abrazo-andes.svg",
+    "tags": [
+      "andes",
+      "bienvenida",
+      "posada",
+      "calidez"
+    ]
+  },
+  {
+    "id": "rio-fluye",
+    "frase": "Como el río, sigue fluyendo. Como la montaña, mantente firme.",
+    "emoji": "🏞️",
+    "estilo": "zen",
+    "archivo": "zira-frase-rio-fluye.svg",
+    "tags": [
+      "rio",
+      "fluye",
+      "fortaleza",
+      "naturaleza"
+    ]
+  }
+]

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      @keyframes blink-m { 0%,94%,100%{transform:scaleY(1)} 96%{transform:scaleY(0.05)} }
+      .eye-m{animation:blink-m 3.5s ease-in-out infinite;transform-origin:200px 195px}
+      @keyframes breathe-m { 0%,100%{transform:scale(1)} 50%{transform:scale(1.006)} }
+      .body-m{animation:breathe-m 5s ease-in-out infinite;transform-origin:200px 200px}
+      @keyframes sparkle-m { 0%,100%{opacity:0.2;transform:scale(1)rotate(0deg)} 50%{opacity:1;transform:scale(1.5)rotate(15deg)} }
+      .sparkle{animation:sparkle-m 2.5s ease-in-out infinite}
+      .sparkle:nth-child(2){animation-delay:0.5s}
+      .sparkle:nth-child(3){animation-delay:1s}
+      .sparkle:nth-child(4){animation-delay:1.5s}
+      @keyframes crown-pulse { 0%,100%{opacity:0.7;transform:scale(1)} 50%{opacity:1;transform:scale(1.1)} }
+      .crown{animation:crown-pulse 2s ease-in-out infinite;transform-origin:200px 100px}
+      @keyframes float-heart-m { 0%,100%{transform:translateY(0)rotate(0deg);opacity:0.35} 50%{transform:translateY(-12px)rotate(5deg);opacity:0.6} }
+      .heart-m{animation:float-heart-m 3.5s ease-in-out infinite}
+      .heart-m:nth-child(2){animation-delay:1.8s}
+      @keyframes wave-arm-m { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-6deg)} }
+      .arm-m{animation:wave-arm-m 3s ease-in-out infinite;transform-origin:80px 260px}
+    </style>
+    <linearGradient id="cuerpo-m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="glaciar-m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdf4ff"/>
+      <stop offset="100%" stop-color="#e9d5ff"/>
+    </linearGradient>
+    <filter id="glow-m">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- CORONA DE ESTRELLAS -->
+  <g class="crown" filter="url(#glow-m)">
+    <polygon points="180,85 183,90 188,90 184,94 186,99 180,96 175,99 177,94 173,90 178,90" fill="#fef3c7" opacity="0.9"/>
+    <polygon points="200,78 202,82 206,82 203,85 204,89 200,87 196,89 197,85 194,82 198,82" fill="#fef3c7" opacity="1"/>
+    <polygon points="220,85 222,89 226,89 223,92 224,96 220,94 216,96 217,92 214,89 218,89" fill="#fef3c7" opacity="0.9"/>
+  </g>
+
+  <!-- ESTRELLAS BRILLANDO -->
+  <g filter="url(#glow-m)">
+    <circle cx="60" cy="55" r="2" fill="#fef3c7" class="sparkle"/>
+    <circle cx="140" cy="40" r="1.5" fill="#fef3c7" class="sparkle"/>
+    <circle cx="320" cy="65" r="2.5" fill="#fef3c7" class="sparkle"/>
+    <circle cx="100" cy="120" r="1.5" fill="#fef3c7" class="sparkle"/>
+    <circle cx="340" cy="130" r="1.5" fill="#fef3c7" class="sparkle"/>
+    <circle cx="250" cy="45" r="1" fill="#fef3c7" class="sparkle" style="animation-delay:0.8s"/>
+    <circle cx="50" cy="160" r="1.5" fill="#fef3c7" class="sparkle" style="animation-delay:1.2s"/>
+  </g>
+
+  <g class="body-m">
+    <!-- MONTAÑA CUERPO (púrpura mágica) -->
+    <polygon points="200,80 340,340 60,340" fill="url(#cuerpo-m)" opacity="0.95"/>
+    <!-- AURA -->
+    <circle cx="200" cy="120" r="60" fill="#c084fc" opacity="0.12"/>
+    <path d="M 175,110 Q 200,85 225,110 Q 240,100 235,130 Q 220,135 200,132 Q 180,135 165,128 Q 160,100 175,110 Z" fill="url(#glaciar-m)" opacity="0.9"/>
+
+    <!-- OJOS grandes (mágica, asombro) -->
+    <g class="eye-m">
+      <ellipse cx="158" cy="195" rx="14" ry="16" fill="#2e1065"/>
+      <ellipse cx="158" cy="195" rx="9" ry="11" fill="#fdf4ff"/>
+      <circle cx="156" cy="193" r="5" fill="#2e1065"/>
+      <circle cx="153" cy="190" r="2" fill="#fff"/>
+      <circle cx="163" cy="190" r="1.5" fill="#c084fc" opacity="0.7"/>
+
+      <ellipse cx="242" cy="195" rx="14" ry="16" fill="#2e1065"/>
+      <ellipse cx="242" cy="195" rx="9" ry="11" fill="#fdf4ff"/>
+      <circle cx="240" cy="193" r="5" fill="#2e1065"/>
+      <circle cx="237" cy="190" r="2" fill="#fff"/>
+      <circle cx="247" cy="190" r="1.5" fill="#c084fc" opacity="0.7"/>
+    </g>
+
+    <!-- MEJILLAS -->
+    <ellipse cx="133" cy="228" rx="10" ry="7" fill="#c084fc" opacity="0.25"/>
+    <ellipse cx="267" cy="228" rx="10" ry="7" fill="#c084fc" opacity="0.25"/>
+
+    <!-- BOCA sonrisa feliz -->
+    <path d="M 185,235 Q 200,253 215,235" fill="none" stroke="#2e1065" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- BRAZO IZQUIERDO saludando -->
+    <g class="arm-m">
+      <line x1="80" y1="255" x2="55" y2="230" stroke="#7c3aed" stroke-width="5" stroke-linecap="round"/>
+      <line x1="55" y1="230" x2="45" y2="210" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <!-- BRAZO DERECHO -->
+    <line x1="320" y1="255" x2="345" y2="240" stroke="#7c3aed" stroke-width="5" stroke-linecap="round"/>
+    <line x1="345" y1="240" x2="360" y2="225" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- CORAZONES FLOTANTES -->
+  <g filter="url(#glow-m)">
+    <path d="M 140,305 C 135,300 130,303 130,308 C 130,315 140,320 140,320 C 140,320 150,315 150,308 C 150,303 145,300 140,305 Z" fill="#f9a8d4" opacity="0.5" class="heart-m"/>
+    <path d="M 260,295 C 257,291 254,293 254,297 C 254,302 260,306 260,306 C 260,306 266,302 266,297 C 266,293 263,291 260,295 Z" fill="#f9a8d4" opacity="0.4" class="heart-m"/>
+  </g>
+</svg>

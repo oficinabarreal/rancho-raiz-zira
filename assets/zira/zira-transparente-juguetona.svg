@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      @keyframes blink-j { 0%,95%,100%{transform:scaleY(1)} 97%{transform:scaleY(0.05)} }
+      .eye-lid-j{animation:blink-j 4s ease-in-out infinite;transform-origin:200px 200px}
+      @keyframes breathe-j { 0%,100%{transform:scale(1)} 50%{transform:scale(1.008)} }
+      .body-j{animation:breathe-j 5s ease-in-out infinite;transform-origin:200px 200px}
+      @keyframes bounce-drop { 0%,100%{transform:translateY(0);opacity:0.5} 50%{transform:translateY(-10px);opacity:0.8} }
+      .drop{animation:bounce-drop 2s ease-in-out infinite}
+      .drop:nth-child(2){animation-delay:0.7s}
+      .drop:nth-child(3){animation-delay:1.4s}
+      .drop:nth-child(4){animation-delay:0.3s}
+      @keyframes splash { 0%,100%{transform:scale(1);opacity:0.15} 50%{transform:scale(1.3);opacity:0.25} }
+      .splash{animation:splash 3s ease-in-out infinite}
+      @keyframes wave-arm { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(10deg)} }
+      .arm-w{animation:wave-arm 2.5s ease-in-out infinite;transform-origin:320px 260px}
+      @keyframes twinkle-glasses { 0%,100%{opacity:0.7} 50%{opacity:1} }
+      .glasses-shine{animation:twinkle-glasses 3s ease-in-out infinite}
+    </style>
+    <linearGradient id="cuerpo-j" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="glaciar-j" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="lente" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- GOTITAS DE AGUA flotando -->
+  <g class="drop">
+    <path d="M 100,80 Q 102,85 100,90 Q 98,85 100,80 Z" fill="#38bdf8" opacity="0.6"/>
+  </g>
+  <g class="drop">
+    <path d="M 310,60 Q 312,65 310,70 Q 308,65 310,60 Z" fill="#38bdf8" opacity="0.5"/>
+  </g>
+  <g class="drop">
+    <path d="M 340,200 Q 342,207 340,214 Q 338,207 340,200 Z" fill="#38bdf8" opacity="0.4"/>
+  </g>
+  <g class="drop">
+    <path d="M 70,250 Q 72,257 70,264 Q 68,257 70,250 Z" fill="#38bdf8" opacity="0.5"/>
+  </g>
+
+  <!-- SALPICADURAS (círculos) -->
+  <circle cx="85" cy="285" r="8" fill="#7dd3fc" class="splash"/>
+  <circle cx="315" cy="275" r="6" fill="#7dd3fc" class="splash" style="animation-delay:1.5s"/>
+
+  <g class="body-j">
+    <!-- MONTAÑA CUERPO -->
+    <polygon points="200,90 340,340 60,340" fill="url(#cuerpo-j)"/>
+    <!-- NIEVE/GLACIAR -->
+    <path d="M 176,115 Q 200,90 224,115 Q 240,105 235,140 Q 220,145 200,140 Q 180,145 165,138 Q 160,105 176,115 Z" fill="url(#glaciar-j)" opacity="0.9"/>
+
+    <!-- OJOS con parpadeo -->
+    <g class="eye-lid-j">
+      <ellipse cx="160" cy="195" rx="14" ry="14" fill="#1e293b"/>
+      <ellipse cx="160" cy="195" rx="9" ry="11" fill="#fff"/>
+      <circle cx="158" cy="193" r="4" fill="#1e293b"/>
+      <circle cx="156" cy="191" r="1.5" fill="#fff"/>
+
+      <ellipse cx="240" cy="195" rx="14" ry="14" fill="#1e293b"/>
+      <ellipse cx="240" cy="195" rx="9" ry="11" fill="#fff"/>
+      <circle cx="238" cy="193" r="4" fill="#1e293b"/>
+      <circle cx="236" cy="191" r="1.5" fill="#fff"/>
+    </g>
+
+    <!-- GAFAS DE SOL -->
+    <g>
+      <ellipse cx="160" cy="195" rx="20" ry="16" fill="url(#lente)" stroke="#fbbf24" stroke-width="2.5"/>
+      <ellipse cx="240" cy="195" rx="20" ry="16" fill="url(#lente)" stroke="#fbbf24" stroke-width="2.5"/>
+      <line x1="180" y1="195" x2="220" y2="195" stroke="#fbbf24" stroke-width="3"/>
+      <line x1="140" y1="195" x2="120" y2="190" stroke="#fbbf24" stroke-width="3"/>
+      <line x1="260" y1="195" x2="280" y2="190" stroke="#fbbf24" stroke-width="3"/>
+      <!-- Brillito en lente -->
+      <circle cx="155" cy="190" r="3" fill="#fff" opacity="0.6" class="glasses-shine"/>
+      <circle cx="235" cy="190" r="3" fill="#fff" opacity="0.6" class="glasses-shine" style="animation-delay:1.5s"/>
+    </g>
+
+    <!-- MEJILLAS sonrosadas -->
+    <ellipse cx="135" cy="225" rx="10" ry="7" fill="#f472b6" opacity="0.25"/>
+    <ellipse cx="265" cy="225" rx="10" ry="7" fill="#f472b6" opacity="0.25"/>
+
+    <!-- BOCA - sonrisa amplia (juguetona) -->
+    <path d="M 183,235 Q 200,255 217,235" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <!-- Lengüita -->
+    <path d="M 193,245 Q 200,255 207,245" fill="#f472b6" opacity="0.5"/>
+
+    <!-- BRAZOS -->
+    <g class="arm-w">
+      <line x1="80" y1="255" x2="55" y2="280" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="55" y1="280" x2="40" y2="270" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <line x1="320" y1="255" x2="345" y2="230" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+    <line x1="345" y1="230" x2="360" y2="215" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- FLOTADOR (aro salvavidas) en brazo izquierdo -->
+    <circle cx="55" cy="275" r="12" fill="none" stroke="#ef4444" stroke-width="4" opacity="0.6"/>
+    <circle cx="55" cy="275" r="12" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
+    <line x1="43" y1="275" x2="45" y2="275" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="65" y1="275" x2="67" y2="275" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="55" y1="263" x2="55" y2="265" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="55" y1="285" x2="55" y2="287" stroke="#fbbf24" stroke-width="3"/>
+  </g>
+</svg>
