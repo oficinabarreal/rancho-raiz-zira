@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:39:18.940Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_14_habitacion-17.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra un paisaje exterior con un cuerpo de agua tranquilo en primer plano, rodeado de altos árboles delgados y frondosos bajo un cielo azul intenso. La superficie del agua refleja los árboles y el cielo, y hay vegetación acuática y hierbas en las orillas.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "árboles altos",
+    "agua tranquila",
+    "reflejos en el agua",
+    "cielo azul despejado",
+    "vegetación ribereña",
+    "hierbas acuáticas",
+    "sombra proyectada en el agua"
+  ],
+  "momento_detectado": "mediodia",
+  "tags_sugeridos": [
+    "paisaje natural",
+    "agua",
+    "árboles",
+    "reflejo",
+    "calma"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "mediodia",
+  "clima_ideal": [
+    "soleado",
+    "despejado",
+    "cálido"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera"
+  ],
+  "momentos": [
+    "día soleado",
+    "tarde tranquila"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "water-reflection",
+    "gentle-breeze"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": true,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La escena transmite serenidad y conexión con la naturaleza, típica de entornos rurales o ecológicos en zonas montañosas como Calingasta. No se observan estructuras artificiales ni elementos de infraestructura humana visible."
+}

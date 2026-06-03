@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:37:06.503Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_05_habitacion-08.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una vista desde el interior de una estructura rústica hacia un patio exterior, enmarcada por dos postes de madera pintados de azul intenso. En el fondo se observa un asador con carne asándose sobre fuego, rodeado de muros de adobe, césped verde, árboles y montañas nevadas bajo un cielo parcialmente nublado.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "postes azules",
+    "asador con carne",
+    "fuego",
+    "muros de adobe",
+    "césped",
+    "árboles",
+    "montañas nevadas",
+    "cielo nublado",
+    "techumbre de paja",
+    "suelo de tierra"
+  ],
+  "momento_detectado": "tarde",
+  "tags_sugeridos": [
+    "rústico",
+    "asado",
+    "montañas",
+    "adobe",
+    "paisaje argentino"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "tarde",
+  "clima_ideal": [
+    "templado",
+    "soleado",
+    "con brisa suave"
+  ],
+  "estaciones": [
+    "primavera",
+    "verano",
+    "otoño"
+  ],
+  "momentos": [
+    "atardecer familiar",
+    "reunión al aire libre",
+    "disfrute del paisaje"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "breeze-flow",
+    "fire-flicker"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": true,
+    "hay_montanas": true,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": true,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La escena evoca una experiencia auténtica de vida rural en la zona de Calingasta, con énfasis en la gastronomía local (asado) y el entorno natural andino. La luz cálida sugiere que es cerca del atardecer, ideal para capturar la atmósfera acogedora del lugar."
+}

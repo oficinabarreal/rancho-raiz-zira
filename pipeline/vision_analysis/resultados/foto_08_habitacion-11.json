@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:38:01.696Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_08_habitacion-11.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una vista exterior de un área de piscina con un techo de madera rústica que proporciona sombra. Se observan muebles de madera, agua en el suelo reflejando el cielo, y al fondo se aprecian montañas y árboles bajo un cielo parcialmente nublado con el sol brillando intensamente.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "techo de madera",
+    "sillas de madera",
+    "mesa de madera",
+    "piscina azul",
+    "suelo mojado",
+    "reflejos",
+    "montañas",
+    "árboles",
+    "cielo azul",
+    "nubes",
+    "sol brillante"
+  ],
+  "momento_detectado": "mediodia",
+  "tags_sugeridos": [
+    "rural",
+    "relax",
+    "naturaleza",
+    "montaña",
+    "piscina"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "mediodia",
+  "clima_ideal": [
+    "soleado",
+    "templado",
+    "seco"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera"
+  ],
+  "momentos": [
+    "descanso",
+    "vacaciones",
+    "fines de semana"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "warm-glow",
+    "nature-breeze"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": true,
+    "hay_agua": true,
+    "hay_fuego": false,
+    "hay_montanas": true,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": true,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La foto transmite una sensación de tranquilidad y conexión con la naturaleza, ideal para promocionar un escape rural o vacacional en zona de montaña."
+}

@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:37:39.075Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_06_habitacion-09.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una escena nocturna en un espacio exterior de la posada Rancho Raiz, con una pileta rectangular iluminada por luces cálidas y un perro negro caminando cerca del borde. A la izquierda, se observa un toldo de madera con muebles rústicos y una fogata encendida que proyecta luz sobre el piso de baldosas. Al fondo, árboles altos y nubes oscuras en el cielo nocturno completan el ambiente tranquilo y acogedor.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "pileta",
+    "fogata",
+    "toldo de madera",
+    "muebles rústicos",
+    "perro negro",
+    "árboles altos",
+    "cielo nocturno",
+    "iluminación cálida",
+    "baldosas",
+    "muros bajos"
+  ],
+  "momento_detectado": "noche",
+  "tags_sugeridos": [
+    "noche",
+    "pileta",
+    "fogata",
+    "rústico",
+    "relax"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "noche",
+  "clima_ideal": [
+    "templado",
+    "seco",
+    "sin viento"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera",
+    "otoño"
+  ],
+  "momentos": [
+    "atardecer tardío",
+    "noche tranquila",
+    "reunión familiar"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "warm-glow",
+    "fire-flicker",
+    "night-breeze"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": true,
+    "hay_agua": true,
+    "hay_fuego": true,
+    "hay_montanas": false,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": true,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La escena transmite calma y confort, ideal para promocionar experiencias de descanso en entornos naturales. La presencia del perro añade un toque humano y acogedor."
+}

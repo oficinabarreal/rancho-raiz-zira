@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "nombre": "RanchoCut Templates Inteligentes",
+    "descripcion": "Sistema de selección automática de templates por contexto"
+  },
+  
+  "estrategias_seleccion": {
+    "por_contexto": {
+      "nombre": "Contexto + Clima + Momento",
+      "descripcion": "Selecciona assets basados en clima actual, momento del día y estación",
+      "pasos": [
+        "Leer contexto (clima, momento, estación)",
+        "Filtrar fotos por contexto_ideal",
+        "Filtrar animaciones por contexto_ideal",
+        "Filtrar audio por contexto_ideal",
+        "Seleccionar textos predefinidos que coincidan",
+        "Generar receta JSON"
+      ]
+    },
+    "por_foto": {
+      "nombre": "Basado en Foto",
+      "descripcion": "Extrae contexto del nombre/descripción de foto y selecciona assets relacionados",
+      "pasos": [
+        "Leer nombre/descripción de foto",
+        "Extraer tags: pileta, chimenea, noche, atardecer, etc.",
+        "Buscar animaciones con tags coincidentes",
+        "Buscar audio con tags coincidentes",
+        "Seleccionar textos apropiados al contexto",
+        "Generar receta JSON"
+      ]
+    },
+    "por_categoria": {
+      "nombre": "Por Categoría",
+      "descripcion": "Selecciona assets predefinidos por categoría temática",
+      "categorias": {
+        "verano_pileta": {
+          "fotos_recomendadas": ["pileta-01", "pileta-02"],
+          "animaciones": ["pool-dream", "particle-text"],
+          "audio": ["agua-pileta", "lofi-relax"],
+          "textos": ["por_momento.mediodia", "por_estacion.verano"]
+        },
+        "invierno_chimenea": {
+          "fotos_recomendadas": ["habitacion-15", "habitacion-17"],
+          "animaciones": ["warm-glow", "kinetic-glass"],
+          "audio": ["fuego-chimenea", "epic-cinematic"],
+          "textos": ["por_momento.noche", "por_estacion.invierno"]
+        },
+        "astroturismo": {
+          "fotos_recomendadas": ["pileta-03", "telegram-photo"],
+          "animaciones": ["particle-galaxy", "translucent-letters"],
+          "audio": ["noche-estrellada", "epic-cinematic"],
+          "textos": ["por_momento.noche", "por_clima.despejado"]
+        },
+        "marca_premium": {
+          "fotos_recomendadas": ["logo-horizontal", "logo-vertical", "logo"],
+          "animaciones": ["logo-3d", "logo-reveal", "glass-letters"],
+          "audio": ["epic-cinematic", "ambiente-montania"],
+          "textos": ["llamados_accion"]
+        },
+        "tour_virtual": {
+          "fotos_recomendadas": ["habitacion-04", "habitacion-06", "habitacion-11", "telegram-photo"],
+          "animaciones": ["brand-gallery", "transitions"],
+          "audio": ["ambiente-montania", "lofi-relax"],
+          "textos": ["por_momento.manana", "por_momento.tarde"]
+        }
+      }
+    }
+  },
+
+  "templates_por_contexto": {
+    "clima": {
+      "soleado": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["pool-dream", "particle-text", "kinetic-glass"],
+        "audio_prioritario": ["agua-pileta", "ambiente-montania", "lofi-relax"],
+        "textos_prioritarios": ["por_momento.mediodia", "por_clima.soleado", "por_estacion.verano"]
+      },
+      "nublado": {
+        "peso": 0.8,
+        "animaciones_prioritarias": ["glass-letters", "kinetic", "transitions"],
+        "audio_prioritario": ["ambiente-montania", "lofi-relax"],
+        "textos_prioritarios": ["por_clima.nublado", "por_momento.manana"]
+      },
+      "lluvia": {
+        "peso": 0.7,
+        "animaciones_prioritarias": ["warm-glow", "minimal", "text-transitions"],
+        "audio_prioritario": ["fuego-chimenea", "lofi-relax"],
+        "textos_prioritarios": ["por_clima.lluvia", "por_momento.noche"]
+      },
+      "nieve": {
+        "peso": 0.9,
+        "animaciones_prioritarias": ["particle-text", "warm-glow", "glass-letters"],
+        "audio_prioritario": ["fuego-chimenea", "epic-cinematic"],
+        "textos_prioritarios": ["por_clima.nieve", "por_estacion.invierno", "por_momento.noche"]
+      },
+      "despejado": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["particle-galaxy", "translucent-letters", "particle-text"],
+        "audio_prioritario": ["noche-estrellada", "epic-cinematic"],
+        "textos_prioritarios": ["por_clima.despejado", "por_momento.noche"]
+      }
+    },
+
+    "momento": {
+      "manana": {
+        "peso": 0.9,
+        "animaciones_prioritarias": ["wave-reveal", "particle-text", "transitions"],
+        "audio_prioritario": ["ambiente-montania", "lofi-relax"],
+        "textos_prioritarios": ["por_momento.manana", "llamados_accion"]
+      },
+      "mediodia": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["pool-dream", "kinetic", "brand-gallery"],
+        "audio_prioritario": ["agua-pileta", "epic-cinematic"],
+        "textos_prioritarios": ["por_momento.mediodia", "por_clima.soleado"]
+      },
+      "tarde": {
+        "peso": 0.9,
+        "animaciones_prioritarias": ["warm-glow", "glass-letters", "kinetic-glass"],
+        "audio_prioritario": ["ambiente-montania", "lofi-relax"],
+        "textos_prioritarios": ["por_momento.tarde", "por_momento.atardecer"]
+      },
+      "atardecer": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["pool-dream", "warm-glow", "transitions"],
+        "audio_prioritario": ["epic-cinematic", "ambiente-montania"],
+        "textos_prioritarios": ["por_momento.atardecer", "llamados_accion"]
+      },
+      "noche": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["particle-galaxy", "translucent-letters", "warm-glow"],
+        "audio_prioritario": ["noche-estrellada", "fuego-chimenea"],
+        "textos_prioritarios": ["por_momento.noche", "por_clima.despejado"]
+      }
+    },
+
+    "estacion": {
+      "verano": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["pool-dream", "particle-text", "kinetic"],
+        "audio_prioritario": ["agua-pileta", "lofi-relax"],
+        "textos_prioritarios": ["por_estacion.verano", "por_clima.soleado", "por_momento.mediodia"]
+      },
+      "invierno": {
+        "peso": 1.0,
+        "animaciones_prioritarias": ["warm-glow", "particle-text", "glass-letters"],
+        "audio_prioritario": ["fuego-chimenea", "epic-cinematic"],
+        "textos_prioritarios": ["por_estacion.invierno", "por_clima.nieve", "por_momento.noche"]
+      },
+      "primavera": {
+        "peso": 0.9,
+        "animaciones_prioritarias": ["particle-text", "transitions", "wave-reveal"],
+        "audio_prioritario": ["ambiente-montania", "lofi-relax"],
+        "textos_prioritarios": ["por_estacion.primavera", "por_momento.manana"]
+      },
+      "otoño": {
+        "peso": 0.8,
+        "animaciones_prioritarias": ["warm-glow", "glass-letters", "transitions"],
+        "audio_prioritario": ["fuego-chimenea", "ambiente-montania"],
+        "textos_prioritarios": ["por_estacion.otoño", "por_momento.tarde", "por_momento.atardecer"]
+      }
+    }
+  },
+
+  "recomendaciones_tags": {
+    "pileta": {
+      "animaciones": ["pool-dream", "particle-text", "kinetic"],
+      "audio": ["agua-pileta", "lofi-relax"],
+      "categoria": "verano_pileta"
+    },
+    "chimenea": {
+      "animaciones": ["warm-glow", "particle-text", "glass-letters"],
+      "audio": ["fuego-chimenea", "epic-cinematic"],
+      "categoria": "invierno_chimenea"
+    },
+    "noche": {
+      "animaciones": ["particle-galaxy", "translucent-letters", "warm-glow"],
+      "audio": ["noche-estrellada", "fuego-chimenea"],
+      "categoria": "astroturismo"
+    },
+    "logo": {
+      "animaciones": ["logo-3d", "logo-reveal", "glass-letters"],
+      "audio": ["epic-cinematic", "ambiente-montania"],
+      "categoria": "marca_premium"
+    },
+    "habitacion": {
+      "animaciones": ["brand-gallery", "transitions", "minimal"],
+      "audio": ["ambiente-montania", "lofi-relax"],
+      "categoria": "tour_virtual"
+    },
+    "exterior": {
+      "animaciones": ["brand-gallery", "kinetic-glass", "pool-dream"],
+      "audio": ["ambiente-montania", "epic-cinematic"],
+      "categoria": "tour_virtual"
+    },
+    "interior": {
+      "animaciones": ["warm-glow", "transitions", "minimal"],
+      "audio": ["fuego-chimenea", "lofi-relax"],
+      "categoria": "invierno_chimenea"
+    },
+    "atardecer": {
+      "animaciones": ["pool-dream", "warm-glow", "transitions"],
+      "audio": ["epic-cinematic", "ambiente-montania"],
+      "categoria": "verano_pileta"
+    },
+    "montañas": {
+      "animaciones": ["particle-text", "kinetic-glass", "brand-gallery"],
+      "audio": ["ambiente-montania", "epic-cinematic"],
+      "categoria": "tour_virtual"
+    }
+  }
+}

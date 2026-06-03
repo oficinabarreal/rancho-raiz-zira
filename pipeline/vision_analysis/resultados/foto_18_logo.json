@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:40:56.276Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_18_logo.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra un letrero circular de madera tallada con el nombre 'RANCHO RAIZ' grabado en letras mayúsculas, montado sobre una pared de piedra rústica. El diseño del letrero incluye anillos concéntricos que simulan el corte transversal de un árbol y líneas onduladas que evocan agua o terreno, todo en tonos marrones naturales. Alrededor del letrero se observan plantas verdes en primer plano y en la parte superior, sugiriendo un entorno exterior con vegetación.",
+  "categoria": "marca",
+  "elementos_clave": [
+    "letrero de madera tallada",
+    "pared de piedra",
+    "plantas verdes",
+    "texto 'RANCHO RAIZ'",
+    "diseño de anillos de árbol",
+    "líneas onduladas"
+  ],
+  "momento_detectado": "manana",
+  "tags_sugeridos": [
+    "ranchera",
+    "rustico",
+    "madera",
+    "naturaleza",
+    "calingasta"
+  ],
+  "categoria_sugerida": "marca",
+  "hora_sugerida": "manana",
+  "clima_ideal": [
+    "soleado",
+    "templado",
+    "seco"
+  ],
+  "estaciones": [
+    "primavera",
+    "verano",
+    "otoño"
+  ],
+  "momentos": [
+    "desayuno",
+    "bienvenida",
+    "entrada principal"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "nature-breeze",
+    "wood-texture"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": true,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": false,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "El letrero parece ser la señalización principal de entrada o identificación del establecimiento. La iluminación suave y la presencia de plantas frescas sugieren que fue tomado en horas matutinas con buena luz natural."
+}

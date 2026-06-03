@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:44:03.904Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_17_logo-vertical.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "Se observa un letrero de madera rústica montado sobre un poste de madera, con el nombre 'RANCHO RAIZ' grabado en letras mayúsculas y un logotipo estilizado que evoca raíces o flamas. El fondo muestra vegetación verde y montañas borrosas, indicando un entorno natural al aire libre.",
+  "categoria": "marca",
+  "elementos_clave": [
+    "letrero de madera",
+    "poste de madera",
+    "logotipo grabado",
+    "texto 'RANCHO RAIZ'",
+    "vegetación de fondo",
+    "montañas difuminadas"
+  ],
+  "momento_detectado": "mediodia",
+  "tags_sugeridos": [
+    "rústico",
+    "naturaleza",
+    "montaña",
+    "posada",
+    "branding"
+  ],
+  "categoria_sugerida": "marca",
+  "hora_sugerida": "mediodia",
+  "clima_ideal": [
+    "soleado",
+    "templado",
+    "sin lluvia"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera",
+    "otoño"
+  ],
+  "momentos": [
+    "mañana clara",
+    "tarde soleada"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "nature-breeze",
+    "wood-texture"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": true,
+    "es_logo": true,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La imagen es claramente una señalización de marca para un establecimiento turístico en zona montañosa, con fuerte énfasis en la estética natural y rústica."
+}

@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "nombre": "Modelos Multimodales Disponibles",
+    "descripcion": "Opciones de modelos con visión para analizar las fotos",
+    "fecha_analisis": "2026-05-26"
+  },
+
+  "situacion_actual": {
+    "modelo_activo": "nvidia/nemotron-3-super-120b-a12b",
+    "capacidad": "SOLO TEXTO - NO PUEDE VER FOTOS",
+    "input_soportado": ["text"],
+    "necesita_cambio": true
+  },
+
+  "opcion_1_gemini_api": {
+    "_status": "RECOMENDADA - TENEMOS LA API KEY",
+    "nombre": "Google Gemini API",
+    "api_key_disponible": "GOOGLE_API_KEY=AIzaSyCph6Z78... en .env",
+    "modelos_sugeridos": [
+      {
+        "id": "gemini-2.0-flash",
+        "nombre": "Gemini 2.0 Flash",
+        "visión": true,
+        "gratuito": true,
+        "velocidad": "Muy rápida",
+        "nota": "Mejor opción para análisis masivo de fotos"
+      },
+      {
+        "id": "gemini-1.5-flash",
+        "nombre": "Gemini 1.5 Flash",
+        "visión": true,
+        "gratuito": true,
+        "velocidad": "Rápida",
+        "nota": "Estable y probado"
+      },
+      {
+        "id": "gemini-1.5-pro",
+        "nombre": "Gemini 1.5 Pro",
+        "visión": true,
+        "gratuito": "Límite diario",
+        "velocidad": "Menos rápida",
+        "nota": "Mayor precisión pero con límites"
+      }
+    ],
+    "ventajas": [
+      "✅ YA TENEMOS la API KEY en .env",
+      "✅ Gratuita para uso básico",
+      "✅ Muy buena para visión",
+      "✅ Rápida",
+      "✅ OpenClaw tiene una skill 'gemini' disponible (deshabilitada)"
+    ],
+    "pasos_implementacion": [
+      "1. Usar GOOGLE_API_KEY directamente con curl o script",
+      "2. O habilitar la skill 'gemini' en OpenClaw",
+      "3. Analizar las 22 fotos",
+      "4. Guardar resultados en JSON",
+      "5. Actualizar db.json con --actualizar-db-desde-vision"
+    ]
+  },
+
+  "opcion_2_nvidia_multimodal": {
+    "_status": "ALTERNATIVA - Tenemos NVIDIA_API_KEY",
+    "nombre": "NVIDIA API Multimodal",
+    "api_key_disponible": "NVIDIA_API_KEY=nvapi-1234567890 en .env",
+    "modelos_disponibles_en_nvidia": [
+      {
+        "id": "nvidia/nemotron-vision-qa-2b",
+        "nombre": "Nemotron Vision QA 2B",
+        "visión": true
+      },
+      {
+        "id": "adept/fuyu-8b",
+        "nombre": "Fuyu 8B",
+        "visión": true
+      },
+      {
+        "id": "microsoft/phi-3-vision-128k-instruct",
+        "nombre": "Phi-3 Vision",
+        "visión": true
+      },
+      {
+        "id": "google/gemma-3-4b-it-multimodal",
+        "nombre": "Gemma 3 Multimodal",
+        "visión": true
+      }
+    ],
+    "ventajas": [
+      "✅ NVIDIA_API_KEY también existe",
+      "✅ Se puede AGREGAR estos modelos a models.json de OpenClaw",
+      "✅ Integración nativa con el ecosistema actual"
+    ],
+    "desventajas": [
+      "⚠️ Menos probados para visión que Gemini",
+      "⚠️ Necesita modificar configuración de OpenClaw"
+    ],
+    "pasos_implementacion": [
+      "1. Agregar modelos multimodales a .openclaw/agents/main/agent/models.json",
+      "2. Cambiar modelo primario a uno multimodal",
+      "3. Reiniciar OpenClaw/Hermes",
+      "4. Analizar fotos con visión_analyze"
+    ]
+  },
+
+  "opcion_3_openrouter": {
+    "_status": "ALTERNATIVA - Tenemos OPENROUTER_API_KEY",
+    "nombre": "OpenRouter API",
+    "api_key_disponible": "OPENROUTER_API_KEY=sk-abc123... en .env",
+    "nota": "OpenRouter tiene MUCHOS modelos multimodales",
+    "ejemplos_modelos": [
+      "openai/gpt-4o-mini",
+      "anthropic/claude-3-haiku",
+      "google/gemini-flash-1.5",
+      "microsoft/phi-3.5-vision-instruct"
+    ]
+  },
+
+  "recomendacion_pasos_ahora": {
+    "prioridad_1": "PROBAR LA GOOGLE_API_KEY CON GEMINI",
+    "por_que": "Es la más fácil, más probada para visión, y GRATUITA",
+    "acciones_inmediatas": [
+      "1. Verificar si GOOGLE_API_KEY es válida",
+      "2. Crear script simple de prueba con Gemini",
+      "3. Analizar 2 fotos URGENTES primero:",
+      "   - foto_12_habitacion-15.jpg (creída chimenea)",
+      "   - foto_19_pileta-01.jpg (creída pileta)",
+      "4. Validar si los videos anteriores eran correctos",
+      "5. Luego analizar todas las fotos"
+    ]
+  },
+
+  "fotos_urgentes_para_validar": {
+    "nota": "Estas se usaron para generar videos con metadata inventada",
+    "fotos": [
+      {
+        "archivo_preparado": "foto_12_habitacion-15.jpg",
+        "original": "habitacion-15.jpg",
+        "lo_que_se_creia": "Chimenea encendida creando ambiente cálido",
+        "tags_inventados": ["chimenea", "fuego", "calor", "invierno"],
+        "video_generado": "reel-chimenea-completo.mp4",
+        "necesita_validacion": "MUY ALTA"
+      },
+      {
+        "archivo_preparado": "foto_19_pileta-01.jpg",
+        "original": "pileta-01.jpg",
+        "lo_que_se_creia": "Pileta exterior de la posada con vista a las montañas",
+        "tags_inventados": ["pileta", "verano", "sol", "agua"],
+        "video_generado": "reel-pileta-completo.mp4",
+        "necesita_validacion": "MUY ALTA"
+      }
+    ]
+  },
+
+  "si_gemini_no_funciona": {
+    "alternativas": [
+      "Usar OpenRouter con su API key",
+      "Agregar modelos multimodales NVIDIA a la configuración",
+      "Análisis manual del usuario (subir a web y pegar resultados)",
+      "Habilitar skill 'gemini' en OpenClaw"
+    ]
+  }
+}

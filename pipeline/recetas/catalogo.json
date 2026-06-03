@@ -1,0 +1,597 @@
+{
+  "recetas": [
+    {
+      "id": "base-center-fade",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Center Fade Base",
+      "descripcion": "Baseline: Ken Burns center + texto fade, sin overlay",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "center",
+        "estilo": "fade",
+        "overlay": null,
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        6,
+        11,
+        19,
+        8
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Sin overlay, texto apenas legible en fondos claros",
+        "estrellas": 2,
+        "tamano_mb": null,
+        "duracion_seg": null,
+        "notas": "Requiere overlay cinematic para legibilidad"
+      },
+      "tags": [
+        "kenburns-center",
+        "fade",
+        "baseline",
+        "sin-overlay"
+      ]
+    },
+    {
+      "id": "pan-left-fade-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Pan Izq-Der Fade Cinematic",
+      "descripcion": "Barrido horizontal + texto fade + barras cinematicas",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_left_to_right",
+        "estilo": "fade",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        6,
+        11,
+        19,
+        8
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Buen barrido, texto legible, transiciones suaves",
+        "estrellas": 4,
+        "tamano_mb": 1.1,
+        "duracion_seg": 16,
+        "notas": "Primer reel que cumple el estandar minimo"
+      },
+      "tags": [
+        "kenburns-pan",
+        "fade",
+        "cinematic",
+        "4-fotos"
+      ]
+    },
+    {
+      "id": "zoomout-fade-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Zoom Out Fade Cinematic",
+      "descripcion": "Alejamiento + texto fade + barras cinematicas",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "zoom_out",
+        "estilo": "fade",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.15,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Zoom out dramatico, ideal para fotos de noche",
+        "estrellas": 4,
+        "tamano_mb": 1.8,
+        "duracion_seg": 16,
+        "notas": "Fotos de noche + zoom out = efecto cinematografico"
+      },
+      "tags": [
+        "kenburns-zoomout",
+        "fade",
+        "cinematic",
+        "noche"
+      ]
+    },
+    {
+      "id": "pan-right-slideleft-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Pan Der-Izq SlideLeft Cinematic",
+      "descripcion": "Barrido inverso + texto desde izquierda + barras",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_right_to_left",
+        "estilo": "slide_left",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        11,
+        3,
+        5,
+        22
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Texto slide_left funciona bien, barrido inverso interesante",
+        "estrellas": 3,
+        "tamano_mb": 0.892,
+        "duracion_seg": 16,
+        "notas": "Atardeceres + pan inverso = ritmo pausado"
+      },
+      "tags": [
+        "kenburns-pan",
+        "slide-left",
+        "cinematic",
+        "atardecer"
+      ]
+    },
+    {
+      "id": "pan-bottom-pulse-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Pan Abajo-Arriba Pulse Cinematic",
+      "descripcion": "Barrido vertical ascendente + texto pulsante + barras",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_bottom_to_top",
+        "estilo": "pulse",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        3,
+        4,
+        13,
+        8
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Barrido vertical ascendente da sensacion de grandeza",
+        "estrellas": 4,
+        "tamano_mb": 1.1,
+        "duracion_seg": 16,
+        "notas": "Montanas + pan up = epico"
+      },
+      "tags": [
+        "kenburns-pan",
+        "pulse",
+        "cinematic",
+        "montana"
+      ]
+    },
+    {
+      "id": "center-pulse-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Center Pulse Cinematic",
+      "descripcion": "Zoom central + texto pulsante + barras",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "center",
+        "estilo": "pulse",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        16,
+        17,
+        18
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Simple pero efectivo para branding: logo + pulse",
+        "estrellas": 3,
+        "tamano_mb": 0.605,
+        "duracion_seg": 12,
+        "notas": "Ideal para reels de marca (3 fotos de logo)"
+      },
+      "tags": [
+        "kenburns-center",
+        "pulse",
+        "cinematic",
+        "branding"
+      ]
+    },
+    {
+      "id": "storytelling-pan-slide",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Storytelling Pan SlideUp",
+      "descripcion": "Narrativa completa: logo → pileta → atardecer → noche → logo",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_left_to_right",
+        "estilo": "slide_up",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        16,
+        19,
+        5,
+        2,
+        18
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": "Mejor receta: narrativa coherente, pan suave, texto slide_up",
+        "estrellas": 5,
+        "tamano_mb": 1.1,
+        "duracion_seg": 20,
+        "notas": "ESTANDAR: esta combinacion es el nuevo piso de calidad"
+      },
+      "tags": [
+        "kenburns-pan",
+        "slide-up",
+        "cinematic",
+        "storytelling",
+        "estandar"
+      ]
+    },
+    {
+      "id": "pan-left-vibrante-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Pan Izq-Der Vibrante Cinematic",
+      "descripcion": "Pan horizontal + color boost (eq saturation+contrast) + barras",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_left_to_right",
+        "estilo": "fade",
+        "overlay": "cinematic",
+        "colorGrade": "vibrante",
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        6,
+        11,
+        19,
+        22
+      ],
+      "calidad": {
+        "estado": "candidato",
+        "evaluacion": null,
+        "estrellas": null,
+        "tamano_mb": null,
+        "duracion_seg": null,
+        "notas": "Probar si eq saturation=1.3 mejora la percepcion visual"
+      },
+      "tags": [
+        "kenburns-pan",
+        "fade",
+        "cinematic",
+        "color-vibrante",
+        "por-probar"
+      ]
+    },
+    {
+      "id": "pan-left-suave-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Pan Izq-Der Suave Cinematic",
+      "descripcion": "Pan horizontal + tono natural (eq suave) + barras",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_left_to_right",
+        "estilo": "fade",
+        "overlay": "cinematic",
+        "colorGrade": "suave",
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        6,
+        11,
+        19,
+        22
+      ],
+      "calidad": {
+        "estado": "candidato",
+        "evaluacion": null,
+        "estrellas": null,
+        "tamano_mb": null,
+        "duracion_seg": null,
+        "notas": "Probar si eq suave da tono mas natural/filmico"
+      },
+      "tags": [
+        "kenburns-pan",
+        "fade",
+        "cinematic",
+        "color-suave",
+        "por-probar"
+      ]
+    },
+    {
+      "id": "zoomout-vignette-fade",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Zoom Out Vignette Fade",
+      "descripcion": "Alejamiento + viñeta en esquinas + texto fade (sin barras)",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "zoom_out",
+        "estilo": "fade",
+        "overlay": "vignette",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.15,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "calidad": {
+        "estado": "candidato",
+        "evaluacion": null,
+        "estrellas": null,
+        "tamano_mb": null,
+        "duracion_seg": null,
+        "notas": "Probar vignette como alternativa a barras cinematicas"
+      },
+      "tags": [
+        "kenburns-zoomout",
+        "fade",
+        "vignette",
+        "por-probar"
+      ]
+    },
+    {
+      "id": "top-left-slide-up-cine",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Top-Left SlideUp Cinematic",
+      "descripcion": "Zoom a esquina superior izquierda + texto slide_up + barras",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "top_left",
+        "estilo": "slide_up",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 4,
+        "zoomSpeed": 0.0008,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        6,
+        11,
+        19,
+        8
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": null,
+        "estrellas": null,
+        "tamano_mb": 1.01,
+        "duracion_seg": null,
+        "notas": "Probar zoom direccional a esquina + texto ascendente | 2026-05-27: 1.01MB"
+      },
+      "tags": [
+        "kenburns-direccional",
+        "slide-up",
+        "cinematic",
+        "por-probar"
+      ]
+    },
+    {
+      "id": "duracion-3s-rapido",
+      "fecha": "2026-05-27",
+      "version": 1,
+      "nombre": "Ritmo Rapido 3s",
+      "descripcion": "Misma receta que storytelling pero con 3s por foto (mas ritmo)",
+      "herramientas": [
+        "ffmpeg"
+      ],
+      "params": {
+        "kenBurns": "pan_left_to_right",
+        "estilo": "slide_up",
+        "overlay": "cinematic",
+        "colorGrade": null,
+        "duracion": 3,
+        "zoomSpeed": 0.001,
+        "zoomMax": 1.12,
+        "transiciones": [
+          "fade",
+          "fadeblack",
+          "circleopen",
+          "circleclose",
+          "wipeleft"
+        ],
+        "fontSize_titulo": 70,
+        "fontSize_subtitulo": 40,
+        "fps": 30
+      },
+      "fotos": [
+        16,
+        19,
+        5,
+        2,
+        18
+      ],
+      "calidad": {
+        "estado": "probado",
+        "evaluacion": null,
+        "estrellas": null,
+        "tamano_mb": 1.17,
+        "duracion_seg": null,
+        "notas": "Probar si 3s/foto da mejor ritmo para reel de 15s | 2026-05-27: 1.17MB"
+      },
+      "tags": [
+        "kenburns-pan",
+        "slide-up",
+        "cinematic",
+        "ritmo-rapido",
+        "por-probar"
+      ]
+    }
+  ]
+}

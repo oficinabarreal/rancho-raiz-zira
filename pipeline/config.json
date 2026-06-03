@@ -1,0 +1,15 @@
+{
+  "temperatura": "26°C",
+  "estado": "Despejado y fresco",
+  "consejo": "Ideal para una fogata en la noche",
+  "template": "climaDiario",
+  "clipType": "particles",
+  "duration": 8,
+  "fps": 30,
+  "output": "/sdcard/Download/ranchocut-final.mp4",
+  "brand": {
+    "name": "Rancho Raíz",
+    "tagline": "Conexión Andina",
+    "instagram": "@ranchoraiz.posada"
+  }
+}

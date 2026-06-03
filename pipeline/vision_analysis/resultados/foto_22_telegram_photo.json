@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:41:46.586Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_22_telegram_photo.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una piscina rectangular con agua azul clara, rodeada de baldosas beige y un borde de concreto. En el fondo, se observa un paisaje rural con árboles altos, un muro bajo y un cielo dramático con nubes iluminadas por los colores cálidos del atardecer.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "piscina",
+    "baldosas",
+    "agua",
+    "cielo",
+    "nubes",
+    "árboles",
+    "muro",
+    "paisaje rural",
+    "reflejo en el agua"
+  ],
+  "momento_detectado": "atardecer",
+  "tags_sugeridos": [
+    "atardecer",
+    "piscina",
+    "paisaje",
+    "rural",
+    "calma"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "atardecer",
+  "clima_ideal": [
+    "templado",
+    "seco",
+    "soleado"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera"
+  ],
+  "momentos": [
+    "atardecer",
+    "relax",
+    "vacaciones"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "warm-glow",
+    "sunset-reflection"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": true,
+    "hay_agua": true,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La escena transmite tranquilidad y conexión con la naturaleza, ideal para promocionar espacios de descanso en entornos rurales o semi-rurales durante la temporada cálida."
+}

@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:34:57.209Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "total_fotos": 1,
+    "exitos": 1,
+    "errores": 0
+  },
+  "resultados": [
+    {
+      "nombre_archivo": "foto_19_pileta-01.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "La imagen muestra una pileta al aire libre bajo un techo de madera rústica con columnas de troncos naturales. El suelo está mojado, reflejando el cielo azul con nubes blancas y el sol brillante, mientras que al fondo se observan árboles, montañas y un muro perimetral de adobe.",
+        "categoria": "exterior",
+        "elementos_clave": [
+          "pileta",
+          "techo de madera",
+          "columnas de tronco",
+          "suelo mojado",
+          "reflejos",
+          "cielo azul",
+          "nubes",
+          "sol",
+          "montañas",
+          "árboles",
+          "muro de adobe",
+          "sillones de madera"
+        ],
+        "momento_detectado": "mediodia",
+        "tags_sugeridos": [
+          "pileta",
+          "rústico",
+          "montañas",
+          "relax",
+          "Calingasta"
+        ],
+        "categoria_sugerida": "exterior",
+        "hora_sugerida": "mediodia",
+        "clima_ideal": [
+          "soleado",
+          "templado",
+          "seco"
+        ],
+        "estaciones": [
+          "verano",
+          "primavera"
+        ],
+        "momentos": [
+          "descanso",
+          "vacaciones",
+          "disfrute al aire libre"
+        ],
+        "animaciones_recomendadas": [
+          "pool-dream",
+          "warm-glow",
+          "sky-flow"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": true,
+          "hay_agua": true,
+          "hay_fuego": false,
+          "hay_montanas": true,
+          "es_logo": false,
+          "hay_cama": false,
+          "hay_muebles_rusticos": true,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.95,
+        "comentarios_adicionales": "La escena transmite tranquilidad y conexión con la naturaleza, ideal para promocionar turismo rural o descanso en zonas montañosas."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_19_pileta-01.json"
+    }
+  ]
+}

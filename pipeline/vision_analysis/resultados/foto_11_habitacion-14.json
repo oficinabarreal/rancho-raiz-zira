@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:38:18.898Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_11_habitacion-14.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una pileta al aire libre con agua azul clara que refleja el cielo, rodeada de baldosas de tono tierra. En el fondo se observa un paisaje rural con árboles altos, un muro bajo y un cielo dramático con nubes iluminadas por los colores cálidos del atardecer.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "pileta",
+    "agua",
+    "baldosas",
+    "cielo",
+    "nubes",
+    "árboles",
+    "muro",
+    "paisaje rural",
+    "reflejo en el agua"
+  ],
+  "momento_detectado": "atardecer",
+  "tags_sugeridos": [
+    "atardecer",
+    "pileta",
+    "paisaje",
+    "relax",
+    "naturaleza"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "atardecer",
+  "clima_ideal": [
+    "templado",
+    "soleado",
+    "despejado"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera"
+  ],
+  "momentos": [
+    "atardecer",
+    "tarde"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "warm-glow",
+    "sunset-pan"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": true,
+    "hay_agua": true,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La foto captura un ambiente tranquilo y relajante, ideal para promocionar el descanso en un entorno natural durante la temporada cálida."
+}

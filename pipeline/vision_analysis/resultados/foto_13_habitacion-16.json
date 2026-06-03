@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:39:09.279Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_13_habitacion-16.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra un espacio semiabierto con techo de madera y vigas rústicas, donde se encuentra una mesa de ping pong sobre ruedas y sillas de madera. Al fondo se observan árboles, una cerca de bambú y montañas bajo un cielo azul con nubes blancas.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "mesa de ping pong",
+    "techo de madera",
+    "vigas rústicas",
+    "sillas de madera",
+    "montañas",
+    "árboles",
+    "cielo azul",
+    "nubes",
+    "cerca de bambú",
+    "lámparas colgantes"
+  ],
+  "momento_detectado": "mediodia",
+  "tags_sugeridos": [
+    "rústico",
+    "montaña",
+    "ocio",
+    "aire libre",
+    "naturaleza"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "mediodia",
+  "clima_ideal": [
+    "soleado",
+    "templado",
+    "seco"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera"
+  ],
+  "momentos": [
+    "día libre",
+    "recreación familiar",
+    "descanso al aire libre"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "nature-breeze",
+    "leisure-vibes"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": true,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": true,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "El espacio parece diseñado para entretenimiento al aire libre en un entorno natural, típico de una posada en zona montañosa."
+}

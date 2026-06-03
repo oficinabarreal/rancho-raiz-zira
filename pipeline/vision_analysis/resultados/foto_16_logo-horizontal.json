@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:40:07.239Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_16_logo-horizontal.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra un letrero de madera rústica con el nombre 'RANCHO RAIZ' y un diseño grabado de ondas o montañas, ubicado en el inicio de un sendero natural rodeado de vegetación. El fondo está desenfocado, mostrando árboles y luz natural que sugiere un entorno boscoso en la Cordillera de los Andes.",
+  "categoria": "marca",
+  "elementos_clave": [
+    "letrero de madera",
+    "texto 'RANCHO RAIZ'",
+    "diseño grabado de ondas/montañas",
+    "sendero de tierra",
+    "vegetación verde",
+    "árboles desenfocados",
+    "luz natural difusa"
+  ],
+  "momento_detectado": "mediodia",
+  "tags_sugeridos": [
+    "ranchoraiz",
+    "calingasta",
+    "sanjuan",
+    "andinos",
+    "naturaleza"
+  ],
+  "categoria_sugerida": "marca",
+  "hora_sugerida": "mediodia",
+  "clima_ideal": [
+    "soleado",
+    "templado",
+    "seco"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera",
+    "otoño"
+  ],
+  "momentos": [
+    "mañana",
+    "mediodía",
+    "tarde temprana"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "gentle-breeze",
+    "leaf-fall"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": true,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": false,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "El letrero actúa como elemento de marca y bienvenida, integrado en un entorno natural que refuerza la identidad rústica y andina del lugar. La iluminación sugiere un día claro, ideal para turismo de naturaleza."
+}

@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:34:10.896Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "total_fotos": 2,
+    "exitos": 1,
+    "errores": 1
+  },
+  "resultados": [
+    {
+      "nombre_archivo": "foto_12_habitacion-15.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "La imagen muestra un amplio pasillo techado al aire libre con columnas de adobe y un techo de vigas de madera con entablado de caña. Se observa una silla de descanso junto a la pared de la posada, con vistas a un jardín y árboles bajo un cielo azul despejado.",
+        "categoria": "exterior",
+        "elementos_clave": [
+          "vigas de madera",
+          "columnas de adobe",
+          "techo de caña",
+          "silla de descanso",
+          "suelo de cemento",
+          "cielo azul",
+          "vegetación",
+          "paredes de tierra"
+        ],
+        "momento_detectado": "mediodia",
+        "tags_sugeridos": [
+          "arquitectura_rustica",
+          "adobe",
+          "calingasta",
+          "patio_cubierto",
+          "diseño_natural"
+        ],
+        "categoria_sugerida": "exterior",
+        "hora_sugerida": "mediodia",
+        "clima_ideal": [
+          "soleado",
+          "seco",
+          "templado"
+        ],
+        "estaciones": [
+          "verano",
+          "primavera",
+          "otoño"
+        ],
+        "momentos": [
+          "descanso",
+          "lectura",
+          "relajación"
+        ],
+        "animaciones_recomendadas": [
+          "warm-glow",
+          "sun-dance"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": false,
+          "hay_agua": false,
+          "hay_fuego": false,
+          "hay_montanas": false,
+          "es_logo": false,
+          "hay_cama": false,
+          "hay_muebles_rusticos": true,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.95,
+        "comentarios_adicionales": "La iluminación es muy fuerte y directa, típica de la zona de Cuyo, creando sombras marcadas en el suelo."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_12_habitacion-15.json"
+    },
+    {
+      "nombre_archivo": "foto_19_pileta-01.jpg",
+      "error": "read ETIMEDOUT"
+    }
+  ]
+}

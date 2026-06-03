@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:43:22.144Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_03_habitacion-06.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una vista exterior de la posada Rancho Raiz en Calingasta, con edificios de adobe y estructuras rústicas rodeadas de árboles altos y vegetación. El cielo azul presenta nubes blancas voluminosas y la luna es visible, sugiriendo un momento entre tarde y atardecer.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "edificio de adobe",
+    "camioneta blanca",
+    "árboles altos",
+    "cielo azul",
+    "nubes blancas",
+    "luna visible",
+    "estructuras rústicas",
+    "pasto",
+    "montañas al fondo"
+  ],
+  "momento_detectado": "atardecer",
+  "tags_sugeridos": [
+    "posada",
+    "rural",
+    "andes",
+    "arquitectura_adobe",
+    "paisaje_argentino"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "atardecer",
+  "clima_ideal": [
+    "despejado",
+    "parcialmente nublado",
+    "templado"
+  ],
+  "estaciones": [
+    "primavera",
+    "verano",
+    "otoño"
+  ],
+  "momentos": [
+    "atardecer",
+    "amanecer",
+    "tarde"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "cloud-drift",
+    "nature-breeze"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": true,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": true,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.92,
+  "comentarios_adicionales": "La presencia de la luna durante el día y la iluminación cálida sugieren que la foto fue tomada cerca del atardecer. La arquitectura tradicional de adobe y el entorno natural son característicos de la región de Calingasta."
+}

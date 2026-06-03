@@ -1,0 +1,227 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "nombre": "RanchoCut Prompt System para Agentes Autónomos",
+    "descripcion": "Sistema de prompts y workflows para que agentes (opencode, hermes, openclaw) generen Reels automáticamente"
+  },
+
+  "rol_agente": {
+    "nombre": "Productor de Contenido - Rancho Raiz",
+    "objetivo": "Crear automáticamente Reels de Instagram (formato 9:16) para promocionar la posada Rancho Raiz en Calingasta, San Juan, Argentina",
+    "ubicacion": "Posada Altos de Ansilta / Rancho Raiz - Cordillera de los Andes",
+    "tono": "Cálido, acogedor, premium, conectado con la naturaleza"
+  },
+
+  "workflow_completo": {
+    "nombre": "Pipeline Automatizado RanchoCut",
+    "pasos": [
+      {
+        "paso": 1,
+        "nombre": "Conocer el Contexto",
+        "descripcion": "Recolectar información del momento actual",
+        "acciones": [
+          "Determinar el momento del día: manana, mediodia, tarde, atardecer, noche",
+          "Determinar el clima: soleado, nublado, lluvia, nieve, despejado",
+          "Determinar la estación: verano, invierno, primavera, otoño",
+          "Opcional: Leer foto seleccionada y extraer tags de su nombre/descripción"
+        ],
+        "prompt_ejemplo": "Hoy es martes 15 de julio de 2026, son las 21:00 hs en Calingasta, San Juan. El clima está despejado y frío (invierno). La foto seleccionada es 'habitacion-15' que muestra una chimenea encendida."
+      },
+      {
+        "paso": 2,
+        "nombre": "Generar Receta JSON",
+        "descripcion": "Usar CLI de RanchoCut para generar una receta inteligente",
+        "acciones": [
+          "Ejecutar: node ranchocut/cli.js --generar --clima=XX --momento=XX --estacion=XX [--foto=ID_FOTO]",
+          "El CLI devuelve una receta JSON completa con: foto, animación, textos, plantilla, alternativas",
+          "Guardar la ruta de la receta JSON generada"
+        ],
+        "ejemplo_comando": "node ranchocut/cli.js --generar --clima=despejado --momento=noche --estacion=invierno --foto=habitacion-15"
+      },
+      {
+        "paso": 3,
+        "nombre": "Revisar y Mejorar la Receta (IA)",
+        "descripcion": "El agente usa su criterio para validar y mejorar la selección",
+        "acciones": [
+          "Leer la receta JSON generada",
+          "Revisar los prompts sugeridos en receta.prompts_para_agente",
+          "Validar coherencia: tags de foto vs tags de animación vs contexto",
+          "Si es necesario: elegir alternativas de receta.alternativas_animacion",
+          "Si es necesario: modificar textos desde DB.textos_predefinidos",
+          "Agregar contexto extra: clima específico, eventos especiales, promociones"
+        ],
+        "ejemplo_prompt_revision": "La receta sugiere animación 'warm-glow' para foto 'habitacion-15' (chimenea). Los tags coinciden: chimenea=invierno_chimenea → warm-glow. Textos: 'Noches estrelladas en la cordillera' + 'Reserva tu lugar'. ¿Es apropiado? Sí, pero podría cambiar el texto principal a 'Chimenea encendida te espera' desde DB.textos_predefinidos.por_estacion.invierno."
+      },
+      {
+        "paso": 4,
+        "nombre": "Grabar Animación desde HTML",
+        "descripcion": "Capturar la animación Three.js como video (formato 9:16)",
+        "acciones": [
+          "Identificar la ruta de la animación: receta.animacion.ruta",
+          "Las animaciones están en: lab/arte-gallery/...",
+          "La ruta es relativa al directorio ~/publicidad/",
+          "Necesario: abrir el HTML en navegador (Chromium) y grabar con MediaRecorder",
+          "Formato objetivo: 1080x1920 (9:16), 30fps, duración según animación"
+        ],
+        "ejemplo_ruta": "lab/arte-gallery/galeria/warm-glow.html",
+        "nota_importante": "Actualmente la grabación requiere interacción manual en navegador. El agente debe poder automatizar esto o indicar al usuario que grabe."
+      },
+      {
+        "paso": 5,
+        "nombre": "Ejecutar Pipeline FFmpeg",
+        "descripcion": "Aplicar overlays de texto, efectos y convertir a MP4 final",
+        "acciones": [
+          "Usar la receta JSON + el video grabado",
+          "Ejecutar: node ranchocut/cli.js --recipe=RUTA_RECETA --video=RUTA_VIDEO_GRABADO",
+          "Opcional: --output=RUTA_SALIDA para personalizar ubicación",
+          "FFmpeg aplica: resize 1080x1920, drawtext con animaciones alpha, color correction, audio placeholder"
+        ],
+        "ejemplo_comando": "node ranchocut/cli.js --recipe=ranchocut/recipes/receta-123456789.json --video=/sdcard/grabacion.webm"
+      },
+      {
+        "paso": 6,
+        "nombre": "Entregar Resultado",
+        "descripcion": "Informar al usuario y sugerir próximos pasos",
+        "acciones": [
+          "Indicar ruta del video final: ~/downloads/reel-final.mp4 o custom",
+          "Sugerir hashtags apropiados desde DB.textos_predefinidos.hashtags",
+          "Sugerir mejoras para próximo reel",
+          "Guardar estadística: qué combinaciones funcionan mejor"
+        ]
+      }
+    ]
+  },
+
+  "prompts_por_caso_de_uso": {
+    "caso_foto_nombrada": {
+      "descripcion": "Cuando el agente conoce la foto por su nombre/descripción",
+      "prompt_inicio": "Tengo que crear un Reel para Rancho Raiz. La foto seleccionada se llama '[NOMBRE_FOTO]' y su descripción es '[DESCRIPCION]'. Los tags que detecto son: '[TAGS]'.",
+      "pasos": [
+        "1. Mapear tags a categorías en TEMPLATES.recomendaciones_tags",
+        "2. Determinar contexto: ¿la foto muestra pileta? → verano. ¿muestra chimenea? → invierno. ¿muestra noche/estrellas? → astroturismo.",
+        "3. Generar receta: node ranchocut/cli.js --generar --foto=[ID] --clima=[detectado] --momento=[detectado]",
+        "4. Revisar coherencia",
+        "5. Ejecutar pipeline"
+      ],
+      "ejemplo_foto": "Foto: 'pileta-02-atardecer.jpg' | Descripción: 'Pileta al atardecer con sol dorado' | Tags: pileta, atardecer, verano, agua",
+      "ejemplo_inferencia": "Tags contienen 'pileta' → TEMPLATES.recomendaciones_tags.pileta = categoría 'verano_pileta'. Animaciones recomendadas: pool-dream, particle-text. Momento: atardecer. Clima: soleado. Textos de: por_momento.atardecer + por_estacion.verano."
+    },
+
+    "caso_solo_contexto": {
+      "descripcion": "Cuando el agente solo sabe clima/momento/estación, no hay foto específica",
+      "prompt_inicio": "Hoy es [FECHA], son [HORA]. El clima en Calingasta es [CLIMA]. Estamos en [ESTACION].",
+      "pasos": [
+        "1. Usar TEMPLATES.templates_por_contexto para priorizar assets",
+        "2. Buscar fotos cuyo clima_ideal coincida con el actual",
+        "3. Buscar animaciones cuyo contexto_ideal coincida",
+        "4. Generar receta: node ranchocut/cli.js --generar --clima=XX --momento=XX --estacion=XX",
+        "5. El CLI elige foto automáticamente del DB"
+      ],
+      "ejemplo_contexto": "Fecha: 15 enero 2026 | Hora: 14:00 | Clima: soleado, 32°C | Estación: verano",
+      "ejemplo_inferencia": "Prioridad: TEMPLATES.templates_por_contexto.clima.soleado + momento.mediodia + estacion.verano. Fotos con tag 'pileta' son prioritarias. Animación pool-dream es perfecta. Textos de verano + soleado + mediodia."
+    },
+
+    "caso_evento_especial": {
+      "descripcion": "Cuando hay promociones, eventos, fin de semana largo",
+      "prompt_inicio": "Este fin de semana es largo por [FESTIVO]. Rancho Raiz tiene una promoción: [PROMOCION].",
+      "pasos": [
+        "1. Generar receta base según contexto normal",
+        "2. Modificar textos secundarios para reflejar la promoción",
+        "3. Considerar plantilla 'classic' para mayor impacto de marca",
+        "4. Agregar llamado a acción fuerte en texto2",
+        "5. Usar hashtags relevantes al evento"
+      ],
+      "ejemplo_promocion": "Finde largo Carnaval + 20% de descuento + reserva con 50% anticipo",
+      "textos_modificados": {
+        "texto1": "Finde Largo en Rancho Raiz",
+        "texto2": "20% OFF | Reserva ahora",
+        "hashtags": "#Carnaval2026 #PromocionRanchoRaiz #FindeLargo"
+      }
+    }
+  },
+
+  "reglas_decision_importantes": {
+    "regla_1": {
+      "nombre": "Coherencia Tags",
+      "descripcion": "Los tags de la foto deben coincidir con la categoría de template",
+      "logica": "Si foto.tags contiene 'pileta' → categoría = verano_pileta. Si foto.tags contiene 'chimenea' o 'noche' → ver si corresponde a invierno_chimenea o astroturismo. Chequear TEMPLATES.recomendaciones_tags para cada tag."
+    },
+    "regla_2": {
+      "nombre": "Prioridad por Momento",
+      "descripcion": "El momento del día tiene más peso que la estación en textos",
+      "logica": "Si es noche → textos de noche son más importantes que los de verano/invierno. Si es atardecer → textos de atardecer dominan. Ver DB.textos_predefinidos.por_momento."
+    },
+    "regla_3": {
+      "nombre": "Plantilla según Categoría",
+      "descripcion": "Categoría define qué plantilla FFmpeg usar",
+      "logica": {
+        "verano_pileta": "classic o minimal",
+        "invierno_chimenea": "classic (mejor para textos cálidos)",
+        "astroturismo": "minimal o clima (si hay datos de temperatura)",
+        "marca_premium": "classic (enfocado en logo)",
+        "tour_virtual": "classic"
+      }
+    },
+    "regla_4": {
+      "nombre": "Alternativas",
+      "descripcion": "Siempre considerar las alternativas en la receta",
+      "logica": "Si la animación principal parece incoherente, revisar receta.alternativas_animacion. El CLI genera 3 alternativas. El agente puede elegir cualquiera o incluso buscar una diferente en DB.animaciones._index por tags."
+    }
+  },
+
+  "ejemplos_flujos_completos": {
+    "ejemplo_1": {
+      "nombre": "Noche de Invierno con Chimenea",
+      "entrada_agente": "21:30 hs, 5°C, despejado, invierno. Foto: habitacion-15 (chimenea encendida)",
+      "flujo": [
+        "Paso 1 - Contexto: clima=despejado, momento=noche, estacion=invierno, foto=habitacion-15",
+        "Paso 2 - CLI: node ranchocut/cli.js --generar --clima=despejado --momento=noche --estacion=invierno --foto=habitacion-15",
+        "Paso 3 - Revisión: Receta sugiere warm-glow. Foto tag=chimenea → TEMPLATES.recomendaciones_tags.chimenea.categoria = invierno_chimenea. Coherente ✓. Textos: 'Noches estrelladas...' + 'Reserva tu lugar'.",
+        "Paso 4 - Mejora IA: Podría cambiar texto1 a 'Chimenea encendida te espera' de DB.textos_predefinidos.por_estacion.invierno. Es más específico a la foto.",
+        "Paso 5 - Grabar: Abrir lab/arte-gallery/galeria/warm-glow.html en Chromium, grabar 8s",
+        "Paso 6 - FFmpeg: node ranchocut/cli.js --recipe=receta.json --video=grabacion.webm",
+        "Paso 7 - Entrega: Video listo. Hashtags: #RanchoRaiz #InviernoEnLosAndes #Chimenea #Astroturismo"
+      ]
+    },
+    "ejemplo_2": {
+      "nombre": "Tarde de Verano en Pileta",
+      "entrada_agente": "17:00 hs, 30°C, soleado, enero (verano). Foto: pileta-02 (pileta al atardecer)",
+      "flujo": [
+        "Paso 1 - Contexto: clima=soleado, momento=tarde→atardecer, estacion=verano, foto=pileta-02",
+        "Paso 2 - CLI: node ranchocut/cli.js --generar --clima=soleado --momento=atardecer --estacion=verano --foto=pileta-02",
+        "Paso 3 - Revisión: Receta sugiere pool-dream. Foto tag=pileta → categoría verano_pileta. Perfecta coincidencia. Animación pool-dream tiene contexto_ideal = verano + soleado + atardecer. ✓",
+        "Paso 4 - Textos: 'Atardecer naranja en los Andes' (por_momento.atardecer) + 'Escápate este finde' (llamados_accion). Ideal.",
+        "Paso 5 - Grabar: lab/arte-gallery/brand/02-pool-dream.html",
+        "Paso 6 - FFmpeg + Entrega"
+      ]
+    }
+  },
+
+  "como_leer_la_db": {
+    "ubicaciones": {
+      "db_principal": "ranchocut/assets/db.json",
+      "templates": "ranchocut/assets/templates.json"
+    },
+    "estructura_db": {
+      "fotos": "DB.fotos._index → array de objetos con id, archivo, descripcion, tags, categoria, hora, clima_ideal, estaciones, momentos, plantillas_recomendadas",
+      "animaciones": "DB.animaciones._index → array con id, nombre, descripcion, tags, duracion, mejor_para, contexto_ideal, ruta",
+      "audio": "DB.audio._index → similar",
+      "textos_predefinidos": {
+        "por_momento": "manana, mediodia, tarde, atardecer, noche",
+        "por_clima": "soleado, nublado, lluvia, nieve, despejado",
+        "por_estacion": "verano, invierno, primavera, otoño",
+        "llamados_accion": "Array de CTAs",
+        "hashtags": "Array de hashtags"
+      }
+    },
+    "busqueda_tags": "Para encontrar assets relacionados: buscar coincidencia entre foto.tags y TEMPLATES.recomendaciones_tags. Cada entrada en recomendaciones_tags tiene: animaciones, audio, categoria."
+  },
+
+  "referencia_rapida_cli": {
+    "generar_receta": "node ranchocut/cli.js --generar --clima=XX --momento=XX --estacion=XX [--foto=ID]",
+    "listar_assets": "node ranchocut/cli.js --listar=fotos | animaciones | textos",
+    "ejecutar_receta": "node ranchocut/cli.js --recipe=RUTA_JSON --video=RUTA_VIDEO [--output=SALIDA]",
+    "ffmpeg_directo": "node ranchocut/cli.js --video=RUTA [--classic|--clima|--minimal] [--texto1='XX'] [--texto2='XX']",
+    "ayuda": "node ranchocut/cli.js --help"
+  }
+}

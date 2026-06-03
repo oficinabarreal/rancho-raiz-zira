@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RanchoCut Render Engine</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background: #050510; 
+            width: 1080px;
+            height: 1920px;
+        }
+        canvas { 
+            display: block; 
+            width: 1080px; 
+            height: 1920px; 
+        }
+        #debug {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: rgba(255,255,255,0.5);
+            font-family: monospace;
+            font-size: 12px;
+            pointer-events: none;
+        }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <canvas id="videoCanvas" width="1080" height="1920"></canvas>
+    <div id="debug"></div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        
+        const canvas = document.getElementById('videoCanvas');
+        const debug = document.getElementById('debug');
+        
+        let config = {
+            clipType: 'particles',
+            duration: 8,
+            fps: 30,
+            temperatura: '26°C',
+            estado: 'Despejado',
+            textoPrincipal: 'RANCHO RAÍZ'
+        };
+        
+        window.setConfig = function(cfg) {
+            config = { ...config, ...cfg };
+            debug.textContent = `Config: ${JSON.stringify(config)}`;
+        };
+        
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x050510);
+        scene.fog = new THREE.FogExp2(0x050510, 0.02);
+        
+        const camera = new THREE.PerspectiveCamera(45, 1080 / 1920, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            canvas: canvas, 
+            antialias: true,
+            preserveDrawingBuffer: true,
+            alpha: true
+        });
+        renderer.setSize(1080, 1920, false);
+        renderer.setPixelRatio(1);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+        scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+        
+        const warmLight = new THREE.PointLight(0xffa500, 2, 30);
+        warmLight.position.set(0, 2, 0);
+        scene.add(warmLight);
+        
+        const coolLight = new THREE.DirectionalLight(0x4488ff, 0.5);
+        coolLight.position.set(-5, 3, -5);
+        scene.add(coolLight);
+        
+        let clipObjects = [];
+        let animationCallback = null;
+        
+        function buildParticleClip() {
+            const particleCount = 4000;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            
+            const neonColors = [
+                new THREE.Color(0x00ccff),
+                new THREE.Color(0x00ff99),
+                new THREE.Color(0xff3388),
+                new THREE.Color(0x7744ff),
+                new THREE.Color(0xff6600)
+            ];
+            
+            const textPixels = generateTextPixelCoords(config.textoPrincipal || 'RANCHO');
+            
+            const particles = [];
+            const targetPositions = [];
+            
+            for (let i = 0; i < particleCount; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const radius = 10 + Math.random() * 8;
+                const zOffset = (Math.random() - 0.5) * 4;
+                
+                positions[i * 3] = Math.cos(angle) * radius;
+                positions[i * 3 + 1] = Math.sin(angle) * radius;
+                positions[i * 3 + 2] = zOffset;
+                
+                const color = neonColors[Math.floor(Math.random() * neonColors.length)];
+                colors[i * 3] = color.r;
+                colors[i * 3 + 1] = color.g;
+                colors[i * 3 + 2] = color.b;
+                
+                const targetPixel = textPixels[i % textPixels.length];
+                targetPositions.push({
+                    x: targetPixel ? targetPixel.x : (Math.random() - 0.5) * 6,
+                    y: targetPixel ? targetPixel.y : (Math.random() - 0.5) * 3,
+                    z: 0
+                });
+                
+                particles.push({
+                    originalX: positions[i * 3],
+                    originalY: positions[i * 3 + 1],
+                    originalZ: positions[i * 3 + 2]
+                });
+            }
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            
+            const material = new THREE.ShaderMaterial({
+                uniforms: { uTime: { value: 0 } },
+                vertexShader: `
+                    attribute vec3 color;
+                    varying vec3 vColor;
+                    void main() {
+                        vColor = color;
+                        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                        gl_PointSize = 2.5 * 300.0 / -mvPosition.z;
+                        gl_Position = projectionMatrix * mvPosition;
+                    }
+                `,
+                fragmentShader: `
+                    varying vec3 vColor;
+                    void main() {
+                        float dist = length(gl_PointCoord - vec2(0.5));
+                        if (dist > 0.5) discard;
+                        float alpha = 1.0 - smoothstep(0.35, 0.5, dist);
+                        gl_FragColor = vec4(vColor, alpha);
+                    }
+                `,
+                transparent: true,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+            
+            const particleSystem = new THREE.Points(geometry, material);
+            scene.add(particleSystem);
+            
+            clipObjects.push(particleSystem);
+            
+            return {
+                particles,
+                targetPositions,
+                particleSystem,
+                material
+            };
+        }
+        
+        function generateTextPixelCoords(text) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = 'bold 120px system-ui, sans-serif';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+            
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            const pixels = [];
+            
+            for (let y = 0; y < canvas.height; y += 3) {
+                for (let x = 0; x < canvas.width; x += 3) {
+                    const i = (y * canvas.width + x) * 4;
+                    if (imageData[i] > 128) {
+                        pixels.push({
+                            x: (x - canvas.width / 2) / 50,
+                            y: -(y - canvas.height / 2) / 50
+                        });
+                    }
+                }
+            }
+            return pixels;
+        }
+        
+        function buildGlassClip() {
+            const group = new THREE.Group();
+            const text = config.textoPrincipal || 'RANCHO';
+            const spacing = 1.5;
+            const totalWidth = (text.length - 1) * spacing;
+            
+            const neonColors = [0x00ccff, 0x00ff99, 0xff3388, 0x7744ff, 0xff6600, 0x00ddff];
+            const letters = [];
+            
+            for (let i = 0; i < text.length; i++) {
+                const color = neonColors[i % neonColors.length];
+                
+                const geometry = new THREE.CylinderGeometry(0.35, 0.35, 1.2, 16);
+                const material = new THREE.MeshPhysicalMaterial({
+                    color: 0xffffff,
+                    metalness: 0.0,
+                    roughness: 0.03,
+                    transmission: 0.97,
+                    thickness: 0.6,
+                    ior: 1.5,
+                    transparent: true,
+                    opacity: 0.85,
+                    clearcoat: 1.0,
+                });
+                
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.position.x = -totalWidth / 2 + i * spacing;
+                
+                const glowGeom = new THREE.SphereGeometry(0.8, 32, 32);
+                const glowMat = new THREE.MeshBasicMaterial({ 
+                    color: color, 
+                    transparent: true, 
+                    opacity: 0.12 
+                });
+                mesh.add(new THREE.Mesh(glowGeom, glowMat));
+                
+                const edgesGeom = new THREE.EdgesGeometry(geometry);
+                const edgesMat = new THREE.LineBasicMaterial({ 
+                    color: color,
+                    transparent: true,
+                    opacity: 0.5
+                });
+                mesh.add(new THREE.LineSegments(edgesGeom, edgesMat));
+                
+                group.add(mesh);
+                letters.push({
+                    mesh,
+                    originalX: mesh.position.x,
+                    index: i
+                });
+            }
+            
+            const particleCount = 30;
+            const glowColors = [0x00ccff, 0x00ff99, 0xff3388, 0x7744ff];
+            
+            for (let i = 0; i < particleCount; i++) {
+                const color = glowColors[i % glowColors.length];
+                const glowMat = new THREE.MeshBasicMaterial({ color });
+                const particle = new THREE.Mesh(
+                    new THREE.SphereGeometry(0.06 + Math.random() * 0.06, 8, 8),
+                    glowMat
+                );
+                
+                particle.position.set(
+                    (Math.random() - 0.5) * totalWidth * 1.2,
+                    (Math.random() - 0.5) * 4,
+                    (Math.random() - 0.5) * 3
+                );
+                
+                particle.userData = {
+                    originalPos: particle.position.clone(),
+                    speed: 0.5 + Math.random() * 1.5,
+                    offset: Math.random() * Math.PI * 2
+                };
+                
+                group.add(particle);
+            }
+            
+            scene.add(group);
+            clipObjects.push(group);
+            
+            return { group, letters };
+        }
+        
+        function buildBackgroundMountains() {
+            const mountainGroup = new THREE.Group();
+            
+            for (let i = 0; i < 5; i++) {
+                const scale = 0.6 + Math.random() * 0.8;
+                const height = 6 + Math.random() * 8;
+                
+                const mountain = new THREE.Mesh(
+                    new THREE.ConeGeometry(4 * scale, height, 4),
+                    new THREE.MeshStandardMaterial({ 
+                        color: i % 2 === 0 ? 0x2a2a3e : 0x1a1a2e, 
+                        roughness: 0.95, 
+                        flatShading: true 
+                    })
+                );
+                
+                mountain.position.set(
+                    (i - 2) * 6 + (Math.random() - 0.5) * 3,
+                    height / 2 - 4,
+                    -15 - Math.random() * 10
+                );
+                
+                mountain.rotation.y = Math.random() * Math.PI * 0.25;
+                mountainGroup.add(mountain);
+            }
+            
+            const starsGeometry = new THREE.BufferGeometry();
+            const starPositions = new Float32Array(500 * 3);
+            
+            for (let i = 0; i < 500; i++) {
+                const radius = 40 + Math.random() * 40;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.random() * Math.PI;
+                
+                starPositions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+                starPositions[i * 3 + 1] = radius * Math.cos(phi) * 0.6 + 15;
+                starPositions[i * 3 + 2] = -20 - Math.random() * 30;
+            }
+            
+            starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            
+            const starsMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 0.15,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            mountainGroup.add(new THREE.Points(starsGeometry, starsMaterial));
+            
+            scene.add(mountainGroup);
+            clipObjects.push(mountainGroup);
+            
+            return mountainGroup;
+        }
+        
+        let clipData = null;
+        
+        function initScene() {
+            clipObjects.forEach(obj => scene.remove(obj));
+            clipObjects = [];
+            
+            buildBackgroundMountains();
+            
+            if (config.clipType === 'glass') {
+                clipData = buildGlassClip();
+            } else {
+                clipData = buildParticleClip();
+            }
+            
+            camera.position.set(0, 0, 12);
+        }
+        
+        const clock = new THREE.Clock();
+        let startTime = 0;
+        let isRecording = false;
+        let recordedChunks = [];
+        let mediaRecorder = null;
+        
+        function animate() {
+            const elapsed = clock.getElapsedTime();
+            const progress = startTime > 0 ? (elapsed - startTime) / config.duration : 0;
+            
+            if (debug) {
+                debug.textContent = `Time: ${(elapsed - (startTime || elapsed)).toFixed(2)}s / ${config.duration}s | Progress: ${(progress * 100).toFixed(0)}%`;
+            }
+            
+            if (config.clipType === 'glass' && clipData && clipData.letters) {
+                clipData.letters.forEach((letter, i) => {
+                    const delay = letter.index * 0.08;
+                    const localProgress = Math.max(0, Math.min(1, (progress - delay) / 0.5));
+                    
+                    if (localProgress > 0 && localProgress < 1) {
+                        const eased = 1 - Math.pow(1 - localProgress, 3);
+                        letter.mesh.position.y = Math.sin(elapsed * 2 + i) * 0.2 * eased;
+                        letter.mesh.rotation.z = Math.sin(elapsed * 1.5 + i * 0.5) * 0.1 * eased;
+                    }
+                    letter.mesh.rotation.y += 0.003;
+                });
+                
+                clipData.group.rotation.y = Math.sin(elapsed * 0.2) * 0.1;
+            } 
+            else if (clipData && clipData.particles) {
+                const positions = clipData.particleSystem.geometry.attributes.position.array;
+                
+                for (let i = 0; i < 4000; i++) {
+                    if (i * 3 + 2 >= positions.length) break;
+                    
+                    const p = clipData.particles[i];
+                    const t = clipData.targetPositions[i];
+                    if (!p || !t) continue;
+                    
+                    if (progress < 0.35) {
+                        const phase = progress / 0.35;
+                        const eased = 1 - Math.pow(1 - phase, 3);
+                        positions[i * 3] = p.originalX + (t.x - p.originalX) * eased;
+                        positions[i * 3 + 1] = p.originalY + (t.y - p.originalY) * eased;
+                        positions[i * 3 + 2] = p.originalZ + (t.z - p.originalZ) * eased;
+                    } 
+                    else if (progress > 0.65) {
+                        const phase = (progress - 0.65) / 0.35;
+                        phase = phase * phase;
+                        positions[i * 3] = t.x + (p.originalX - t.x) * phase;
+                        positions[i * 3 + 1] = t.y + (p.originalY - t.y) * phase;
+                        positions[i * 3 + 2] = t.z + (p.originalZ - t.z) * phase;
+                    } 
+                    else {
+                        positions[i * 3] = t.x + Math.sin(elapsed * 2 + i * 0.01) * 0.03;
+                        positions[i * 3 + 1] = t.y + Math.cos(elapsed * 1.5 + i * 0.02) * 0.03;
+                    }
+                }
+                
+                clipData.particleSystem.geometry.attributes.position.needsUpdate = true;
+                clipData.particleSystem.rotation.y = Math.sin(elapsed * 0.3) * 0.1;
+            }
+            
+            renderer.render(scene, camera);
+            
+            if (isRecording && progress >= 1) {
+                stopRecording();
+                return;
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        function startRecording() {
+            initScene();
+            
+            const stream = canvas.captureStream(config.fps);
+            recordedChunks = [];
+            
+            mediaRecorder = new MediaRecorder(stream, {
+                mimeType: 'video/webm;codecs=vp9',
+                videoBitsPerSecond: 50000000
+            });
+            
+            mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) recordedChunks.push(e.data);
+            };
+            
+            mediaRecorder.onstop = async () => {
+                const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                const buffer = await blob.arrayBuffer();
+                
+                window._renderComplete = true;
+                
+                if (window.onRecordingComplete) {
+                    window.onRecordingComplete(Array.from(new Uint8Array(buffer)));
+                }
+            };
+            
+            isRecording = true;
+            startTime = clock.getElapsedTime();
+            mediaRecorder.start();
+        }
+        
+        function stopRecording() {
+            isRecording = false;
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+            }
+        }
+        
+        window.startRender = function(cfg) {
+            if (cfg) config = { ...config, ...cfg };
+            startRecording();
+        };
+        
+        window.preview = function() {
+            initScene();
+            startTime = 0;
+            clock.start();
+            animate();
+        };
+        
+        initScene();
+        animate();
+    </script>
+</body>
+</html>

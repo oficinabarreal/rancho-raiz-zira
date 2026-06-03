@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:37:53.801Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_07_habitacion-10.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra una escena nocturna de un complejo de posada con una pileta de natación iluminada en primer plano. Se observan estructuras rústicas con techos de paja, árboles altos y un cielo oscuro con nubes, todo bañado por una iluminación artificial cálida.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "pileta",
+    "techos de paja",
+    "luces artificiales",
+    "árboles",
+    "cielo nocturno",
+    "muros de adobe",
+    "suelo mojado"
+  ],
+  "momento_detectado": "noche",
+  "tags_sugeridos": [
+    "posada",
+    "noche",
+    "pileta",
+    "rústico",
+    "Calingasta"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "noche",
+  "clima_ideal": [
+    "templado",
+    "seco",
+    "despejado"
+  ],
+  "estaciones": [
+    "verano",
+    "primavera"
+  ],
+  "momentos": [
+    "noche",
+    "atardecer"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "warm-glow",
+    "night-sky"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": true,
+    "hay_agua": true,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": true,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.95,
+  "comentarios_adicionales": "La iluminación artificial crea un ambiente acogedor y resalta la textura de los materiales rústicos. El suelo mojado refleja las luces, añadiendo profundidad a la escena."
+}

@@ -1,0 +1,384 @@
+{
+  "studio": "RanchoCut Studio",
+  "version": "2.0",
+  "resolucion": {
+    "ancho": 1080,
+    "alto": 1920,
+    "aspecto": "9:16"
+  },
+  "config": {
+    "previewSegundos": 3,
+    "grabacionSegundos": 8,
+    "fps": 30
+  },
+  "categorias": {
+    "galeria": {
+      "nombre": "Galería 3D",
+      "color": "#00ccff",
+      "animaciones": [
+        {
+          "id": "translucent-letters",
+          "nombre": "Letras Translúcidas",
+          "descripcion": "Texto 3D neón con dispersión interactiva",
+          "tags": ["glow", "interactivo"],
+          "path": "lab/arte-gallery/galeria/translucent-letters.html",
+          "duracion": 8
+        },
+        {
+          "id": "glassmorphism",
+          "nombre": "Glassmorphism",
+          "descripcion": "Geometrías con efecto vidrio esmerilado",
+          "tags": ["refracción", "bloom"],
+          "path": "lab/arte-gallery/galeria/glassmorphism.html",
+          "duracion": 6
+        },
+        {
+          "id": "particle-galaxy",
+          "nombre": "Galaxia Partículas",
+          "descripcion": "5000 partículas con brazos espirales",
+          "tags": ["partículas", "orgánico"],
+          "path": "lab/arte-gallery/galeria/particle-galaxy.html",
+          "duracion": 10
+        },
+        {
+          "id": "logo-reveal",
+          "nombre": "Logo Reveal",
+          "descripcion": "Revelación de marca con partículas",
+          "tags": ["marca", "cinemático"],
+          "path": "lab/arte-gallery/galeria/logo-reveal.html",
+          "duracion": 5
+        }
+      ]
+    },
+    "transiciones": {
+      "nombre": "Transiciones",
+      "color": "#ff3388",
+      "animaciones": [
+        {
+          "id": "scramble",
+          "nombre": "Text Scramble",
+          "descripcion": "Caracteres se mezclan digitalmente",
+          "tags": ["texto", "digital"],
+          "path": "lab/arte-gallery/transiciones/01-scramble.html",
+          "duracion": 5
+        },
+        {
+          "id": "kinetic",
+          "nombre": "Kinetic Typography",
+          "descripcion": "Palabras vuelan desde los costados",
+          "tags": ["cinético", "rebote"],
+          "path": "lab/arte-gallery/transiciones/02-kinetic.html",
+          "duracion": 6
+        },
+        {
+          "id": "wave-reveal",
+          "nombre": "Wave Reveal",
+          "descripcion": "Barrido con onda senoidal shader",
+          "tags": ["shader", "barrido"],
+          "path": "lab/arte-gallery/transiciones/03-wave-reveal.html",
+          "duracion": 5
+        },
+        {
+          "id": "flip-cards",
+          "nombre": "3D Flip Cards",
+          "descripcion": "Cartas 3D giran 180° con mensajes",
+          "tags": ["3D", "dual"],
+          "path": "lab/arte-gallery/transiciones/04-flip-cards.html",
+          "duracion": 6
+        },
+        {
+          "id": "glitch",
+          "nombre": "Glitch Morph",
+          "descripcion": "Texto con glitch digital y RGB split",
+          "tags": ["glitch", "cyberpunk"],
+          "path": "lab/arte-gallery/transiciones/05-glitch.html",
+          "duracion": 5
+        },
+        {
+          "id": "text-anim",
+          "nombre": "Text Animado",
+          "descripcion": "Tipografía publicitaria para Reels",
+          "tags": ["texto", "publicidad"],
+          "path": "lab/arte-gallery/transiciones/06-text.html",
+          "duracion": 7
+        },
+        {
+          "id": "ejemplar-texto",
+          "nombre": "Ejemplar Texto",
+          "descripcion": "Video publicitario Rancho Raiz",
+          "tags": ["ejemplo", "completo"],
+          "path": "lab/arte-gallery/transiciones/07-ejemplar-texto.html",
+          "duracion": 10
+        },
+        {
+          "id": "minimalista",
+          "nombre": "Minimalista",
+          "descripcion": "Estilo minimal para vertical",
+          "tags": ["minimal", "limpio"],
+          "path": "lab/arte-gallery/transiciones/08-minimalista.html",
+          "duracion": 6
+        },
+        {
+          "id": "organico-poetico",
+          "nombre": "Orgánico Poético",
+          "descripcion": "Estilo orgánico y poético",
+          "tags": ["orgánico", "poético"],
+          "path": "lab/arte-gallery/transiciones/09-organico-poetico.html",
+          "duracion": 8
+        },
+        {
+          "id": "aventura-destino",
+          "nombre": "Aventura Destino",
+          "descripcion": "Estilo aventura y épico",
+          "tags": ["épico", "aventura"],
+          "path": "lab/arte-gallery/transiciones/10-aventura-destino.html",
+          "duracion": 8
+        },
+        {
+          "id": "parts",
+          "nombre": "Spot Premium",
+          "descripcion": "Spot premium con partículas",
+          "tags": ["premium", "completo"],
+          "path": "lab/arte-gallery/transiciones/11-parts.html",
+          "duracion": 10
+        }
+      ]
+    },
+    "letras": {
+      "nombre": "Letras & Tipografía",
+      "color": "#7744ff",
+      "animaciones": [
+        {
+          "id": "matrix-letras",
+          "nombre": "Matrix",
+          "descripcion": "Estilo Matrix digital",
+          "tags": ["digital", "matrix"],
+          "path": "lab/arte-gallery/letras/01-matrix.html",
+          "duracion": 6
+        },
+        {
+          "id": "click-pantalla",
+          "nombre": "Click Pantalla",
+          "descripcion": "Interactivo con click",
+          "tags": ["interactivo", "click"],
+          "path": "lab/arte-gallery/letras/02-click-pantalla.html",
+          "duracion": 5
+        },
+        {
+          "id": "ondas",
+          "nombre": "Ondas",
+          "descripcion": "Ondas deformando texto",
+          "tags": ["shader", "ondas"],
+          "path": "lab/arte-gallery/letras/03-ondas.html",
+          "duracion": 6
+        },
+        {
+          "id": "spring",
+          "nombre": "Spring Physics",
+          "descripcion": "Física de resortes",
+          "tags": ["física", "spring"],
+          "path": "lab/arte-gallery/letras/04-spring.html",
+          "duracion": 7
+        },
+        {
+          "id": "pendulo",
+          "nombre": "Péndulo",
+          "descripcion": "Letras como péndulos",
+          "tags": ["física", "pendular"],
+          "path": "lab/arte-gallery/letras/05-pendulo.html",
+          "duracion": 6
+        },
+        {
+          "id": "eco-lujo",
+          "nombre": "Eco Lujo",
+          "descripcion": "Efecto eco de lujo",
+          "tags": ["eco", "premium"],
+          "path": "lab/arte-gallery/letras/06-eco-lujo.html",
+          "duracion": 5
+        },
+        {
+          "id": "magnetismo",
+          "nombre": "Magnetismo",
+          "descripcion": "Letras atraídas magnéticamente",
+          "tags": ["física", "imán"],
+          "path": "lab/arte-gallery/letras/07-mahnetismo.html",
+          "duracion": 6
+        },
+        {
+          "id": "falla-optica",
+          "nombre": "Falla Óptica",
+          "descripcion": "Distorsiones ópticas",
+          "tags": ["shader", "distorsión"],
+          "path": "lab/arte-gallery/letras/08-falla-optica.html",
+          "duracion": 5
+        },
+        {
+          "id": "gasap",
+          "nombre": "GSAP Animado",
+          "descripcion": "Animaciones GSAP fluidas",
+          "tags": ["gsap", "tween"],
+          "path": "lab/arte-gallery/letras/09-gasap.html",
+          "duracion": 6
+        },
+        {
+          "id": "completo-letras",
+          "nombre": "Completo",
+          "descripcion": "Showcase completo de letras",
+          "tags": ["showcase", "completo"],
+          "path": "lab/arte-gallery/letras/10-completo.html",
+          "duracion": 10
+        }
+      ]
+    },
+    "brand": {
+      "nombre": "Brand (Posada)",
+      "color": "#00ff99",
+      "animaciones": [
+        {
+          "id": "hotel-gallery",
+          "nombre": "Hotel Gallery",
+          "descripcion": "6 fotos reales en círculo 3D glass",
+          "tags": ["fotos", "posada", "glass"],
+          "path": "lab/arte-gallery/brand/01-hotel-gallery.html",
+          "duracion": 10
+        },
+        {
+          "id": "pool-dream",
+          "nombre": "Pool Dream",
+          "descripcion": "Pileta con shader de agua reflectante",
+          "tags": ["agua", "shader", "pileta"],
+          "path": "lab/arte-gallery/brand/02-pool-dream.html",
+          "duracion": 8
+        },
+        {
+          "id": "logo-3d",
+          "nombre": "Logo 3D Reveal",
+          "descripcion": "Logo real con revelación cinemática",
+          "tags": ["marca", "cinemático"],
+          "path": "lab/arte-gallery/brand/03-logo-3d.html",
+          "duracion": 6
+        },
+        {
+          "id": "rancho-raiz-letters",
+          "nombre": "Rancho Raiz Letters",
+          "descripcion": "Letras neón translúcidas con dispersión",
+          "tags": ["marca", "neón", "glow"],
+          "path": "lab/rancho_raiz_letters.html",
+          "duracion": 8
+        },
+        {
+          "id": "letras-v2",
+          "nombre": "Letras v2 Poimandres",
+          "descripcion": "Glassmorphism avanzado con IOR",
+          "tags": ["poimandres", "transmission"],
+          "path": "lab/letrasv2.html",
+          "duracion": 7
+        },
+        {
+          "id": "letras-basicas",
+          "nombre": "Letras Básicas",
+          "descripcion": "Versión inicial de letras 3D",
+          "tags": ["básico", "prueba"],
+          "path": "lab/letras.html",
+          "duracion": 5
+        },
+        {
+          "id": "fiber-tree",
+          "nombre": "Fiber Tree Ad",
+          "descripcion": "Árbol de fibra 3D conceptual",
+          "tags": ["conceptual", "artístico"],
+          "path": "lab/fiber_tree_ad.html",
+          "duracion": 6
+        }
+      ]
+    },
+    "fusion": {
+      "nombre": "Fusión (Multi-técnica)",
+      "color": "#ff6600",
+      "animaciones": [
+        {
+          "id": "kinetic-glass",
+          "nombre": "Kinetic Glass",
+          "descripcion": "Glass + Kinetic + Partículas",
+          "tags": ["fusión", "3 técnicas"],
+          "path": "lab/arte-gallery/fusion/01-kinetic-glass.html",
+          "duracion": 8
+        },
+        {
+          "id": "particle-typography",
+          "nombre": "Particle Typography",
+          "descripcion": "3500 partículas formando RANCHO",
+          "tags": ["fusión", "4 técnicas"],
+          "path": "lab/arte-gallery/fusion/02-particle-typography.html",
+          "duracion": 8
+        },
+        {
+          "id": "crystal-glitch",
+          "nombre": "Crystal Glitch",
+          "descripcion": "Shader + GlitchPass + RGB split",
+          "tags": ["fusión", "5 técnicas"],
+          "path": "lab/arte-gallery/fusion/03-crystal-glitch.html",
+          "duracion": 7
+        }
+      ]
+    },
+    "revistas": {
+      "nombre": "Estilos Revista",
+      "color": "#aa44ff",
+      "animaciones": [
+        {
+          "id": "editorial-viajes",
+          "nombre": "Editorial Viajes",
+          "descripcion": "Estilo editorial de viajes",
+          "tags": ["editorial", "viajes"],
+          "path": "lab/arte-gallery/revistas/01-editorial-viajes.html",
+          "duracion": 8
+        },
+        {
+          "id": "brutalismo-organico",
+          "nombre": "Brutalismo Orgánico",
+          "descripcion": "Estilo brutalista",
+          "tags": ["brutalismo", "grunge"],
+          "path": "lab/arte-gallery/revistas/02-brutalismo-organico.html",
+          "duracion": 7
+        },
+        {
+          "id": "retro-cine",
+          "nombre": "Retro Cine",
+          "descripcion": "Estilo retro y cinematográfico",
+          "tags": ["retro", "cinema"],
+          "path": "lab/arte-gallery/revistas/03-retro-cine.html",
+          "duracion": 8
+        }
+      ]
+    },
+    "motor": {
+      "nombre": "Motor React Three",
+      "color": "#ffaa00",
+      "animaciones": [
+        {
+          "id": "posada-3d",
+          "nombre": "Posada 3D",
+          "descripcion": "Escenario React Three Fiber",
+          "tags": ["react", "r3f", "componente"],
+          "path": "lab/motor-three/posada-3d/index.html",
+          "duracion": 10
+        }
+      ]
+    }
+  },
+  "plantillasFFmpeg": {
+    "classic": {
+      "nombre": "Rancho Raiz Classic",
+      "textos": ["RANCHO RAÍZ", "CONEXIÓN ANDINA", "RESERVA HOY", "@ranchoraiz.posada"]
+    },
+    "clima": {
+      "nombre": "Clima Diario",
+      "textos": ["EL CLIMA EN RANCHO RAÍZ", "{{temperatura}}", "{{estado}}", "{{consejo}}"]
+    },
+    "minimal": {
+      "nombre": "Solo Instagram",
+      "textos": ["@ranchoraiz.posada"]
+    }
+  }
+}

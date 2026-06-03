@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:43:11.237Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_01_habitacion-04.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra un paisaje nocturno en un campo abierto bajo un cielo estrellado con nubes iluminadas por la luna. Se observan siluetas de árboles, animales pastando y luces distantes que sugieren una zona rural o semiurbana.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "cielo nocturno",
+    "luna",
+    "nubes",
+    "campos",
+    "árboles",
+    "animales",
+    "luces distantes",
+    "vegetación baja"
+  ],
+  "momento_detectado": "noche",
+  "tags_sugeridos": [
+    "noche",
+    "paisaje rural",
+    "luna",
+    "campos",
+    "siluetas"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "noche",
+  "clima_ideal": [
+    "despejado",
+    "frío",
+    "seco"
+  ],
+  "estaciones": [
+    "invierno",
+    "otoño"
+  ],
+  "momentos": [
+    "noche tranquila",
+    "atardecer tardío"
+  ],
+  "animaciones_recomendadas": [
+    "pool-dream",
+    "warm-glow",
+    "night-breeze"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": false,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.9,
+  "comentarios_adicionales": "La foto captura una escena serena y natural, ideal para transmitir tranquilidad y conexión con el entorno rural. No se ven estructuras arquitectónicas ni elementos de marca."
+}

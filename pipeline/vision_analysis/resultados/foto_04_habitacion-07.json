@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:36:56.169Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "archivo_original": "foto_04_habitacion-07.jpg"
+  },
+  "analizada": true,
+  "descripcion_real": "La imagen muestra un paisaje exterior con cielo azul intenso, nubes blancas voluminosas y una luna visible en el cielo. En primer plano se observa terreno con pasto disperso y suelo arenoso, mientras que en segundo plano hay construcciones rústicas de adobe o material similar, árboles altos y delgados, y al fondo se intuyen montañas bajo el horizonte.",
+  "categoria": "exterior",
+  "elementos_clave": [
+    "cielo azul",
+    "nubes blancas",
+    "luna",
+    "pasto",
+    "suelo arenoso",
+    "construcciones rústicas",
+    "árboles altos",
+    "montañas al fondo"
+  ],
+  "momento_detectado": "tarde",
+  "tags_sugeridos": [
+    "paisaje andino",
+    "posada rural",
+    "cielo despejado",
+    "arquitectura tradicional",
+    "naturaleza argentina"
+  ],
+  "categoria_sugerida": "exterior",
+  "hora_sugerida": "tarde",
+  "clima_ideal": [
+    "soleado",
+    "despejado",
+    "templado"
+  ],
+  "estaciones": [
+    "primavera",
+    "verano",
+    "otoño"
+  ],
+  "momentos": [
+    "atardecer tranquilo",
+    "día soleado",
+    "visita turística"
+  ],
+  "animaciones_recomendadas": [
+    "warm-glow",
+    "cloud-drift",
+    "gentle-breeze"
+  ],
+  "preguntas_clave": {
+    "hay_chimenea": false,
+    "hay_pileta": false,
+    "hay_agua": false,
+    "hay_fuego": false,
+    "hay_montanas": true,
+    "es_logo": false,
+    "hay_cama": false,
+    "hay_muebles_rusticos": false,
+    "se_ve_cielo": true,
+    "hay_plantas": true
+  },
+  "confianza_analisis": 0.92,
+  "comentarios_adicionales": "La foto captura la esencia del entorno natural y arquitectónico de la región de Calingasta, destacando la armonía entre la construcción humana y el paisaje andino. La presencia de la luna durante el día sugiere que es tarde, posiblemente cerca del atardecer."
+}

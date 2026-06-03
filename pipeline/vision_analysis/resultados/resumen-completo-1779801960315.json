@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:26:00.299Z",
+    "modelo": "gemini-2.0-flash",
+    "total_fotos": 1,
+    "exitos": 0,
+    "errores": 1
+  },
+  "resultados": [
+    {
+      "nombre_archivo": "foto_19_pileta-01.jpg",
+      "error": "API error: 429"
+    }
+  ]
+}

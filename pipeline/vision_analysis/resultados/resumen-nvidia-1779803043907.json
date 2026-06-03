@@ -1,0 +1,323 @@
+{
+  "_meta": {
+    "fecha_analisis": "2026-05-26T13:44:03.907Z",
+    "modelo": "qwen/qwen3.5-122b-a10b",
+    "api": "NVIDIA NIM",
+    "total_fotos": 5,
+    "exitos": 5,
+    "errores": 0
+  },
+  "resultados": [
+    {
+      "nombre_archivo": "foto_01_habitacion-04.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "La imagen muestra un paisaje nocturno en un campo abierto bajo un cielo estrellado con nubes iluminadas por la luna. Se observan siluetas de árboles, animales pastando y luces distantes que sugieren una zona rural o semiurbana.",
+        "categoria": "exterior",
+        "elementos_clave": [
+          "cielo nocturno",
+          "luna",
+          "nubes",
+          "campos",
+          "árboles",
+          "animales",
+          "luces distantes",
+          "vegetación baja"
+        ],
+        "momento_detectado": "noche",
+        "tags_sugeridos": [
+          "noche",
+          "paisaje rural",
+          "luna",
+          "campos",
+          "siluetas"
+        ],
+        "categoria_sugerida": "exterior",
+        "hora_sugerida": "noche",
+        "clima_ideal": [
+          "despejado",
+          "frío",
+          "seco"
+        ],
+        "estaciones": [
+          "invierno",
+          "otoño"
+        ],
+        "momentos": [
+          "noche tranquila",
+          "atardecer tardío"
+        ],
+        "animaciones_recomendadas": [
+          "pool-dream",
+          "warm-glow",
+          "night-breeze"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": false,
+          "hay_agua": false,
+          "hay_fuego": false,
+          "hay_montanas": false,
+          "es_logo": false,
+          "hay_cama": false,
+          "hay_muebles_rusticos": false,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.9,
+        "comentarios_adicionales": "La foto captura una escena serena y natural, ideal para transmitir tranquilidad y conexión con el entorno rural. No se ven estructuras arquitectónicas ni elementos de marca."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_01_habitacion-04.json"
+    },
+    {
+      "nombre_archivo": "foto_03_habitacion-06.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "La imagen muestra una vista exterior de la posada Rancho Raiz en Calingasta, con edificios de adobe y estructuras rústicas rodeadas de árboles altos y vegetación. El cielo azul presenta nubes blancas voluminosas y la luna es visible, sugiriendo un momento entre tarde y atardecer.",
+        "categoria": "exterior",
+        "elementos_clave": [
+          "edificio de adobe",
+          "camioneta blanca",
+          "árboles altos",
+          "cielo azul",
+          "nubes blancas",
+          "luna visible",
+          "estructuras rústicas",
+          "pasto",
+          "montañas al fondo"
+        ],
+        "momento_detectado": "atardecer",
+        "tags_sugeridos": [
+          "posada",
+          "rural",
+          "andes",
+          "arquitectura_adobe",
+          "paisaje_argentino"
+        ],
+        "categoria_sugerida": "exterior",
+        "hora_sugerida": "atardecer",
+        "clima_ideal": [
+          "despejado",
+          "parcialmente nublado",
+          "templado"
+        ],
+        "estaciones": [
+          "primavera",
+          "verano",
+          "otoño"
+        ],
+        "momentos": [
+          "atardecer",
+          "amanecer",
+          "tarde"
+        ],
+        "animaciones_recomendadas": [
+          "warm-glow",
+          "cloud-drift",
+          "nature-breeze"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": false,
+          "hay_agua": false,
+          "hay_fuego": false,
+          "hay_montanas": true,
+          "es_logo": false,
+          "hay_cama": false,
+          "hay_muebles_rusticos": true,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.92,
+        "comentarios_adicionales": "La presencia de la luna durante el día y la iluminación cálida sugieren que la foto fue tomada cerca del atardecer. La arquitectura tradicional de adobe y el entorno natural son característicos de la región de Calingasta."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_03_habitacion-06.json"
+    },
+    {
+      "nombre_archivo": "foto_10_habitacion-13.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "La imagen muestra una piscina rectangular de agua azul turquesa rodeada por un deck de hormigón húmedo que refleja el cielo. A la izquierda, se observa una estructura de madera rústica con techo de paja y columnas de troncos, bajo la cual hay muebles de madera. Al fondo, se aprecian árboles altos y un cielo parcialmente nublado con tonos azules y grises.",
+        "categoria": "exterior",
+        "elementos_clave": [
+          "piscina",
+          "deck de hormigón",
+          "estructura de madera",
+          "techo de paja",
+          "columnas de troncos",
+          "sillón de madera",
+          "mesa baja",
+          "árboles altos",
+          "cielo nublado",
+          "muro de adobe",
+          "columpio de madera"
+        ],
+        "momento_detectado": "mediodia",
+        "tags_sugeridos": [
+          "piscina",
+          "rústico",
+          "exterior",
+          "relax",
+          "naturaleza"
+        ],
+        "categoria_sugerida": "exterior",
+        "hora_sugerida": "mediodia",
+        "clima_ideal": [
+          "soleado",
+          "templado",
+          "despejado"
+        ],
+        "estaciones": [
+          "verano",
+          "primavera"
+        ],
+        "momentos": [
+          "descanso",
+          "vacaciones",
+          "recreación"
+        ],
+        "animaciones_recomendadas": [
+          "pool-dream",
+          "warm-glow",
+          "nature-breeze"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": true,
+          "hay_agua": true,
+          "hay_fuego": false,
+          "hay_montanas": false,
+          "es_logo": false,
+          "hay_cama": false,
+          "hay_muebles_rusticos": true,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.95,
+        "comentarios_adicionales": "El suelo mojado sugiere que acaba de llover o se ha regado el área. La arquitectura rústica y natural encaja con el entorno andino de Calingasta."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_10_habitacion-13.json"
+    },
+    {
+      "nombre_archivo": "foto_15_habitacion-18.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "La imagen muestra un cuerpo de agua tranquilo con vegetación acuática flotante y reflejos de árboles altos y delgados en su superficie. En la orilla, se observa una densa vegetación de juncos y arbustos, con un bosque de árboles columnares que se elevan hacia un cielo azul visible entre sus copas.",
+        "categoria": "exterior",
+        "elementos_clave": [
+          "agua",
+          "árboles altos",
+          "vegetación acuática",
+          "juncos",
+          "reflejos",
+          "cielo azul",
+          "bosque",
+          "orilla"
+        ],
+        "momento_detectado": "mediodia",
+        "tags_sugeridos": [
+          "naturaleza",
+          "agua",
+          "bosque",
+          "tranquilidad",
+          "paisaje"
+        ],
+        "categoria_sugerida": "exterior",
+        "hora_sugerida": "mediodia",
+        "clima_ideal": [
+          "soleado",
+          "templado",
+          "seco"
+        ],
+        "estaciones": [
+          "verano",
+          "primavera"
+        ],
+        "momentos": [
+          "día soleado",
+          "tarde tranquila"
+        ],
+        "animaciones_recomendadas": [
+          "pool-dream",
+          "warm-glow",
+          "gentle-water"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": false,
+          "hay_agua": true,
+          "hay_fuego": false,
+          "hay_montanas": false,
+          "es_logo": false,
+          "hay_cama": false,
+          "hay_muebles_rusticos": false,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.95,
+        "comentarios_adicionales": "La foto captura un entorno natural sereno, probablemente parte del paisaje circundante a la posada Rancho Raiz, destacando la presencia de agua y vegetación nativa típica de la región andina."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_15_habitacion-18.json"
+    },
+    {
+      "nombre_archivo": "foto_17_logo-vertical.jpg",
+      "exito": true,
+      "resultado": {
+        "descripcion_real": "Se observa un letrero de madera rústica montado sobre un poste de madera, con el nombre 'RANCHO RAIZ' grabado en letras mayúsculas y un logotipo estilizado que evoca raíces o flamas. El fondo muestra vegetación verde y montañas borrosas, indicando un entorno natural al aire libre.",
+        "categoria": "marca",
+        "elementos_clave": [
+          "letrero de madera",
+          "poste de madera",
+          "logotipo grabado",
+          "texto 'RANCHO RAIZ'",
+          "vegetación de fondo",
+          "montañas difuminadas"
+        ],
+        "momento_detectado": "mediodia",
+        "tags_sugeridos": [
+          "rústico",
+          "naturaleza",
+          "montaña",
+          "posada",
+          "branding"
+        ],
+        "categoria_sugerida": "marca",
+        "hora_sugerida": "mediodia",
+        "clima_ideal": [
+          "soleado",
+          "templado",
+          "sin lluvia"
+        ],
+        "estaciones": [
+          "verano",
+          "primavera",
+          "otoño"
+        ],
+        "momentos": [
+          "mañana clara",
+          "tarde soleada"
+        ],
+        "animaciones_recomendadas": [
+          "warm-glow",
+          "nature-breeze",
+          "wood-texture"
+        ],
+        "preguntas_clave": {
+          "hay_chimenea": false,
+          "hay_pileta": false,
+          "hay_agua": false,
+          "hay_fuego": false,
+          "hay_montanas": true,
+          "es_logo": true,
+          "hay_cama": false,
+          "hay_muebles_rusticos": false,
+          "se_ve_cielo": true,
+          "hay_plantas": true
+        },
+        "confianza_analisis": 0.95,
+        "comentarios_adicionales": "La imagen es claramente una señalización de marca para un establecimiento turístico en zona montañosa, con fuerte énfasis en la estética natural y rústica."
+      },
+      "ruta_resultado": "/data/data/com.termux/files/home/publicidad/ranchocut/vision_analysis/resultados/foto_17_logo-vertical.json"
+    }
+  ]
+}
