@@ -10,7 +10,8 @@
       "zira",
       "montaña",
       "reflexion"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "raices-profundas",
@@ -22,7 +23,8 @@
       "rancho",
       "raices",
       "naturaleza"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "cada-atardecer",
@@ -34,7 +36,8 @@
       "atardecer",
       "andes",
       "esperanza"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "silencio-andes",
@@ -47,7 +50,8 @@
       "andes",
       "paz",
       "meditacion"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "corazon-piedra",
@@ -59,7 +63,8 @@
       "zira",
       "montaña",
       "esencia"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "viento-peino",
@@ -71,7 +76,8 @@
       "zira",
       "naturaleza",
       "identidad"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "fogata-estrellas",
@@ -84,7 +90,8 @@
       "noche",
       "andes",
       "magia"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "lluvia-beso",
@@ -96,7 +103,8 @@
       "lluvia",
       "naturaleza",
       "magia"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "sol-despierta",
@@ -109,7 +117,8 @@
       "mañana",
       "andes",
       "vida"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "verde-que-te-quiero",
@@ -122,7 +131,8 @@
       "verde",
       "andes",
       "vida"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "manto-estrellado",
@@ -135,7 +145,8 @@
       "estrellas",
       "barreal",
       "guardiana"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "nieve-corona",
@@ -148,7 +159,8 @@
       "glaciar",
       "zira",
       "montaña"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "camino-montaña",
@@ -161,7 +173,8 @@
       "superacion",
       "montaña",
       "motivacion"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "abrazo-andes",
@@ -174,7 +187,8 @@
       "bienvenida",
       "posada",
       "calidez"
-    ]
+    ],
+    "emoji_svg": true
   },
   {
     "id": "rio-fluye",
@@ -187,6 +201,7 @@
       "fluye",
       "fortaleza",
       "naturaleza"
-    ]
+    ],
+    "emoji_svg": true
   }
 ]

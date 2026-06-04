@@ -64,7 +64,12 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🌙</text>
+    <!-- Moon crescent -->
+  <g transform="translate(540, 260)" fill="#f7c92b">
+    <circle cx="0" cy="0" r="36" fill="#f7c92b" opacity="0.15"/>
+    <circle cx="0" cy="0" r="28" fill="#f7c92b"/>
+    <circle cx="8" cy="-6" r="22" fill="#0f172a"/>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(16,185,129,0.3)" opacity="0.1" filter="url(#star-glow)"/>

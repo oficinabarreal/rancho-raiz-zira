@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+body { margin:0; background:#0f172a; width:1080px; height:1080px; display:flex; align-items:center; justify-content:center; }
+svg { width:1080px; height:1080px; }
+</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(16,185,129,0)"/>
+      <stop offset="30%" stop-color="rgba(139,92,246,0.3)"/>
+      <stop offset="70%" stop-color="rgba(139,92,246,0.3)"/>
+      <stop offset="100%" stop-color="rgba(16,185,129,0)"/>
+    </linearGradient>
+    <linearGradient id="z-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="star-glow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Subtle stars -->
+  <g fill="#fff" opacity="0.15">
+    <circle cx="120" cy="100" r="1.5"/>
+    <circle cx="300" cy="60" r="1"/>
+    <circle cx="500" cy="130" r="1.5"/>
+    <circle cx="700" cy="50" r="1"/>
+    <circle cx="900" cy="90" r="1.5"/>
+    <circle cx="1000" cy="200" r="1"/>
+    <circle cx="150" cy="250" r="1"/>
+    <circle cx="850" cy="180" r="1.5"/>
+    <circle cx="400" cy="200" r="1"/>
+    <circle cx="650" cy="160" r="1"/>
+    <circle cx="200" cy="350" r="1"/>
+    <circle cx="950" cy="300" r="1"/>
+    <circle cx="80" cy="180" r="1"/>
+    <circle cx="1040" cy="120" r="1.5"/>
+  </g>
+
+  <!-- Mountains -->
+  <g fill="#1e293b">
+    <polygon points="0,1080 120,620 280,750 440,550 600,680 760,500 920,650 1040,580 1080,700 1080,1080" opacity="0.3"/>
+    <polygon points="0,1080 180,750 360,820 540,680 720,780 900,700 1080,740 1080,1080" opacity="0.15"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect width="1080" height="2" fill="url(#accent-line)" y="0"/>
+
+  <!-- Z logo top-left -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="80" height="80" rx="16" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.15)" stroke-width="1"/>
+    <text x="40" y="58" font-family="monospace" font-size="52" font-weight="bold" fill="url(#z-grad)" filter="url(#neon)" text-anchor="middle">Z</text>
+  </g>
+
+  <!-- Emoji grande -->
+  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🌅</text>
+
+  <!-- Círculo decorativo detrás del emoji -->
+  <circle cx="540" cy="220" r="100" fill="rgba(139,92,246,0.3)" opacity="0.1" filter="url(#star-glow)"/>
+
+  <!-- Zira phrase -->
+    <text x="540" y="332" font-family="system-ui, sans-serif" font-size="44" font-weight="300" fill="#f1f5f9" text-anchor="middle" letter-spacing="1">Cada atardecer</text>
+    <text x="540" y="404" font-family="system-ui, sans-serif" font-size="44" font-weight="300" fill="#f1f5f9" text-anchor="middle" letter-spacing="1">es una promesa</text>
+    <text x="540" y="476" font-family="system-ui, sans-serif" font-size="36" font-weight="300" fill="#f1f5f9" text-anchor="middle" letter-spacing="1">de un nuevo amanecer.</text>
+
+
+  <!-- Barra decorativa -->
+  <rect x="440" y="578" width="200" height="2" rx="1" fill="#8b5cf6" opacity="0.4"/>
+
+  <!-- Footer: Zira + Rancho Raíz -->
+  <text x="540" y="628" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#8b5cf6" text-anchor="middle" letter-spacing="4" opacity="0.8">ZIRA</text>
+  <text x="540" y="656" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle" letter-spacing="2">RANCHO RAÍZ · BARREAL</text>
+
+  <!-- Badge estilo -->
+  <g transform="translate(540, 1020)">
+    <rect x="-60" y="-14" width="120" height="28" rx="14" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.12)" stroke-width="0.5"/>
+    <text x="0" y="4" font-family="monospace" font-size="11" fill="#8b5cf6" text-anchor="middle" letter-spacing="1">MAGICA · ZIRA</text>
+  </g>
+</svg>
+</body></html>

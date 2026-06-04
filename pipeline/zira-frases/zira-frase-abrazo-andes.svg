@@ -64,7 +64,16 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🤗</text>
+    <!-- Hug / Open arms -->
+  <g transform="translate(540, 260)" fill="#fbbf24">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#fbbf24"/>
+    <circle cx="0" cy="-3" r="16" fill="#fbbf24"/>
+    <circle cx="-6" cy="-6" r="3" fill="#92400e"/>
+    <circle cx="6" cy="-6" r="3" fill="#92400e"/>
+    <path d="M-6,4 Q0,10 6,4" stroke="#92400e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M-22,-8 Q-28,-2 -22,8" stroke="#fbbf24" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M22,-8 Q28,-2 22,8" stroke="#fbbf24" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(139,92,246,0.3)" opacity="0.1" filter="url(#star-glow)"/>

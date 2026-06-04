@@ -64,7 +64,14 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🌿</text>
+    <!-- Leaf / Herb -->
+  <g transform="translate(540, 260)" fill="#10b981">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#10b981"/>
+    <path d="M0,18 Q-20,0 0,-18 Q20,0 0,18Z" fill="#34d399"/>
+    <path d="M0,18 Q-12,4 -4,-6" stroke="#10b981" stroke-width="2" fill="none"/>
+    <path d="M0,18 Q12,4 4,-6" stroke="#10b981" stroke-width="2" fill="none"/>
+    <line x1="0" y1="18" x2="0" y2="-14" stroke="#065f46" stroke-width="1.5"/>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(245,158,11,0.3)" opacity="0.1" filter="url(#star-glow)"/>

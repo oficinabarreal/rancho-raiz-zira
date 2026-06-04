@@ -64,7 +64,13 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🔥</text>
+    <!-- Fire -->
+  <g transform="translate(540, 260)" fill="#ef4444">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#ef4444"/>
+    <path d="M0,18 Q-14,2 -8,-8 Q-2,-16 0,-24 Q2,-16 8,-8 Q14,2 0,18Z" fill="#f97316"/>
+    <path d="M0,18 Q-6,6 -2,-4 Q0,-10 0,-16 Q2,-8 6,-2 Q8,6 0,18Z" fill="#fbbf24"/>
+    <path d="M0,16 Q-3,8 0,0 Q2,6 3,10 Q3,14 0,16Z" fill="#fff" opacity="0.5"/>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(139,92,246,0.3)" opacity="0.1" filter="url(#star-glow)"/>

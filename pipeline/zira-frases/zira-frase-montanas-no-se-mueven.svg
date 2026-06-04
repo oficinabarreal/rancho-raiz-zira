@@ -64,7 +64,13 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🏔️</text>
+    <!-- Mountain -->
+  <g transform="translate(540, 260)" fill="#94a3b8">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#4a9eff"/>
+    <polygon points="0,-32 -30,20 30,20" fill="#64748b"/>
+    <polygon points="-30,20 0,-12 20,20" fill="#94a3b8"/>
+    <polygon points="0,-32 -8,-10 8,-10" fill="#fff" opacity="0.8"/>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(16,185,129,0.3)" opacity="0.1" filter="url(#star-glow)"/>

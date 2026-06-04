@@ -64,7 +64,23 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">❄️</text>
+    <!-- Snowflake -->
+  <g transform="translate(540, 260)" fill="#e2e8f0">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#e2e8f0"/>
+    <g stroke="#93c5fd" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="-20" x2="0" y2="20"/>
+      <line x1="-17" y1="-10" x2="17" y2="10"/>
+      <line x1="-17" y1="10" x2="17" y2="-10"/>
+    </g>
+    <g fill="#93c5fd">
+      <circle cx="0" cy="-22" r="2.5"/>
+      <circle cx="0" cy="22" r="2.5"/>
+      <circle cx="-19" cy="-11" r="2.5"/>
+      <circle cx="19" cy="11" r="2.5"/>
+      <circle cx="-19" cy="11" r="2.5"/>
+      <circle cx="19" cy="-11" r="2.5"/>
+    </g>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(59,130,246,0.3)" opacity="0.1" filter="url(#star-glow)"/>

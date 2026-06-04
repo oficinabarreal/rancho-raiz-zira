@@ -64,7 +64,17 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🌧️</text>
+    <!-- Rain -->
+  <g transform="translate(540, 260)" fill="#60a5fa">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#60a5fa"/>
+    <path d="M-18,-8 Q-14,-18 -4,-14 Q0,-24 10,-16 Q20,-20 22,-8 Q28,-2 22,6 Z" fill="#93c5fd"/>
+    <g stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round">
+      <line x1="-14" y1="10" x2="-18" y2="20"/>
+      <line x1="-4" y1="12" x2="-8" y2="24"/>
+      <line x1="6" y1="10" x2="2" y2="22"/>
+      <line x1="14" y1="8" x2="10" y2="18"/>
+    </g>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(16,185,129,0.3)" opacity="0.1" filter="url(#star-glow)"/>

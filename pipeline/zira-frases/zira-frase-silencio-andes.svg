@@ -64,7 +64,14 @@
   </g>
 
   <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">🧘</text>
+    <!-- Lotus / Meditation -->
+  <g transform="translate(540, 260)" fill="#a78bfa">
+    <circle cx="0" cy="0" r="36" opacity="0.1" fill="#a78bfa"/>
+    <ellipse cx="0" cy="-8" rx="18" ry="10" fill="#c4b5fd"/>
+    <ellipse cx="0" cy="-2" rx="12" ry="8" fill="#a78bfa"/>
+    <circle cx="0" cy="-18" r="6" fill="#c4b5fd"/>
+    <path d="M-10,2 Q-6,8 0,10 Q6,8 10,2" stroke="#7c3aed" stroke-width="1.5" fill="none"/>
+  </g>
 
   <!-- Círculo decorativo detrás del emoji -->
   <circle cx="540" cy="220" r="100" fill="rgba(16,185,129,0.3)" opacity="0.1" filter="url(#star-glow)"/>
