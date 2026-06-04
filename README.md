@@ -128,6 +128,21 @@ El dashboard muestra en tiempo real:
 
 ---
 
+## 📊 Analytics
+
+Sistema de análisis de datos estilo Cambridge Analytics para seguimiento de engagement, tendencias y crecimiento.
+
+| Archivo | Función |
+|---------|---------|
+| `analytics/colector.py` | Recolecta métricas de Instagram (likes, comments, engagement) |
+| `analytics/dashboard.py` | Genera dashboard interactivo HTML+Chart.js |
+| `analytics/viz.py` | Visualizaciones con matplotlib (pendiente instalación) |
+| `analytics/dashboard.html` | Dashboard auto-contenido listo para abrir en navegador |
+
+**Cron:** Recolección automática cada día a las 10:00 ARG.
+
+📈 **[Abrir Dashboard Analytics](https://raw.githubusercontent.com/oficinabarreal/rancho-raiz-zira/main/analytics/dashboard.html)** — descargar y abrir localmente (Chart.js carga desde CDN).
+
 ## 🧪 Tests
 
 Suite completa de tests automatizados:
