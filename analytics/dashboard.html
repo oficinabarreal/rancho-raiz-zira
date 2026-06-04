@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZIRA · Analytics Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        background: #0a0a1a;
+        color: #c8d6e5;
+        font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+        padding: 1.5rem;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    .header {
+        text-align: center;
+        padding: 2rem 0 2.5rem;
+        border-bottom: 1px solid #1a1a3e;
+        margin-bottom: 2rem;
+    }
+    .header .logo { font-size: 3rem; }
+    .header h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #4a9eff, #00d2d3, #5f27cd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0.5rem 0;
+    }
+    .header .sub { color: #8395a7; font-size: 0.95rem; }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    .stat-card {
+        background: linear-gradient(135deg, rgba(74,158,255,0.08), rgba(0,210,211,0.03));
+        border: 1px solid #1a1a3e;
+        border-radius: 14px;
+        padding: 1.2rem;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-2px); border-color: #4a9eff; }
+    .stat-card .value { font-size: 1.8rem; font-weight: 700; color: #4a9eff; }
+    .stat-card .label { font-size: 0.78rem; color: #8395a7; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 1px; }
+    .stat-card.alt .value { color: #00d2d3; }
+    .stat-card.purple .value { color: #5f27cd; }
+    .stat-card.red .value { color: #ff6b6b; }
+    .stat-card.gold .value { color: #feca57; }
+    .section {
+        background: rgba(13,13,26,0.7);
+        border: 1px solid #1a1a3e;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .section h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #4a9eff;
+        margin-bottom: 1rem;
+        border-left: 3px solid #4a9eff;
+        padding-left: 0.8rem;
+    }
+    .chart-container { position: relative; height: 300px; width: 100%; }
+    .chart-container.tall { height: 400px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .heatmap-container { overflow-x: auto; }
+    .heatmap {
+        display: grid;
+        grid-template-columns: 40px repeat(24, 1fr);
+        gap: 2px;
+        min-width: 700px;
+    }
+    .heatmap .label {
+        font-size: 0.7rem;
+        color: #8395a7;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 6px;
+    }
+    .heatmap .hour-label {
+        font-size: 0.6rem;
+        color: #576574;
+        text-align: center;
+    }
+    .heatmap .cell {
+        aspect-ratio: 1;
+        border-radius: 3px;
+        min-width: 22px;
+        min-height: 22px;
+    }
+    .heatmap .cell:hover { outline: 2px solid #4a9eff; cursor: pointer; }
+    .heatmap-legend { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem; font-size: 0.75rem; color: #8395a7; }
+    .heatmap-legend .bar { height: 12px; width: 120px; border-radius: 4px; background: linear-gradient(to right, #0d0d1a, #4a9eff, #00d2d3); }
+    .footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: #576574;
+        font-size: 0.8rem;
+        border-top: 1px solid #1a1a3e;
+        margin-top: 2rem;
+    }
+    .footer .zira { color: #4a9eff; font-weight: 600; }
+    .update-badge {
+        display: inline-block;
+        background: rgba(74,158,255,0.15);
+        color: #4a9eff;
+        border: 1px solid rgba(74,158,255,0.3);
+        padding: 0.25rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+    @media (max-width: 768px) {
+        .row { grid-template-columns: 1fr; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        body { padding: 0.8rem; }
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="logo">🏔️</div>
+    <h1>ZIRA · Instagram Analytics</h1>
+    <p class="sub">@rancho.raiz.2026 — Reporte del 04/06/2026 00:16</p>
+    <div class="update-badge">📊 72 posts · 47 días de datos</div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card"><div class="value">72</div><div class="label">Posts Totales</div></div>
+    <div class="stat-card alt"><div class="value">15</div><div class="label">Likes Totales</div></div>
+    <div class="stat-card purple"><div class="value">2</div><div class="label">Comentarios</div></div>
+    <div class="stat-card gold"><div class="value">0.24</div><div class="label">Engagement/Post</div></div>
+    <div class="stat-card alt"><div class="value">27</div><div class="label">Fotos</div></div>
+    <div class="stat-card purple"><div class="value">45</div><div class="label">Videos</div></div>
+    <div class="stat-card"><div class="value">9</div><div class="label">Días Activos</div></div>
+    <div class="stat-card red"><div class="value">47</div><div class="label">Días desde 1er Post</div></div>
+</div>
+
+<div class="row">
+    <div class="section">
+        <h2>📈 Engagement Diario</h2>
+        <div class="chart-container"><canvas id="chartEngagement"></canvas></div>
+    </div>
+    <div class="section">
+        <h2>📊 IMAGE vs VIDEO</h2>
+        <div class="chart-container"><canvas id="chartTypeCompare"></canvas></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="section">
+        <h2>🏆 Top 10 Posts por Engagement</h2>
+        <div class="chart-container"><canvas id="chartTopPosts"></canvas></div>
+    </div>
+    <div class="section">
+        <h2>📅 Engagement por Día de la Semana</h2>
+        <div class="chart-container"><canvas id="chartWeekday"></canvas></div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>🗓️ Actividad de Posts — Día vs Hora</h2>
+    <div class="heatmap-container">
+        <div class="heatmap" id="heatmap">
+            <div></div>
+            <div class="hour-label">0:00</div><div class="hour-label">1:00</div><div class="hour-label">2:00</div><div class="hour-label">3:00</div><div class="hour-label">4:00</div><div class="hour-label">5:00</div><div class="hour-label">6:00</div><div class="hour-label">7:00</div><div class="hour-label">8:00</div><div class="hour-label">9:00</div><div class="hour-label">10:00</div><div class="hour-label">11:00</div><div class="hour-label">12:00</div><div class="hour-label">13:00</div><div class="hour-label">14:00</div><div class="hour-label">15:00</div><div class="hour-label">16:00</div><div class="hour-label">17:00</div><div class="hour-label">18:00</div><div class="hour-label">19:00</div><div class="hour-label">20:00</div><div class="hour-label">21:00</div><div class="hour-label">22:00</div><div class="hour-label">23:00</div>
+            <div class="label">Lun</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 10:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.05263157894736842);" title="Lun 11:00 — 1 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 13:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 14:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 16:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 20:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 21:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 22:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Lun 23:00 — 0 posts"></div><div class="label">Mar</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 10:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 11:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 13:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 14:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 16:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mar 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.5263157894736842);" title="Mar 20:00 — 10 posts"></div><div class="cell" style="background:rgba(74,158,255,0.5263157894736842);" title="Mar 21:00 — 10 posts"></div><div class="cell" style="background:rgba(74,158,255,0.42105263157894735);" title="Mar 22:00 — 8 posts"></div><div class="cell" style="background:rgba(74,158,255,0.3157894736842105);" title="Mar 23:00 — 6 posts"></div><div class="label">Mié</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 10:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.5263157894736842);" title="Mié 11:00 — 10 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 13:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 14:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,1.0);" title="Mié 16:00 — 19 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 20:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 21:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 22:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Mié 23:00 — 0 posts"></div><div class="label">Jue</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 10:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 11:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 13:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 14:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 16:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 20:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 21:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 22:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Jue 23:00 — 0 posts"></div><div class="label">Vie</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 10:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 11:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 13:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 14:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 16:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 20:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 21:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 22:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Vie 23:00 — 0 posts"></div><div class="label">Sáb</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.05263157894736842);" title="Sáb 10:00 — 1 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 11:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 13:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.21052631578947367);" title="Sáb 14:00 — 4 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 16:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 20:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 21:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.05263157894736842);" title="Sáb 22:00 — 1 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Sáb 23:00 — 0 posts"></div><div class="label">Dom</div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 0:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 1:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 2:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 3:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 4:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 5:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 6:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 7:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 8:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 9:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 10:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 11:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 12:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.05263157894736842);" title="Dom 13:00 — 1 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 14:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 15:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 16:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 17:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 18:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 19:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.05263157894736842);" title="Dom 20:00 — 1 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 21:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 22:00 — 0 posts"></div><div class="cell" style="background:rgba(74,158,255,0.0);" title="Dom 23:00 — 0 posts"></div>
+        </div>
+    </div>
+    <div class="heatmap-legend">
+        <span>0</span>
+        <div class="bar"></div>
+        <span>19</span>
+        <span style="margin-left:auto;">🎯 72 posts</span>
+    </div>
+</div>
+
+<div class="footer">
+    <span class="zira">⚡ ZIRA · Rancho Raíz · Barreal</span><br>
+    Generado automáticamente — 04/06/2026<br>
+    <span style="font-size:0.7rem;">Datasets: 72 registros · 9 días</span>
+</div>
+
+<script>
+// === Gráfico 1: Engagement Diario ===
+new Chart(document.getElementById('chartEngagement'), {
+    type: 'bar',
+    data: {
+        labels: ["2026-04-18", "2026-04-20", "2026-05-02", "2026-05-03", "2026-05-05", "2026-05-10", "2026-05-23", "2026-06-02", "2026-06-03"],
+        datasets: [
+            {
+                label: 'Engagement',
+                data: [0, 0, 5, 0, 2, 1, 1, 6, 2],
+                backgroundColor: 'rgba(74, 158, 255, 0.7)',
+                borderColor: '#4a9eff',
+                borderWidth: 1,
+                borderRadius: 4,
+            },
+            {
+                label: 'Likes',
+                data: [0, 0, 3, 0, 2, 1, 1, 6, 2],
+                backgroundColor: 'rgba(0, 210, 211, 0.5)',
+                borderColor: '#00d2d3',
+                borderWidth: 1,
+                borderRadius: 4,
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#c8d6e5' } } },
+        scales: {
+            x: { ticks: { color: '#8395a7' }, grid: { color: '#1a1a3e' } },
+            y: { ticks: { color: '#8395a7' }, grid: { color: '#1a1a3e' }, beginAtZero: true }
+        }
+    }
+});
+
+// === Gráfico 2: IMAGE vs VIDEO ===
+new Chart(document.getElementById('chartTypeCompare'), {
+    type: 'radar',
+    data: {
+        labels: ['Cantidad', 'Likes Total', 'Engagement Total', 'Engagement Promedio'],
+        datasets: [
+            {
+                label: 'IMAGE',
+                data: [27, 4, 6, 0.22],
+                backgroundColor: 'rgba(0, 210, 211, 0.2)',
+                borderColor: '#00d2d3',
+                borderWidth: 2,
+                pointBackgroundColor: '#00d2d3',
+            },
+            {
+                label: 'VIDEO',
+                data: [45, 11, 11, 0.24],
+                backgroundColor: 'rgba(74, 158, 255, 0.2)',
+                borderColor: '#4a9eff',
+                borderWidth: 2,
+                pointBackgroundColor: '#4a9eff',
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#c8d6e5' } } },
+        scales: {
+            r: {
+                angleLines: { color: '#1a1a3e' },
+                grid: { color: '#1a1a3e' },
+                pointLabels: { color: '#c8d6e5' },
+                ticks: { color: '#8395a7', backdropColor: 'transparent' }
+            }
+        }
+    }
+});
+
+// === Gráfico 3: Top 10 Posts ===
+new Chart(document.getElementById('chartTopPosts'), {
+    type: 'bar',
+    data: {
+        labels: ["06/03 VIDEO", "06/03 VIDEO", "05/10 VIDEO", "06/02 IMAGE", "06/02 VIDEO", "05/05 VIDEO", "05/05 VIDEO", "06/02 VIDEO", "06/02 VIDEO", "05/02 IMAGE"],
+        datasets: [{
+            label: 'Engagement',
+            data: [1, 1, 1, 1, 1, 1, 1, 2, 2, 5],
+            backgroundColor: ["rgba(74, 158, 255, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(0, 210, 211, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(74, 158, 255, 0.8)", "rgba(0, 210, 211, 0.8)"],
+            borderColor: 'transparent',
+            borderRadius: 4,
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#8395a7' }, grid: { color: '#1a1a3e' }, beginAtZero: true },
+            y: { ticks: { color: '#c8d6e5', font: { size: 10 } }, grid: { display: false } }
+        }
+    }
+});
+
+// === Gráfico 4: Engagement por Día de la Semana ===
+new Chart(document.getElementById('chartWeekday'), {
+    type: 'polarArea',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+        datasets: [{
+            data: [0, 8, 2, 0, 0, 6, 1],
+            backgroundColor: [
+                'rgba(74, 158, 255, 0.6)',
+                'rgba(0, 210, 211, 0.6)',
+                'rgba(95, 39, 205, 0.6)',
+                'rgba(254, 202, 87, 0.6)',
+                'rgba(255, 107, 107, 0.6)',
+                'rgba(46, 213, 115, 0.6)',
+                'rgba(255, 159, 67, 0.6)',
+            ],
+            borderColor: '#0a0a1a',
+            borderWidth: 2,
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'right', labels: { color: '#c8d6e5' } } },
+        scales: { r: { grid: { color: '#1a1a3e' }, ticks: { color: '#8395a7', backdropColor: 'transparent' } } }
+    }
+});
+</script>
+</body>
+</html>

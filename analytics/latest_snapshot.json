@@ -1,0 +1,17 @@
+{
+  "fetched_at": "2026-06-03T17:14:29.017611+00:00",
+  "metrics": {
+    "timestamp": "2026-06-03T17:14:29.016620+00:00",
+    "total_posts": 72,
+    "total_likes": 15,
+    "total_comments": 2,
+    "total_engagement": 17,
+    "engagement_per_post": 0.24,
+    "likes_per_post": 0.21
+  },
+  "posts_count": 72,
+  "posts_by_type": {
+    "IMAGE": 27,
+    "VIDEO": 45
+  }
+}
