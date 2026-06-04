@@ -135,13 +135,14 @@ Sistema de análisis de datos estilo Cambridge Analytics para seguimiento de eng
 | Archivo | Función |
 |---------|---------|
 | `analytics/colector.py` | Recolecta métricas de Instagram (likes, comments, engagement) |
-| `analytics/dashboard.py` | Genera dashboard interactivo HTML+Chart.js |
-| `analytics/viz.py` | Visualizaciones con matplotlib (pendiente instalación) |
+| `analytics/dashboard.py` | Genera dashboard interactivo HTML+Chart.js (no requiere matplotlib) |
 | `analytics/dashboard.html` | Dashboard auto-contenido listo para abrir en navegador |
+
+> 💡 **Nota:** matplotlib no compila en Termux (Android). Todo el dashboard usa Chart.js vía CDN.
 
 **Cron:** Recolección automática cada día a las 10:00 ARG.
 
-📈 **[Abrir Dashboard Analytics](https://raw.githubusercontent.com/oficinabarreal/rancho-raiz-zira/main/analytics/dashboard.html)** — descargar y abrir localmente (Chart.js carga desde CDN).
+📈 **[Abrir Dashboard Analytics](https://raw.githubusercontent.com/oficinabarreal/rancho-raiz-zira/main/analytics/dashboard.html)** — descargar y abrir localmente (Chart.js carga desde CDN, necesitás internet).
 
 ## 🧪 Tests
 
