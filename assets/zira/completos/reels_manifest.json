@@ -1,0 +1,22 @@
+[
+  {
+    "estilo": "juguetona",
+    "archivo": "zira_juguetona_reel.mp4",
+    "path": "/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/assets/zira/completos/zira_juguetona_reel.mp4"
+  },
+  {
+    "estilo": "magica",
+    "archivo": "zira_magica_reel.mp4",
+    "path": "/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/assets/zira/completos/zira_magica_reel.mp4"
+  },
+  {
+    "estilo": "viva",
+    "archivo": "zira_viva_reel.mp4",
+    "path": "/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/assets/zira/completos/zira_viva_reel.mp4"
+  },
+  {
+    "estilo": "clasica",
+    "archivo": "zira_clasica_reel.mp4",
+    "path": "/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/assets/zira/completos/zira_clasica_reel.mp4"
+  }
+]

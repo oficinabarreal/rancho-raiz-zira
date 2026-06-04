@@ -1,0 +1,4 @@
+Subject: Se procesó su pago
+Date: Wed, 03 Jun 2026 14:40:43 +0000 (UTC)
+From: Starlink <no-reply@starlink.com>
+

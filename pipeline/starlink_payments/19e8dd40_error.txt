@@ -1,0 +1,4 @@
+Subject: Se produjo un error en el pago de Starlink
+Date: Wed, 03 Jun 2026 14:12:20 +0000 (UTC)
+From: Starlink <no-reply@starlink.com>
+

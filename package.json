@@ -1,0 +1,26 @@
+{
+  "name": "hola-3",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"assets/banner.svg\" width=\"100%\" alt=\"Zira CRM Banner\"> </p>",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oficinabarreal/rancho-raiz-zira.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oficinabarreal/rancho-raiz-zira/issues"
+  },
+  "homepage": "https://github.com/oficinabarreal/rancho-raiz-zira#readme",
+  "dependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}

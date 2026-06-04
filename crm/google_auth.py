@@ -59,6 +59,10 @@ def get_service(api_name: str, api_version: str, scope_key: str) -> Any | None:
             if "token" in stored and "access_token" not in stored:
                 stored["access_token"] = stored.pop("token")
                 token_file.write_text(json.dumps(stored, indent=2))
+            # Normalizar inverso: algunos json tienen "access_token" pero no "token"
+            if "access_token" in stored and "token" not in stored:
+                stored["token"] = stored["access_token"]
+                token_file.write_text(json.dumps(stored, indent=2))
             creds = Credentials.from_authorized_user_file(str(token_file), stored_scopes)
         except Exception:
             creds = None
