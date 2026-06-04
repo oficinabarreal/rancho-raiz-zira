@@ -9,6 +9,10 @@ from pathlib import Path
 OUT_DIR = Path("/data/data/com.termux/files/home/Documents/Codex/2026-05-18/hola-3/pipeline/zira-frases")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Import SVG emoji shapes
+sys.path.insert(0, str(OUT_DIR.parent.parent))
+from scripts.svg_emoji_components import EMOJI_SVG
+
 # ─── COLECCIÓN DE FRASES ZIRA ───
 FRASES = [
     {
@@ -123,7 +127,9 @@ FRASES = [
 def generar_svg(frase_data):
     f = frase_data
     frases = f["frase"].split("\n")
-    emoji = f["emoji"]
+    emoji_char = f["emoji"]
+    emoji_svg = EMOJI_SVG.get(emoji_char, 
+        f'<text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">{emoji_char}</text>')
     estilo = f["estilo"]
     
     # Colores según estilo
@@ -222,10 +228,8 @@ def generar_svg(frase_data):
     <text x="40" y="58" font-family="monospace" font-size="52" font-weight="bold" fill="url(#z-grad)" filter="url(#neon)" text-anchor="middle">Z</text>
   </g>
 
-  <!-- Emoji grande -->
-  <text x="540" y="260" font-family="system-ui, sans-serif" font-size="96" text-anchor="middle">{emoji}</text>
-
-  <!-- Círculo decorativo detrás del emoji -->
+  <!-- Emoji grande (SVG shapes en vez de texto emoji) -->
+  {emoji_svg}
   <circle cx="540" cy="220" r="100" fill="{c['glow']}" opacity="0.1" filter="url(#star-glow)"/>
 
   <!-- Zira phrase -->
