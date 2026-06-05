@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="noche" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070a1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="montana1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="montana2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="estrella" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="star-glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="text-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="big-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo nocturno -->
+  <rect width="1080" height="1080" fill="url(#noche)"/>
+
+  <!-- Estrellas -->
+  <g fill="#ffffff" opacity="0.3">
+    <circle cx="80" cy="60" r="1.5"/>
+    <circle cx="200" cy="120" r="1"/>
+    <circle cx="350" cy="45" r="1.8"/>
+    <circle cx="500" cy="90" r="1.2"/>
+    <circle cx="650" cy="55" r="1.5"/>
+    <circle cx="780" cy="100" r="1"/>
+    <circle cx="900" cy="70" r="1.8"/>
+    <circle cx="1020" cy="130" r="1.2"/>
+    <circle cx="150" cy="200" r="1"/>
+    <circle cx="420" cy="180" r="1.5"/>
+    <circle cx="680" cy="160" r="1"/>
+    <circle cx="940" cy="190" r="1.3"/>
+    <circle cx="50" cy="300" r="1"/>
+    <circle cx="1030" cy="280" r="1.5"/>
+    <circle cx="300" cy="250" r="0.8"/>
+    <circle cx="750" cy="230" r="1.2"/>
+  </g>
+
+  <!-- Estrella de Los Redondos (estrella de 5 puntas) -->
+  <g transform="translate(540, 280)" filter="url(#big-glow)">
+    <polygon points="0,-80 18,-25 76,-25 30,10 47,65 0,30 -47,65 -30,10 -76,-25 -18,-25" 
+             fill="url(#estrella)" opacity="0.9"/>
+    <polygon points="0,-60 13,-20 55,-20 22,8 34,48 0,22 -34,48 -22,8 -55,-20 -13,-20" 
+             fill="#fef3c7" opacity="0.4"/>
+  </g>
+
+  <!-- Montañas (fondo) -->
+  <polygon points="0,750 100,580 200,650 350,500 450,600 540,520 620,590 720,460 800,550 920,500 1080,600 1080,900 0,900" 
+           fill="url(#montana2)" opacity="0.5"/>
+  
+  <!-- Montañas (frente) -->
+  <polygon points="0,850 120,680 220,740 380,620 500,710 580,650 680,700 820,590 950,670 1080,640 1080,900 0,900" 
+           fill="url(#montana1)"/>
+
+  <!-- Nieve en picos -->
+  <polygon points="350,500 380,530 365,535 340,525 320,540 310,530 330,510" fill="#e2e8f0" opacity="0.6"/>
+  <polygon points="720,460 745,490 730,495 710,485 690,500 680,490 695,470" fill="#e2e8f0" opacity="0.6"/>
+  <polygon points="540,520 560,545 550,550 535,540 520,550 510,540 525,525" fill="#e2e8f0" opacity="0.4"/>
+
+  <!-- Texto principal: Gracias, Indio -->
+  <text x="540" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" 
+        font-size="64" fill="#fbbf24" filter="url(#text-glow)" font-weight="bold" 
+        letter-spacing="8">GRACIAS, INDIO</text>
+
+  <!-- Línea decorativa -->
+  <line x1="340" y1="430" x2="740" y2="430" stroke="#fbbf24" stroke-width="1" opacity="0.4"/>
+
+  <!-- Cita -->
+  <text x="540" y="490" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" 
+        font-size="28" fill="#94a3b8" font-style="italic" opacity="0.8">
+    "Tanta montaña, tanto viento
+  </text>
+  <text x="540" y="535" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" 
+        font-size="28" fill="#94a3b8" font-style="italic" opacity="0.8">
+    tanta sed y tanto tiempo"
+  </text>
+
+  <!-- Atribución de la cita -->
+  <text x="540" y="570" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" 
+        font-size="16" fill="#64748b" font-style="italic">
+    — Tarea Fina, Patricio Rey y sus Redonditos de Ricota
+  </text>
+
+  <!-- Fechas -->
+  <text x="540" y="640" text-anchor="middle" font-family="'Courier New', monospace" 
+        font-size="36" fill="#cbd5e1" letter-spacing="4">
+    1949 — 2026
+  </text>
+
+  <!-- Texto inferior -->
+  <text x="540" y="700" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" 
+        font-size="20" fill="#64748b" letter-spacing="3">
+    ETERNO EN EL CORAZÓN DEL PUEBLO
+  </text>
+
+  <!-- Footer -->
+  <text x="540" y="820" text-anchor="middle" font-family="'Courier New', monospace" 
+        font-size="14" fill="#475569" letter-spacing="6" opacity="0.6">
+    RANCHO RAÍZ · BARREAL
+  </text>
+</svg>
