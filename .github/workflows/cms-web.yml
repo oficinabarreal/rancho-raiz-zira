@@ -11,6 +11,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   generate:
@@ -40,10 +46,26 @@ jobs:
         run: |
           git config user.name "Zira CMS Bot"
           git config user.email "cms@ranchoraiz.bot"
-          git add index.html panel/index.html admin/cms_data.json
+          git add index.html panel/index.html admin/cms_data.json admin/index.html
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "🔄 Web actualizada desde CMS [skip ci]"
             git push
           fi
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
