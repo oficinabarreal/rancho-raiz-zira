@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin · Rancho Raíz CMS</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='20,6 34,34 6,34' fill='%23C5A059'/%3E%3C/svg%3E">
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,7 +29,8 @@
     .badge-inactive { background: rgba(239,68,68,0.15); color: #ef4444; }
     .toast { position: fixed; bottom: 24px; right: 24px; background: #1e293b; border: 1px solid var(--gold); padding: 12px 20px; border-radius: 10px; font-size: 14px; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 100; }
     .toast.show { opacity: 1; transform: translateY(0); }
-    .login-box { max-width: 360px; margin: 40vh auto 0; transform: translateY(-50%); }
+    .login-box { max-width: 400px; margin: 0 auto; padding-top: 30vh; }
+    .login-card { background: var(--dark-2); border: 1px solid #1e293b; border-radius: 16px; padding: 40px 32px; text-align: center; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fadeIn 0.4s ease-out; }
   </style>
