@@ -1,0 +1,42 @@
+name: 🤖 Zira Agent — Autónomo
+
+on:
+  schedule:
+    # Corre todos los días a las 09:00 UTC (06:00 AR)
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    inputs:
+      force_banner:
+        description: 'Forzar generación de banner'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  zira-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 🐍 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 🏔️ Zira Agent
+        id: agent
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          CRM_INSTAGRAM_TOKEN: ${{ secrets.CRM_INSTAGRAM_TOKEN }}
+          CRM_TG_TOKEN: ${{ secrets.CRM_TG_TOKEN }}
+          CRM_TG_CHAT_ID: ${{ secrets.CRM_TG_CHAT_ID }}
+        run: python scripts/gh-zira-agent.py
+
+      - name: 📋 Agent Report
+        if: always()
+        run: |
+          echo "🏔️ Zira Agent completed"
+          echo "See: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
