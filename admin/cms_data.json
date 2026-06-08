@@ -1,0 +1,87 @@
+{
+  "config": {
+    "password_admin": "rancho",
+    "telefono": "+54 9 264 123-4567",
+    "whatsapp": "5492641234567",
+    "email": "info@ranchoraiz.com",
+    "direccion": "Ruta 149, Barreal, San Juan",
+    "ig_usuario": "ranchoraiz.barreal"
+  },
+  "habitaciones": [
+    {
+      "nombre": "Habitación Matrimonial",
+      "precio": "35000",
+      "descripcion": "Amplia habitación con cama queen, vista a la cordillera. Baño privado, calefacción, ropa blanca incluida, WiFi.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "1"
+    },
+    {
+      "nombre": "Habitación Doble",
+      "precio": "28000",
+      "descripcion": "Dos camas individuales. Ideal para amigos o compañeros. Baño compartido, calefacción, ropa blanca incluida.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "2"
+    },
+    {
+      "nombre": "Habitación Familiar",
+      "precio": "45000",
+      "descripcion": "Capacidad para 4 personas. Dos ambientes, baño privado, cocina equipada, calefacción, Smart TV.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "3"
+    },
+    {
+      "nombre": "Cabaña Completa",
+      "precio": "65000",
+      "descripcion": "Cabaña independiente con cochera, parrilla, cocina completa y vistas 360° de la Cordillera de los Andes.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "4"
+    },
+    {
+      "nombre": "Camping",
+      "precio": "5000",
+      "descripcion": "Espacio para carpa con acceso a baños y duchas calientes. Fogón compartido, zona de mate.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "5"
+    }
+  ],
+  "servicios": [
+    {
+      "nombre": "WiFi Starlink",
+      "descripcion": "Conexión satelital de alta velocidad en todo el predio",
+      "icono": "wifi",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Desayuno Casero",
+      "descripcion": "Pan amasado, dulces regionales, frutas de estación, mate y café de montaña",
+      "icono": "cafe",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Cabalgatas",
+      "descripcion": "Excursiones a caballo por la precordillera con guías locales",
+      "icono": "caballo",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Traslado",
+      "descripcion": "Te buscamos y llevamos desde la terminal de Barreal o San Juan",
+      "icono": "auto",
+      "activo": "SI"
+    }
+  ],
+  "galeria": [
+    {
+      "imagen_url": "",
+      "descripcion": "Vista de la Cordillera desde el patio",
+      "orden": "1",
+      "activo": "SI"
+    }
+  ],
+  "sheet_url": "https://docs.google.com/spreadsheets/d/1dd2sVgDAHPITFcE83QGP00eTNs8qiv1pFT3PmJaNikI/edit"
+}

@@ -1,0 +1,49 @@
+name: CMS Web Auto-Update
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # cada 30 minutos
+  workflow_dispatch:          # manual
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generar_web_cms.py'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
+
+      - name: Generate site from CMS
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          CRM_STATE_DIR: /tmp/crm_state
+        run: |
+          mkdir -p /tmp/crm_state
+          python3 scripts/generar_web_cms.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Zira CMS Bot"
+          git config user.email "cms@ranchoraiz.bot"
+          git add index.html panel/index.html admin/cms_data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Web actualizada desde CMS [skip ci]"
+            git push
+          fi
