@@ -1,12 +1,5 @@
 {
-  "config": {
-    "password_admin": "rancho",
-    "telefono": "+54 9 264 123-4567",
-    "whatsapp": "5492641234567",
-    "email": "info@ranchoraiz.com",
-    "direccion": "Ruta 149, Barreal, San Juan",
-    "ig_usuario": "ranchoraiz.barreal"
-  },
+  "config": {},
   "habitaciones": [
     {
       "nombre": "Habitación Matrimonial",
