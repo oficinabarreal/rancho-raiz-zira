@@ -80,6 +80,39 @@ function logout() {
   render();
 }
 
+// ─── Login handler (separado para evitar closures rotas) ───────
+function handleLoginAttempt() {
+  const input = document.getElementById('login-pwd');
+  const errorEl = document.getElementById('login-error');
+  if (!input) return;
+  const pwd = input.value;
+  if (login(pwd)) {
+    // success — render() ya se llamó desde login()
+  } else {
+    if (errorEl) errorEl.textContent = 'Contraseña incorrecta';
+    input.value = '';
+    input.focus();
+  }
+}
+
+// Se registra cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+  const app = document.getElementById('app');
+  if (!app) return;
+  // Escuchar Enter en el input de login (delegación)
+  app.addEventListener('keydown', function(e) {
+    if (e.target && e.target.id === 'login-pwd' && e.key === 'Enter') {
+      handleLoginAttempt();
+    }
+  });
+  // Escuchar clicks en el botón de login (delegación)
+  app.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'login-btn') {
+      handleLoginAttempt();
+    }
+  });
+});
+
 // ─── Data loading ────────────────────────────────────────────────
 async function loadData() {
   try {
@@ -106,15 +139,6 @@ function formatDate() {
 // ─── Renderers ──────────────────────────────────────────────────
 
 function renderLogin() {
-  let error = '';
-  const tryLogin = () => {
-    const pwd = document.getElementById('login-pwd').value;
-    if (!login(pwd)) {
-      error = 'Contraseña incorrecta';
-      renderLogin();
-    }
-  };
-  
   document.getElementById('app').innerHTML = `
     <div class="login-box fade-in">
       <div class="card text-center" style="padding:32px">
@@ -122,15 +146,15 @@ function renderLogin() {
         <h2 style="font-size:20px;font-weight:700;margin-bottom:4px">Admin CMS</h2>
         <p style="font-size:13px;color:#64748b;margin-bottom:24px">Rancho Raíz · Panel de gestión</p>
         <input id="login-pwd" type="password" placeholder="Contraseña" 
-               style="margin-bottom:12px;text-align:center"
-               onkeydown="if(event.key==='Enter') document.getElementById('login-btn').click()">
-        ${error ? `<p style="color:#ef4444;font-size:13px;margin-bottom:12px">${error}</p>` : ''}
-        <button id="login-btn" class="btn-gold" style="width:100%" onclick="(${tryLogin.toString()})()">Entrar</button>
+               style="margin-bottom:12px;text-align:center">
+        <p id="login-error" style="color:#ef4444;font-size:13px;margin-bottom:12px;min-height:20px"></p>
+        <button id="login-btn" class="btn-gold" style="width:100%">Entrar</button>
         <p style="font-size:11px;color:#475569;margin-top:16px">Solo para el equipo de Rancho Raíz</p>
       </div>
     </div>
   `;
-  document.getElementById('login-pwd').focus();
+  const input = document.getElementById('login-pwd');
+  if (input) input.focus();
 }
 
 function renderSidebar() {
