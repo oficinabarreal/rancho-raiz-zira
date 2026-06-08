@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generar_web_cms.py'
+      - '.github/workflows/cms-web.yml'
 
 permissions:
   contents: write
