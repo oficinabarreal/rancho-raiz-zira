@@ -1,17 +1,17 @@
 {
   "config": {
     "password_admin": "rancho",
-    "telefono": "0054 9 264 123 4567",
-    "whatsapp": "5492641234567",
-    "email": "info@ranchoraiz.com",
-    "direccion": "Ruta 149, Barreal, San Juan",
+    "telefono": "+54 9 264 585-3266",
+    "whatsapp": "5492645853266",
+    "email": "ranchoraiz.barreal@gmail.com",
+    "direccion": "Ruta 149, Barreal, San Juan, Argentina",
     "ig_usuario": "ranchoraiz.barreal"
   },
   "habitaciones": [
     {
-      "nombre": "Habitación Matrimonial",
-      "precio": "35000",
-      "descripcion": "Amplia habitación con cama queen, vista a la cordillera. Baño privado, calefacción, ropa blanca incluida, WiFi.",
+      "nombre": "Cabaña Completa (1 pers.)",
+      "precio": "80000",
+      "descripcion": "Alquiler completo de la cabaña para 1 persona. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta y vistas a la Cordillera de los Andes.",
       "imagen_url": "",
       "activo": "SI",
       "orden": "1",
@@ -19,9 +19,9 @@
       "promo_label": ""
     },
     {
-      "nombre": "Habitación Doble",
-      "precio": "28000",
-      "descripcion": "Dos camas individuales. Ideal para amigos o compañeros. Baño compartido, calefacción, ropa blanca incluida.",
+      "nombre": "Cabaña Completa (2 pers.)",
+      "precio": "95000",
+      "descripcion": "Alquiler completo de la cabaña para 2 personas. Ideal para parejas. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta y vistas a la Cordillera.",
       "imagen_url": "",
       "activo": "SI",
       "orden": "2",
@@ -29,9 +29,9 @@
       "promo_label": ""
     },
     {
-      "nombre": "Habitación Familiar",
-      "precio": "45000",
-      "descripcion": "Capacidad para 4 personas. Dos ambientes, baño privado, cocina equipada, calefacción, Smart TV.",
+      "nombre": "Cabaña Completa (3 pers.)",
+      "precio": "105000",
+      "descripcion": "Alquiler completo de la cabaña para 3 personas. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta.",
       "imagen_url": "",
       "activo": "SI",
       "orden": "3",
@@ -39,22 +39,42 @@
       "promo_label": ""
     },
     {
-      "nombre": "Cabaña Completa",
-      "precio": "65000",
-      "descripcion": "Cabaña independiente con cochera, parrilla, cocina completa y vistas 360° de la Cordillera de los Andes.",
+      "nombre": "Cabaña Completa (4 pers.)",
+      "precio": "115000",
+      "descripcion": "Alquiler completo de la cabaña para 4 personas. Dos ambientes, baño privado, cocina equipada, calefacción, Smart TV, WiFi Starlink, parrilla y pileta.",
       "imagen_url": "",
       "activo": "SI",
       "orden": "4",
-      "precio_promocion": "55000",
-      "promo_label": "15% OFF"
+      "precio_promocion": "",
+      "promo_label": ""
     },
     {
-      "nombre": "Camping",
-      "precio": "5000",
-      "descripcion": "Espacio para carpa con acceso a baños y duchas calientes. Fogón compartido, zona de mate.",
+      "nombre": "Cabaña Completa (5 pers.)",
+      "precio": "120000",
+      "descripcion": "Alquiler completo de la cabaña para 5 personas. Capacidad máxima. Todas las comodidades: cochera, parrilla, cocina completa, WiFi Starlink, patio con pileta y vistas 360°.",
       "imagen_url": "",
       "activo": "SI",
       "orden": "5",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Camping (por persona)",
+      "precio": "5000",
+      "descripcion": "Espacio para carpa en el predio con acceso a baño, ducha caliente, fogón compartido y zona de mate. WiFi Starlink incluido.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "6",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Noche sola (tarifa única)",
+      "precio": "120000",
+      "descripcion": "Tarifa especial para reserva de una sola noche en la cabaña completa, sin importar la cantidad de personas.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "7",
       "precio_promocion": "",
       "promo_label": ""
     }
@@ -62,26 +82,32 @@
   "servicios": [
     {
       "nombre": "WiFi Starlink",
-      "descripcion": "Conexión satelital de alta velocidad en todo el predio",
+      "descripcion": "Internet satelital de alta velocidad en todo el predio y la cabaña",
       "icono": "wifi",
       "activo": "SI"
     },
     {
-      "nombre": "Desayuno Casero",
-      "descripcion": "Pan amasado, dulces regionales, frutas de estación, mate y café de montaña",
-      "icono": "cafe",
+      "nombre": "Patio con Pileta",
+      "descripcion": "Amplio patio con pileta de temporada, ideal para disfrutar del clima de Barreal",
+      "icono": "montaña",
       "activo": "SI"
     },
     {
-      "nombre": "Cabalgatas",
-      "descripcion": "Excursiones a caballo por la precordillera con guías locales",
-      "icono": "caballo",
+      "nombre": "Parrilla & Fogón",
+      "descripcion": "Asador completo con leña incluida y fogón compartido para noches al aire libre",
+      "icono": "montaña",
       "activo": "SI"
     },
     {
-      "nombre": "Traslado",
-      "descripcion": "Te buscamos y llevamos desde la terminal de Barreal o San Juan",
+      "nombre": "Cochera Privada",
+      "descripcion": "Estacionamiento cubierto dentro del predio",
       "icono": "auto",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Vistas a la Cordillera",
+      "descripcion": "Vistas panorámicas a la Cordillera de los Andes desde toda la propiedad",
+      "icono": "montaña",
       "activo": "SI"
     }
   ],
@@ -96,21 +122,30 @@
   "promociones": [
     {
       "nombre": "Escapada de Invierno",
-      "descripcion": "3 noches en Matrimonial con desayuno + cabalgata",
-      "precio_regular": "105000",
-      "precio_promo": "85000",
+      "descripcion": "3 noches en Cabaña (2 pers.) con leña y wifi incluidos",
+      "precio_regular": "285000",
+      "precio_promo": "250000",
       "imagen_url": "",
       "activo": "SI",
       "orden": "1"
     },
     {
-      "nombre": "Finde Largo Cabaña",
-      "descripcion": "2 noches en Cabaña Completa con traslado incluido",
-      "precio_regular": "130000",
-      "precio_promo": "99000",
+      "nombre": "Finde Largo",
+      "descripcion": "2 noches en Cabaña Completa (hasta 4 pers.) con traslado desde San Juan",
+      "precio_regular": "230000",
+      "precio_promo": "200000",
       "imagen_url": "",
       "activo": "SI",
       "orden": "2"
+    },
+    {
+      "nombre": "Semana en la Montaña",
+      "descripcion": "7 noches en Cabaña (2 pers.) con 10% de descuento",
+      "precio_regular": "665000",
+      "precio_promo": "598500",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "3"
     }
   ],
   "sheet_url": "https://docs.google.com/spreadsheets/d/1dd2sVgDAHPITFcE83QGP00eTNs8qiv1pFT3PmJaNikI/edit"
