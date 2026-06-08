@@ -59,8 +59,8 @@ build/
 factura_*.txt
 factura_*.pdf
 
-# Dashboard generado automáticamente (se genera en CI y se deploya a gh-pages)
-/index.html
+# Dashboard generado automáticamente (se genera en CI)
+/panel/index.html
 
 # Archivos de estado con datos de prueba que pueden contener
 # información personal o de clientes
