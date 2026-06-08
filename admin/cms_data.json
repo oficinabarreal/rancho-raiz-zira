@@ -14,7 +14,9 @@
       "descripcion": "Amplia habitación con cama queen, vista a la cordillera. Baño privado, calefacción, ropa blanca incluida, WiFi.",
       "imagen_url": "",
       "activo": "SI",
-      "orden": "1"
+      "orden": "1",
+      "precio_promocion": "",
+      "promo_label": ""
     },
     {
       "nombre": "Habitación Doble",
@@ -22,7 +24,9 @@
       "descripcion": "Dos camas individuales. Ideal para amigos o compañeros. Baño compartido, calefacción, ropa blanca incluida.",
       "imagen_url": "",
       "activo": "SI",
-      "orden": "2"
+      "orden": "2",
+      "precio_promocion": "",
+      "promo_label": ""
     },
     {
       "nombre": "Habitación Familiar",
@@ -30,7 +34,9 @@
       "descripcion": "Capacidad para 4 personas. Dos ambientes, baño privado, cocina equipada, calefacción, Smart TV.",
       "imagen_url": "",
       "activo": "SI",
-      "orden": "3"
+      "orden": "3",
+      "precio_promocion": "",
+      "promo_label": ""
     },
     {
       "nombre": "Cabaña Completa",
@@ -38,7 +44,9 @@
       "descripcion": "Cabaña independiente con cochera, parrilla, cocina completa y vistas 360° de la Cordillera de los Andes.",
       "imagen_url": "",
       "activo": "SI",
-      "orden": "4"
+      "orden": "4",
+      "precio_promocion": "55000",
+      "promo_label": "15% OFF"
     },
     {
       "nombre": "Camping",
@@ -46,7 +54,9 @@
       "descripcion": "Espacio para carpa con acceso a baños y duchas calientes. Fogón compartido, zona de mate.",
       "imagen_url": "",
       "activo": "SI",
-      "orden": "5"
+      "orden": "5",
+      "precio_promocion": "",
+      "promo_label": ""
     }
   ],
   "servicios": [
@@ -81,6 +91,26 @@
       "descripcion": "Vista de la Cordillera desde el patio",
       "orden": "1",
       "activo": "SI"
+    }
+  ],
+  "promociones": [
+    {
+      "nombre": "Escapada de Invierno",
+      "descripcion": "3 noches en Matrimonial con desayuno + cabalgata",
+      "precio_regular": "105000",
+      "precio_promo": "85000",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "1"
+    },
+    {
+      "nombre": "Finde Largo Cabaña",
+      "descripcion": "2 noches en Cabaña Completa con traslado incluido",
+      "precio_regular": "130000",
+      "precio_promo": "99000",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "2"
     }
   ],
   "sheet_url": "https://docs.google.com/spreadsheets/d/1dd2sVgDAHPITFcE83QGP00eTNs8qiv1pFT3PmJaNikI/edit"

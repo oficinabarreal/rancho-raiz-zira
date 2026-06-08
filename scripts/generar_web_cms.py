@@ -87,7 +87,7 @@ def get_config(data):
     return cfg
 
 def render_habitaciones(habitaciones, cfg):
-    """Render room cards HTML."""
+    """Render room cards HTML with optional promo pricing."""
     active = [h for h in habitaciones if h.get("activo", "").upper() == "SI"]
     active.sort(key=lambda x: x.get("orden", "99"))
     if not active:
@@ -97,6 +97,8 @@ def render_habitaciones(habitaciones, cfg):
     for h in active:
         nombre = html_mod.escape(h.get("nombre", ""))
         precio = html_mod.escape(h.get("precio", ""))
+        precio_promo = h.get("precio_promocion", "").strip()
+        promo_label = h.get("promo_label", "").strip()
         desc = html_mod.escape(h.get("descripcion", ""))
         img = h.get("imagen_url", "").strip()
         img_html = ""
@@ -105,10 +107,26 @@ def render_habitaciones(habitaciones, cfg):
         else:
             img_html = '<div class="w-full h-48 bg-dark-3 rounded-lg mb-4 flex items-center justify-center text-slate-500"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>'
         
-        precio_html = f'<span class="text-gold text-2xl font-bold">${precio}</span><span class="text-slate-400 text-sm">/noche</span>' if precio else ''
+        # Price display: show promo if available
+        if precio_promo and precio:
+            precio_html = f'''
+                <div class="flex items-baseline gap-2">
+                    <span class="text-slate-500 text-sm line-through">${html_mod.escape(precio)}</span>
+                    <span class="text-green-400 text-2xl font-bold">${html_mod.escape(precio_promo)}</span>
+                    <span class="text-slate-400 text-xs">/noche</span>
+                </div>'''
+            badge_text = html_mod.escape(promo_label) if promo_label else "OFERTA"
+            promo_badge = f'<span class="absolute top-3 right-3 bg-green-500 text-dark text-xs font-bold px-2 py-1 rounded-full">{badge_text}</span>'
+        elif precio:
+            precio_html = f'<span class="text-gold text-2xl font-bold">${precio}</span><span class="text-slate-400 text-sm">/noche</span>'
+            promo_badge = ''
+        else:
+            precio_html = ''
+            promo_badge = ''
         
         cards += f'''
-        <div class="bg-dark-2 rounded-xl p-6 border border-slate-700/50 hover:border-gold/30 transition-all duration-300">
+        <div class="bg-dark-2 rounded-xl p-6 border border-slate-700/50 hover:border-gold/30 transition-all duration-300 relative">
+            {promo_badge}
             {img_html}
             <h3 class="text-xl font-semibold text-white mb-2">{nombre}</h3>
             <p class="text-slate-400 text-sm mb-4 leading-relaxed">{desc}</p>
@@ -173,7 +191,49 @@ def render_galeria(galeria):
             </div>'''
     return items
 
-def generate_site(config, habitaciones, servicios, galeria):
+def render_promociones(promociones):
+    """Render promotions/deals HTML."""
+    active = [p for p in promociones if p.get("activo", "").upper() == "SI"]
+    active.sort(key=lambda x: x.get("orden", "99"))
+    if not active:
+        return ""
+    
+    cards = ""
+    for p in active:
+        nombre = html_mod.escape(p.get("nombre", ""))
+        desc = html_mod.escape(p.get("descripcion", ""))
+        precio_reg = p.get("precio_regular", "").strip()
+        precio_promo = p.get("precio_promo", "").strip()
+        img = p.get("imagen_url", "").strip()
+        
+        img_html = ""
+        if img:
+            img_html = f'<img src="{html_mod.escape(img)}" alt="{nombre}" class="w-full h-40 object-cover rounded-lg mb-4">'
+        else:
+            img_html = '<div class="w-full h-40 bg-gradient-to-br from-gold/20 to-dark-3 rounded-lg mb-4 flex items-center justify-center"><svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg></div>'
+        
+        if precio_promo and precio_reg:
+            price_html = f'''
+                <div class="flex items-baseline gap-2 justify-center">
+                    <span class="text-slate-500 text-sm line-through">${html_mod.escape(precio_reg)}</span>
+                    <span class="text-green-400 text-2xl font-bold">${html_mod.escape(precio_promo)}</span>
+                </div>'''
+        elif precio_promo:
+            price_html = f'<span class="text-green-400 text-2xl font-bold">${html_mod.escape(precio_promo)}</span>'
+        else:
+            price_html = ''
+        
+        cards += f'''
+        <div class="bg-dark-2 rounded-xl p-6 border border-gold/20 hover:border-gold/40 transition-all duration-300 text-center">
+            {img_html}
+            <span class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full mb-3">🔥 PROMO</span>
+            <h3 class="text-lg font-bold text-white mb-2">{nombre}</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">{desc}</p>
+            {price_html}
+        </div>'''
+    return cards
+
+def generate_site(config, habitaciones, servicios, galeria, promociones):
     """Generate the complete index.html."""
     telefono = html_mod.escape(config.get("telefono", ""))
     whatsapp = html_mod.escape(config.get("whatsapp", ""))
@@ -184,6 +244,23 @@ def generate_site(config, habitaciones, servicios, galeria):
     rooms_html = render_habitaciones(habitaciones, config)
     services_html = render_servicios(servicios)
     gallery_html = render_galeria(galeria)
+    promos_html = render_promociones(promociones)
+    
+    # Only add promos section if there are active promotions
+    promos_section = f'''
+    <!-- PROMOCIONES -->
+    <section id="promociones" class="py-20 px-4 bg-dark-2/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">🔥 Promociones</h2>
+          <p class="text-slate-400">Ofertas especiales para que vivas la montaña</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {promos_html}
+        </div>
+      </div>
+    </section>
+    ''' if promos_html else ''
     
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -298,6 +375,7 @@ def generate_site(config, habitaciones, servicios, galeria):
       </div>
     </section>
 
+    {promos_section}
     <!-- CONTACTO -->
     <section id="contacto" class="py-20 px-4 bg-dark-2/50">
       <div class="max-w-6xl mx-auto">
@@ -350,6 +428,7 @@ def main():
     habitaciones = read_sheet_tab("habitaciones")
     servicios = read_sheet_tab("servicios")
     galeria = read_sheet_tab("galeria")
+    promociones = read_sheet_tab("promociones")
     
     config = get_config(config_data)
     
@@ -357,9 +436,10 @@ def main():
     print(f"   Habitaciones: {len(habitaciones)}")
     print(f"   Servicios: {len(servicios)}")
     print(f"   Galería: {len(galeria)}")
+    print(f"   Promociones: {len(promociones)}")
     
     print("🏗️  Generando sitio web...")
-    html = generate_site(config, habitaciones, servicios, galeria)
+    html = generate_site(config, habitaciones, servicios, galeria, promociones)
     
     # Write to web root
     output_dir = os.path.dirname(os.path.abspath(__file__)) + "/.."
@@ -384,6 +464,7 @@ def main():
             "habitaciones": habitaciones,
             "servicios": servicios,
             "galeria": galeria,
+            "promociones": promociones,
             "sheet_url": f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit"
         }, f, ensure_ascii=False, indent=2)
     print("✅ admin/cms_data.json generado")

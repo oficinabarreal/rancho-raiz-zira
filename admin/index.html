@@ -163,7 +163,8 @@ function renderSidebar() {
     { id: 'habitaciones', label: '🛏️ Habitaciones', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
     { id: 'servicios', label: '✨ Servicios', icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' },
     { id: 'galeria', label: '🖼️ Galería', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-    { id: 'config', label: '⚙️ Config', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+    { id: 'promociones', label: '🔥 Promociones', icon: 'M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7' },
+    { id: 'config', label: '⚙️ Config', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z },
   ];
   
   return `
@@ -337,6 +338,37 @@ function renderGaleria() {
   `;
 }
 
+function renderPromociones() {
+  const items = state.data?.promociones || [];
+  const rows = items.map(p => `
+    <tr>
+      <td style="font-weight:500">${esc(p.nombre)}</td>
+      <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;color:#94a3b8">${esc(p.descripcion)}</td>
+      <td>${p.precio_regular ? '$' + esc(p.precio_regular) : '—'}</td>
+      <td style="color:#22c55e;font-weight:600">${p.precio_promo ? '$' + esc(p.precio_promo) : '—'}</td>
+      <td><span class="badge ${p.activo === 'SI' ? 'badge-active' : 'badge-inactive'}">${p.activo === 'SI' ? 'Activa' : 'Inactiva'}</span></td>
+    </tr>
+  `).join('');
+
+  return `
+    <div class="p-8 fade-in">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <div>
+          <h1 style="font-size:24px;font-weight:700">🔥 Promociones</h1>
+          <p style="font-size:13px;color:#64748b">${items.length} promociones cargadas</p>
+        </div>
+        <a href="${SHEET_URL}" target="_blank" class="btn-gold" style="font-size:13px;padding:8px 16px">Editar en Sheets</a>
+      </div>
+      <div class="card" style="padding:0;overflow:auto">
+        <table>
+          <thead><tr><th>Nombre</th><th>Descripción</th><th>Precio regular</th><th>Precio promo</th><th>Estado</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
 function renderConfig() {
   const cfg = state.data?.config || {};
   const entries = Object.entries(cfg).map(([k, v]) => `
@@ -378,6 +410,7 @@ function render() {
       case 'habitaciones': return renderHabitaciones();
       case 'servicios': return renderServicios();
       case 'galeria': return renderGaleria();
+      case 'promociones': return renderPromociones();
       case 'config': return renderConfig();
       default: return renderDashboard();
     }
