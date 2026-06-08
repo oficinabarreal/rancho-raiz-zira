@@ -9,6 +9,7 @@ on:
     paths:
       - 'scripts/generar_web_cms.py'
       - '.github/workflows/cms-web.yml'
+      - 'admin/index.html'
 
 permissions:
   contents: write
