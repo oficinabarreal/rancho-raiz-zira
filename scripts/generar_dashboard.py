@@ -312,7 +312,9 @@ def main():
 
     html = generar_html(git, tests, runs, facturas, ts)
 
-    output_path = PROJECT_DIR / "panel" / "index.html"
+    output_dir = PROJECT_DIR / "panel"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "index.html"
     output_path.write_text(html, encoding="utf-8")
     print(f"✅ Dashboard escrito: {output_path} ({len(html)} bytes)")
 
