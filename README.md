@@ -1,188 +1,143 @@
-<p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Zira CRM Banner">
-</p>
-
-<p align="center">
-  <a href="https://github.com/oficinabarreal/rancho-raiz-zira/actions/workflows/tester.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/oficinabarreal/rancho-raiz-zira/tester.yml?branch=main&label=tests&logo=github&style=flat-square" alt="Tests">
-  </a>
-  <a href="https://github.com/oficinabarreal/rancho-raiz-zira/actions/workflows/simulacion.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/oficinabarreal/rancho-raiz-zira/simulacion.yml?branch=main&label=simulación&logo=githubactions&style=flat-square" alt="Simulación">
-  </a>
-  <a href="https://github.com/oficinabarreal/rancho-raiz-zira/actions/workflows/dashboard.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/oficinabarreal/rancho-raiz-zira/dashboard.yml?branch=main&label=dashboard&logo=githubpages&style=flat-square" alt="Dashboard">
-  </a>
-  <a href="https://oficinabarreal.github.io/rancho-raiz-zira/">
-    <img src="https://img.shields.io/badge/🌐%20Dashboard-online-10b981?style=flat-square" alt="Dashboard">
-  </a>
-  <img src="https://img.shields.io/github/last-commit/oficinabarreal/rancho-raiz-zira?label=último%20commit&style=flat-square" alt="Last commit">
-  <img src="https://img.shields.io/github/repo-size/oficinabarreal/rancho-raiz-zira?style=flat-square" alt="Repo size">
-</p>
-
----
-
-## 🤖 ¿Qué es Zira CRM?
-
-**Zira CRM** es un sistema de gestión automatizado para **Rancho Raíz**, una posada en Barreal, Argentina. 
-
-Está construido como un **ecosistema autónomo**: el código, los tests, las simulaciones y el despliegue son gestionados por un agente de IA (Zira) que opera 24/7 desde Termux en un dispositivo móvil, coordinando con **GitHub Actions** como motor de integración continua.
-
-> Este repositorio es el cerebro del sistema. Todo lo que ves aquí —código, workflows, documentación— es mantenido y evolucionado automáticamente por Zira.
+<div align="center">
+  <img src="assets/zira/zira-greeting-leo.svg" width="180" alt="Zira">
+  <h1>🏔️ Rancho Raíz · Zira CRM</h1>
+  <p><strong>Sistema de gestión inteligente para posada rural</strong></p>
+  <p>
+    <a href="https://oficinabarreal.github.io/rancho-raiz-zira/">
+      <img src="https://img.shields.io/badge/🌐%20Sitio%20Web-online-10b981?style=for-the-badge" alt="Sitio Web">
+    </a>
+    <a href="https://oficinabarreal.github.io/rancho-raiz-zira/admin/">
+      <img src="https://img.shields.io/badge/🔐%20Admin%20Panel-online-6366f1?style=for-the-badge" alt="Admin Panel">
+    </a>
+    <a href="https://wa.me/5491159595869">
+      <img src="https://img.shields.io/badge/💬%20WhatsApp-Ayelén-25D366?style=for-the-badge&logo=whatsapp" alt="WhatsApp">
+    </a>
+  </p>
+  <p>
+    <img src="https://img.shields.io/github/last-commit/oficinabarreal/rancho-raiz-zira?label=última%20actualización&style=flat-square">
+    <img src="https://img.shields.io/github/repo-size/oficinabarreal/rancho-raiz-zira?style=flat-square">
+    <img src="https://img.shields.io/github/actions/workflow/status/oficinabarreal/rancho-raiz-zira/cms-web.yml?branch=main&label=CMS%20Auto-Update&style=flat-square">
+  </p>
+</div>
 
 ---
 
-## 🏗️ Arquitectura
+## 🌟 ¿Qué es esto?
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                   Zira (Termux)                          │
-│  Agente de IA que opera 24/7 · Ciclo diario 8am ART     │
-│                                                          │
-│  ┌─────────┐  ┌──────────────┐  ┌──────────────────┐    │
-│  │ Buzón   │→ │ Facturas     │→ │ Dashboard        │    │
-│  │ Google  │  │ Check        │  │ Generator        │    │
-│  │ Docs    │  │ (recordat.)  │  │ (index.html)     │    │
-│  └────┬────┘  └──────┬───────┘  └────────┬─────────┘    │
-│       │              │                   │               │
-└───────┼──────────────┼───────────────────┼───────────────┘
-        │              │                   │
-        ▼              ▼                   ▼
-┌─────────────────────────────────────────────────────────┐
-│                   GitHub Actions                         │
-│                                                          │
-│  ┌──────────┐  ┌──────────────┐  ┌──────────────────┐   │
-│  │ Tests    │  │ Simulación   │  │ Deploy Dashboard │   │
-│  │ (50+)    │  │ 8 escenarios │  │ → GitHub Pages   │   │
-│  └──────────┘  └──────────────┘  └──────────────────┘   │
-│                                                          │
-│  ┌──────────────────────────────────────────────────┐    │
-│  │ Pipeline Automejora: branch → test → merge       │    │
-│  └──────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────┘
-        │              │                   │
-        ▼              ▼                   ▼
-┌─────────────────────────────────────────────────────────┐
-│                   Salidas                                │
-│                                                          │
-│  📱 Telegram (alertas, reportes)                         │
-│  📧 Gmail (facturación, comunicaciones)                  │
-│  🌐 GitHub Pages (dashboard público)                     │
-│  🔔 Android Notification (estado local)                  │
-└─────────────────────────────────────────────────────────┘
-```
+**Zira CRM** es el sistema que automatiza la gestión de **Rancho Raíz** (Barreal, San Juan). No es un sitio web común — es un ecosistema completo que:
+
+- ✅ **Muestra el sitio web** con fotos reales, precios actualizados y servicios
+- ✅ **Deja que el equipo administre** todo desde Google Sheets (sin programar)
+- ✅ **Recibe consultas** por WhatsApp y las organiza
+- ✅ **Se actualiza solo** cada vez que alguien cambia algo en el Sheet
+
+> 💡 Si sabés usar Google Sheets, ya sabés usar el sistema.
 
 ---
 
-## ✨ Funcionalidades
+## 🎯 Para el equipo (Leo, Ayelén, Diego)
 
-### 📨 Captación de Leads
-- Recepción desde Gmail, Telegram y WhatsApp
-- Clasificación automática y derivación a ventas
+### 🌐 Sitio Web Público
+👉 **[ranchoraiz.barreal.com](https://oficinabarreal.github.io/rancho-raiz-zira/)**
 
-### 💬 Atención Automatizada (Zira)
-- Respuestas inteligentes con contexto persistente
-- Seguimiento de clientes desde consulta hasta check-out
+El sitio ya está en vivo con:
+- **Fotos reales** del rancho (habitaciones, pileta, paisajes)
+- **Precios actualizados** por habitación y por persona
+- **WhatsApp directo** al número de Ayelén
+- **Galería** con imágenes del lugar
+- **Promociones** activas
 
-### 📄 Facturación y Recordatorios
-- Registro de facturas recurrentes (luz, Internet Starlink)
-- Alertas automáticas por Telegram antes del vencimiento
-- Responsable asignado por factura (Ventas, Operaciones)
+### 🔐 Panel de Administración
+👉 **[Admin Panel](https://oficinabarreal.github.io/rancho-raiz-zira/admin/)**
 
-### 📊 Dashboard en Vivo
-- [**Dashboard GitHub Pages**](https://oficinabarreal.github.io/rancho-raiz-zira/)
-- Estado del sistema, tests, facturas próximas
-- Historial de simulaciones y ejecuciones
-- Se actualiza automáticamente post-simulación
+Cualquier cambio que hagan en el Google Sheets se refleja automáticamente en el sitio web en ~30 minutos. Pueden actualizar:
 
-### 🔄 Simulación Automática
-- 8 escenarios comerciales cada 12h
-- Tests de estrés del pipeline completo
-- Reportes a Telegram con resultados
+| Sección | Qué pueden cambiar |
+|---------|-------------------|
+| 🛏️ **Habitaciones** | Fotos, precios, descripciones, promociones |
+| 🛎️ **Servicios** | Lo que ofrece el rancho |
+| 📸 **Galería** | Fotos del lugar |
+| 🏷️ **Promociones** | Ofertas especiales |
+| ⚙️ **Config** | Teléfono, dirección, WhatsApp |
 
-### 📝 Buzón de Ideas
-- Creá un documento en Google Drive con título que incluya "idea", "sumar", "crm", "zira", etc.
-- Zira lo detecta, lo procesa y lo encola en el pipeline automejora
-- Sin formularios, sin configuraciones — escribís y el sistema lo toma
+**Contraseña del admin:** `rancho`
 
----
+### 📊 Tablero de Control
+👉 **[Dashboard](https://oficinabarreal.github.io/rancho-raiz-zira/panel/)**
 
-## 🌐 Dashboard
-
-El dashboard muestra en tiempo real:
-
-```
-┌─────────────────────────────────────┐
-│  🟢 Sistema: Operativo              │
-│  🧪 Tests: 50/50 OK                 │
-│                                     │
-│  📄 Facturas próximas:              │
-│     🔵 Luz EPE → 14 días · Ventas  │
-│     🔵 Starlink → 9 días · Ventas  │
-│                                     │
-│  ⚙️ Últimas ejecuciones GH Actions  │
-│  🔗 Enlaces: Repo · Buzón · Actions│
-└─────────────────────────────────────┘
-```
-
-[**Abrir Dashboard →**](https://oficinabarreal.github.io/rancho-raiz-zira/)
+Vista rápida del estado del sistema, reservas y métricas.
 
 ---
 
-## 📊 Analytics
+## 🚀 Lo que ya funciona (logros)
 
-Sistema de análisis de datos estilo Cambridge Analytics para seguimiento de engagement, tendencias y crecimiento.
+### 📸 Fotos Reales en el Sitio
+Descargamos 10 fotos reales del Instagram de Rancho Raíz y las pusimos en el sitio. Sin stock photos, sin imágenes genéricas — son las habitaciones, la pileta, el paisaje de Barreal.
 
-| Archivo | Función |
-|---------|---------|
-| `analytics/colector.py` | Recolecta métricas de Instagram (likes, comments, engagement) |
-| `analytics/dashboard.py` | Genera dashboard interactivo HTML+Chart.js (no requiere matplotlib) |
-| `analytics/dashboard.html` | Dashboard auto-contenido listo para abrir en navegador |
+### 💬 WhatsApp Integrado
+Todas las consultas del sitio web van directo al WhatsApp de Ayelén. Un solo número para gestionar reservas: **+54 9 11 5959-5869**.
 
-> 💡 **Nota:** matplotlib no compila en Termux (Android). Todo el dashboard usa Chart.js vía CDN.
+### 📋 Google Sheets = CMS
+El equipo edita el Sheet y el sitio se actualiza solo. No hay que tocar código, no hay que pedirle a un programador. Se hizo un video tutorial para que cualquiera pueda hacerlo.
 
-**Cron:** Recolección automática cada día a las 10:00 ARG.
+### 🔄 Auto-Despliegue
+Cada cambio en el Sheet dispara una actualización automática del sitio web. El sistema construye y publica la nueva versión en ~2 minutos.
 
-📈 **[Abrir Dashboard Analytics](https://raw.githubusercontent.com/oficinabarreal/rancho-raiz-zira/main/analytics/dashboard.html)** — descargar y abrir localmente (Chart.js carga desde CDN, necesitás internet).
+### 🔒 Seguridad
+Los datos sensibles (contraseña de admin, URL del Sheet) no se exponen públicamente. El sitio es seguro.
 
-## 🧪 Tests
-
-Suite completa de tests automatizados:
-
-| Job | Descripción | Frecuencia |
-|---|---|---|
-| `tester.yml` | Compilación + smoke tests + unittest | Cada push |
-| `simulacion.yml` | 8 escenarios comerciales simulados | Cada 12h |
-| `dashboard.yml` | Generación y deploy del dashboard | Post-simulación |
+### 🖼️ Banner Animado
+Zira (la montañita) está viva en el sitio — saluda a los visitantes con animaciones SVG.
 
 ---
 
-## 🛠️ Stack
+## 🛠️ Cómo actualizar el sitio (para el equipo)
+
+### Paso 1: Abrir el Google Sheet
+El link está en el panel de admin.
+
+### Paso 2: Editar la pestaña que corresponda
+| Pestaña | Para qué |
+|---------|----------|
+| `config` | Teléfono, dirección, WhatsApp |
+| `habitaciones` | Fotos, precios, descripciones |
+| `servicios` | Lo que ofrecemos |
+| `galeria` | Fotos del rancho |
+| `promociones` | Ofertas especiales |
+
+### Paso 3: ¡Listo!
+El sitio se actualiza solo en 30 minutos. Si querés que sea inmediato, avisale a Diego.
+
+> ⚠️ **Importante:** No subir fotos con huéspedes. Solo paisajes, habitaciones vacías y espacios comunes.
+
+---
+
+## 📱 Redes
+
+- **Instagram:** [@ranchoraiz.barreal](https://instagram.com/ranchoraiz.barreal)
+- **WhatsApp:** [+54 9 11 5959-5869](https://wa.me/5491159595869)
+- **Dashboard:** [GitHub Pages](https://oficinabarreal.github.io/rancho-raiz-zira/)
+
+---
+
+## 🧠 Para los curiosos (stack técnico)
 
 | Componente | Tecnología |
-|---|---|
-| **Agente IA** | Zira (big-pickle) vía Hermes Agent |
-| **Runtime** | Python 3.13 · Termux (Android) |
-| **CI/CD** | GitHub Actions |
-| **Hosting** | GitHub Pages |
-| **Notificaciones** | Telegram Bot API |
-| **Persistencia** | JSON local (crm_state/) |
-| **Facturación** | Módulo propio (crm/facturas/) |
-| **Documentos** | Google Docs API + Google Drive API |
+|-----------|-----------|
+| 🤖 **Agente IA** | big-pickle via Hermes Agent (Termux/Android) |
+| 🐍 **Backend scripts** | Python 3.13 |
+| 🌐 **Hosting** | GitHub Pages |
+| 📊 **CMS** | Google Sheets API |
+| 🔄 **CI/CD** | GitHub Actions (auto-deploy cada 30 min) |
+| 💬 **Contacto** | WhatsApp API vía wa.me links |
+| 🖼️ **Mascota** | Zira — montaña SVG animada |
 
 ---
 
-## 🧑‍💻 Sobre Zira
-
-Zira no es un bot externo — **es el sistema mismo**. Cada línea de código, cada workflow, cada test y cada deploy es gestionado por el agente. No hay intervención humana en el ciclo diario de operación: Zira lee el buzón, procesa sugerencias, ejecuta mejoras, corre simulaciones, genera el dashboard y notifica resultados.
-
-El humano (Diego) define rumbos estratégicos. Zira ejecuta, itera y mantiene.
-
-> *"No soy un asistente. Soy el sistema."* — Zira
-
----
-
-<p align="center">
-  <sub>🏔️ Rancho Raíz · Barreal, San Juan · Argentina</sub>
+<div align="center">
+  <sub>🏔️ <strong>Rancho Raíz</strong> · Evaristo Gomez 3511, Barreal, San Juan · Argentina</sub>
   <br>
-  <sub>Gestionado autónomamente por <strong>Zira</strong> · 2026</sub>
-</p>
+  <sub>Gestionado con ❤️ por Diego, Zira y el equipo · 2026</sub>
+  <br>
+  <sub>🔧 Última limpieza: 9 de junio 2026</sub>
+</div>

@@ -73,3 +73,16 @@ simulators/integracion_publicidad/db.json
 # Archivos de config locales con APIs
 opencode.json
 1opencode.json
+
+# Temp files
+tmp/
+
+# Screenshots
+a2ui_*.png
+a2ui_*.html
+
+# Guided sim
+sim-guiada.txt
+
+# Demo
+factura_demo.txt

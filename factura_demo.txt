@@ -1,7 +1,0 @@
-Factura de Demo CRM - Rancho Raíz
-
-Cliente: [Nombre del cliente demo]
-Total: $300,000 COP (simulado)
-
-Propósito: Archivo de prueba para demostrar funcionalidad del sistema CRM
-Estado: Demo — no representa una facturación real
