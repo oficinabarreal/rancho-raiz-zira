@@ -13,7 +13,7 @@
       "precio": "80000",
       "descripcion": "Alquiler completo de la cabaña para 1 persona. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta y vistas a la Cordillera de los Andes.",
       "imagen_url": "",
-      "activo": "SI",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_2.jpg",
       "orden": "1",
       "precio_promocion": "",
       "promo_label": ""
@@ -23,7 +23,7 @@
       "precio": "95000",
       "descripcion": "Alquiler completo de la cabaña para 2 personas. Ideal para parejas. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta y vistas a la Cordillera.",
       "imagen_url": "",
-      "activo": "SI",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_3.jpg",
       "orden": "2",
       "precio_promocion": "",
       "promo_label": ""
@@ -33,7 +33,7 @@
       "precio": "105000",
       "descripcion": "Alquiler completo de la cabaña para 3 personas. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta.",
       "imagen_url": "",
-      "activo": "SI",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_4.jpg",
       "orden": "3",
       "precio_promocion": "",
       "promo_label": ""
@@ -43,7 +43,7 @@
       "precio": "115000",
       "descripcion": "Alquiler completo de la cabaña para 4 personas. Dos ambientes, baño privado, cocina equipada, calefacción, Smart TV, WiFi Starlink, parrilla y pileta.",
       "imagen_url": "",
-      "activo": "SI",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_5.jpg",
       "orden": "4",
       "precio_promocion": "",
       "promo_label": ""
@@ -53,7 +53,7 @@
       "precio": "120000",
       "descripcion": "Alquiler completo de la cabaña para 5 personas. Capacidad máxima. Todas las comodidades: cochera, parrilla, cocina completa, WiFi Starlink, patio con pileta y vistas 360°.",
       "imagen_url": "",
-      "activo": "SI",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_6.jpg",
       "orden": "5",
       "precio_promocion": "",
       "promo_label": ""
@@ -63,7 +63,7 @@
       "precio": "5000",
       "descripcion": "Espacio para carpa en el predio con acceso a baño, ducha caliente, fogón compartido y zona de mate. WiFi Starlink incluido.",
       "imagen_url": "",
-      "activo": "SI",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_7.jpg",
       "orden": "6",
       "precio_promocion": "",
       "promo_label": ""
@@ -113,10 +113,74 @@
   ],
   "galeria": [
     {
-      "imagen_url": "",
-      "descripcion": "Vista de la Cordillera desde el patio",
-      "orden": "1",
-      "activo": "SI"
+      "nombre": "Foto 1",
+      "descripcion": "Algunos visitantes, posando en nuestro alambrado! Siempre hay alguno diferente 🐦 🕊 🦉 🦅",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/Cs3gu8uOFuU_1.jpg",
+      "activo": "SI",
+      "orden": "1"
+    },
+    {
+      "nombre": "Foto 2",
+      "descripcion": "Detalles que enamoran y una vista que lo tiene todo. 💚  Madera, adobe y esa luz dorada que entra por",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_2.jpg",
+      "activo": "SI",
+      "orden": "2"
+    },
+    {
+      "nombre": "Foto 3",
+      "descripcion": "Detalles que enamoran y una vista que lo tiene todo. 💚  Madera, adobe y esa luz dorada que entra por",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_3.jpg",
+      "activo": "SI",
+      "orden": "3"
+    },
+    {
+      "nombre": "Foto 4",
+      "descripcion": "Detalles que enamoran y una vista que lo tiene todo. 💚  Madera, adobe y esa luz dorada que entra por",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_4.jpg",
+      "activo": "SI",
+      "orden": "4"
+    },
+    {
+      "nombre": "Foto 5",
+      "descripcion": "Es más que una casa, es un hogar 🫶🥰",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_5.jpg",
+      "activo": "SI",
+      "orden": "5"
+    },
+    {
+      "nombre": "Foto 6",
+      "descripcion": "Es más que una casa, es un hogar 🫶🥰",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_6.jpg",
+      "activo": "SI",
+      "orden": "6"
+    },
+    {
+      "nombre": "Foto 7",
+      "descripcion": "Es más que una casa, es un hogar 🫶🥰",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_7.jpg",
+      "activo": "SI",
+      "orden": "7"
+    },
+    {
+      "nombre": "Foto 8",
+      "descripcion": "La luz de Barreal hace magia en todos los rincones. ✨  Este es el espacio para quedarse: desayunos t",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DQDXL9tDYuF_8.jpg",
+      "activo": "SI",
+      "orden": "8"
+    },
+    {
+      "nombre": "Foto 9",
+      "descripcion": "La luz de Barreal hace magia en todos los rincones. ✨  Este es el espacio para quedarse: desayunos t",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DQDXL9tDYuF_9.jpg",
+      "activo": "SI",
+      "orden": "9"
+    },
+    {
+      "nombre": "Foto 10",
+      "descripcion": "La luz de Barreal hace magia en todos los rincones. ✨  Este es el espacio para quedarse: desayunos t",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DQDXL9tDYuF_10.jpg",
+      "activo": "SI",
+      "orden": "10"
     }
   ],
   "promociones": [

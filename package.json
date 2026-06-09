@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/oficinabarreal/rancho-raiz-zira#readme",
   "dependencies": {
+    "acorn": "^8.16.0",
     "puppeteer": "^25.1.0"
   }
 }
