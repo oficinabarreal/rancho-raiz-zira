@@ -77,10 +77,24 @@ Visitantes → WhatsApp de Ayelón
 
 ---
 
+## 🤖 RanchoBot — Asistente WhatsApp Inteligente
+👉 [Repo privado: oficinabarreal/rancho-bot](https://github.com/oficinabarreal/rancho-bot)
+
+El RanchoBot es un asistente automático que vive en el WhatsApp del rancho y **responde consultas 24/7**:
+- 💰 Precios de cabañas
+- 📍 Ubicación y cómo llegar
+- 🛎️ Servicios disponibles
+- 📸 Galería de fotos
+- 💬 Contacto directo con el equipo
+
+**Estado:** El bot ya está programado, listo para activarse. Solo requiere vincular el número de WhatsApp del rancho una vez (se hace desde el mismo celu, 30 segundos).
+
+**Próximas features posibles:** captura de leads, notificaciones al equipo, actualización del sitio vía WhatsApp.
+
 ## 🏆 Próximos pasos posibles
 
 - [ ] **Subir más fotos** al Sheet para que aparezcan en la galería
-- [ ] **Conectar ManyChat/WhatsApp Bot** para respuestas automáticas 24/7
+- [ ] **Activar RanchoBot** y ponerlo a responder
 - [ ] **Agregar más habitaciones** al Sheet cuando se construyan
 - [ ] **Sistema de reservas** directo desde la web
 
