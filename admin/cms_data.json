@@ -1,6 +1,5 @@
 {
   "config": {
-    "password_admin": "rancho",
     "telefono": "+54 9 11 5959-5869",
     "whatsapp": "5491159595869",
     "email": "ranchoraiz.barreal@gmail.com",
@@ -211,6 +210,5 @@
       "activo": "SI",
       "orden": "3"
     }
-  ],
-  "sheet_url": "https://docs.google.com/spreadsheets/d/1dd2sVgDAHPITFcE83QGP00eTNs8qiv1pFT3PmJaNikI/edit"
+  ]
 }

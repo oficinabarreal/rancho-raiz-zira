@@ -55,6 +55,7 @@ build/
 *.egg-info/
 
 # DATOS SENSIBLES — no subir a GitHub
+http/
 # Facturas/datos de clientes
 factura_*.txt
 factura_*.pdf

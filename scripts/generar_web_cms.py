@@ -455,19 +455,39 @@ def main():
         f.write(html)
     print(f"✅ panel/index.html generado")
     
-    # Save config for admin page
+    # Save config for admin page — STRIP sensitive data (password_admin, sheet_url)
     admin_dir = os.path.join(output_dir, "admin")
     os.makedirs(admin_dir, exist_ok=True)
+    public_config = {k: v for k, v in config.items() if k not in ("password_admin",)}
+    public_data = {
+        "config": public_config,
+        "habitaciones": habitaciones,
+        "servicios": servicios,
+        "galeria": galeria,
+        "promociones": promociones,
+    }
     with open(os.path.join(admin_dir, "cms_data.json"), "w", encoding="utf-8") as f:
-        json.dump({
-            "config": config,
-            "habitaciones": habitaciones,
-            "servicios": servicios,
-            "galeria": galeria,
-            "promociones": promociones,
-            "sheet_url": f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit"
-        }, f, ensure_ascii=False, indent=2)
-    print("✅ admin/cms_data.json generado")
+        json.dump(public_data, f, ensure_ascii=False, indent=2)
+    print("✅ admin/cms_data.json generado (sin datos sensibles)")
+    
+    # Save full raw data dump locally (NOT deployed — see .gitignore)
+    http_dir = os.path.join(output_dir, "http")
+    os.makedirs(http_dir, exist_ok=True)
+    full_data = {
+        "config": config,
+        "habitaciones": habitaciones,
+        "servicios": servicios,
+        "galeria": galeria,
+        "promociones": promociones,
+        "sheet_url": f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit"
+    }
+    with open(os.path.join(http_dir, "datos_crudos.txt"), "w", encoding="utf-8") as f:
+        f.write(f"# Rancho Raíz — Datos crudos del CMS\n")
+        f.write(f"# Generado: {__import__('datetime').datetime.now().isoformat()}\n")
+        f.write(f"# Sheet: {full_data['sheet_url']}\n")
+        f.write("# ATENCIÓN: Este archivo contiene datos internos. NO está deployado.\n\n")
+        f.write(json.dumps(full_data, ensure_ascii=False, indent=2))
+    print("✅ http/datos_crudos.txt generado (dump local completo)")
     
     print("\n🎉 Listo! Sitio generado desde CMS.")
 
