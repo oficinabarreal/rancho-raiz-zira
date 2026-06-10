@@ -1,0 +1,78 @@
+name: 🏔️ Simulación de Chats Diaria
+on:
+  schedule:
+    # Corre a las 8am Argentina (UTC-3) → 11:00 UTC
+    - cron: '0 11 * * *'
+  workflow_dispatch:     # también manual
+    inputs:
+      date:
+        description: 'Fecha YYYY-MM-DD (default: hoy)'
+        default: ''
+        required: false
+      modo:
+        description: 'historia (default) | diario'
+        default: 'historia'
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-chats
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generar simulación de conversaciones
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generar HTML de chats
+        run: |
+          MODO="${{ inputs.modo || 'historia' }}"
+          if [ -n "${{ inputs.date }}" ]; then
+            python3 scripts/generar_simulacion_chats.py --modo "$MODO" --date "${{ inputs.date }}"
+          else
+            python3 scripts/generar_simulacion_chats.py --modo "$MODO"
+          fi
+          echo "✅ HTML generado (modo: $MODO)"
+
+      - name: Commit y push
+        run: |
+          git config user.name "Zira Chat Bot"
+          git config user.email "chats@ranchoraiz.bot"
+          git add simulaciones/chats/index.html
+          if git diff --cached --quiet; then
+            echo "📭 Sin cambios — el HTML ya está actualizado"
+          else
+            git commit -m "🔄 Simulación de chats $(date +%Y-%m-%d) [skip ci]"
+            git push
+            echo "✅ Commiteado y pusheado"
+          fi
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
