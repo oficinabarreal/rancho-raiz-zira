@@ -35,8 +35,20 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(251,191,36,0.06) 0%, transparent 60%);
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(225,48,108,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 100%, rgba(252,161,48,0.06) 0%, transparent 50%);
       pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e1306c, #f77737, #fca130);
+      opacity: 0.4;
     }
     .hero-zira {
       width: 140px;
@@ -53,13 +65,12 @@
       font-family: 'DM Serif Display', serif;
       font-size: 28px;
       font-weight: 400;
-      color: #fbbf24;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #f77737);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       position: relative;
       line-height: 1.2;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: #f59e0b;
     }
     .hero .sub {
       font-size: 14px;
@@ -73,9 +84,9 @@
       margin-top: 14px;
       padding: 4px 14px;
       border-radius: 20px;
-      background: rgba(251,191,36,0.1);
-      border: 1px solid rgba(251,191,36,0.15);
-      color: #fbbf24;
+      background: linear-gradient(135deg, rgba(225,48,108,0.1), rgba(252,161,48,0.1));
+      border: 1px solid rgba(252,161,48,0.15);
+      color: #fca130;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.3px;
@@ -169,6 +180,28 @@
       margin-top: 2px;
     }
 
+    /* ─── Grid amenities ─── */
+    .amen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 500px) {
+      .amen-grid { grid-template-columns: 1fr; }
+    }
+    .amen-item {
+      background: rgba(251,191,36,0.03);
+      border: 1px solid rgba(251,191,36,0.06);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #d6d3d1;
+    }
+    .amen-item .am-icon { font-size: 20px; flex-shrink: 0; }
+
     /* ─── Grid actividades ─── */
     .act-grid {
       display: grid;
@@ -197,7 +230,7 @@
     }
     .map-container iframe {
       width: 100%;
-      height: 240px;
+      height: 280px;
       display: block;
     }
 
@@ -241,8 +274,8 @@
       padding: 12px;
       border-radius: 12px;
       border: none;
-      background: linear-gradient(135deg, #f59e0b, #fbbf24);
-      color: #1c1917;
+      background: linear-gradient(135deg, #e1306c, #f77737, #fca130);
+      color: #fff;
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
@@ -250,7 +283,7 @@
     }
     .guest-form .btn-submit:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(251,191,36,0.2);
+      box-shadow: 0 6px 20px rgba(225,48,108,0.25);
     }
     .guest-form .btn-submit:active {
       transform: translateY(0);
@@ -288,11 +321,11 @@
     .info-row {
       display: flex;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       align-items: flex-start;
     }
     .info-row:last-child { margin-bottom: 0; }
-    .info-icon { font-size: 18px; flex-shrink: 0; }
+    .info-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
     .info-text { font-size: 13px; color: #a8a29e; line-height: 1.5; }
     .info-text strong { color: #d6d3d1; }
 
@@ -310,6 +343,22 @@
       margin-top: 8px;
     }
 
+    /* ─── Cuidado ambiente ─── */
+    .eco-note {
+      background: linear-gradient(135deg, rgba(52,211,153,0.06), rgba(16,185,129,0.03));
+      border: 1px solid rgba(16,185,129,0.1);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #a7f3d0;
+    }
+    .eco-note .eco-icon { font-size: 22px; flex-shrink: 0; }
+
     /* ─── Footer ─── */
     .footer-info {
       text-align: center;
@@ -325,7 +374,7 @@
       from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .card, .zira-letter, .guest-form, .act-grid, .weather-badge {
+    .card, .zira-letter, .guest-form, .act-grid, .weather-badge, .eco-note {
       animation: fadeUp 0.5s ease-out both;
     }
     .card:nth-child(2) { animation-delay: 0.1s; }
@@ -429,9 +478,18 @@
     <p>
       <span class="highlight">Acá van a encontrar todo lo necesario</span> para disfrutar
       su estadía: actividades, mapas, recomendaciones. Si necesitan algo que no está en
-      esta página, no duden en escribirme. Bueno... escribirle a <strong>Diego</strong>
-      por WhatsApp, que él me transmite todo.
+      esta página, no duden en escribirle a <strong>Diego</strong> por WhatsApp,
+      que él me transmite todo.
     </p>
+    <div class="eco-note">
+      <span class="eco-icon">🌱</span>
+      <div>
+        <strong>Un pedido de la montaña:</strong> acá la energía es cuidada como el agua en el valle.
+        Les pido que apaguen luces y calefacción cuando salgan, cierren bien las puertas
+        para que el viento no se lleve el calor, y usen el agua con cariño.
+        La tierra lo agradece, y el bolsillo también. 💚
+      </div>
+    </div>
     <div class="signature">
       Con cariño,<br>
       Zira 🏔️
@@ -439,30 +497,76 @@
     </div>
   </div>
 
-  <!-- ═══ DATOS PRÁCTICOS ═══ -->
+  <!-- ═══ LA CASA ═══ -->
   <div class="section">
     <div class="section-title">
-      📍 Tu estadía
+      🏡 La casa
+      <span class="line"></span>
+    </div>
+    <div class="card">
+      <p>
+        <strong>Rancho Raíz</strong> es una casa completa, con todo lo necesario para
+        que su estadía en Barreal sea inolvidable.
+      </p>
+      <div class="info-row">
+        <div class="info-icon">🛋️</div>
+        <div class="info-text"><strong>Living-comedor</strong> amplio con sofá cama, cocina totalmente equipada con cocina a gas, vajilla completa y heladera con freezer.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🛁</div>
+        <div class="info-text"><strong>Baño completo</strong> con antebaño, ducha, bañera, inodoro y bidet.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🛏️</div>
+        <div class="info-text"><strong>Habitación</strong> con ropa de cama y toallas. Capacidad para 4 personas (o 5 según edades).</div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📺</div>
+        <div class="info-text"><strong>WiFi</strong> · <strong>TV Smart</strong> · Calefacción en living y habitación.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🌿</div>
+        <div class="info-text"><strong>Patio amplio</strong> con pileta (no climatizada) · Galería muy amplia con parrillero · Estacionamiento privado.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ AMENITIES GRID ═══ -->
+  <div class="section">
+    <div class="section-title">
+      ✨ Equipamiento
+      <span class="line"></span>
+    </div>
+    <div class="amen-grid">
+      <div class="amen-item"><span class="am-icon">🔥</span> Cocina a gas</div>
+      <div class="amen-item"><span class="am-icon">🍳</span> Cocina equipada</div>
+      <div class="amen-item"><span class="am-icon">🍽️</span> Vajilla completa</div>
+      <div class="amen-item"><span class="am-icon">🧊</span> Heladera con freezer</div>
+      <div class="amen-item"><span class="am-icon">📶</span> WiFi satelital</div>
+      <div class="amen-item"><span class="am-icon">📺</span> TV Smart</div>
+      <div class="amen-item"><span class="am-icon">🛁</span> Bañera + ducha</div>
+      <div class="amen-item"><span class="am-icon">🧴</span> Ropa de cama · Toallas</div>
+      <div class="amen-item"><span class="am-icon">🏊</span> Pileta (no climatizada)</div>
+      <div class="amen-item"><span class="am-icon">🌳</span> Galería con parrillero</div>
+      <div class="amen-item"><span class="am-icon">🚗</span> Estacionamiento privado</div>
+      <div class="amen-item"><span class="am-icon">🏔️</span> Vista a la montaña</div>
+    </div>
+  </div>
+
+  <!-- ═══ HORARIOS ═══ -->
+  <div class="section">
+    <div class="section-title">
+      🕐 Horarios
       <span class="line"></span>
     </div>
     <div class="card">
       <div class="info-row">
-        <div class="info-icon">🏡</div>
-        <div class="info-text"><strong>Rancho Raíz</strong> — Cabaña del Cerro<br>
-        Capacidad para hasta 5 personas, cocina completa, estufa, piletón climatizado.</div>
+        <div class="info-icon">🔑</div>
+        <div class="info-text"><strong>Check-in:</strong> 14:00 hs — Los recibe Diego en la entrada y les entrega las llaves.</div>
       </div>
       <div class="info-row">
-        <div class="info-icon">🕐</div>
-        <div class="info-text"><strong>Check-in:</strong> 14:00 hs · <strong>Check-out:</strong> 10:00 hs<br>
-        Te recibe Diego en la entrada. Desayuno de 8 a 10:30 en el quincho.</div>
-      </div>
-      <div class="info-row">
-        <div class="info-icon">🅿️</div>
-        <div class="info-text"><strong>Estacionamiento cubierto</strong> dentro del predio.</div>
-      </div>
-      <div class="info-row">
-        <div class="info-icon">🌐</div>
-        <div class="info-text"><strong>WiFi</strong> disponible en toda la cabaña. Starlink satelital.</div>
+        <div class="info-icon">🚪</div>
+        <div class="info-text"><strong>Check-out:</strong> 10:00 hs</div>
       </div>
     </div>
   </div>
@@ -473,6 +577,12 @@
       🏔️ Actividades en Barreal
       <span class="line"></span>
     </div>
+    <p style="font-size:12.5px;color:#78716c;margin-bottom:12px;line-height:1.5;">
+      Barreal tiene un montón para hacer. Si alguna de estas actividades les interesa,
+      <strong>pregunten a Diego</strong> que les da toda la información actualizada
+      (horarios, precios, contacto). Estamos armando una base con todo para responderles
+      al toque.
+    </p>
     <div class="act-grid">
       <div class="act-item">
         <div class="ai-icon">🏜️</div>
@@ -482,7 +592,7 @@
       <div class="act-item">
         <div class="ai-icon">🐴</div>
         <div class="ai-title">Cabalgatas</div>
-        <div class="ai-desc">Recorré el valle a caballo con guías locales. Consultar en el pueblo.</div>
+        <div class="ai-desc">Recorré el valle a caballo con guías locales. Consultá con Diego.</div>
       </div>
       <div class="act-item">
         <div class="ai-icon">🌌</div>
@@ -497,7 +607,7 @@
       <div class="act-item">
         <div class="ai-icon">🧘</div>
         <div class="ai-title">Yoga al aire libre</div>
-        <div class="ai-desc">En el quincho del rancho con vista a la montaña. Consultar horarios.</div>
+        <div class="ai-desc">En el quincho del rancho con vista a la montaña. Consultá con Diego.</div>
       </div>
       <div class="act-item">
         <div class="ai-icon">🍷</div>
@@ -515,7 +625,7 @@
     </div>
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26862.287278368693!2d-69.47321059430532!3d-31.805694868230035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96817c8453c1e1e3%3A0x9f3e3c3c3c3c3c3c!2sBarreal%2C%20San%20Juan!5e0!3m2!1ses-419!2sar!4v1"
+        src="https://maps.google.com/maps?q=Rancho+Raiz+Evaristo+Gomez+3511+Barreal+San+Juan&output=embed&z=16"
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
@@ -523,9 +633,13 @@
       </iframe>
     </div>
     <div class="card" style="margin-top:10px;">
-      <p style="margin-bottom:0;">
-        <strong>Dirección:</strong> Ruta 149, Barreal, Calingasta, San Juan.<br>
-        <strong>Desde el pueblo:</strong> 5 minutos en auto hacia el sur por RP 149.
+      <p style="margin-bottom:8px;">
+        <strong>Dirección:</strong> Evaristo Gómez 3511, J5411 Barreal, San Juan.
+      </p>
+      <p style="font-size:12.5px;color:#a8a29e;margin-bottom:0;">
+        📍 <strong>Más preciso:</strong> Villa Pituil, entrada del loteo Las Cortaderas.
+        Tomar calle Proyectada 1 hasta el fondo (2 cuadras), donde topa mano izquierda.
+        Ahí está <strong>Posada Rancho Raíz</strong>.
       </p>
     </div>
   </div>
@@ -566,8 +680,11 @@
       <label>¿Qué les gustaría hacer durante su estadía?</label>
       <textarea name="intereses" placeholder="Dunas, cabalgatas, trekking, vinos, yoga, astroturismo..."></textarea>
 
+      <label>¿Alergias o condiciones médicas? (opcional)</label>
+      <textarea name="alergias" placeholder="Ej: alergia al polen, celíaco, asma, medicamentos... Así estamos atentos si pasa algo."></textarea>
+
       <label>Algo más que quieran contarnos</label>
-      <textarea name="notas" placeholder="Alergias, preferencias, celebraciones, lo que sea..."></textarea>
+      <textarea name="notas" placeholder="Preferencias, celebraciones, lo que sea..."></textarea>
 
       <button type="submit" class="btn-submit">✨ Enviar a Zira</button>
     </form>
@@ -583,7 +700,7 @@
     <div class="card" style="text-align:center;">
       <p>Si tienen preguntas, quieren cambiar algo, o simplemente charlar,<br>
       <strong>Diego está al toque por WhatsApp</strong>.</p>
-      <a href="https://wa.me/5491159595869?text=¡Hola!%20Somos%20los%20huéspedes%20de%20Rancho%20Raíz%20🏔️" class="wa-button" target="_blank">
+      <a href="https://wa.me/5492645017161?text=¡Hola!%20Somos%20los%20huéspedes%20de%20Rancho%20Raíz%20🏔️" class="wa-button" target="_blank">
         <span class="wa-icon">💬</span>
         Escribir a Diego por WhatsApp
       </a>
@@ -598,7 +715,7 @@
     <div>🏔️ Página de bienvenida · Zira para Rancho Raíz</div>
     <div style="margin-top:2px;">Barreal, Calingasta, San Juan · Argentina</div>
     <div style="margin-top:6px; color:#3f3f46;">
-      Primera experiencia de Zira con huéspedes reales · 11 de junio de 2026
+      Primera experiencia de Zira con huéspedes reales · Junio 2026
     </div>
   </div>
 
