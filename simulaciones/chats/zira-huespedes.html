@@ -743,6 +743,9 @@
   align-items: center;
   justify-content: center;
 }
+.chat-btn.hidden {
+  display: none;
+}
 .chat-btn:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 28px rgba(225,48,108,0.45);
@@ -1278,21 +1281,45 @@ function startPolling() {
 // ============================================================
 function toggleChat() {
   const panel = document.getElementById('chatPanel');
+  const btn = document.getElementById('chatToggleBtn');
   const isOpen = panel.classList.contains('open');
   
   if (isOpen) {
     panel.classList.remove('open');
+    btn.classList.remove('hidden');
     document.getElementById('chatBedge').classList.remove('show');
+    // Volver atras en el historial para popstate coincida
+    if (window.history.state && window.history.state.ziraChat) {
+      window.history.back();
+    }
   } else {
     panel.classList.add('open');
+    btn.classList.add('hidden');
     if (!chatInitialized) {
       chatInitialized = true;
       initChat();
     }
     document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
     document.getElementById('chatInput').focus();
+    // Push state para interceptar back button de Android
+    window.history.pushState({ ziraChat: true }, '', window.location.href);
   }
 }
+
+// ============================================================
+// Interceptar back button de Android (popstate)
+// ============================================================
+window.addEventListener('popstate', function(e) {
+  const panel = document.getElementById('chatPanel');
+  if (panel && panel.classList.contains('open')) {
+    panel.classList.remove('open');
+    document.getElementById('chatToggleBtn').classList.remove('hidden');
+    document.getElementById('chatBedge').classList.remove('show');
+    // Prevenir que el navegador siga navegando
+    e.preventDefault();
+    return;
+  }
+});
 </script>
 
 </body>
