@@ -42,11 +42,11 @@ jobs:
         run: |
           MODO="${{ inputs.modo || 'historia' }}"
           if [ -n "${{ inputs.date }}" ]; then
-            python3 scripts/generar_simulacion_chats.py --modo "$MODO" --date "${{ inputs.date }}"
+            python3 scripts/generar_simulacion_realista.py --modo "$MODO" --date "${{ inputs.date }}"
           else
-            python3 scripts/generar_simulacion_chats.py --modo "$MODO"
+            python3 scripts/generar_simulacion_realista.py --modo "$MODO"
           fi
-          echo "✅ HTML generado (modo: $MODO)"
+          echo "✅ HTML realista generado (modo: $MODO)"
 
       - name: Commit y push
         run: |
