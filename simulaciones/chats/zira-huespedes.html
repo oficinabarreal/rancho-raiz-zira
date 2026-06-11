@@ -528,10 +528,36 @@
         <div class="info-icon">🌿</div>
         <div class="info-text"><strong>Patio amplio</strong> con pileta (no climatizada) · Galería muy amplia con parrillero · Estacionamiento privado.</div>
       </div>
+      <div class="info-row">
+        <div class="info-icon">🐾</div>
+        <div class="info-text"><strong>Pet friendly</strong> — Aceptamos mascotas bajo consulta. Pregunten por las condiciones al reservar 🐶</div>
+      </div>
     </div>
   </div>
 
-  <!-- ═══ AMENITIES GRID ═══ -->
+  <!-- ═══ LA FINCA ═══ -->
+  <div class="section">
+    <div class="section-title">
+      🌿 La finca
+      <span class="line"></span>
+    </div>
+    <div class="card">
+      <p>
+        <strong>Rancho Raíz</strong> está inserto dentro de la <strong>finca de aromáticas más grande de Villa Pituil</strong>.
+        Todo el predio forma parte de una finca productiva de plantas aromáticas y medicinales,
+        donde el aire tiene olor a lavanda, romero y tomillo silvestre.
+      </p>
+      <p>
+        Esto significa que van a estar rodeados de naturaleza auténtica: el sonido del viento entre las plantas,
+        el vuelo de los pájaros, y ese cielo sanjuanino que parece pintado a mano.
+      </p>
+      <p style="font-size:12px;color:#a8a29e;">
+        💡 Para más detalles sobre la historia de la finca, pueden consultar nuestro perfil de Booking o preguntarle a Diego.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ EQUIPAMIENTO ═══ -->
   <div class="section">
     <div class="section-title">
       ✨ Equipamiento
@@ -550,6 +576,7 @@
       <div class="amen-item"><span class="am-icon">🌳</span> Galería con parrillero</div>
       <div class="amen-item"><span class="am-icon">🚗</span> Estacionamiento privado</div>
       <div class="amen-item"><span class="am-icon">🏔️</span> Vista a la montaña</div>
+      <div class="amen-item"><span class="am-icon">🐾</span> Pet friendly (consultar)</div>
     </div>
   </div>
 
@@ -566,7 +593,11 @@
       </div>
       <div class="info-row">
         <div class="info-icon">🚪</div>
-        <div class="info-text"><strong>Check-out:</strong> 10:00 hs</div>
+        <div class="info-text"><strong>Check-out flexible:</strong> Salida libre hasta las <strong>13:00 hs</strong> sin cargo.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">⏰</div>
+        <div class="info-text"><strong>Late check-out (optativo):</strong> Si necesitan quedarse hasta las <strong>18:00 hs</strong>, consúltenos disponibilidad.</div>
       </div>
     </div>
   </div>
@@ -586,8 +617,8 @@
     <div class="act-grid">
       <div class="act-item">
         <div class="ai-icon">🏜️</div>
-        <div class="ai-title">Dunas de Barreal</div>
-        <div class="ai-desc">El mayor arenal de Sudamérica. Imperdible al atardecer. A 15 min en auto.</div>
+        <div class="ai-title">Pampa del Leoncito</div>
+        <div class="ai-desc">Planicie al pie de los Andes, ideal para atardeceres y avistaje de cóndores. A 20 min en auto.</div>
       </div>
       <div class="act-item">
         <div class="ai-icon">🐴</div>
@@ -625,7 +656,7 @@
     </div>
     <div class="map-container">
       <iframe
-        src="https://maps.google.com/maps?q=Rancho+Raiz+Evaristo+Gomez+3511+Barreal+San+Juan&output=embed&z=16"
+        src="https://maps.google.com/maps?q=Rancho+Raiz+3511+Sur+Barreal+San+Juan&output=embed&z=16"
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
@@ -634,7 +665,7 @@
     </div>
     <div class="card" style="margin-top:10px;">
       <p style="margin-bottom:8px;">
-        <strong>Dirección:</strong> Evaristo Gómez 3511, J5411 Barreal, San Juan.
+        <strong>Dirección:</strong> 3511 Sur, Loteo Las Cortaderas, J5411 Barreal, San Juan.
       </p>
       <p style="font-size:12.5px;color:#a8a29e;margin-bottom:0;">
         📍 <strong>Más preciso:</strong> Villa Pituil, entrada del loteo Las Cortaderas.
@@ -667,6 +698,16 @@
       <label>Fechas de estadía</label>
       <input type="text" name="fechas" placeholder="Ej: 11 al 15 de junio">
 
+      <label>¿Cómo vienen? (para preparar las camas)</label>
+      <select name="configuracion_camas">
+        <option value="">Seleccionar...</option>
+        <option value="pareja">Pareja (cama matrimonial)</option>
+        <option value="pareja_hijos">Pareja con hijos</option>
+        <option value="amigos">Amigos (camas separadas)</option>
+        <option value="individual">Solo/a</option>
+        <option value="otro">Otra configuración</option>
+      </select>
+
       <label>¿Cómo se enteraron de Rancho Raíz?</label>
       <select name="origen">
         <option value="">Seleccionar...</option>
@@ -678,7 +719,7 @@
       </select>
 
       <label>¿Qué les gustaría hacer durante su estadía?</label>
-      <textarea name="intereses" placeholder="Dunas, cabalgatas, trekking, vinos, yoga, astroturismo..."></textarea>
+      <textarea name="intereses" placeholder="Cabalgatas, trekking, Pampa del Leoncito, vinos, yoga, astroturismo..."></textarea>
 
       <label>¿Alergias o condiciones médicas? (opcional)</label>
       <textarea name="alergias" placeholder="Ej: alergia al polen, celíaco, asma, medicamentos... Así estamos atentos si pasa algo."></textarea>
@@ -1106,7 +1147,7 @@
 // ============================================================
 // ⚡ URL de tu API en Vercel (cambiar después del deploy)
 //    Ejemplo: 'https://zira-chat-api.vercel.app/api/chat'
-const VERCEL_API_URL = ''; // ← PONER ACÁ LA URL DE VERCEL
+const VERCEL_API_URL = 'https://zira-chat-api.vercel.app/api/chat';
 
 // ============================================================
 // Estado
