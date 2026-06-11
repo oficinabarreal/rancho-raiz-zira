@@ -1104,8 +1104,9 @@
 // ============================================================
 // CONFIGURACIÓN
 // ============================================================
-// ⚡ URL del webhook de Google Apps Script
-const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyl5KOPEtOfKFcbtMzDY6WmY0QxB5--xOnC--bHLYeVisHMU67evob-stq3uQtw-Dfz/exec';
+// ⚡ URL de tu API en Vercel (cambiar después del deploy)
+//    Ejemplo: 'https://zira-chat-api.vercel.app/api/chat'
+const VERCEL_API_URL = ''; // ← PONER ACÁ LA URL DE VERCEL
 
 // ============================================================
 // Estado
@@ -1113,8 +1114,7 @@ const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyl5KOPEtOfKFcbtMzDY
 let sessionId = localStorage.getItem('zira_session_id') || '';
 let chatInitialized = false;
 let typingTimeout = null;
-let pollInterval = null;
-let lastMessageCount = 0;
+let chatHistory = [];  // historial para mandar contexto a Gemini
 
 // ============================================================
 // Inicialización
@@ -1124,29 +1124,25 @@ function initChat() {
     sessionId = 'sess_' + Math.random().toString(36).substring(2, 10);
     localStorage.setItem('zira_session_id', sessionId);
   }
-  
-  // Si hay webhook, enviar saludo inicial de Zira
-  if (WEBAPP_URL) {
+
+  // Mostrar bienvenida de Zira
+  if (VERCEL_API_URL) {
     fetchWelcome();
   }
-  
+
   // Habilitar input
   document.getElementById('chatInput').disabled = false;
   document.getElementById('sendBtn').disabled = false;
-  
-  // Empezar a poller respuestas
-  startPolling();
 }
 
 // ============================================================
 // Mostrar mensaje de bienvenida de Zira
 // ============================================================
 function fetchWelcome() {
-  // Mostrar mensaje de bienvenida de Zira
   const container = document.getElementById('chatMessages');
   const startMsg = document.getElementById('chatStartMsg');
   if (startMsg) startMsg.style.display = 'none';
-  
+
   const welcomeDiv = document.createElement('div');
   welcomeDiv.className = 'chat-bubble zira';
   const now = new Date();
@@ -1154,57 +1150,69 @@ function fetchWelcome() {
   welcomeDiv.innerHTML = '🏔️ ¡Hola! Soy <strong>Zira</strong>, la montaña que cuida Rancho Raíz. Si tenés alguna duda sobre tu estadía, preguntame nomás. Estoy acá para ayudarte 💚<div class="cb-time">' + timeStr + '</div>';
   container.appendChild(welcomeDiv);
   container.scrollTop = container.scrollHeight;
+
+  // Guardar en historial
+  chatHistory.push({ role: 'zira', text: '¡Hola! Soy Zira, la montaña que cuida Rancho Raíz. Si tenés alguna duda sobre tu estadía, preguntame nomás. Estoy acá para ayudarte 💚' });
 }
 
 // ============================================================
 // Enviar mensaje
 // ============================================================
-function sendMessage() {
+async function sendMessage() {
   const input = document.getElementById('chatInput');
   const text = input.value.trim();
   if (!text) return;
-  
+
   input.value = '';
   document.getElementById('sendBtn').disabled = true;
-  
+
   // Mostrar el mensaje del guest
   appendMessage('guest', text);
-  
+  chatHistory.push({ role: 'guest', text: text });
+
   // Mostrar "escribiendo..."
   showTyping(true);
-  
-  if (WEBAPP_URL) {
-    // Enviar al webhook
-    fetch(WEBAPP_URL, {
-      method: 'POST',
-      mode: 'no-cors',  // Necesario para Apps Script Web App
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        session_id: sessionId,
-        nombre: 'Huésped',
-        mensaje: text
-      })
-    }).catch(function(err) {
-      console.log('Webhook no disponible (modo no-cors)');
-    });
-    
-    // Iniciar polling para respuesta
-    startPolling();
-    
-    // timeout de seguridad: ocultar typing después de 2 min
-    if (typingTimeout) clearTimeout(typingTimeout);
-    typingTimeout = setTimeout(function() {
-      showTyping(false);
-    }, 120000);
-    
-  } else {
-    // Sin webhook configurado → mostrar mensaje offline
+  typingTimeout = setTimeout(function() {
     showTyping(false);
+  }, 30000); // timeout de seguridad 30 seg
+
+  if (VERCEL_API_URL) {
+    try {
+      const resp = await fetch(VERCEL_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          session_id: sessionId,
+          mensaje: text,
+          history: chatHistory.slice(-15), // últimos 15 msjs de contexto
+        }),
+      });
+
+      const data = await resp.json();
+
+      showTyping(false);
+      if (typingTimeout) clearTimeout(typingTimeout);
+
+      if (data.ok && data.respuesta) {
+        appendMessage('zira', data.respuesta);
+        chatHistory.push({ role: 'zira', text: data.respuesta });
+      } else {
+        appendMessage('zira', '🏔️ Zira se desconectó del viento... Dejame tu mensaje y en un ratito te respondo. Mientras, podés escribirle a Diego al WhatsApp 💬');
+      }
+    } catch (err) {
+      showTyping(false);
+      if (typingTimeout) clearTimeout(typingTimeout);
+      appendMessage('zira', '🏔️ El viento se llevó mi respuesta... Dejame tu mensaje y en un ratito te respondo. Mientras, podés escribirle directo a <strong>Diego</strong> al WhatsApp 💬');
+    }
+  } else {
+    // Sin API configurada → fallback offline a WhatsApp
+    showTyping(false);
+    if (typingTimeout) clearTimeout(typingTimeout);
     setTimeout(function() {
       appendMessage('zira', '🏔️ Zira se está conectando al valle... Dejame tu mensaje y en un ratito te respondo. Mientras tanto, podés escribirle directo a <strong>Diego</strong> al WhatsApp 💬');
-    }, 1500);
+    }, 800);
   }
-  
+
   document.getElementById('sendBtn').disabled = false;
 }
 
@@ -1215,18 +1223,18 @@ function appendMessage(remitente, texto) {
   const container = document.getElementById('chatMessages');
   const startMsg = document.getElementById('chatStartMsg');
   if (startMsg) startMsg.style.display = 'none';
-  
+
   const bubble = document.createElement('div');
   bubble.className = 'chat-bubble ' + remitente;
   const now = new Date();
   const timeStr = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-  
+
   if (remitente === 'zira') {
     bubble.innerHTML = '🏔️ ' + texto + '<div class="cb-time">' + timeStr + '</div>';
   } else {
     bubble.innerHTML = texto + '<div class="cb-time">' + timeStr + '</div>';
   }
-  
+
   container.appendChild(bubble);
   container.scrollTop = container.scrollHeight;
 }
@@ -1245,50 +1253,17 @@ function showTyping(visible) {
 }
 
 // ============================================================
-// Polling de respuestas (cada 20 segundos)
-// ============================================================
-function startPolling() {
-  if (!WEBAPP_URL) return;
-  if (pollInterval) clearInterval(pollInterval);
-  
-  pollInterval = setInterval(function() {
-    fetch(WEBAPP_URL + '?action=mensajes&session_id=' + sessionId + '&t=' + Date.now())
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        if (data.ok && data.messages) {
-          // Solo los mensajes de zira que no hayamos mostrado
-          const ziraMsgs = data.messages.filter(function(m) { return m.remitente === 'zira' && m.respondido === 'SI'; });
-          if (ziraMsgs.length > lastMessageCount) {
-            // Hay nuevos mensajes de Zira
-            showTyping(false);
-            if (typingTimeout) clearTimeout(typingTimeout);
-            
-            for (var i = lastMessageCount; i < ziraMsgs.length; i++) {
-              appendMessage('zira', ziraMsgs[i].mensaje);
-            }
-            lastMessageCount = ziraMsgs.length;
-          }
-        }
-      })
-      .catch(function(err) {
-        // Silencio - el webhook puede no estar listo
-      });
-  }, 20000);
-}
-
-// ============================================================
 // Toggle chat panel
 // ============================================================
 function toggleChat() {
   const panel = document.getElementById('chatPanel');
   const btn = document.getElementById('chatToggleBtn');
   const isOpen = panel.classList.contains('open');
-  
+
   if (isOpen) {
     panel.classList.remove('open');
     btn.classList.remove('hidden');
     document.getElementById('chatBedge').classList.remove('show');
-    // Volver atras en el historial para popstate coincida
     if (window.history.state && window.history.state.ziraChat) {
       window.history.back();
     }
@@ -1301,7 +1276,6 @@ function toggleChat() {
     }
     document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
     document.getElementById('chatInput').focus();
-    // Push state para interceptar back button de Android
     window.history.pushState({ ziraChat: true }, '', window.location.href);
   }
 }
@@ -1315,7 +1289,6 @@ window.addEventListener('popstate', function(e) {
     panel.classList.remove('open');
     document.getElementById('chatToggleBtn').classList.remove('hidden');
     document.getElementById('chatBedge').classList.remove('show');
-    // Prevenir que el navegador siga navegando
     e.preventDefault();
     return;
   }
