@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🏔️ Zira te da la bienvenida · Rancho Raíz</title>
+  <title>🏔️ Hernan, bienvenido a Rancho Raíz · Zira</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
@@ -63,7 +63,7 @@
     }
     .hero h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 400;
       background: linear-gradient(135deg, #fbbf24, #f59e0b, #f77737);
       -webkit-background-clip: text;
@@ -72,6 +72,14 @@
       position: relative;
       line-height: 1.2;
     }
+    .hero h1 .name-highlight {
+      display: block;
+      font-size: 38px;
+      background: linear-gradient(135deg, #fff, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .hero .sub {
       font-size: 14px;
       color: #a8a29e;
@@ -79,6 +87,27 @@
       line-height: 1.5;
       position: relative;
     }
+    .hero .guest-stay {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 14px;
+      position: relative;
+    }
+    .hero .guest-stay .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 13px;
+      border-radius: 20px;
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.1);
+      color: #d6d3d1;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .hero .guest-stay .pill strong { color: #fbbf24; }
     .hero .badge {
       display: inline-block;
       margin-top: 14px;
@@ -450,43 +479,48 @@
       </svg>
     </div>
 
-    <h1>Bienvenidos a <em>Rancho Raíz</em></h1>
-    <p class="sub">Un rincón de Barreal, San Juan, donde la montaña te recibe<br>
-    con los brazos abiertos y el viento cuenta historias.</p>
-
-    <div class="weather-badge">
-      <span>⛅</span>
-      <span>Barreal · Nublado y ventoso · 10°C</span>
-      <span style="font-size:9px;color:#6b7280;">11 jun</span>
+    <h1>
+      Bienvenido<br>
+      <span class="name-highlight">Hernan 🏔️</span>
+    </h1>
+    <p class="sub">
+      Esta es tu casa en Barreal para los próximos días.<br>
+      Todo está listo para que disfrutes la montaña.
+    </p>
+    <div class="guest-stay">
+      <span class="pill">📅 <strong>Jue 11 → Dom 14</strong> junio</span>
+      <span class="pill">👥 <strong>3</strong> adultos</span>
+      <span class="pill">🔑 Check-in <strong>desde 14:00</strong></span>
+      <span class="pill">🚪 Check-out <strong>flexible hasta 13:00</strong></span>
     </div>
+    <div class="badge">✨ PRIMERA EXPERIENCIA ZIRA CON HUÉSPEDES</div>
   </div>
 
   <!-- ═══ CARTA DE ZIRA ═══ -->
   <div class="zira-letter">
-    <div class="greeting">Queridos huéspedes,</div>
+    <div class="greeting">Querido Hernan,</div>
     <p>
       Soy <strong>Zira</strong>, la montaña que cuida Rancho Raíz. Desde mi glaciar en la cima
-      de los Andes, observo el valle de Barreal y les doy la bienvenida a su hogar
-      por estos días.
+      de los Andes, te doy la bienvenida a tu hogar en Barreal.
     </p>
     <p>
       Esta es mi <strong>primera experiencia</strong> recibiendo huéspedes de manera directa.
-      Estoy aprendiendo igual que ustedes exploran. Si ven algo que no está del todo claro
-      o falta información, <strong>por favor disculpen</strong> — cada día soy una montaña
+      Estoy aprendiendo igual que vos explorás estos días. Si ves algo que no está del todo claro
+      o falta información, <strong>por favor disculpá</strong> — cada día soy una montaña
       un poquito más sabia.
     </p>
     <p>
-      <span class="highlight">Acá van a encontrar todo lo necesario</span> para disfrutar
-      su estadía: actividades, mapas, recomendaciones. Si necesitan algo que no está en
-      esta página, no duden en escribirle a <strong>Diego</strong> por WhatsApp,
-      que él me transmite todo.
+      <span class="highlight">Acá vas a encontrar todo lo necesario</span> para disfrutar
+      tu estadía con los tuyos (3 personas, qué bien suena ese número): actividades, mapas,
+      recomendaciones y un chat vivo conmigo. Si necesitás algo que no está en esta página,
+      <strong>Diego</strong> está al toque por WhatsApp.
     </p>
     <div class="eco-note">
       <span class="eco-icon">🌱</span>
       <div>
         <strong>Un pedido de la montaña:</strong> acá la energía es cuidada como el agua en el valle.
-        Les pido que apaguen luces y calefacción cuando salgan, cierren bien las puertas
-        para que el viento no se lleve el calor, y usen el agua con cariño.
+        Te pido que apagues luces y calefacción cuando salgas, cierres bien las puertas
+        para que el viento no se lleve el calor, y uses el agua con cariño.
         La tierra lo agradece, y el bolsillo también. 💚
       </div>
     </div>
@@ -506,7 +540,7 @@
     <div class="card">
       <p>
         <strong>Rancho Raíz</strong> es una casa completa, con todo lo necesario para
-        que su estadía en Barreal sea inolvidable.
+        que tu estadía en Barreal sea inolvidable.
       </p>
       <div class="info-row">
         <div class="info-icon">🛋️</div>
@@ -610,7 +644,7 @@
     </div>
     <p style="font-size:12.5px;color:#78716c;margin-bottom:12px;line-height:1.5;">
       Barreal tiene un montón para hacer. Si alguna de estas actividades les interesa,
-      <strong>pregunten a Diego</strong> que les da toda la información actualizada
+      <strong>preguntale a Diego</strong> que les da toda la información actualizada
       (horarios, precios, contacto). Estamos armando una base con todo para responderles
       al toque.
     </p>
@@ -678,12 +712,12 @@
   <!-- ═══ FORMULARIO HUÉSPED ═══ -->
   <div class="section">
     <div class="section-title">
-      📋 Cuéntanos de ustedes
+      📋 Contanos de vos
       <span class="line"></span>
     </div>
     <p style="font-size:12.5px;color:#78716c;margin-bottom:12px;line-height:1.5;">
       Así Zira aprende sobre sus gustos y puede recomendarles actividades
-      pensadas especialmente para ustedes. Sus datos quedan en el rancho.
+      pensadas especialmente para vos. Tus datos quedan en el rancho.
     </p>
     <form class="guest-form" action="mailto:oficinabarreal@gmail.com" method="post" enctype="text/plain">
       <label>Nombre completo</label>
@@ -718,42 +752,42 @@
         <option value="otro">Otro</option>
       </select>
 
-      <label>¿Qué les gustaría hacer durante su estadía?</label>
+      <label>¿Qué te gustaría hacer durante tu estadía?</label>
       <textarea name="intereses" placeholder="Cabalgatas, trekking, Pampa del Leoncito, vinos, yoga, astroturismo..."></textarea>
 
       <label>¿Alergias o condiciones médicas? (opcional)</label>
       <textarea name="alergias" placeholder="Ej: alergia al polen, celíaco, asma, medicamentos... Así estamos atentos si pasa algo."></textarea>
 
-      <label>Algo más que quieran contarnos</label>
+      <label>Algo más que quieras contarnos</label>
       <textarea name="notas" placeholder="Preferencias, celebraciones, lo que sea..."></textarea>
 
       <button type="submit" class="btn-submit">✨ Enviar a Zira</button>
     </form>
-    <p class="form-note">📧 El formulario abre tu correo. Mandalo así Zira aprende de ustedes.</p>
+    <p class="form-note">📧 El formulario abre tu correo. Mandalo así Zira aprende de vos.</p>
   </div>
 
   <!-- ═══ CONTACTO WHATSAPP ═══ -->
   <div class="section">
     <div class="section-title">
-      💬 ¿Necesitan algo?
+      💬 ¿Necesitás algo?
       <span class="line"></span>
     </div>
     <div class="card" style="text-align:center;">
-      <p>Si tienen preguntas, quieren cambiar algo, o simplemente charlar,<br>
+      <p>Si tenés preguntas, querés cambiar algo, o simplemente charlar,<br>
       <strong>Diego está al toque por WhatsApp</strong>.</p>
-      <a href="https://wa.me/5492645017161?text=¡Hola!%20Somos%20los%20huéspedes%20de%20Rancho%20Raíz%20🏔️" class="wa-button" target="_blank">
+      <a href="https://wa.me/5492645017161?text=¡Hola!%20Soy%20Hernan,%20huésped%20de%20Rancho%20Raíz%20🏔️" class="wa-button" target="_blank">
         <span class="wa-icon">💬</span>
         Escribir a Diego por WhatsApp
       </a>
       <p style="font-size:11px;color:#78716c;margin-top:10px;margin-bottom:0;">
-        También pueden mandar un correo a <strong style="color:#a8a29e;">oficinabarreal@gmail.com</strong>
+        También podés mandar un correo a <strong style="color:#a8a29e;">oficinabarreal@gmail.com</strong>
       </p>
     </div>
   </div>
 
   <!-- ═══ FOOTER ═══ -->
   <div class="footer-info">
-    <div>🏔️ Página de bienvenida · Zira para Rancho Raíz</div>
+    <div>🏔️ Hernan · Bienvenido a Rancho Raíz</div>
     <div style="margin-top:2px;">Barreal, Calingasta, San Juan · Argentina</div>
     <div style="margin-top:6px; color:#3f3f46;">
       Primera experiencia de Zira con huéspedes reales · Junio 2026
@@ -1145,9 +1179,12 @@
 // ============================================================
 // CONFIGURACIÓN
 // ============================================================
-// ⚡ URL de tu API en Vercel (cambiar después del deploy)
-//    Ejemplo: 'https://zira-chat-api.vercel.app/api/chat'
+// ⚡ URL de tu API en Vercel
 const VERCEL_API_URL = 'https://zira-chat-api.vercel.app/api/chat';
+
+// 👤 Datos del huésped (personalizado)
+const GUEST_NAME = 'Hernan';
+const GUEST_INFO = '3 adultos, hospedándose del jueves 11 al domingo 14 de junio de 2026';
 
 // ============================================================
 // Estado
@@ -1188,12 +1225,12 @@ function fetchWelcome() {
   welcomeDiv.className = 'chat-bubble zira';
   const now = new Date();
   const timeStr = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-  welcomeDiv.innerHTML = '🏔️ ¡Hola! Soy <strong>Zira</strong>, la montaña que cuida Rancho Raíz. Si tenés alguna duda sobre tu estadía, preguntame nomás. Estoy acá para ayudarte 💚<div class="cb-time">' + timeStr + '</div>';
+  welcomeDiv.innerHTML = '🏔️ ¡Hola <strong>' + GUEST_NAME + '</strong>! Soy <strong>Zira</strong>, la montaña que cuida Rancho Raíz. Bienvenido a Barreal con los tuyos 🙌 Si tenés alguna duda sobre tu estadía, preguntame nomás. Estoy acá para ayudarte 💚<div class="cb-time">' + timeStr + '</div>';
   container.appendChild(welcomeDiv);
   container.scrollTop = container.scrollHeight;
 
   // Guardar en historial
-  chatHistory.push({ role: 'zira', text: '¡Hola! Soy Zira, la montaña que cuida Rancho Raíz. Si tenés alguna duda sobre tu estadía, preguntame nomás. Estoy acá para ayudarte 💚' });
+  chatHistory.push({ role: 'zira', text: '¡Hola ' + GUEST_NAME + '! Soy Zira, la montaña que cuida Rancho Raíz. Bienvenido a Barreal. Si tenés alguna duda sobre tu estadía, preguntame nomás. Estoy acá para ayudarte 💚' });
 }
 
 // ============================================================
@@ -1223,10 +1260,12 @@ async function sendMessage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          tenant_id: 'rancho-raiz',  // ← identificar la posada
+          tenant_id: 'rancho-raiz',
           session_id: sessionId,
           mensaje: text,
           history: chatHistory.slice(-15),
+          guest_name: GUEST_NAME,
+          guest_info: GUEST_INFO,
         }),
       });
 
