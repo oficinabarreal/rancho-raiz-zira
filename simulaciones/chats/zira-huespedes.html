@@ -1182,9 +1182,10 @@ async function sendMessage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          tenant_id: 'rancho-raiz',  // ← identificar la posada
           session_id: sessionId,
           mensaje: text,
-          history: chatHistory.slice(-15), // últimos 15 msjs de contexto
+          history: chatHistory.slice(-15),
         }),
       });
 
