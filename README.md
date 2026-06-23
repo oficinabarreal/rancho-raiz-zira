@@ -134,10 +134,55 @@ El sitio se actualiza solo en 30 minutos. Si querés que sea inmediato, avisale 
 
 ---
 
+## 🤝 Colaboración & Sponsorship
+
+¿Querés ser parte del desarrollo y monetizar juntos?
+
+### 💼 **Para Developers**
+Ayudá a escalar el sistema y obtené **comisión por clientes nuevos**:
+- **Consultoría/Desarrollo:** 30% comisión
+- **Referidos (posadas/hoteles):** 15% MRR por cliente
+- **Integraciones custom:** $500-2K por proyecto
+
+📧 **Contactar:** [diego@oficinabarreal.dev](mailto:diego@oficinabarreal.dev)
+
+### 🏢 **Para Empresas / Agencias**
+Integra Zira CRM en tu stack y ofrécelo a tus clientes:
+- **Licencia blanca/white-label:** Desde $500/mes
+- **Soporte prioritario:** $200/mes
+- **Custom features:** Presupuesto según alcance
+
+📧 **Contactar:** [diego@oficinabarreal.dev](mailto:diego@oficinabarreal.dev)
+
+### 💰 **Para Sponsors**
+Apoya el desarrollo y recibí visibilidad en nuestros repositorios + comunidad:
+- **Sponsor individual:** $5-25/mes (badge + crédito)
+- **Sponsor corporativo:** $500+/mes (logo + page sponsor)
+
+[![Sponsor en GitHub](https://img.shields.io/badge/Sponsor-GitHub-blue?style=for-the-badge&logo=github)](https://github.com/sponsors/oficinabarreal)
+
+### 🔗 **Partnership Directo**
+¿Posada/hotel? ¿Agencia de marketing? Contáctanos para:
+- Implementación gratuita en tu negocio
+- Revenue share en generación de contenido
+- Integración con herramientas existentes
+
+📞 **WhatsApp:** [+54 9 11 5959-5869](https://wa.me/5491159595869)
+
+---
+
+## 📄 Licencia
+
+MIT — usá, modificá, compartí.
+
+---
+
 <div align="center">
   <sub>🏔️ <strong>Rancho Raíz</strong> · Evaristo Gomez 3511, Barreal, San Juan · Argentina</sub>
   <br>
   <sub>Gestionado con ❤️ por Diego, Zira y el equipo · 2026</sub>
   <br>
   <sub>🔧 Última limpieza: 9 de junio 2026</sub>
+  <br>
+  <sub>💡 ¿Preguntas o colaboraciones? Abrí un issue o contactá directamente</sub>
 </div>
