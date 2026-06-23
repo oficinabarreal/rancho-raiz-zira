@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners & Sponsors - Rancho Raíz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .benefits {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .benefits li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .benefits li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+        }
+        
+        .sponsors-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .sponsors-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .sponsor-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tier {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .tier.gold {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        }
+        
+        .tier.platinum {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .tier h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        .tier-price {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .contact-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .contact-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            padding: 12px 25px;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .contact-links a:hover {
+            background: #764ba2;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤝 Partners & Sponsors</h1>
+            <p class="subtitle">Sé parte del ecosistema Rancho Raíz · Zira CRM</p>
+        </header>
+        
+        <div class="grid">
+            <!-- Card 1: Developers -->
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h2>Para Developers</h2>
+                <p>Ayudá a escalar el sistema y obtené comisión por clientes nuevos.</p>
+                <div class="price">30% comisión por features</div>
+                <ul class="benefits">
+                    <li>Consultoría: $50-100/hora</li>
+                    <li>Referidos: 15% MRR perpetuo</li>
+                    <li>Features custom: $500-2K</li>
+                </ul>
+                <a href="mailto:diego@oficinabarreal.dev" class="cta-button">Contactar</a>
+            </div>
+            
+            <!-- Card 2: Agencies -->
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h2>Para Agencias</h2>
+                <p>Integra Zira CRM en tu stack y ofrécelo a tus clientes.</p>
+                <div class="price">Desde $500/mes</div>
+                <ul class="benefits">
+                    <li>White-label disponible</li>
+                    <li>Soporte prioritario</li>
+                    <li>Features custom</li>
+                </ul>
+                <a href="mailto:diego@oficinabarreal.dev" class="cta-button">Contactar</a>
+            </div>
+            
+            <!-- Card 3: Content Creators -->
+            <div class="card">
+                <div class="card-icon">📸</div>
+                <h2>Content Creators</h2>
+                <p>Genera contenido y monetiza con comisiones por referrals.</p>
+                <div class="price">20% comisión por cliente</div>
+                <ul class="benefits">
+                    <li>Embajador: $300/mes +</li>
+                    <li>Co-branded content</li>
+                    <li>Early access a features</li>
+                </ul>
+                <a href="mailto:diego@oficinabarreal.dev" class="cta-button">Contactar</a>
+            </div>
+        </div>
+        
+        <!-- Sponsors Section -->
+        <div class="sponsors-section">
+            <h2>💰 Sé un Sponsor</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                Apoya el desarrollo y recibí visibilidad en nuestros repositorios y comunidad.
+            </p>
+            
+            <div class="sponsor-tiers">
+                <div class="tier">
+                    <h3>🥉 Bronze</h3>
+                    <div class="tier-price">$25/mes</div>
+                    <ul class="benefits">
+                        <li>Badge en README</li>
+                        <li>Crédito público</li>
+                    </ul>
+                </div>
+                
+                <div class="tier">
+                    <h3>🥈 Silver</h3>
+                    <div class="tier-price">$100/mes</div>
+                    <ul class="benefits">
+                        <li>Logo en README</li>
+                        <li>Página sponsor</li>
+                        <li>Priority support</li>
+                    </ul>
+                </div>
+                
+                <div class="tier gold">
+                    <h3>🥇 Gold</h3>
+                    <div class="tier-price">$500/mes</div>
+                    <ul class="benefits">
+                        <li>Logo en sitio web</li>
+                        <li>Discord VIP</li>
+                        <li>Feature requests</li>
+                    </ul>
+                </div>
+                
+                <div class="tier platinum">
+                    <h3>💎 Platinum</h3>
+                    <div class="tier-price">$1,000+/mes</div>
+                    <ul class="benefits">
+                        <li>Todo lo anterior</li>
+                        <li>Reuniones mensuales</li>
+                        <li>Influencia en roadmap</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://github.com/sponsors/oficinabarreal" class="cta-button">
+                    ⭐ Sponsor en GitHub
+                </a>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>¿Querés colaborar?</h2>
+            <p style="margin-bottom: 20px; color: #666;">
+                Ponte en contacto y hablemos de tu propuesta
+            </p>
+            <div class="contact-links">
+                <a href="mailto:diego@oficinabarreal.dev">📧 Email</a>
+                <a href="https://wa.me/5491159595869">📱 WhatsApp</a>
+                <a href="https://github.com/oficinabarreal">💻 GitHub</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>🏔️ Rancho Raíz · Zira CRM</p>
+            <p>Hecho con ❤️ en Barreal, San Juan, Argentina · 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
