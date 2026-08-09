@@ -110,7 +110,78 @@
       "activo": "SI"
     }
   ],
-  "galeria": [],
+  "galeria": [
+    {
+      "nombre": "Foto 1",
+      "descripcion": "Algunos visitantes, posando en nuestro alambrado! Siempre hay alguno diferente 🐦 🕊 🦉 🦅",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/Cs3gu8uOFuU_1.jpg",
+      "activo": "SI",
+      "orden": "1"
+    },
+    {
+      "nombre": "Foto 2",
+      "descripcion": "Detalles que enamoran y una vista que lo tiene todo. 💚  Madera, adobe y esa luz dorada que entra por",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_2.jpg",
+      "activo": "SI",
+      "orden": "2"
+    },
+    {
+      "nombre": "Foto 3",
+      "descripcion": "Detalles que enamoran y una vista que lo tiene todo. 💚  Madera, adobe y esa luz dorada que entra por",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_3.jpg",
+      "activo": "SI",
+      "orden": "3"
+    },
+    {
+      "nombre": "Foto 4",
+      "descripcion": "Detalles que enamoran y una vista que lo tiene todo. 💚  Madera, adobe y esa luz dorada que entra por",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_4.jpg",
+      "activo": "SI",
+      "orden": "4"
+    },
+    {
+      "nombre": "Foto 5",
+      "descripcion": "Es más que una casa, es un hogar 🫶🥰",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_5.jpg",
+      "activo": "SI",
+      "orden": "5"
+    },
+    {
+      "nombre": "Foto 6",
+      "descripcion": "Es más que una casa, es un hogar 🫶🥰",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_6.jpg",
+      "activo": "SI",
+      "orden": "6"
+    },
+    {
+      "nombre": "Foto 7",
+      "descripcion": "Es más que una casa, es un hogar 🫶🥰",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_7.jpg",
+      "activo": "SI",
+      "orden": "7"
+    },
+    {
+      "nombre": "Foto 8",
+      "descripcion": "La luz de Barreal hace magia en todos los rincones. ✨  Este es el espacio para quedarse: desayunos t",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DQDXL9tDYuF_8.jpg",
+      "activo": "SI",
+      "orden": "8"
+    },
+    {
+      "nombre": "Foto 9",
+      "descripcion": "La luz de Barreal hace magia en todos los rincones. ✨  Este es el espacio para quedarse: desayunos t",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DQDXL9tDYuF_9.jpg",
+      "activo": "SI",
+      "orden": "9"
+    },
+    {
+      "nombre": "Foto 10",
+      "descripcion": "La luz de Barreal hace magia en todos los rincones. ✨  Este es el espacio para quedarse: desayunos t",
+      "imagen_url": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DQDXL9tDYuF_10.jpg",
+      "activo": "SI",
+      "orden": "10"
+    }
+  ],
   "promociones": [
     {
       "nombre": "Escapada de Invierno",
