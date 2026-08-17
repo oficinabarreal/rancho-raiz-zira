@@ -1,5 +1,11 @@
 {
-  "config": {},
+  "config": {
+    "telefono": "+54 9 11 5959-5869",
+    "whatsapp": "5491159595869",
+    "email": "ranchoraiz.barreal@gmail.com",
+    "direccion": "Rancho Raiz, Evaristo Gomez 3511, J5411 Barreal, San Juan",
+    "ig_usuario": "ranchoraiz.barreal"
+  },
   "habitaciones": [
     {
       "nombre": "Cabaña Completa (1 pers.)",
