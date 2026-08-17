@@ -78,7 +78,38 @@
       "promo_label": ""
     }
   ],
-  "servicios": [],
+  "servicios": [
+    {
+      "nombre": "WiFi Starlink",
+      "descripcion": "Internet satelital de alta velocidad en todo el predio y la cabaña",
+      "icono": "wifi",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Patio con Pileta",
+      "descripcion": "Amplio patio con pileta de temporada, ideal para disfrutar del clima de Barreal",
+      "icono": "montaña",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Parrilla & Fogón",
+      "descripcion": "Asador completo con leña incluida y fogón compartido para noches al aire libre",
+      "icono": "montaña",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Cochera Privada",
+      "descripcion": "Estacionamiento cubierto dentro del predio",
+      "icono": "auto",
+      "activo": "SI"
+    },
+    {
+      "nombre": "Vistas a la Cordillera",
+      "descripcion": "Vistas panorámicas a la Cordillera de los Andes desde toda la propiedad",
+      "icono": "montaña",
+      "activo": "SI"
+    }
+  ],
   "galeria": [
     {
       "nombre": "Foto 1",
