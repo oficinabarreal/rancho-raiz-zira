@@ -6,7 +6,78 @@
     "direccion": "Rancho Raiz, Evaristo Gomez 3511, J5411 Barreal, San Juan",
     "ig_usuario": "ranchoraiz.barreal"
   },
-  "habitaciones": [],
+  "habitaciones": [
+    {
+      "nombre": "Cabaña Completa (1 pers.)",
+      "precio": "80000",
+      "descripcion": "Alquiler completo de la cabaña para 1 persona. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta y vistas a la Cordillera de los Andes.",
+      "imagen_url": "",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_2.jpg",
+      "orden": "1",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Cabaña Completa (2 pers.)",
+      "precio": "95000",
+      "descripcion": "Alquiler completo de la cabaña para 2 personas. Ideal para parejas. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta y vistas a la Cordillera.",
+      "imagen_url": "",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_3.jpg",
+      "orden": "2",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Cabaña Completa (3 pers.)",
+      "precio": "105000",
+      "descripcion": "Alquiler completo de la cabaña para 3 personas. Cabaña independiente con cochera, parrilla, cocina equipada, WiFi Starlink, patio con pileta.",
+      "imagen_url": "",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/DPxMXcmDfPy_4.jpg",
+      "orden": "3",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Cabaña Completa (4 pers.)",
+      "precio": "115000",
+      "descripcion": "Alquiler completo de la cabaña para 4 personas. Dos ambientes, baño privado, cocina equipada, calefacción, Smart TV, WiFi Starlink, parrilla y pileta.",
+      "imagen_url": "",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_5.jpg",
+      "orden": "4",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Cabaña Completa (5 pers.)",
+      "precio": "120000",
+      "descripcion": "Alquiler completo de la cabaña para 5 personas. Capacidad máxima. Todas las comodidades: cochera, parrilla, cocina completa, WiFi Starlink, patio con pileta y vistas 360°.",
+      "imagen_url": "",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_6.jpg",
+      "orden": "5",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Camping (por persona)",
+      "precio": "5000",
+      "descripcion": "Espacio para carpa en el predio con acceso a baño, ducha caliente, fogón compartido y zona de mate. WiFi Starlink incluido.",
+      "imagen_url": "",
+      "activo": "https://oficinabarreal.github.io/rancho-raiz-zira/assets/images/CsBjC7uur4q_7.jpg",
+      "orden": "6",
+      "precio_promocion": "",
+      "promo_label": ""
+    },
+    {
+      "nombre": "Noche sola (tarifa única)",
+      "precio": "120000",
+      "descripcion": "Tarifa especial para reserva de una sola noche en la cabaña completa, sin importar la cantidad de personas.",
+      "imagen_url": "",
+      "activo": "SI",
+      "orden": "7",
+      "precio_promocion": "",
+      "promo_label": ""
+    }
+  ],
   "servicios": [
     {
       "nombre": "WiFi Starlink",
